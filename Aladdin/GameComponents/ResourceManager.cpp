@@ -4,13 +4,15 @@ ResourceManager* ResourceManager::_instance = NULL;
 
 ResourceManager::ResourceManager()
 {
-	_aladdinAnimationXML = new tinyxml2::XMLDocument();
-	_aladdinAnimationXML->LoadFile("Resources/Aladdin/Aladdin-Animations.xml");
+	_animationXMLAladdin = new tinyxml2::XMLDocument();
+	_animationXMLAladdin->LoadFile("Resources/Aladdin/Aladdin-Animations.xml");
 
-	_appleWeaponAnimationXML = new tinyxml2::XMLDocument();
-	_appleWeaponAnimationXML->LoadFile("Resources/Items/AppleWeapon-Animation.xml");
+	_animationXMLAppleWeapon = new tinyxml2::XMLDocument();
+	_animationXMLAppleWeapon->LoadFile("Resources/Items/AppleWeapon-Animation.xml");
 
 	_textureAladdin = Graphics::GetInstance()->LoadTexture(L"Resources/Aladdin/Aladdin_Sprite.png", D3DCOLOR_XRGB(255, 0, 255));
+	_textureItems = Graphics::GetInstance()->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
+	_textureAgrabahMarket = Graphics::GetInstance()->LoadTexture(L"Resources/AgrabahMarket.png");
 }
 
 
@@ -27,17 +29,27 @@ ResourceManager* ResourceManager::GetInstance()
 	return _instance;
 }
 
-tinyxml2::XMLDocument* ResourceManager::GetAladdinAnimationXML()
+tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdin()
 {
-	return _aladdinAnimationXML;
+	return _animationXMLAladdin;
 }
 
-tinyxml2::XMLDocument * ResourceManager::GetAppleWeaponAnimationXML()
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLAppleWeapon()
 {
-	return _appleWeaponAnimationXML;
+	return _animationXMLAppleWeapon;
 }
 
-LPDIRECT3DTEXTURE9 ResourceManager::GetAladdinTexture()
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdin()
 {
 	return _textureAladdin;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureItems()
+{
+	return _textureItems;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAgrabahMarket()
+{
+	return _textureAgrabahMarket;
 }

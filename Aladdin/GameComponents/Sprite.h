@@ -25,7 +25,7 @@ protected:
 
 	bool IsRect(RECT rect);
 public:
-	Sprite(LPCWSTR filePath, D3DCOLOR colorKey = NULL, RECT sourceRect = RECT(), int width = NULL, int height = NULL);
+	//Sprite(LPCWSTR filePath, D3DCOLOR colorKey = NULL, RECT sourceRect = RECT(), int width = NULL, int height = NULL);
 	Sprite(LPDIRECT3DTEXTURE9 texture, RECT sourceRect = RECT(), int width = NULL, int height = NULL);
 	Sprite();
 	~Sprite();

@@ -11,6 +11,7 @@
 class MainScene : public Scene
 {
 private:
+	std::vector<Sprite*> _backgroundTextures;
 	GameMap* _gameMap;
 	Player* _player;
 

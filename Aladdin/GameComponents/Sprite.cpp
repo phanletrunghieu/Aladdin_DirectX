@@ -1,5 +1,6 @@
 #include "Sprite.h"
 
+/*
 Sprite::Sprite(LPCWSTR filePath, D3DCOLOR colorKey, RECT sourceRect, int width, int height)
 {
 	_spriteHandler = Graphics::GetInstance()->GetSpriteHandler();
@@ -60,6 +61,7 @@ Sprite::Sprite(LPCWSTR filePath, D3DCOLOR colorKey, RECT sourceRect, int width, 
 		NULL,
 		&_texture);
 }
+*/
 
 Sprite::Sprite(LPDIRECT3DTEXTURE9 texture, RECT sourceRect, int width, int height)
 {

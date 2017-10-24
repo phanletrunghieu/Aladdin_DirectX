@@ -16,6 +16,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 	quadTree = new QuadTree(r, 1);
 	_quadTree = quadTree;
 
+	/* don't use tileset for this game
 	for (size_t i = 0; i < _map->GetNumTilesets(); i++)
 	{
 		const Tmx::Tileset *tileset = _map->GetTileset(i);
@@ -25,6 +26,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 		_listTileSet[i] = new Sprite(wPath.c_str());
 	}
+	*/
 
 	////////object here
 	for (size_t i = 0; i < _map->GetNumObjectGroups(); i++)
@@ -121,12 +123,14 @@ GameMap::~GameMap()
 	}
 	_listApples.clear();
 
+	/*don't use tileset for this game
 	for (size_t i = 0; i < _listTileSet.size(); i++)
 	{
 		if (_listTileSet[i])
 			delete _listTileSet[i];
 	}
 	_listTileSet.clear();
+	*/
 
 	_quadTree->Clear();
 	delete _quadTree;
@@ -134,7 +138,7 @@ GameMap::~GameMap()
 
 void GameMap::Draw(Camera * camera)
 {
-	//map
+	/*don't use tileset for this game
 	for (size_t i = 0; i < _map->GetNumTileLayers(); i++)
 	{
 		const Tmx::TileLayer *layer = _map->GetTileLayer(i);
@@ -184,6 +188,7 @@ void GameMap::Draw(Camera * camera)
 			}
 		}
 	}
+	*/
 
 	//////draw object here
 	//apple
@@ -194,6 +199,7 @@ void GameMap::Draw(Camera * camera)
 		{
 			delete _listApples[i];
 			_listApples.erase(_listApples.begin() + i);
+			i--;
 			continue;
 		}
 
@@ -204,6 +210,16 @@ void GameMap::Draw(Camera * camera)
 	//float ground
 	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
 	{
+		//remove not visible apple
+		if (!_listFloatGrounds[i]->IsVisible())
+		{
+			delete _listFloatGrounds[i];
+			_listFloatGrounds.erase(_listFloatGrounds.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
 		_listFloatGrounds[i]->Draw(camera);
 	}
 

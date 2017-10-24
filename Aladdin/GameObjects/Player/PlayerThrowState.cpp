@@ -8,7 +8,7 @@ PlayerThrowState::PlayerThrowState()
 
 PlayerThrowState::PlayerThrowState(Player * player) : PlayerState(player, PlayerState::StateName::Throw)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "Throw", ResourceManager::GetInstance()->GetAladdinTexture(), 0.7f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Throw", ResourceManager::GetInstance()->GetTextureAladdin(), 0.7f);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

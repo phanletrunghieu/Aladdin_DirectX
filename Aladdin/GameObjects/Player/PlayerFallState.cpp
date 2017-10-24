@@ -9,7 +9,7 @@ PlayerFallState::PlayerFallState()
 
 PlayerFallState::PlayerFallState(Player * player) : PlayerState(player, PlayerState::StateName::Fall)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "Fall", ResourceManager::GetInstance()->GetAladdinTexture(), 0.8f, false);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Fall", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f, false);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

@@ -11,6 +11,24 @@ MainScene::~MainScene()
 
 void MainScene::LoadContent()
 {
+	Sprite *sprite;
+	RECT sourceRect;
+
+	sourceRect.left = 0;
+	sourceRect.right = 4773;
+	sourceRect.top = 0;
+	sourceRect.bottom = 689;
+
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureAgrabahMarket(), sourceRect);
+	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
+	_backgroundTextures.push_back(sprite);
+
+	sourceRect.top = 689;
+	sourceRect.bottom = 1378;
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureAgrabahMarket(), sourceRect);
+	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
+	_backgroundTextures.push_back(sprite);
+
 	_gameMap = new GameMap("Resources/AgrabahMarket.tmx", _quadTree);
 
 	_player = new Player;
@@ -113,7 +131,9 @@ void MainScene::Update(float dt)
 
 void MainScene::Draw()
 {
+	_backgroundTextures[0]->Draw(_camera);
 	_gameMap->Draw(_camera);
 	_player->Draw(_camera);
+	_backgroundTextures[1]->Draw(_camera);
 	Scene::Draw();
 }

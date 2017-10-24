@@ -8,7 +8,7 @@ PlayerJumpState::PlayerJumpState()
 
 PlayerJumpState::PlayerJumpState(Player * player) : PlayerState(player, PlayerState::StateName::Jump)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "Jump", ResourceManager::GetInstance()->GetAladdinTexture(), 0.8f, false);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Jump", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f, false);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

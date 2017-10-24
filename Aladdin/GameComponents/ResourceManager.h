@@ -8,19 +8,25 @@ class ResourceManager
 private:
 	static ResourceManager *_instance;
 
-	tinyxml2::XMLDocument  *_aladdinAnimationXML;
-	tinyxml2::XMLDocument  *_appleWeaponAnimationXML;
+	tinyxml2::XMLDocument  *_animationXMLAladdin;
+	tinyxml2::XMLDocument  *_animationXMLAppleWeapon;
 
 	LPDIRECT3DTEXTURE9 _textureAladdin;
+	LPDIRECT3DTEXTURE9 _textureItems;
+
+	//map 1
+	LPDIRECT3DTEXTURE9 _textureAgrabahMarket;
 public:
 	ResourceManager();
 	~ResourceManager();
 
 	static ResourceManager* GetInstance();
 
-	tinyxml2::XMLDocument* GetAladdinAnimationXML();
-	tinyxml2::XMLDocument* GetAppleWeaponAnimationXML();
+	tinyxml2::XMLDocument* GetAnimationXMLAladdin();
+	tinyxml2::XMLDocument* GetAnimationXMLAppleWeapon();
 
-	LPDIRECT3DTEXTURE9 GetAladdinTexture();
+	LPDIRECT3DTEXTURE9 GetTextureAladdin();
+	LPDIRECT3DTEXTURE9 GetTextureItems();
+	LPDIRECT3DTEXTURE9 GetTextureAgrabahMarket();
 };
 

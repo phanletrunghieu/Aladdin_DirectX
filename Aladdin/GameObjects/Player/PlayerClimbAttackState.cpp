@@ -11,7 +11,7 @@ PlayerClimbAttackState::PlayerClimbAttackState(Player * player, GameObject *rope
 	_ropeOrHorizontalBar = ropeOrHorizontalBar;
 	_fromState = fromState;
 
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "ClimbAttack", ResourceManager::GetInstance()->GetAladdinTexture(), 0.5f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbAttack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

@@ -7,7 +7,7 @@ PlayerClimbVerticalJumpState::PlayerClimbVerticalJumpState()
 
 PlayerClimbVerticalJumpState::PlayerClimbVerticalJumpState(Player * player) : PlayerState(player, PlayerState::StateName::ClimbVerticalJump)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "ClimbVerticalJump", ResourceManager::GetInstance()->GetAladdinTexture(), 0.8f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbVerticalJump", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

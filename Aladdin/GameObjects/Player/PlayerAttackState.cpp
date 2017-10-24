@@ -9,7 +9,7 @@ PlayerAttackState::PlayerAttackState()
 
 PlayerAttackState::PlayerAttackState(Player * player) : PlayerState(player, PlayerState::StateName::Attack)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "Attack", ResourceManager::GetInstance()->GetAladdinTexture(), 0.5f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Attack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

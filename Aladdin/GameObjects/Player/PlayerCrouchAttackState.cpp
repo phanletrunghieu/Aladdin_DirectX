@@ -7,7 +7,7 @@ PlayerCrouchAttackState::PlayerCrouchAttackState()
 
 PlayerCrouchAttackState::PlayerCrouchAttackState(Player * player) :PlayerState(player, PlayerState::StateName::CrouchAttack)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "CrouchAttack", ResourceManager::GetInstance()->GetAladdinTexture(), 0.5f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "CrouchAttack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

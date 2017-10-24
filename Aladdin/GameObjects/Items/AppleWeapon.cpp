@@ -2,8 +2,8 @@
 
 AppleWeapon::AppleWeapon():GameObject(GameObject::GameObjectType::AppleWeapon)
 {
-	_animationFly = new Animation(ResourceManager::GetInstance()->GetAppleWeaponAnimationXML(), "Fly", ResourceManager::GetInstance()->GetAladdinTexture(), 0.5f);
-	_animationExplode = new Animation(ResourceManager::GetInstance()->GetAppleWeaponAnimationXML(), "Explode", ResourceManager::GetInstance()->GetAladdinTexture(), 0.4f);
+	_animationFly = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAppleWeapon(), "Fly", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f);
+	_animationExplode = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAppleWeapon(), "Explode", ResourceManager::GetInstance()->GetTextureAladdin(), 0.4f);
 
 	_currentAnimation = _animationFly;
 	_width = _currentAnimation->GetWidth();

@@ -9,7 +9,7 @@ PlayerRunFallState::PlayerRunFallState()
 
 PlayerRunFallState::PlayerRunFallState(Player * player) : PlayerState(player, PlayerState::StateName::RunFall)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAladdinAnimationXML(), "RunFall", ResourceManager::GetInstance()->GetAladdinTexture(), 0.8f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "RunFall", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f);
 	_animation->FlipVertical(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());

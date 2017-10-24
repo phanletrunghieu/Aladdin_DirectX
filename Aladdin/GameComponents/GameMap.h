@@ -11,7 +11,8 @@
 class GameMap
 {
 private:
-	std::map<int, Sprite*> _listTileSet;
+	//don't use tileset for this game
+	//std::map<int, Sprite*> _listTileSet;
 	Tmx::Map *_map;
 	QuadTree* _quadTree;
 
