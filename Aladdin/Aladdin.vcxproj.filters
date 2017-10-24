@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="GameComponents">
+      <UniqueIdentifier>{6ca7ccaf-dd6e-4231-a17e-8620b65b957b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects">
+      <UniqueIdentifier>{788faa91-0109-4edc-b6e9-c5107d91fff0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Player">
+      <UniqueIdentifier>{e9f86eba-749f-43c2-adce-299137d40993}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scenes">
+      <UniqueIdentifier>{2b770f9d-5d2f-4a32-bb51-8850e745e31b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TmxParser">
+      <UniqueIdentifier>{07aacb83-98e7-49a0-bf95-cff41769e7c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TmxParser\base64">
+      <UniqueIdentifier>{f2c3c805-c993-442e-93e9-04750b4d8743}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TmxParser\tinyxml2">
+      <UniqueIdentifier>{dfc7229c-7f76-4e04-8247-c093a1587b54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Items">
+      <UniqueIdentifier>{ccb598e4-55a6-4657-b88c-f7d9ee9b42c7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="GameComponents\Animation.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\Graphics.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\Input.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\QuadTree.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\Scene.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\SceneManager.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\Sprite.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\Timer.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Camera.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\GameObject.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\Player.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerIdleState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\MainScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\miniz.c">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxColor.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxEllipse.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxImage.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxImageLayer.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxLayer.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxMap.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxObject.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxObjectGroup.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxPolygon.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxPolyline.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxProperty.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxPropertySet.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxTerrain.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxTerrainArray.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxTile.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxTileLayer.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxTileOffset.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxTileset.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\TmxUtil.cpp">
+      <Filter>TmxParser</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\base64\base64.cpp">
+      <Filter>TmxParser\base64</Filter>
+    </ClCompile>
+    <ClCompile Include="TmxParser\tinyxml2\tinyxml2.cpp">
+      <Filter>TmxParser\tinyxml2</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\GameMap.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\Game.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerRunState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerStopState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\GameCollision.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerFallState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerAttackState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerJumpState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerJumpAttackState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerRunFallState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerRunJumpState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Items\Apple.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Items\FloatGround.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerClimbVerticalFallState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerClimbVerticalJumpState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerClimbVerticalState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerClimbHorizontalIdleState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerClimbHorizontalMoveState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerClimbAttackState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerCrouchAttackState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerCrouchIdleState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerThrowState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerJumpThrowState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Items\Springboard.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerSpringState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Items\AppleWeapon.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents\ResourceManager.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameComponents\Animation.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Graphics.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Input.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\QuadTree.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Scene.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\SceneManager.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Sprite.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Timer.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Camera.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\GameObject.h">
+      <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\Player.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerIdleState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\MainScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxColor.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxEllipse.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxImage.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxImageLayer.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxLayer.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxMap.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxMapTile.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxObject.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxObjectGroup.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxPoint.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxPolygon.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxPolyline.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxProperty.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxPropertySet.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxTerrain.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxTerrainArray.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxTile.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxTileLayer.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxTileOffset.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxTileset.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\TmxUtil.h">
+      <Filter>TmxParser</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\base64\base64.h">
+      <Filter>TmxParser\base64</Filter>
+    </ClInclude>
+    <ClInclude Include="TmxParser\tinyxml2\tinyxml2.h">
+      <Filter>TmxParser\tinyxml2</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\GameMap.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Game.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerRunState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerStopState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\GameCollision.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerFallState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerAttackState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerJumpState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerJumpAttackState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerRunFallState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerRunJumpState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Apple.h">
+      <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\FloatGround.h">
+      <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerClimbVerticalFallState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerClimbVerticalJumpState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerClimbVerticalState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerClimbHorizontalIdleState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerClimbHorizontalMoveState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerClimbAttackState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerCrouchAttackState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerCrouchIdleState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerThrowState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerJumpThrowState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Springboard.h">
+      <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerSpringState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\AppleWeapon.h">
+      <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\ResourceManager.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TmxParser\Tmx.h.in">
+      <Filter>TmxParser</Filter>
+    </None>
+    <None Include="TmxParser\tmxparser.pc.in">
+      <Filter>TmxParser</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Jump" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="8" y="846" w="59" h="42" oX="8" oY="846" oW="888" oH="324" />
+    <sprite x="75" y="828" w="52" h="61" oX="75" oY="828" oW="888" oH="324" />
+    <sprite x="137" y="829" w="54" h="60" oX="137" oY="829" oW="888" oH="324" />
+    <sprite x="203" y="824" w="54" h="68" oX="203" oY="824" oW="888" oH="324" />
+    <sprite x="269" y="820" w="51" h="73" oX="269" oY="820" oW="888" oH="324" />
+  </Animation>
+  <Animation name="Fall" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="336" y="829" w="38" h="65" oX="336" oY="829" oW="545" oH="268" />
+    <sprite x="390" y="818" w="35" h="78" oX="390" oY="818" oW="545" oH="268" />
+    <sprite x="448" y="808" w="34" h="92" oX="448" oY="808" oW="545" oH="268" />
+    <sprite x="504" y="810" w="34" h="92" oX="504" oY="810" oW="545" oH="268" />
+    <sprite x="564" y="812" w="34" h="92" oX="564" oY="812" oW="545" oH="268" />
+  </Animation>
+  <Animation name="Idle" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="6" y="9" w="37" h="49" oX="6" oY="9" oW="-238" oH="328" />
+    <sprite x="54" y="12" w="41" h="46" oX="54" oY="12" oW="-238" oH="328" />
+    <sprite x="106" y="7" w="40" h="51" oX="106" oY="7" oW="-238" oH="328" />
+    <sprite x="156" y="4" w="44" h="54" oX="156" oY="4" oW="-238" oH="328" />
+    <sprite x="205" y="8" w="41" h="50" oX="205" oY="8" oW="-238" oH="328" />
+    <sprite x="253" y="8" w="42" h="50" oX="253" oY="8" oW="-238" oH="328" />
+    <sprite x="301" y="6" w="44" h="52" oX="301" oY="6" oW="-238" oH="328" />
+  </Animation>
+  <Animation name="Run" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="120" y="1220" w="41" h="52" oX="120" oY="1220" oW="1148" oH="598" />
+    <sprite x="171" y="1216" w="40" h="56" oX="171" oY="1216" oW="1148" oH="598" />
+    <sprite x="220" y="1216" w="52" h="56" oX="220" oY="1216" oW="1148" oH="598" />
+    <sprite x="279" y="1219" w="45" h="53" oX="279" oY="1219" oW="1148" oH="598" />
+    <sprite x="334" y="1215" w="42" h="57" oX="334" oY="1215" oW="1148" oH="598" />
+    <sprite x="386" y="1221" w="40" h="51" oX="386" oY="1221" oW="1148" oH="598" />
+    <sprite x="440" y="1219" w="35" h="53" oX="440" oY="1219" oW="1148" oH="598" />
+    <sprite x="488" y="1216" w="49" h="56" oX="488" oY="1216" oW="1148" oH="598" />
+    <sprite x="547" y="1215" w="55" h="57" oX="547" oY="1215" oW="1148" oH="598" />
+    <sprite x="611" y="1219" w="55" h="54" oX="611" oY="1219" oW="1148" oH="598" />
+    <sprite x="679" y="1218" w="44" h="56" oX="679" oY="1218" oW="1148" oH="598" />
+  </Animation>
+  <Animation name="Stop" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="11" y="1293" w="57" h="56" oX="11" oY="1293" oW="1360" oH="547" />
+    <sprite x="83" y="1294" w="43" h="55" oX="83" oY="1294" oW="1360" oH="547" />
+    <sprite x="134" y="1284" w="51" h="65" oX="134" oY="1284" oW="1360" oH="547" />
+    <sprite x="200" y="1283" w="46" h="64" oX="200" oY="1283" oW="1360" oH="547" />
+    <sprite x="256" y="1285" w="41" h="63" oX="256" oY="1285" oW="1360" oH="547" />
+    <sprite x="309" y="1306" w="55" h="45" oX="309" oY="1306" oW="1360" oH="547" />
+    <sprite x="376" y="1308" w="52" h="43" oX="376" oY="1308" oW="1360" oH="547" />
+    <sprite x="437" y="1300" w="45" h="51" oX="437" oY="1300" oW="1360" oH="547" />
+    <sprite x="498" y="1294" w="51" h="51" oX="498" oY="1294" oW="1360" oH="547" />
+  </Animation>
+  <Animation name="Attack" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="5" y="337" w="45" h="50" oX="5" oY="337" oW="379" oH="297" />
+    <sprite x="54" y="326" w="51" h="61" oX="54" oY="326" oW="379" oH="297" />
+    <sprite x="115" y="314" w="44" h="73" oX="115" oY="314" oW="379" oH="297" />
+    <sprite x="171" y="319" w="81" h="68" oX="171" oY="319" oW="379" oH="297" />
+    <sprite x="260" y="335" w="51" h="52" oX="260" oY="335" oW="379" oH="297" />
+  </Animation>
+  <Animation name="Throw" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="7" y="235" w="43" h="55" oX="7" oY="235" oW="283" oH="306" />
+    <sprite x="57" y="232" w="41" h="58" oX="57" oY="232" oW="283" oH="306" />
+    <sprite x="109" y="233" w="37" h="57" oX="109" oY="233" oW="283" oH="306" />
+    <sprite x="163" y="231" w="46" h="59" oX="163" oY="231" oW="283" oH="306" />
+    <sprite x="221" y="233" w="36" h="57" oX="221" oY="233" oW="283" oH="306" />
+    <sprite x="268" y="239" w="38" h="51" oX="268" oY="239" oW="283" oH="306" />
+  </Animation>
+  <Animation name="CrouchIdle" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="205" y="500" w="42" h="48" oX="205" oY="500" oW="369" oH="210" />
+    <sprite x="258" y="509" w="47" h="39" oX="258" oY="509" oW="369" oH="210" />
+    <sprite x="315" y="519" w="53" h="29" oX="315" oY="519" oW="369" oH="210" />
+    <sprite x="378" y="516" w="52" h="34" oX="378" oY="516" oW="369" oH="210" />
+  </Animation>
+  <Animation name="CrouchAttack" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="9" y="640" w="46" h="32" oX="9" oY="640" oW="673" oH="513" />
+    <sprite x="64" y="642" w="45" h="30" oX="64" oY="642" oW="673" oH="513" />
+    <sprite x="115" y="640" w="70" h="32" oX="115" oY="640" oW="673" oH="513" />
+    <sprite x="193" y="639" w="92" h="33" oX="193" oY="639" oW="673" oH="513" />
+    <sprite x="298" y="640" w="84" h="32" oX="298" oY="640" oW="673" oH="513" />
+    <sprite x="392" y="640" w="70" h="32" oX="392" oY="640" oW="673" oH="513" />
+    <sprite x="475" y="642" w="45" h="30" oX="475" oY="642" oW="673" oH="513" />
+  </Animation>
+  <Animation name="RunJump" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="10" y="705" w="41" h="41" oX="10" oY="705" oW="736" oH="294" />
+    <sprite x="66" y="683" w="45" h="75" oX="66" oY="683" oW="736" oH="294" />
+    <sprite x="124" y="686" w="57" h="56" oX="124" oY="686" oW="736" oH="294" />
+    <sprite x="199" y="698" w="58" h="41" oX="199" oY="698" oW="736" oH="294" />
+    <sprite x="273" y="696" w="60" h="47" oX="273" oY="696" oW="736" oH="294" />
+  </Animation>
+  <Animation name="RunFall" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="273" y="696" w="60" h="47" oX="273" oY="696" oW="502" oH="348" />
+    <sprite x="350" y="692" w="57" h="52" oX="350" oY="692" oW="502" oH="348" />
+    <sprite x="419" y="688" w="53" h="57" oX="419" oY="688" oW="502" oH="348" />
+    <sprite x="491" y="680" w="50" h="84" oX="491" oY="680" oW="502" oH="348" />
+    <sprite x="560" y="719" w="59" h="43" oX="560" oY="719" oW="502" oH="348" />
+  </Animation>
+  <Animation name="JumpThrow" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="19" y="1005" w="49" h="54" oX="19" oY="1005" oW="1046" oH="287" />
+    <sprite x="77" y="1007" w="43" h="51" oX="77" oY="1007" oW="1046" oH="287" />
+    <sprite x="132" y="1008" w="38" h="52" oX="132" oY="1008" oW="1046" oH="287" />
+    <sprite x="185" y="1008" w="52" h="52" oX="185" oY="1008" oW="1046" oH="287" />
+    <sprite x="253" y="1012" w="40" h="51" oX="253" oY="1012" oW="1046" oH="287" />
+  </Animation>
+  <Animation name="JumpAttack" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="13" y="1077" w="52" h="53" oX="13" oY="1077" oW="1126" oH="397" />
+    <sprite x="75" y="1075" w="50" h="51" oX="75" oY="1075" oW="1126" oH="397" />
+    <sprite x="140" y="1067" w="46" h="65" oX="140" oY="1067" oW="1126" oH="397" />
+    <sprite x="199" y="1078" w="51" h="55" oX="199" oY="1078" oW="1126" oH="397" />
+    <sprite x="266" y="1070" w="82" h="59" oX="266" oY="1070" oW="1126" oH="397" />
+    <sprite x="361" y="1087" w="58" h="54" oX="361" oY="1087" oW="1126" oH="397" />
+  </Animation>
+  <Animation name="Spring" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="12" y="1154" w="49" h="53" oX="12" oY="1154" oW="1215" oH="457" />
+    <sprite x="76" y="1162" w="37" h="31" oX="76" oY="1162" oW="1215" oH="457" />
+    <sprite x="135" y="1160" w="35" h="33" oX="135" oY="1160" oW="1215" oH="457" />
+    <sprite x="190" y="1160" w="38" h="39" oX="190" oY="1160" oW="1215" oH="457" />
+    <sprite x="252" y="1165" w="38" h="30" oX="252" oY="1165" oW="1215" oH="457" />
+    <sprite x="306" y="1158" w="37" h="37" oX="306" oY="1158" oW="1215" oH="457" />
+    <sprite x="362" y="1161" w="38" h="34" oX="362" oY="1161" oW="1215" oH="457" />
+    <sprite x="76" y="1162" w="37" h="31" oX="76" oY="1162" oW="1215" oH="457" />
+    <sprite x="135" y="1160" w="35" h="33" oX="135" oY="1160" oW="1215" oH="457" />
+    <sprite x="190" y="1160" w="38" h="39" oX="190" oY="1160" oW="1215" oH="457" />
+    <sprite x="252" y="1165" w="38" h="30" oX="252" oY="1165" oW="1215" oH="457" />
+    <sprite x="306" y="1158" w="37" h="37" oX="306" oY="1158" oW="1215" oH="457" />
+    <sprite x="362" y="1161" w="38" h="34" oX="362" oY="1161" oW="1215" oH="457" />
+    <sprite x="76" y="1162" w="37" h="31" oX="76" oY="1162" oW="1215" oH="457" />
+    <sprite x="135" y="1160" w="35" h="33" oX="135" oY="1160" oW="1215" oH="457" />
+    <sprite x="190" y="1160" w="38" h="39" oX="190" oY="1160" oW="1215" oH="457" />
+    <sprite x="252" y="1165" w="38" h="30" oX="252" oY="1165" oW="1215" oH="457" />
+    <sprite x="306" y="1158" w="37" h="37" oX="306" oY="1158" oW="1215" oH="457" />
+    <sprite x="362" y="1161" w="38" h="34" oX="362" oY="1161" oW="1215" oH="457" />
+    <sprite x="417" y="1156" w="42" h="41" oX="417" oY="1156" oW="1215" oH="457" />
+  </Animation>
+  <Animation name="ClimbVertical" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="11" y="1362" w="29" h="85" oX="11" oY="1362" oW="1435" oH="425" />
+    <sprite x="53" y="1361" w="28" h="88" oX="53" oY="1361" oW="1435" oH="425" />
+    <sprite x="94" y="1374" w="28" h="73" oX="94" oY="1374" oW="1435" oH="425" />
+    <sprite x="133" y="1377" w="41" h="61" oX="133" oY="1377" oW="1435" oH="425" />
+    <sprite x="186" y="1363" w="30" h="75" oX="186" oY="1363" oW="1435" oH="425" />
+    <sprite x="231" y="1358" w="28" h="85" oX="231" oY="1358" oW="1435" oH="425" />
+    <sprite x="274" y="1367" w="27" h="78" oX="274" oY="1367" oW="1435" oH="425" />
+    <sprite x="314" y="1377" w="32" h="62" oX="314" oY="1377" oW="1435" oH="425" />
+    <sprite x="356" y="1377" w="42" h="61" oX="356" oY="1377" oW="1435" oH="425" />
+    <sprite x="406" y="1362" w="27" h="80" oX="406" oY="1362" oW="1435" oH="425" />
+  </Animation>
+  <Animation name="ClimbHorizontalMove" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="5" y="1467" w="39" h="77" oX="5" oY="1467" oW="1526" oH="624" />
+    <sprite x="55" y="1469" w="54" h="71" oX="55" oY="1469" oW="1526" oH="624" />
+    <sprite x="120" y="1470" w="52" h="76" oX="120" oY="1470" oW="1526" oH="624" />
+    <sprite x="190" y="1470" w="44" h="79" oX="190" oY="1470" oW="1526" oH="624" />
+    <sprite x="258" y="1468" w="36" h="82" oX="258" oY="1468" oW="1526" oH="624" />
+    <sprite x="306" y="1468" w="42" h="82" oX="306" oY="1468" oW="1526" oH="624" />
+    <sprite x="362" y="1471" w="50" h="76" oX="362" oY="1471" oW="1526" oH="624" />
+    <sprite x="433" y="1473" w="57" h="79" oX="433" oY="1473" oW="1526" oH="624" />
+    <sprite x="511" y="1471" w="47" h="80" oX="511" oY="1471" oW="1526" oH="624" />
+    <sprite x="588" y="1473" w="34" h="77" oX="588" oY="1473" oW="1526" oH="624" />
+  </Animation>
+  <Animation name="ClimbHorizontalIde" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="8" y="1564" w="48" h="87" oX="8" oY="1564" oW="1624" oH="283" />
+    <sprite x="65" y="1564" w="46" h="86" oX="65" oY="1564" oW="1624" oH="283" />
+    <sprite x="121" y="1564" w="40" h="87" oX="121" oY="1564" oW="1624" oH="283" />
+    <sprite x="181" y="1563" w="39" h="87" oX="181" oY="1563" oW="1624" oH="283" />
+    <sprite x="237" y="1562" w="37" h="87" oX="237" oY="1562" oW="1624" oH="283" />
+  </Animation>
+  <Animation name="ClimbAttack" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="7" y="1769" w="47" h="86" oX="7" oY="1769" oW="1834" oH="530" />
+    <sprite x="68" y="1769" w="52" h="88" oX="68" oY="1769" oW="1834" oH="530" />
+    <sprite x="142" y="1760" w="60" h="101" oX="142" oY="1760" oW="1834" oH="530" />
+    <sprite x="220" y="1773" w="77" h="89" oX="220" oY="1773" oW="1834" oH="530" />
+    <sprite x="316" y="1773" w="55" h="88" oX="316" oY="1773" oW="1834" oH="530" />
+    <sprite x="395" y="1775" w="74" h="88" oX="395" oY="1775" oW="1834" oH="530" />
+    <sprite x="490" y="1775" w="47" h="86" oX="490" oY="1775" oW="1834" oH="530" />
+  </Animation>
+  <Animation name="ClimbVerticalJump" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="10" y="1870" w="34" h="72" oX="10" oY="1870" oW="1928" oH="216" />
+    <sprite x="65" y="1873" w="24" h="76" oX="65" oY="1873" oW="1928" oH="216" />
+    <sprite x="100" y="1874" w="36" h="70" oX="100" oY="1874" oW="1928" oH="216" />
+    <sprite x="144" y="1874" w="48" h="63" oX="144" oY="1874" oW="1928" oH="216" />
+    <sprite x="204" y="1875" w="59" h="53" oX="204" oY="1875" oW="1928" oH="216" />
+  </Animation>
+  <Animation name="ClimbVerticalFall" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="204" y="1875" w="59" h="53" oX="204" oY="1875" oW="1734" oH="344" />
+    <sprite x="281" y="1876" w="59" h="40" oX="281" oY="1876" oW="1734" oH="344" />
+    <sprite x="354" y="1869" w="52" h="53" oX="354" oY="1869" oW="1734" oH="344" />
+    <sprite x="422" y="1871" w="47" h="66" oX="422" oY="1871" oW="1734" oH="344" />
+    <sprite x="482" y="1866" w="45" h="74" oX="482" oY="1866" oW="1734" oH="344" />
+  </Animation>
+</Animations>

@@ -1,0 +1,291 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2DFA76BB-2A5C-4E4A-B26C-091216A3FB03}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Aladdin</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(DXSDK_DIR)Include;C:\Users\Phan Hieu\Documents\Visual Studio 2015\Projects\Aladdin\Aladdin\Dependencies\zlib128-dll\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;C:\Users\Phan Hieu\Documents\Visual Studio 2015\Projects\Aladdin\Aladdin\Dependencies\zlib128-dll\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <CallingConvention>StdCall</CallingConvention>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>d3d9.lib;d3dx9.lib;dxgi.lib;zlib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="GameComponents\Animation.cpp" />
+    <ClCompile Include="GameComponents\GameCollision.cpp" />
+    <ClCompile Include="GameComponents\Graphics.cpp" />
+    <ClCompile Include="GameComponents\Input.cpp" />
+    <ClCompile Include="GameComponents\QuadTree.cpp" />
+    <ClCompile Include="GameComponents\ResourceManager.cpp" />
+    <ClCompile Include="GameComponents\Scene.cpp" />
+    <ClCompile Include="GameComponents\SceneManager.cpp" />
+    <ClCompile Include="GameComponents\Sprite.cpp" />
+    <ClCompile Include="GameComponents\Game.cpp" />
+    <ClCompile Include="GameComponents\GameMap.cpp" />
+    <ClCompile Include="GameComponents\Timer.cpp" />
+    <ClCompile Include="GameObjects\Camera.cpp" />
+    <ClCompile Include="GameObjects\GameObject.cpp" />
+    <ClCompile Include="GameObjects\Items\Apple.cpp" />
+    <ClCompile Include="GameObjects\Items\AppleWeapon.cpp" />
+    <ClCompile Include="GameObjects\Items\FloatGround.cpp" />
+    <ClCompile Include="GameObjects\Items\Springboard.cpp" />
+    <ClCompile Include="GameObjects\Player\Player.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerAttackState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerClimbHorizontalIdleState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerClimbHorizontalMoveState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerClimbAttackState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerClimbVerticalFallState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerClimbVerticalJumpState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerClimbVerticalState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerCrouchAttackState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerCrouchIdleState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerFallState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerIdleState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerJumpAttackState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerJumpState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerJumpThrowState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerRunFallState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerRunJumpState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerRunState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerSpringState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerStopState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerThrowState.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Scenes\MainScene.cpp" />
+    <ClCompile Include="TmxParser\base64\base64.cpp" />
+    <ClCompile Include="TmxParser\miniz.c" />
+    <ClCompile Include="TmxParser\tinyxml2\tinyxml2.cpp" />
+    <ClCompile Include="TmxParser\TmxColor.cpp" />
+    <ClCompile Include="TmxParser\TmxEllipse.cpp" />
+    <ClCompile Include="TmxParser\TmxImage.cpp" />
+    <ClCompile Include="TmxParser\TmxImageLayer.cpp" />
+    <ClCompile Include="TmxParser\TmxLayer.cpp" />
+    <ClCompile Include="TmxParser\TmxMap.cpp" />
+    <ClCompile Include="TmxParser\TmxObject.cpp" />
+    <ClCompile Include="TmxParser\TmxObjectGroup.cpp" />
+    <ClCompile Include="TmxParser\TmxPolygon.cpp" />
+    <ClCompile Include="TmxParser\TmxPolyline.cpp" />
+    <ClCompile Include="TmxParser\TmxProperty.cpp" />
+    <ClCompile Include="TmxParser\TmxPropertySet.cpp" />
+    <ClCompile Include="TmxParser\TmxTerrain.cpp" />
+    <ClCompile Include="TmxParser\TmxTerrainArray.cpp" />
+    <ClCompile Include="TmxParser\TmxTile.cpp" />
+    <ClCompile Include="TmxParser\TmxTileLayer.cpp" />
+    <ClCompile Include="TmxParser\TmxTileOffset.cpp" />
+    <ClCompile Include="TmxParser\TmxTileset.cpp" />
+    <ClCompile Include="TmxParser\TmxUtil.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="GameComponents\Animation.h" />
+    <ClInclude Include="GameComponents\GameCollision.h" />
+    <ClInclude Include="GameComponents\Graphics.h" />
+    <ClInclude Include="GameComponents\Input.h" />
+    <ClInclude Include="GameComponents\QuadTree.h" />
+    <ClInclude Include="GameComponents\ResourceManager.h" />
+    <ClInclude Include="GameComponents\Scene.h" />
+    <ClInclude Include="GameComponents\SceneManager.h" />
+    <ClInclude Include="GameComponents\Sprite.h" />
+    <ClInclude Include="GameComponents\Game.h" />
+    <ClInclude Include="GameComponents\GameMap.h" />
+    <ClInclude Include="GameComponents\Timer.h" />
+    <ClInclude Include="GameObjects\Camera.h" />
+    <ClInclude Include="GameObjects\GameObject.h" />
+    <ClInclude Include="GameObjects\Items\Apple.h" />
+    <ClInclude Include="GameObjects\Items\AppleWeapon.h" />
+    <ClInclude Include="GameObjects\Items\FloatGround.h" />
+    <ClInclude Include="GameObjects\Items\Springboard.h" />
+    <ClInclude Include="GameObjects\Player\Player.h" />
+    <ClInclude Include="GameObjects\Player\PlayerAttackState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerClimbHorizontalIdleState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerClimbHorizontalMoveState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerClimbAttackState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerClimbVerticalFallState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerClimbVerticalJumpState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerClimbVerticalState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerCrouchAttackState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerCrouchIdleState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerFallState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerIdleState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerJumpAttackState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerJumpState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerJumpThrowState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerRunFallState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerRunJumpState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerRunState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerSpringState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerStopState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerThrowState.h" />
+    <ClInclude Include="Scenes\MainScene.h" />
+    <ClInclude Include="TmxParser\base64\base64.h" />
+    <ClInclude Include="TmxParser\tinyxml2\tinyxml2.h" />
+    <ClInclude Include="TmxParser\TmxColor.h" />
+    <ClInclude Include="TmxParser\TmxEllipse.h" />
+    <ClInclude Include="TmxParser\TmxImage.h" />
+    <ClInclude Include="TmxParser\TmxImageLayer.h" />
+    <ClInclude Include="TmxParser\TmxLayer.h" />
+    <ClInclude Include="TmxParser\TmxMap.h" />
+    <ClInclude Include="TmxParser\TmxMapTile.h" />
+    <ClInclude Include="TmxParser\TmxObject.h" />
+    <ClInclude Include="TmxParser\TmxObjectGroup.h" />
+    <ClInclude Include="TmxParser\TmxPoint.h" />
+    <ClInclude Include="TmxParser\TmxPolygon.h" />
+    <ClInclude Include="TmxParser\TmxPolyline.h" />
+    <ClInclude Include="TmxParser\TmxProperty.h" />
+    <ClInclude Include="TmxParser\TmxPropertySet.h" />
+    <ClInclude Include="TmxParser\TmxTerrain.h" />
+    <ClInclude Include="TmxParser\TmxTerrainArray.h" />
+    <ClInclude Include="TmxParser\TmxTile.h" />
+    <ClInclude Include="TmxParser\TmxTileLayer.h" />
+    <ClInclude Include="TmxParser\TmxTileOffset.h" />
+    <ClInclude Include="TmxParser\TmxTileset.h" />
+    <ClInclude Include="TmxParser\TmxUtil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="TmxParser\Tmx.h.in" />
+    <None Include="TmxParser\tmxparser.pc.in" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
