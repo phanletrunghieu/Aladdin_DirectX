@@ -30,7 +30,7 @@ public:
 	GameObject(GameObjectType tag = None);
 	~GameObject();
 
-	virtual void  Draw(Camera *camera) {}
+	virtual void Draw(Camera *camera) {}
 	virtual void Update(float deltaTime);
 
 	virtual void OnCollision(GameObject *target, GameCollision::SideCollisions side) {};
@@ -42,6 +42,8 @@ public:
 
 	D3DXVECTOR2 GetPosition();
 	void SetPosition(float x, float y);
+	void SetPosition(D3DXVECTOR2 position);
+	void SetPosition(D3DXVECTOR3 position);
 	void SetPositionX(float x);
 	void SetPositionY(float y);
 

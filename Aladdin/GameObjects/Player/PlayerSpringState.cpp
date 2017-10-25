@@ -8,7 +8,7 @@ PlayerSpringState::PlayerSpringState()
 PlayerSpringState::PlayerSpringState(Player * player) : PlayerState(player, PlayerState::StateName::Spring)
 {
 	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Spring", ResourceManager::GetInstance()->GetTextureAladdin(), 0.4f);
-	_animation->FlipVertical(!_player->IsRight());
+	_animation->FlipHorizontal(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());
 	_player->SetWidth(_animation->GetWidth());

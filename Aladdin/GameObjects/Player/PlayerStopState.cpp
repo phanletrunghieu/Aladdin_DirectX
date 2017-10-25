@@ -9,7 +9,7 @@ PlayerStopState::PlayerStopState()
 PlayerStopState::PlayerStopState(Player * player):PlayerState(player, PlayerState::StateName::Stop)
 {
 	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Stop", ResourceManager::GetInstance()->GetTextureAladdin(), 0.4f);
-	_animation->FlipVertical(!_player->IsRight());
+	_animation->FlipHorizontal(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());
 	_player->SetWidth(_animation->GetWidth());

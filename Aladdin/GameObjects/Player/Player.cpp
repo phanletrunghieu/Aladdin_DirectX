@@ -74,13 +74,16 @@ PlayerState * Player::GetState()
 	return _state;
 }
 
-void Player::SetState(PlayerState * state)
+void Player::SetState(PlayerState * state, bool fixFootPosition)
 {
-	//make sure player's foot at the same position when change state. because each state has own height
-	int newHeight = state->GetAnimation()->GetHeight();
-	int currentHeight = _state->GetAnimation()->GetHeight();
-	float diff = (currentHeight - newHeight) / 2.0;
-	_position.y += diff;
+	if (fixFootPosition)
+	{
+		//make sure player's foot at the same position when change state. because each state has own height
+		int newHeight = state->GetAnimation()->GetHeight();
+		int currentHeight = _state->GetAnimation()->GetHeight();
+		float diff = (currentHeight - newHeight) / 2.0;
+		_position.y += diff;
+	}
 
 	//change state
 	delete _state;

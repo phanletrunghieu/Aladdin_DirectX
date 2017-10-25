@@ -10,7 +10,7 @@ PlayerFallState::PlayerFallState()
 PlayerFallState::PlayerFallState(Player * player) : PlayerState(player, PlayerState::StateName::Fall)
 {
 	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Fall", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f, false);
-	_animation->FlipVertical(!_player->IsRight());
+	_animation->FlipHorizontal(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());
 	_player->SetWidth(_animation->GetWidth());
@@ -66,7 +66,7 @@ void PlayerFallState::OnCollision(GameObject * target, GameCollision::SideCollis
 		if (diffTop < 18
 			&& _player->GetPosition().x >= target->GetBound().left
 			&& _player->GetPosition().x <= target->GetBound().right)
-			_player->SetState(new PlayerClimbHorizontalIdleState(_player, target));
+			_player->SetState(new PlayerClimbHorizontalIdleState(_player, target), false);
 	}
 
 	if (target->GetTag() == GameObject::GameObjectType::Springboard)

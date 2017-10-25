@@ -50,6 +50,17 @@ void GameObject::SetPosition(float x, float y)
 	_position.y = y;
 }
 
+void GameObject::SetPosition(D3DXVECTOR2 position)
+{
+	_position = position;
+}
+
+void GameObject::SetPosition(D3DXVECTOR3 position)
+{
+	_position.x = position.x;
+	_position.y = position.y;
+}
+
 void GameObject::SetPositionX(float x)
 {
 	_position.x = x;

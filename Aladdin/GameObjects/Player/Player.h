@@ -20,7 +20,7 @@ public:
 	void OnCollision(GameObject *target, GameCollision::SideCollisions side);
 
 	PlayerState* GetState();
-	void SetState(PlayerState* state);
+	void SetState(PlayerState* state, bool fixFootPosition = true);
 
 	bool IsRight();
 	bool IsGround();

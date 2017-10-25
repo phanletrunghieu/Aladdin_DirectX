@@ -9,6 +9,7 @@ Camera::Camera(GameObject* follow)
 	_height = Graphics::GetInstance()->GetScreenHeight();
 
 	_position = D3DXVECTOR2((_width*1.0) / 2, (_height*1.0) / 2);
+	_position.x = _follow->GetPosition().x;
 
 	this->_instance = this;
 }
@@ -29,7 +30,7 @@ void Camera::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (_follow != NULL)
+	if (_follow != NULL && (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT)))
 	{
 		_position.x = _follow->GetPosition().x;
 	}

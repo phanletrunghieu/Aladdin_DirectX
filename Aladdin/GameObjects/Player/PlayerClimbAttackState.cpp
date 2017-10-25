@@ -12,7 +12,7 @@ PlayerClimbAttackState::PlayerClimbAttackState(Player * player, GameObject *rope
 	_fromState = fromState;
 
 	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbAttack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f);
-	_animation->FlipVertical(!_player->IsRight());
+	_animation->FlipHorizontal(!_player->IsRight());
 
 	_animation->SetPosition(_player->GetPosition());
 	_player->SetWidth(_animation->GetWidth());
@@ -39,7 +39,7 @@ void PlayerClimbAttackState::Update(float deltaTime)
 		if (_fromState == PlayerState::StateName::ClimbVertical)
 			_player->SetState(new PlayerClimbVerticalState(_player, _ropeOrHorizontalBar));
 		else if(_fromState == PlayerState::StateName::ClimbHorizontalIde)
-			_player->SetState(new PlayerClimbHorizontalIdleState(_player, _ropeOrHorizontalBar));
+			_player->SetState(new PlayerClimbHorizontalIdleState(_player, _ropeOrHorizontalBar), false);
 		return;
 	}
 }

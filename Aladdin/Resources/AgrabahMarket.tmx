@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="182">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="183">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -145,23 +145,23 @@
   <object id="141" x="2294.5" y="574.5" width="44" height="7"/>
   <object id="142" x="2243" y="578.5" width="48.5" height="12"/>
   <object id="143" x="2736.5" y="567.5" width="107" height="11.5"/>
-  <object id="145" x="2642.5" y="406.5" width="159.5" height="13.5"/>
-  <object id="146" x="2798.5" y="423" width="286" height="10"/>
+  <object id="145" x="2642.5" y="406.5" width="174.5" height="13.5"/>
+  <object id="146" x="2788.5" y="423" width="296" height="10"/>
   <object id="147" x="2745" y="167.5" width="83.5" height="10"/>
   <object id="148" x="2518.5" y="167" width="133" height="12.5"/>
-  <object id="149" x="2816" y="295.333" width="380" height="8.66667"/>
+  <object id="149" x="2798" y="295.333" width="398" height="8.66667"/>
   <object id="150" x="2969.33" y="167.333" width="216.667" height="11.3333"/>
   <object id="151" x="3059" y="487" width="797" height="12"/>
   <object id="152" x="4472.67" y="623.833" width="300" height="36.8333"/>
-  <object id="153" x="4431.5" y="631" width="55" height="57.5"/>
-  <object id="155" x="4393" y="639.5" width="43.5" height="48"/>
-  <object id="156" x="4355.5" y="647.5" width="49.25" height="40.9773"/>
+  <object id="153" x="4431.5" y="631" width="193" height="57.5"/>
+  <object id="155" x="4393" y="639.5" width="225.5" height="48"/>
+  <object id="156" x="4355.5" y="647.5" width="260.25" height="40.9773"/>
   <object id="157" x="4609.45" y="503.455" width="74.9091" height="11.2727"/>
   <object id="158" x="4304.33" y="471.333" width="91.3333" height="12"/>
   <object id="159" x="3976.17" y="439.333" width="99.167" height="12"/>
   <object id="160" x="3867.33" y="456.333" width="111.667" height="23.1667"/>
-  <object id="161" x="3827.33" y="471.333" width="83" height="23.3333"/>
-  <object id="162" x="2769.5" y="585.5" width="50" height="104.5"/>
+  <object id="161" x="3827.33" y="471.333" width="115" height="23.3333"/>
+  <object id="162" x="2769.5" y="583.5" width="50" height="106.5"/>
   <object id="166" x="2609.33" y="168.333" width="32.6667" height="251.667"/>
   <object id="167" x="3186" y="327.333" width="378.667" height="13.3333"/>
   <object id="168" x="3566" y="130.833" width="36.6667" height="215.167"/>
@@ -172,6 +172,7 @@
   <object id="176" x="2498.5" y="0" width="24" height="241.5"/>
   <object id="177" x="2785.5" y="174.333" width="33.5" height="130.167"/>
   <object id="181" x="3917.5" y="440" width="68" height="22"/>
+  <object id="182" x="4701" y="1" width="72" height="229"/>
  </objectgroup>
  <objectgroup name="FloatGround">
   <object id="163" gid="4" x="1630.67" y="454" width="33" height="14"/>

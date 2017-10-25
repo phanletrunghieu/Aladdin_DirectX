@@ -6,8 +6,8 @@
 class Animation : public Sprite
 {
 protected:
-
 	std::vector<RECT> _listRectSprites;
+	std::vector<D3DXVECTOR2> _listOriginPointSprites;
 
 	bool _paused, _isBegin, _isFinish, _loop, _isReverse;
 
@@ -19,9 +19,6 @@ public:
 	~Animation();
 
 	void Update(float dt);
-
-	void Draw(D3DXVECTOR3 position = D3DXVECTOR3());
-	void Draw(Camera* camera);
 
 	void SeekToLastFrame();
 

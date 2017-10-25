@@ -26,9 +26,16 @@ Animation::Animation(tinyxml2::XMLDocument *xmlDocument, char* animationName, LP
 				rect.right = rect.left + elem->IntAttribute("w");
 				rect.top = elem->IntAttribute("y");
 				rect.bottom = rect.top + elem->IntAttribute("h");
-
 				//store rect
 				_listRectSprites.push_back(rect);
+
+				//get origin point
+				int oX = elem->IntAttribute("oX");
+				int oY = elem->IntAttribute("oY");
+				D3DXVECTOR2 oPoint;
+				oPoint.x = oX < 0 ? 0 : oX - (rect.left + (rect.right - rect.left) / 2);
+				oPoint.y = oY < 0 ? 0 : oY - (rect.top + (rect.bottom - rect.top) / 2);
+				_listOriginPointSprites.push_back(oPoint);
 
 				//next
 				elem = elem->NextSiblingElement();
@@ -103,6 +110,36 @@ void Animation::Update(float dt)
 		_width = _listRectSprites[_currentIndex].right - _listRectSprites[_currentIndex].left;
 		_height = _listRectSprites[_currentIndex].bottom - _listRectSprites[_currentIndex].top;
 
+		//change position
+		D3DXVECTOR2 vector;
+		if (!_isReverse)
+		{
+			if (_currentIndex == 0)
+				vector = _listOriginPointSprites[_currentIndex] - _listOriginPointSprites[_listOriginPointSprites.size() - 1];
+			else
+				vector = _listOriginPointSprites[_currentIndex] - _listOriginPointSprites[_currentIndex - 1];
+
+		}
+		else
+		{
+			if (_currentIndex == _listOriginPointSprites.size() - 1)
+				vector = _listOriginPointSprites[_currentIndex] - _listOriginPointSprites[0];
+			else
+				vector = _listOriginPointSprites[_currentIndex] - _listOriginPointSprites[_currentIndex + 1];
+
+		}
+
+		if (!_isFlipHorizontal)
+		{
+			_position.x -= vector.x;
+			_position.y -= vector.y;
+		}
+		else
+		{
+			_position.x += vector.x;
+			_position.y -= vector.y;
+		}
+
 		//set RECT
 		_sourceRect = _listRectSprites[_currentIndex];
 	}
@@ -110,16 +147,6 @@ void Animation::Update(float dt)
 	{
 		_currentTotalTime += dt;
 	}
-}
-
-void Animation::Draw(D3DXVECTOR3 position)
-{
-	Sprite::Draw(position);
-}
-
-void Animation::Draw(Camera * camera)
-{
-	Sprite::Draw(camera);
 }
 
 void Animation::SeekToLastFrame()

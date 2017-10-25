@@ -19,10 +19,16 @@ PlayerState::~PlayerState()
 void PlayerState::Update(float deltaTime)
 {
 	if (_animation != NULL)
-		_animation->Update(deltaTime);
+	{
+		_animation->SetPosition(_player->GetPosition());
+		_animation->FlipHorizontal(!_player->IsRight());
 
-	_animation->SetPosition(_player->GetPosition());
-	_animation->FlipVertical(!_player->IsRight());
+		_animation->Update(deltaTime);//after animation update, animation's position maybe change
+		_player->SetPosition(_animation->GetPosition());
+	}
+
+	_player->SetWidth(_animation->GetWidth());
+	_player->SetHeight(_animation->GetHeight());
 }
 
 Animation * PlayerState::GetAnimation()

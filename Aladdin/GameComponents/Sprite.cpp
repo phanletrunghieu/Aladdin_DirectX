@@ -266,7 +266,7 @@ void Sprite::FlipHorizontal(bool flag)
 	if (_isFlipHorizontal != flag)
 	{
 		_isFlipHorizontal = flag;
-		_scale = D3DXVECTOR2(_scale.x, -_scale.y);
+		_scale = D3DXVECTOR2(-_scale.x, _scale.y);
 	}
 
 }
@@ -276,7 +276,7 @@ void Sprite::FlipVertical(bool flag)
 	if (_isFlipVertical != flag)
 	{
 		_isFlipVertical = flag;
-		_scale = D3DXVECTOR2(-_scale.x, _scale.y);
+		_scale = D3DXVECTOR2(_scale.x, -_scale.y);
 	}
 }
 
