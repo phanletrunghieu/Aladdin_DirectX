@@ -12,7 +12,7 @@ ResourceManager::ResourceManager()
 
 	_textureAladdin = Graphics::GetInstance()->LoadTexture(L"Resources/Aladdin/Aladdin_Sprite.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureItems = Graphics::GetInstance()->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
-	_textureAgrabahMarket = Graphics::GetInstance()->LoadTexture(L"Resources/AgrabahMarket.png");
+	_textureAgrabahMarket = Graphics::GetInstance()->LoadTexture(L"Resources/Maps/AgrabahMarket/AgrabahMarket.png");
 }
 
 

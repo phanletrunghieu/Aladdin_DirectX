@@ -13,7 +13,7 @@ class GameObject
 public:
 	enum GameObjectType
 	{
-		None, Player, Apple, AppleWeapon, Enemy, Ground, Rope, HorizontalBar, FloatGround, Springboard
+		None, Player, Enemy, Apple, AppleWeapon, Ground, Rope, HorizontalBar, FloatGround, Springboard
 	};
 protected:
 	GameObjectType _tag;
@@ -41,30 +41,30 @@ public:
 	bool IsVisible();
 
 	D3DXVECTOR2 GetPosition();
-	void SetPosition(float x, float y);
-	void SetPosition(D3DXVECTOR2 position);
-	void SetPosition(D3DXVECTOR3 position);
-	void SetPositionX(float x);
-	void SetPositionY(float y);
+	virtual void SetPosition(float x, float y);
+	virtual void SetPosition(D3DXVECTOR2 position);
+	virtual void SetPosition(D3DXVECTOR3 position);
+	virtual void SetPositionX(float x);
+	virtual void SetPositionY(float y);
 
 	D3DXVECTOR2 GetVelocity();
-	void SetVelocity(float x, float y);
-	void SetVelocityX(float x);
-	void SetVelocityY(float y);
+	virtual void SetVelocity(float x, float y);
+	virtual void SetVelocityX(float x);
+	virtual void SetVelocityY(float y);
 
 	D3DXVECTOR2 GetAcceleration();
-	void SetAcceleration(float x, float y);
-	void SetAccelerationX(float x);
-	void SetAccelerationY(float y);
+	virtual void SetAcceleration(float x, float y);
+	virtual void SetAccelerationX(float x);
+	virtual void SetAccelerationY(float y);
 
 	float GetMass();
-	void SetMass(float mass);
+	virtual void SetMass(float mass);
 
 	int GetWidth();
-	void SetWidth(int width);
+	virtual void SetWidth(int width);
 
 	int GetHeight();
-	void SetHeight(int height);
+	virtual void SetHeight(int height);
 
 	void GetBound(float &top, float &right, float &bottom, float &left);
 	RECT GetBound();

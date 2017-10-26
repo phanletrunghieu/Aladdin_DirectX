@@ -37,6 +37,12 @@
     <Filter Include="GameObjects\Items">
       <UniqueIdentifier>{ccb598e4-55a6-4657-b88c-f7d9ee9b42c7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Enemies">
+      <UniqueIdentifier>{4e2f8cc8-9b55-409a-affc-395a939797c0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Enemies\Enemy_1">
+      <UniqueIdentifier>{afdbcca6-2673-41df-a23c-ba21f78cd2ad}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -231,6 +237,15 @@
     <ClCompile Include="GameComponents\ResourceManager.cpp">
       <Filter>GameComponents</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy.cpp">
+      <Filter>GameObjects\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\EnemyState.cpp">
+      <Filter>GameObjects\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy_1\Enemy_1.cpp">
+      <Filter>GameObjects\Enemies\Enemy_1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -424,6 +439,15 @@
     </ClInclude>
     <ClInclude Include="GameComponents\ResourceManager.h">
       <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy.h">
+      <Filter>GameObjects\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\EnemyState.h">
+      <Filter>GameObjects\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy_1\Enemy_1.h">
+      <Filter>GameObjects\Enemies\Enemy_1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

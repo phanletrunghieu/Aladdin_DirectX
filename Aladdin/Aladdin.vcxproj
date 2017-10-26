@@ -163,6 +163,9 @@
     <ClCompile Include="GameComponents\GameMap.cpp" />
     <ClCompile Include="GameComponents\Timer.cpp" />
     <ClCompile Include="GameObjects\Camera.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy.cpp" />
+    <ClCompile Include="GameObjects\Enemies\EnemyState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy_1\Enemy_1.cpp" />
     <ClCompile Include="GameObjects\GameObject.cpp" />
     <ClCompile Include="GameObjects\Items\Apple.cpp" />
     <ClCompile Include="GameObjects\Items\AppleWeapon.cpp" />
@@ -229,6 +232,9 @@
     <ClInclude Include="GameComponents\GameMap.h" />
     <ClInclude Include="GameComponents\Timer.h" />
     <ClInclude Include="GameObjects\Camera.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy.h" />
+    <ClInclude Include="GameObjects\Enemies\EnemyState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy_1\Enemy_1.h" />
     <ClInclude Include="GameObjects\GameObject.h" />
     <ClInclude Include="GameObjects\Items\Apple.h" />
     <ClInclude Include="GameObjects\Items\AppleWeapon.h" />

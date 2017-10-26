@@ -1,0 +1,33 @@
+﻿
+<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Walk" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="2" y="9" w="45" h="66" oX="-1" oY="76" oW="-303" oH="411" />
+    <sprite x="53" y="10" w="45" h="65" oX="-1" oY="76" oW="-303" oH="411" />
+    <sprite x="109" y="11" w="45" h="64" oX="-1" oY="76" oW="-303" oH="411" />
+    <sprite x="164" y="11" w="45" h="64" oX="-1" oY="76" oW="-303" oH="411" />
+    <sprite x="214" y="10" w="37" h="65" oX="-1" oY="76" oW="-303" oH="411" />
+    <sprite x="259" y="9" w="42" h="66" oX="-1" oY="76" oW="-303" oH="411" />
+    <sprite x="308" y="9" w="49" h="66" oX="-1" oY="76" oW="-303" oH="411" />
+    <sprite x="363" y="11" w="35" h="64" oX="-1" oY="76" oW="-303" oH="411" />
+  </Animation>
+  <Animation name="Attack" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="9" y="82" w="36" h="73" oX="45" oY="156" oW="152" oH="407" />
+    <sprite x="53" y="96" w="49" h="59" oX="93" oY="156" oW="152" oH="407" />
+    <sprite x="109" y="98" w="91" h="57" oX="200" oY="156" oW="152" oH="407" />
+    <sprite x="203" y="97" w="85" h="58" oX="289" oY="156" oW="152" oH="407" />
+    <sprite x="292" y="96" w="76" h="59" oX="368" oY="156" oW="152" oH="407" />
+    <sprite x="382" y="96" w="40" h="59" oX="422" oY="156" oW="152" oH="407" />
+  </Animation>
+  <Animation name="Injured" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="8" y="175" w="44" h="57" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="59" y="185" w="40" h="47" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="114" y="160" w="38" h="72" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="161" y="165" w="41" h="67" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="210" y="171" w="46" h="61" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="268" y="162" w="41" h="70" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="318" y="184" w="46" h="48" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="378" y="185" w="40" h="47" oX="-1" oY="233" oW="233" oH="469" />
+    <sprite x="433" y="166" w="45" h="66" oX="-1" oY="233" oW="233" oH="469" />
+  </Animation>
+</Animations>

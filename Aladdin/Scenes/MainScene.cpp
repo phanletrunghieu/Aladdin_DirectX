@@ -29,7 +29,7 @@ void MainScene::LoadContent()
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
-	_gameMap = new GameMap("Resources/AgrabahMarket.tmx", _quadTree);
+	_gameMap = new GameMap("Resources/Maps/AgrabahMarket/AgrabahMarket.tmx", _quadTree);
 
 	_player = new Player;
 	_player->SetPosition(3020, 300);
