@@ -7,38 +7,41 @@
 class Enemy : public GameObject
 {
 protected:
-	int _health;
+	GameObject* _target;
 
-	//detect player in this range
-	RECT _viewRange;
+	int _health;
+	float _speed;
+
+	// use to detect the target being near
+	int _viewRange, _attackRange;
+	D3DXVECTOR2 _distanceToTarget;
 
 	// face look right?
 	bool _isRight;
 
 	EnemyState *_state;
-
-	void UpdateViewRange();
 public:
 	Enemy();
+	Enemy(GameObject * target);
 	~Enemy();
 
 	virtual void Update(float deltaTime);
 	void Draw(Camera* camera);
 
-	void OnCollision(GameObject *target, GameCollision::SideCollisions side);
+	virtual void OnCollision(GameObject *target, GameCollision::SideCollisions side);
+
+	bool IsTargetInViewRange();
+	bool IsTargetInAttackRange();
 
 	EnemyState* GetState();
 	void SetState(EnemyState* state, bool fixFootPosition = true);
 
+	GameObject* GetTarget();
+
 	int GetHealth();
 	void SetHealth(int newHealth);
 
-	void SetPosition(float x, float y);
-	void SetPosition(D3DXVECTOR2 position);
-	void SetPosition(D3DXVECTOR3 position);
-	void SetPositionX(float x);
-	void SetPositionY(float y);
-
 	bool IsRight();
+	void SetIsRight(bool right);
 };
 

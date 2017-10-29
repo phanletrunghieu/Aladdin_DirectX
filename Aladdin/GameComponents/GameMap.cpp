@@ -37,13 +37,18 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 		{
 			Tmx::Object *object = objectGroup->GetObjects().at(j);
 
+			//init player
+			if (objectGroup->GetName() == "Player")
+			{
+				_player = new Player();
+				_player->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+			}
+
 			//init apple
 			if (objectGroup->GetName() == "Apple")
 			{
 				Apple *apple = new Apple();
 				apple->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
-				apple->SetWidth(object->GetWidth());
-				apple->SetHeight(object->GetHeight());
 
 				_listApples.push_back(apple);
 
@@ -55,8 +60,6 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			{
 				FloatGround *floatGround = new FloatGround();
 				floatGround->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
-				floatGround->SetWidth(object->GetWidth());
-				floatGround->SetHeight(object->GetHeight());
 
 				_listFloatGrounds.push_back(floatGround);
 
@@ -68,12 +71,21 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			{
 				Springboard *springboard = new Springboard();
 				springboard->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
-				springboard->SetWidth(object->GetWidth());
-				springboard->SetHeight(object->GetHeight());
 
 				_listSpringboards.push_back(springboard);
 
 				_quadTree->Insert(springboard);
+			}
+
+			//init Enemies
+			if (objectGroup->GetName() == "Enemy_1")
+			{
+				Enemy *enemy = new Enemy1(_player);
+				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listEnemies.push_back(enemy);
+
+				_quadTree->Insert(enemy);
 			}
 
 			//init ground
@@ -123,6 +135,27 @@ GameMap::~GameMap()
 	}
 	_listApples.clear();
 
+	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
+	{
+		if (_listFloatGrounds[i])
+			delete _listFloatGrounds[i];
+	}
+	_listFloatGrounds.clear();
+
+	for (size_t i = 0; i < _listSpringboards.size(); i++)
+	{
+		if (_listSpringboards[i])
+			delete _listSpringboards[i];
+	}
+	_listSpringboards.clear();
+
+	for (size_t i = 0; i < _listEnemies.size(); i++)
+	{
+		if (_listEnemies[i])
+			delete _listEnemies[i];
+	}
+	_listEnemies.clear();
+
 	/*don't use tileset for this game
 	for (size_t i = 0; i < _listTileSet.size(); i++)
 	{
@@ -134,6 +167,18 @@ GameMap::~GameMap()
 
 	_quadTree->Clear();
 	delete _quadTree;
+}
+
+void GameMap::Update(float deltaTime)
+{
+	//enemies
+	for (size_t i = 0; i < _listEnemies.size(); i++)
+	{
+		_listEnemies[i]->Update(deltaTime);
+	}
+
+	//player
+	_player->Update(deltaTime);
 }
 
 void GameMap::Draw(Camera * camera)
@@ -194,7 +239,7 @@ void GameMap::Draw(Camera * camera)
 	//apple
 	for (size_t i = 0; i < _listApples.size(); i++)
 	{
-		//remove not visible apple
+		//remove not visible object
 		if (!_listApples[i]->IsVisible())
 		{
 			delete _listApples[i];
@@ -210,7 +255,7 @@ void GameMap::Draw(Camera * camera)
 	//float ground
 	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
 	{
-		//remove not visible apple
+		//remove not visible object
 		if (!_listFloatGrounds[i]->IsVisible())
 		{
 			delete _listFloatGrounds[i];
@@ -223,11 +268,40 @@ void GameMap::Draw(Camera * camera)
 		_listFloatGrounds[i]->Draw(camera);
 	}
 
+	//enemies
+	for (size_t i = 0; i < _listEnemies.size(); i++)
+	{
+		_listEnemies[i]->Draw(camera);
+	}
+
+	for (size_t i = 0; i < _listEnemies.size(); i++)
+	{
+		//remove not visible object
+		if (!_listEnemies[i]->IsVisible())
+		{
+			delete _listEnemies[i];
+			_listEnemies.erase(_listEnemies.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listEnemies[i]->Draw(camera);
+	}
+
 	//springboard
 	for (size_t i = 0; i < _listSpringboards.size(); i++)
 	{
 		_listSpringboards[i]->Draw(camera);
 	}
+
+	//player
+	_player->Draw(camera);
+}
+
+Player * GameMap::GetPlayer()
+{
+	return _player;
 }
 
 int GameMap::GetWidth()

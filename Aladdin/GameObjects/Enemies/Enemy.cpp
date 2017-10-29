@@ -1,11 +1,21 @@
 #include "Enemy.h"
 
 
-Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemy)
+Enemy::Enemy()
 {
+	//not use
+}
+
+Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemy)
+{
+	_target = target;
+	_distanceToTarget = _target->GetPosition() - _position;
+
 	_health = 0;
+	_speed = 10;
+	_viewRange = 300;
+	_attackRange = 60;
 	_isRight = false;
-	UpdateViewRange();
 }
 
 Enemy::~Enemy()
@@ -15,20 +25,63 @@ Enemy::~Enemy()
 
 void Enemy::Update(float deltaTime)
 {
+	/*handle move action here*/
+	_distanceToTarget = _target->GetPosition() - _position;
+
+	//face to left or right
+	if(_distanceToTarget.x > 0)
+		_isRight = true;
+	else if (_distanceToTarget.x < 0)
+		_isRight = false;
+
+	//move
+	if(IsTargetInViewRange() && !IsTargetInAttackRange())
+	{
+		if (_distanceToTarget.x > 0)
+		{
+			//move right
+			_velocity.x = _speed;
+		}
+		else if(_distanceToTarget.x < 0)
+		{
+			//move left
+			_velocity.x = -1 * _speed;
+		}
+	}
+	else
+	{
+		//v=0
+		_velocity.x = 0;
+	}
+
 	GameObject::Update(deltaTime);
-	UpdateViewRange();
-
-
+	_state->Update(deltaTime);
 }
 
 void Enemy::Draw(Camera * camera)
 {
-	_state->GetAnimation()->Draw(camera);
+	Animation *animation = _state->GetAnimation();
+	if (animation != NULL)
+		animation->Draw(camera);
 }
 
 void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
 	_state->OnCollision(target, side);
+}
+
+bool Enemy::IsTargetInViewRange()
+{
+	if (abs(_distanceToTarget.x) <= _viewRange && abs(_distanceToTarget.y) < _height)
+		return true;
+	return false;
+}
+
+bool Enemy::IsTargetInAttackRange()
+{
+	if (abs(_distanceToTarget.x) <= _attackRange && abs(_distanceToTarget.y) < _height)
+		return true;
+	return false;
 }
 
 EnemyState * Enemy::GetState()
@@ -52,22 +105,9 @@ void Enemy::SetState(EnemyState * state, bool fixFootPosition)
 	_state = state;
 }
 
-void Enemy::UpdateViewRange()
+GameObject * Enemy::GetTarget()
 {
-	if (_isRight)
-	{
-		_viewRange.left = _position.x;
-		_viewRange.right = _viewRange.left + 10;
-		_viewRange.top = _position.y - _height / 2;
-		_viewRange.bottom = _viewRange.top + _height;
-	}
-	else
-	{
-		_viewRange.right = _position.x;
-		_viewRange.left = _viewRange.right - 10;
-		_viewRange.top = _position.y - _height / 2;
-		_viewRange.bottom = _viewRange.top + _height;
-	}
+	return _target;
 }
 
 int Enemy::GetHealth()
@@ -80,37 +120,12 @@ void Enemy::SetHealth(int newHealth)
 	_health = newHealth;
 }
 
-void Enemy::SetPosition(float x, float y)
-{
-	GameObject::SetPosition(x, y);
-	UpdateViewRange();
-}
-
-void Enemy::SetPosition(D3DXVECTOR2 position)
-{
-	GameObject::SetPosition(position);
-	UpdateViewRange();
-}
-
-void Enemy::SetPosition(D3DXVECTOR3 position)
-{
-	GameObject::SetPosition(position);
-	UpdateViewRange();
-}
-
-void Enemy::SetPositionX(float x)
-{
-	GameObject::SetPositionX(x);
-	UpdateViewRange();
-}
-
-void Enemy::SetPositionY(float y)
-{
-	GameObject::SetPositionY(y);
-	UpdateViewRange();
-}
-
 bool Enemy::IsRight()
 {
 	return _isRight;
+}
+
+void Enemy::SetIsRight(bool right)
+{
+	_isRight = right;
 }

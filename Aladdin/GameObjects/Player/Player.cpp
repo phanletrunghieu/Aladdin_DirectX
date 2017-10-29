@@ -48,7 +48,9 @@ void Player::Update(float deltaTime)
 
 void Player::Draw(Camera * camera)
 {
-	_state->GetAnimation()->Draw(camera);
+	Animation *animation = _state->GetAnimation();
+	if (animation != NULL)
+		animation->Draw(camera);
 
 	//debug
 	/*

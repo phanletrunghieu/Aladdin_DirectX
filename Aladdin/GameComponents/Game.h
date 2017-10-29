@@ -8,6 +8,7 @@
 #include "../GameObjects/Camera.h"
 #include "Timer.h"
 #include "SceneManager.h"
+#include "../Scenes/MainScene.h"
 
 class Game
 {

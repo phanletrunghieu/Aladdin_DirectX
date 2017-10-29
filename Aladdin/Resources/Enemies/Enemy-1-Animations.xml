@@ -1,6 +1,9 @@
 ﻿
 <?xml version="1.0" encoding="utf-8"?>
 <Animations>
+  <Animation name="Idle" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="8" y="175" w="44" h="57" oX="8" oY="175" oW="218" oH="44" />
+  </Animation>
   <Animation name="Walk" imagePath="Enemies_trans.png" width="498" height="1053">
     <sprite x="2" y="9" w="45" h="66" oX="-1" oY="76" oW="-303" oH="411" />
     <sprite x="53" y="10" w="45" h="65" oX="-1" oY="76" oW="-303" oH="411" />

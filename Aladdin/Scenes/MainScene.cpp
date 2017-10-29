@@ -31,10 +31,7 @@ void MainScene::LoadContent()
 
 	_gameMap = new GameMap("Resources/Maps/AgrabahMarket/AgrabahMarket.tmx", _quadTree);
 
-	_player = new Player;
-	_player->SetPosition(3020, 300);
-
-	_camera = new Camera(_player);
+	_camera = new Camera(_gameMap->GetPlayer());
 }
 
 void MainScene::CheckCollision()
@@ -43,7 +40,7 @@ void MainScene::CheckCollision()
 	std::vector<GameObject*> listCanCollisionWithPlayer;
 
 	//get all object that can collision
-	_quadTree->Retrieve(listCanCollisionWithPlayer, _player);
+	_quadTree->Retrieve(listCanCollisionWithPlayer, _gameMap->GetPlayer());
 
 	bool playerGround = false;
 	bool allowPlayerMoveLeft = true;
@@ -56,15 +53,15 @@ void MainScene::CheckCollision()
 			continue;
 
 		//lay va cham cua player voi gameobject
-		GameCollision collisionDataOfOtherObj = GameCollision::CheckCollision(gameObject->GetBound(), _player->GetBound());
+		GameCollision collisionDataOfOtherObj = GameCollision::CheckCollision(gameObject->GetBound(), _gameMap->GetPlayer()->GetBound());
 		if (collisionDataOfOtherObj.IsCollided())
-			gameObject->OnCollision(_player, collisionDataOfOtherObj.GetSide());
+			gameObject->OnCollision(_gameMap->GetPlayer(), collisionDataOfOtherObj.GetSide());
 
 		//lay va cham cua gameobject voi player
-		GameCollision collisionDataOfPlayer = GameCollision::CheckCollision(_player->GetBound(), gameObject->GetBound());
+		GameCollision collisionDataOfPlayer = GameCollision::CheckCollision(_gameMap->GetPlayer()->GetBound(), gameObject->GetBound());
 		if (collisionDataOfPlayer.IsCollided())
 		{
-			_player->OnCollision(gameObject, collisionDataOfPlayer.GetSide());
+			_gameMap->GetPlayer()->OnCollision(gameObject, collisionDataOfPlayer.GetSide());
 
 
 			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround)
@@ -79,13 +76,13 @@ void MainScene::CheckCollision()
 			}
 		}
 	}
-	_player->SetIsGround(playerGround);
+	_gameMap->GetPlayer()->SetIsGround(playerGround);
 
 	//because climb state has own move rule
-	if (_player->GetState()->GetName() != PlayerState::StateName::ClimbVertical && _player->GetState()->GetName() != PlayerState::StateName::ClimbAttack)
+	if (_gameMap->GetPlayer()->GetState()->GetName() != PlayerState::StateName::ClimbVertical && _gameMap->GetPlayer()->GetState()->GetName() != PlayerState::StateName::ClimbAttack)
 	{
-		_player->AllowMoveLeft(allowPlayerMoveLeft);
-		_player->AllowMoveRight(allowPlayerMoveRight);
+		_gameMap->GetPlayer()->AllowMoveLeft(allowPlayerMoveLeft);
+		_gameMap->GetPlayer()->AllowMoveRight(allowPlayerMoveRight);
 	}
 #pragma endregion
 
@@ -125,7 +122,6 @@ void MainScene::Update(float dt)
 	CheckCollision();
 
 	_gameMap->Update(dt);
-	_player->Update(dt);
 	_camera->Update(dt);
 }
 
@@ -133,7 +129,6 @@ void MainScene::Draw()
 {
 	_backgroundTextures[0]->Draw(_camera);
 	_gameMap->Draw(_camera);
-	_player->Draw(_camera);
 	_backgroundTextures[1]->Draw(_camera);
 	Scene::Draw();
 }

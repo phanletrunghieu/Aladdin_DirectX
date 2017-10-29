@@ -71,8 +71,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(DXSDK_DIR)Include;C:\Users\Phan Hieu\Documents\Visual Studio 2015\Projects\Aladdin\Aladdin\Dependencies\zlib128-dll\include;$(IncludePath)</IncludePath>
-    <LibraryPath>$(DXSDK_DIR)Lib\x86;C:\Users\Phan Hieu\Documents\Visual Studio 2015\Projects\Aladdin\Aladdin\Dependencies\zlib128-dll\lib;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(DXSDK_DIR)Include;Dependencies\zlib128-dll\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)Lib\x86;Dependencies\zlib128-dll\lib;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -164,8 +164,11 @@
     <ClCompile Include="GameComponents\Timer.cpp" />
     <ClCompile Include="GameObjects\Camera.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1IdleState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1WalkState.cpp" />
     <ClCompile Include="GameObjects\Enemies\EnemyState.cpp" />
-    <ClCompile Include="GameObjects\Enemies\Enemy_1\Enemy_1.cpp" />
     <ClCompile Include="GameObjects\GameObject.cpp" />
     <ClCompile Include="GameObjects\Items\Apple.cpp" />
     <ClCompile Include="GameObjects\Items\AppleWeapon.cpp" />
@@ -233,8 +236,11 @@
     <ClInclude Include="GameComponents\Timer.h" />
     <ClInclude Include="GameObjects\Camera.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1IdleState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1WalkState.h" />
     <ClInclude Include="GameObjects\Enemies\EnemyState.h" />
-    <ClInclude Include="GameObjects\Enemies\Enemy_1\Enemy_1.h" />
     <ClInclude Include="GameObjects\GameObject.h" />
     <ClInclude Include="GameObjects\Items\Apple.h" />
     <ClInclude Include="GameObjects\Items\AppleWeapon.h" />

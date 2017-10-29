@@ -40,7 +40,7 @@
     <Filter Include="GameObjects\Enemies">
       <UniqueIdentifier>{4e2f8cc8-9b55-409a-affc-395a939797c0}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameObjects\Enemies\Enemy_1">
+    <Filter Include="GameObjects\Enemies\Enemy1">
       <UniqueIdentifier>{afdbcca6-2673-41df-a23c-ba21f78cd2ad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -243,8 +243,17 @@
     <ClCompile Include="GameObjects\Enemies\EnemyState.cpp">
       <Filter>GameObjects\Enemies</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjects\Enemies\Enemy_1\Enemy_1.cpp">
-      <Filter>GameObjects\Enemies\Enemy_1</Filter>
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1.cpp">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1IdleState.cpp">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1WalkState.cpp">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.cpp">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -446,8 +455,17 @@
     <ClInclude Include="GameObjects\Enemies\EnemyState.h">
       <Filter>GameObjects\Enemies</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjects\Enemies\Enemy_1\Enemy_1.h">
-      <Filter>GameObjects\Enemies\Enemy_1</Filter>
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1.h">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1IdleState.h">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1WalkState.h">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.h">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

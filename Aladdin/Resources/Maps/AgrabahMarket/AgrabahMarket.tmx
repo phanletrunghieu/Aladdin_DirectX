@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="207">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="208">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -21,11 +21,17 @@
  <tileset firstgid="10" name="Enemy-3" tilewidth="43" tileheight="50" tilecount="2" columns="2">
   <image source="demo_tmx/Enemy-3.png" width="86" height="50"/>
  </tileset>
+ <tileset firstgid="12" name="Player" tilewidth="37" tileheight="50" tilecount="1" columns="1">
+  <image source="demo_tmx/Player.png" width="37" height="50"/>
+ </tileset>
  <layer name="Tile Layer 1" width="1" height="1">
   <data encoding="base64" compression="zlib">
    eJxjZGBgAAAACAAC
   </data>
  </layer>
+ <objectgroup name="Player">
+  <object id="207" gid="12" x="111.333" y="550" width="37" height="50"/>
+ </objectgroup>
  <objectgroup name="Apple">
   <object id="1" gid="3" x="477.333" y="553" width="11" height="12"/>
   <object id="2" gid="3" x="509.667" y="535" width="11" height="12"/>
@@ -133,13 +139,11 @@
   <object id="179" gid="5" x="3458.25" y="182" width="43" height="18"/>
   <object id="180" gid="5" x="4228.67" y="136" width="43" height="18"/>
  </objectgroup>
- <objectgroup name="Enemy_1_Left">
+ <objectgroup name="Enemy_1">
   <object id="186" gid="6" x="681.5" y="634" width="44" height="58"/>
- </objectgroup>
- <objectgroup name="Enemy_1_Right">
   <object id="187" gid="7" x="2706" y="406" width="44" height="58"/>
  </objectgroup>
- <objectgroup name="Enemy_2_Left">
+ <objectgroup name="Enemy_2">
   <object id="188" gid="8" x="950.333" y="634.667" width="55" height="52"/>
   <object id="189" gid="8" x="1611" y="278" width="55" height="52"/>
   <object id="190" gid="8" x="3238.33" y="662.917" width="55" height="52"/>
@@ -147,19 +151,15 @@
   <object id="192" gid="8" x="4245" y="663.333" width="55" height="52"/>
   <object id="195" gid="8" x="2964" y="294" width="55" height="52"/>
   <object id="196" gid="8" x="4428.33" y="214.667" width="55" height="52"/>
- </objectgroup>
- <objectgroup name="Enemy_2_Right">
   <object id="193" gid="9" x="3679.67" y="485.333" width="55" height="52"/>
  </objectgroup>
- <objectgroup name="Enemy_3_Left">
+ <objectgroup name="Enemy_3">
   <object id="197" gid="10" x="1692.33" y="663" width="43" height="50"/>
   <object id="199" gid="10" x="2027" y="277.5" width="43" height="50"/>
   <object id="200" gid="10" x="3475.5" y="664" width="43" height="50"/>
   <object id="201" gid="10" x="4572.5" y="623.5" width="43" height="50"/>
   <object id="205" gid="10" x="3399" y="327" width="43" height="50"/>
   <object id="206" gid="10" x="4606" y="215" width="43" height="50"/>
- </objectgroup>
- <objectgroup name="Enemy_3_Right">
   <object id="198" gid="11" x="1885.33" y="438.667" width="43" height="50"/>
   <object id="202" gid="11" x="3995" y="439" width="43" height="50"/>
   <object id="203" gid="11" x="3208" y="486" width="43" height="50"/>
