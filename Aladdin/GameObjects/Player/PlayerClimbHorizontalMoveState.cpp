@@ -7,12 +7,7 @@ PlayerClimbHorizontalMoveState::PlayerClimbHorizontalMoveState()
 
 PlayerClimbHorizontalMoveState::PlayerClimbHorizontalMoveState(Player * player, GameObject *horizontalBar) : PlayerState(player, PlayerState::StateName::ClimbHorizontalMove)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbHorizontalMove", ResourceManager::GetInstance()->GetTextureAladdin(), 0.7f);
-	_animation->FlipHorizontal(!_player->IsRight());
-
-	_animation->SetPosition(_player->GetPosition());
-	_player->SetWidth(_animation->GetWidth());
-	_player->SetHeight(_animation->GetHeight());
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbHorizontalMove", ResourceManager::GetInstance()->GetTextureAladdin(), 0.7f));
 
 	_player->SetAccelerationY(0);
 	_player->SetVelocityY(0);

@@ -8,12 +8,7 @@ PlayerThrowState::PlayerThrowState()
 
 PlayerThrowState::PlayerThrowState(Player * player) : PlayerState(player, PlayerState::StateName::Throw)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Throw", ResourceManager::GetInstance()->GetTextureAladdin(), 0.7f);
-	_animation->FlipHorizontal(!_player->IsRight());
-
-	_animation->SetPosition(_player->GetPosition());
-	_player->SetWidth(_animation->GetWidth());
-	_player->SetHeight(_animation->GetHeight());
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Throw", ResourceManager::GetInstance()->GetTextureAladdin(), 0.7f));
 
 	_isCreatedAppleWeapon = false;
 }

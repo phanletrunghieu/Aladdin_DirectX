@@ -36,6 +36,16 @@ Animation * PlayerState::GetAnimation()
 	return _animation;
 }
 
+void PlayerState::SetAnimation(Animation * newAnimation)
+{
+	_animation = newAnimation;
+
+	_animation->FlipHorizontal(!_player->IsRight());
+	_animation->SetPosition(_player->GetPosition());
+	_player->SetWidth(_animation->GetWidth());
+	_player->SetHeight(_animation->GetHeight());
+}
+
 PlayerState::StateName PlayerState::GetName()
 {
 	return _name;

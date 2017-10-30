@@ -20,6 +20,7 @@ public:
 
 	Animation* GetAnimation();
 	void SetAnimation(Animation* newAnimation);
+
 	StateName GetName();
 protected:
 	StateName _name;
