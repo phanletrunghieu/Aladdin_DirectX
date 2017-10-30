@@ -9,12 +9,7 @@ Enemy1IdleState::Enemy1IdleState()
 
 Enemy1IdleState::Enemy1IdleState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Idle)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy1(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies());
-	_animation->FlipHorizontal(_enemy->IsRight());
-
-	_animation->SetPosition(_enemy->GetPosition());
-	_enemy->SetWidth(_animation->GetWidth());
-	_enemy->SetHeight(_animation->GetHeight());
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy1(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies()));
 }
 
 

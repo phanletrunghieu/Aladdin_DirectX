@@ -1,7 +1,6 @@
 #include "Enemy.h"
 
-
-Enemy::Enemy()
+Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemy)
 {
 	//not use
 }
@@ -11,10 +10,12 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemy
 	_target = target;
 	_distanceToTarget = _target->GetPosition() - _position;
 
+	_footPosY = 0;
+
 	_health = 0;
 	_speed = 10;
 	_viewRange = 300;
-	_attackRange = 60;
+	_attackRange = 80;
 	_isRight = false;
 }
 
@@ -56,6 +57,9 @@ void Enemy::Update(float deltaTime)
 
 	GameObject::Update(deltaTime);
 	_state->Update(deltaTime);
+
+	//fix foot posY
+	_position.y = _footPosY - _height / 2;
 }
 
 void Enemy::Draw(Camera * camera)
@@ -82,6 +86,12 @@ bool Enemy::IsTargetInAttackRange()
 	if (abs(_distanceToTarget.x) <= _attackRange && abs(_distanceToTarget.y) < _height)
 		return true;
 	return false;
+}
+
+void Enemy::SetFootPosY()
+{
+	if (_footPosY == 0)
+		_footPosY = _position.y + _height / 2;
 }
 
 EnemyState * Enemy::GetState()
@@ -128,4 +138,22 @@ bool Enemy::IsRight()
 void Enemy::SetIsRight(bool right)
 {
 	_isRight = right;
+}
+
+void Enemy::SetPosition(float x, float y)
+{
+	GameObject::SetPosition(x, y);
+	SetFootPosY();
+}
+
+void Enemy::SetPosition(D3DXVECTOR2 position)
+{
+	GameObject::SetPosition(position);
+	SetFootPosY();
+}
+
+void Enemy::SetPosition(D3DXVECTOR3 position)
+{
+	GameObject::SetPosition(position);
+	SetFootPosY();
 }

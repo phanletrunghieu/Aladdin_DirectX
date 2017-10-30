@@ -9,6 +9,7 @@
 #include "../GameObjects/Items/Springboard.h"
 #include "../GameObjects/Player/Player.h"
 #include "../GameObjects/Enemies/Enemy1/Enemy1.h"
+#include "../GameObjects/Enemies/Enemy2/Enemy2.h"
 
 class GameMap
 {

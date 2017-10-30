@@ -12,6 +12,9 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy1 = new tinyxml2::XMLDocument();
 	_animationXMLEnemy1->LoadFile("Resources/Enemies/Enemy-1-Animations.xml");
 
+	_animationXMLEnemy2 = new tinyxml2::XMLDocument();
+	_animationXMLEnemy2->LoadFile("Resources/Enemies/Enemy-2-Animations.xml");
+
 	_animationXMLAppleWeapon = new tinyxml2::XMLDocument();
 	_animationXMLAppleWeapon->LoadFile("Resources/Items/AppleWeapon-Animation.xml");
 
@@ -46,6 +49,11 @@ tinyxml2::XMLDocument* ResourceManager::GetAnimationXMLAladdin()
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy1()
 {
 	return _animationXMLEnemy1;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy2()
+{
+	return _animationXMLEnemy2;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLAppleWeapon()

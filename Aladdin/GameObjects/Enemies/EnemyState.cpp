@@ -38,6 +38,16 @@ Animation * EnemyState::GetAnimation()
 	return _animation;
 }
 
+void EnemyState::SetAnimation(Animation * newAnimation)
+{
+	_animation = newAnimation;
+
+	_animation->FlipHorizontal(_enemy->IsRight());
+	_animation->SetPosition(_enemy->GetPosition());
+	_enemy->SetWidth(_animation->GetWidth());
+	_enemy->SetHeight(_animation->GetHeight());
+}
+
 EnemyState::StateName EnemyState::GetName()
 {
 	return _name;

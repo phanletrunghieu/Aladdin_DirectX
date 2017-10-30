@@ -70,6 +70,9 @@ bool Game::Initialize()
 	// Show MainScene
 	SceneManager::GetInstance()->ReplaceScene(new MainScene());
 
+	// init rand
+	srand(time(0));
+
 	return true;
 }
 

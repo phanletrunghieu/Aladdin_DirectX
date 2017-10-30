@@ -23,6 +23,7 @@ public:
 	void SeekToLastFrame();
 
 	int GetCurrentIndex();
+	void SetCurrentIndex(int index);
 
 	bool IsBegin();
 	bool IsFinish();

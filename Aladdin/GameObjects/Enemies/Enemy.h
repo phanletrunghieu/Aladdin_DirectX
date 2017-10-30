@@ -20,6 +20,10 @@ protected:
 	bool _isRight;
 
 	EnemyState *_state;
+
+	//fix foot posY
+	int _footPosY;
+	void SetFootPosY();
 public:
 	Enemy();
 	Enemy(GameObject * target);
@@ -43,5 +47,9 @@ public:
 
 	bool IsRight();
 	void SetIsRight(bool right);
+
+	void SetPosition(float x, float y);
+	void SetPosition(D3DXVECTOR2 position);
+	void SetPosition(D3DXVECTOR3 position);
 };
 

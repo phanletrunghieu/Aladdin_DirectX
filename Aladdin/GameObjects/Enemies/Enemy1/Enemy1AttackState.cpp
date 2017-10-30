@@ -9,12 +9,7 @@ Enemy1AttackState::Enemy1AttackState()
 
 Enemy1AttackState::Enemy1AttackState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Attack)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy1(), "Attack", ResourceManager::GetInstance()->GetTextureEnemies(), 0.8f);
-	_animation->FlipHorizontal(_enemy->IsRight());
-
-	_animation->SetPosition(_enemy->GetPosition());
-	_enemy->SetWidth(_animation->GetWidth());
-	_enemy->SetHeight(_animation->GetHeight());
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy1(), "Attack", ResourceManager::GetInstance()->GetTextureEnemies(), 0.8f));
 }
 
 

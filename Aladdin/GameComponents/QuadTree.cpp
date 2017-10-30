@@ -2,6 +2,7 @@
 
 int QuadTree::MAX_LEVEL = 5;
 int QuadTree::MAX_OBJECT_IN_REGION = 5;
+std::vector<GameObject*> QuadTree::_listDynamicGameObject;
 
 QuadTree::QuadTree(RECT bound, int level)
 {
@@ -78,49 +79,54 @@ void QuadTree::Clear()
 		delete[] _nodes;
 	}
 
-	_listGameObject.clear();
+	_listStaticGameObject.clear();
 }
 
-void QuadTree::Insert(GameObject * gameObject)
+void QuadTree::InsertStaticObject(GameObject * gameObject)
 {
 	//Insert entity into corresponding nodes
 	if (_nodes)
 	{
 		if (_nodes[0]->IsContain(gameObject))
-			_nodes[0]->Insert(gameObject);
+			_nodes[0]->InsertStaticObject(gameObject);
 		if (_nodes[1]->IsContain(gameObject))
-			_nodes[1]->Insert(gameObject);
+			_nodes[1]->InsertStaticObject(gameObject);
 		if (_nodes[2]->IsContain(gameObject))
-			_nodes[2]->Insert(gameObject);
+			_nodes[2]->InsertStaticObject(gameObject);
 		if (_nodes[3]->IsContain(gameObject))
-			_nodes[3]->Insert(gameObject);
+			_nodes[3]->InsertStaticObject(gameObject);
 
 		return; // Return here to ignore rest.
 	}
 
 	//Insert entity into current quadtree
 	if (this->IsContain(gameObject))
-		_listGameObject.push_back(gameObject);
+		_listStaticGameObject.push_back(gameObject);
 
 	//Split and move all objects in list into it’s corresponding nodes
-	if (_listGameObject.size() > MAX_OBJECT_IN_REGION && _level < MAX_LEVEL)
+	if (_listStaticGameObject.size() > MAX_OBJECT_IN_REGION && _level < MAX_LEVEL)
 	{
 		this->Split();
 
-		while (!_listGameObject.empty())
+		while (!_listStaticGameObject.empty())
 		{
-			if (_nodes[0]->IsContain(_listGameObject.back()))
-				_nodes[0]->Insert(_listGameObject.back());
-			if (_nodes[1]->IsContain(_listGameObject.back()))
-				_nodes[1]->Insert(_listGameObject.back());
-			if (_nodes[2]->IsContain(_listGameObject.back()))
-				_nodes[2]->Insert(_listGameObject.back());
-			if (_nodes[3]->IsContain(_listGameObject.back()))
-				_nodes[3]->Insert(_listGameObject.back());
+			if (_nodes[0]->IsContain(_listStaticGameObject.back()))
+				_nodes[0]->InsertStaticObject(_listStaticGameObject.back());
+			if (_nodes[1]->IsContain(_listStaticGameObject.back()))
+				_nodes[1]->InsertStaticObject(_listStaticGameObject.back());
+			if (_nodes[2]->IsContain(_listStaticGameObject.back()))
+				_nodes[2]->InsertStaticObject(_listStaticGameObject.back());
+			if (_nodes[3]->IsContain(_listStaticGameObject.back()))
+				_nodes[3]->InsertStaticObject(_listStaticGameObject.back());
 
-			_listGameObject.pop_back();
+			_listStaticGameObject.pop_back();
 		}
 	}
+}
+
+void QuadTree::InsertDynamicObject(GameObject * gameObject)
+{
+	_listDynamicGameObject.push_back(gameObject);
 }
 
 void QuadTree::Retrieve(std::vector<GameObject*>& return_objects_list, GameObject * gameObject)
@@ -147,7 +153,15 @@ void QuadTree::Retrieve(std::vector<GameObject*>& return_objects_list, GameObjec
 	//Add all entities in current region into return_objects_list
 	if (this->IsContain(gameObject))
 	{
-		for (auto i = _listGameObject.begin(); i != _listGameObject.end(); i++)
+		//find static objects
+		for (auto i = _listStaticGameObject.begin(); i != _listStaticGameObject.end(); i++)
+		{
+			if (gameObject != *i)
+				return_objects_list.push_back(*i);
+		}
+
+		//add moving objects
+		for (auto i = _listDynamicGameObject.begin(); i != _listDynamicGameObject.end(); i++)
 		{
 			if (gameObject != *i)
 				return_objects_list.push_back(*i);

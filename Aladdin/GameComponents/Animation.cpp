@@ -159,6 +159,21 @@ int Animation::GetCurrentIndex()
 	return _currentIndex;
 }
 
+void Animation::SetCurrentIndex(int index)
+{
+	_currentIndex = index;
+
+	if (_currentIndex >= _listRectSprites.size())
+		_currentIndex = _listRectSprites.size() - 1;
+
+	if (_currentIndex < 0)
+		_currentIndex = 0;
+
+	//check finish, begin
+	_isFinish = _currentIndex == _listRectSprites.size() - 1;
+	_isBegin = _currentIndex == 0;
+}
+
 bool Animation::IsBegin()
 {
 	return _isBegin;

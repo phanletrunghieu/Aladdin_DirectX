@@ -8,12 +8,7 @@ Enemy1WalkState::Enemy1WalkState()
 
 Enemy1WalkState::Enemy1WalkState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Walk)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy1(), "Walk", ResourceManager::GetInstance()->GetTextureEnemies(), 0.7f);
-	_animation->FlipHorizontal(_enemy->IsRight());
-
-	_animation->SetPosition(_enemy->GetPosition());
-	_enemy->SetWidth(_animation->GetWidth());
-	_enemy->SetHeight(_animation->GetHeight());
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy1(), "Walk", ResourceManager::GetInstance()->GetTextureEnemies(), 0.7f));
 }
 
 

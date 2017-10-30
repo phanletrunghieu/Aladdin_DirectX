@@ -19,6 +19,7 @@ public:
 	virtual void OnCollision(GameObject *target, GameCollision::SideCollisions side) {};
 
 	Animation* GetAnimation();
+	void SetAnimation(Animation* newAnimation);
 	StateName GetName();
 protected:
 	StateName _name;

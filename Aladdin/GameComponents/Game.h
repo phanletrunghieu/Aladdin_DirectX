@@ -3,6 +3,7 @@
 #define WIN32_LEAN_AND_MEAN
 
 #include <Windows.h>
+#include <ctime>
 #include "Input.h"
 #include "Graphics.h"
 #include "../GameObjects/Camera.h"

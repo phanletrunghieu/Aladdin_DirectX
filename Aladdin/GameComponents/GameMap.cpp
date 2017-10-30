@@ -52,7 +52,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				_listApples.push_back(apple);
 
-				_quadTree->Insert(apple);
+				_quadTree->InsertStaticObject(apple);
 			}
 
 			//init float ground
@@ -63,7 +63,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				_listFloatGrounds.push_back(floatGround);
 
-				_quadTree->Insert(floatGround);
+				_quadTree->InsertStaticObject(floatGround);
 			}
 
 			//init Springboard
@@ -74,7 +74,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				_listSpringboards.push_back(springboard);
 
-				_quadTree->Insert(springboard);
+				_quadTree->InsertStaticObject(springboard);
 			}
 
 			//init Enemies
@@ -85,7 +85,16 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				_listEnemies.push_back(enemy);
 
-				_quadTree->Insert(enemy);
+				QuadTree::InsertDynamicObject(enemy);
+			}
+			if (objectGroup->GetName() == "Enemy_2")
+			{
+				Enemy *enemy = new Enemy2(_player);
+				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listEnemies.push_back(enemy);
+
+				QuadTree::InsertDynamicObject(enemy);
 			}
 
 			//init ground
@@ -96,7 +105,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->Insert(gameObject);
+				_quadTree->InsertStaticObject(gameObject);
 			}
 
 			//init rope
@@ -107,7 +116,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->Insert(gameObject);
+				_quadTree->InsertStaticObject(gameObject);
 			}
 
 			//init HorizontalBar
@@ -118,7 +127,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
 
-				_quadTree->Insert(gameObject);
+				_quadTree->InsertStaticObject(gameObject);
 			}
 		}
 	}

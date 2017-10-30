@@ -10,6 +10,7 @@ private:
 
 	tinyxml2::XMLDocument  *_animationXMLAladdin;
 	tinyxml2::XMLDocument  *_animationXMLEnemy1;
+	tinyxml2::XMLDocument  *_animationXMLEnemy2;
 	tinyxml2::XMLDocument  *_animationXMLAppleWeapon;
 
 	LPDIRECT3DTEXTURE9 _textureAladdin;
@@ -26,6 +27,7 @@ public:
 
 	tinyxml2::XMLDocument* GetAnimationXMLAladdin();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy1();
+	tinyxml2::XMLDocument* GetAnimationXMLEnemy2();
 	tinyxml2::XMLDocument* GetAnimationXMLAppleWeapon();
 
 	LPDIRECT3DTEXTURE9 GetTextureAladdin();

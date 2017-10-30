@@ -40,7 +40,7 @@ void PlayerJumpThrowState::Update(float deltaTime)
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(appleWeapon);
 
 		//add appleWeapon to QuadTree
-		SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->Insert(appleWeapon);
+		SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->InsertStaticObject(appleWeapon);
 	}
 
 	if (_animation->IsFinish())//change state
