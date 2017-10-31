@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Idle" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="9" y="663" w="43" h="49" oX="-1" oY="-1" oW="700" oH="43" />
+  </Animation>
+  <Animation name="Eat" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="2" y="727" w="37" h="43" oX="-1" oY="771" oW="765" oH="341" />
+    <sprite x="45" y="721" w="40" h="49" oX="-1" oY="771" oW="765" oH="341" />
+    <sprite x="94" y="725" w="34" h="45" oX="-1" oY="771" oW="765" oH="341" />
+    <sprite x="143" y="727" w="37" h="43" oX="-1" oY="771" oW="765" oH="341" />
+    <sprite x="187" y="725" w="54" h="45" oX="-1" oY="771" oW="765" oH="341" />
+    <sprite x="247" y="719" w="52" h="51" oX="-1" oY="771" oW="765" oH="341" />
+    <sprite x="308" y="722" w="40" h="48" oX="-1" oY="771" oW="765" oH="341" />
+  </Animation>
+  <Animation name="Walk" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="7" y="784" w="36" h="51" oX="-1" oY="836" oW="828" oH="354" />
+    <sprite x="52" y="786" w="34" h="49" oX="-1" oY="836" oW="828" oH="354" />
+    <sprite x="93" y="789" w="36" h="46" oX="-1" oY="836" oW="828" oH="354" />
+    <sprite x="133" y="781" w="38" h="54" oX="-1" oY="836" oW="828" oH="354" />
+    <sprite x="178" y="776" w="43" h="59" oX="-1" oY="836" oW="828" oH="354" />
+    <sprite x="233" y="781" w="38" h="54" oX="-1" oY="836" oW="828" oH="354" />
+    <sprite x="281" y="788" w="36" h="47" oX="-1" oY="836" oW="828" oH="354" />
+    <sprite x="323" y="785" w="33" h="50" oX="-1" oY="836" oW="828" oH="354" />
+  </Animation>
+  <Animation name="Attack" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="2" y="842" w="55" h="57" oX="35" oY="900" oW="917" oH="300" />
+    <sprite x="68" y="844" w="36" h="55" oX="100" oY="900" oW="917" oH="300" />
+    <sprite x="115" y="850" w="60" h="49" oX="173" oY="900" oW="917" oH="300" />
+    <sprite x="182" y="856" w="45" h="43" oX="226" oY="900" oW="917" oH="300" />
+    <sprite x="236" y="848" w="32" h="51" oX="269" oY="900" oW="917" oH="300" />
+  </Animation>
+  <Animation name="Injured" imagePath="Enemies_trans.png" width="498" height="1053">
+    <sprite x="4" y="919" w="54" h="51" oX="39" oY="971" oW="974" oH="442" />
+    <sprite x="63" y="920" w="55" h="50" oX="98" oY="971" oW="974" oH="442" />
+    <sprite x="124" y="921" w="55" h="49" oX="159" oY="971" oW="974" oH="442" />
+    <sprite x="185" y="921" w="55" h="49" oX="221" oY="971" oW="974" oH="442" />
+    <sprite x="246" y="923" w="65" h="47" oX="295" oY="971" oW="974" oH="442" />
+    <sprite x="322" y="906" w="68" h="64" oX="380" oY="971" oW="974" oH="442" />
+    <sprite x="399" y="910" w="68" h="60" oX="456" oY="971" oW="974" oH="442" />
+  </Animation>
+</Animations>

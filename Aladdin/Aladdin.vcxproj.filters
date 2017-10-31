@@ -46,6 +46,9 @@
     <Filter Include="GameObjects\Enemies\Enemy2">
       <UniqueIdentifier>{2dfd97c5-9462-4bb1-927d-d77dfcbc0f92}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Enemies\Enemy3">
+      <UniqueIdentifier>{a4cabe55-5c85-4b31-9fab-f1de91ca22d8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -270,6 +273,18 @@
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2WalkState.cpp">
       <Filter>GameObjects\Enemies\Enemy2</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3.cpp">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3AttackState.cpp">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3IdleState.cpp">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.cpp">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -493,6 +508,18 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2WalkState.h">
       <Filter>GameObjects\Enemies\Enemy2</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3.h">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3AttackState.h">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3IdleState.h">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.h">
+      <Filter>GameObjects\Enemies\Enemy3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

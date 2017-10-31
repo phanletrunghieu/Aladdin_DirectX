@@ -15,6 +15,9 @@ ResourceManager::ResourceManager()
 	_animationXMLEnemy2 = new tinyxml2::XMLDocument();
 	_animationXMLEnemy2->LoadFile("Resources/Enemies/Enemy-2-Animations.xml");
 
+	_animationXMLEnemy3 = new tinyxml2::XMLDocument();
+	_animationXMLEnemy3->LoadFile("Resources/Enemies/Enemy-3-Animations.xml");
+
 	_animationXMLAppleWeapon = new tinyxml2::XMLDocument();
 	_animationXMLAppleWeapon->LoadFile("Resources/Items/AppleWeapon-Animation.xml");
 
@@ -27,6 +30,12 @@ ResourceManager::ResourceManager()
 
 ResourceManager::~ResourceManager()
 {
+	delete _animationXMLAladdin;
+	delete _animationXMLEnemy1;
+	delete _animationXMLEnemy2;
+	delete _animationXMLEnemy3;
+	delete _animationXMLAppleWeapon;
+
 	_textureAladdin->Release();
 	_textureEnemies->Release();
 	_textureItems->Release();
@@ -54,6 +63,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy1()
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy2()
 {
 	return _animationXMLEnemy2;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy3()
+{
+	return _animationXMLEnemy3;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLAppleWeapon()

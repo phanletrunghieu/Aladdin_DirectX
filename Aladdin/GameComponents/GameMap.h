@@ -10,6 +10,7 @@
 #include "../GameObjects/Player/Player.h"
 #include "../GameObjects/Enemies/Enemy1/Enemy1.h"
 #include "../GameObjects/Enemies/Enemy2/Enemy2.h"
+#include "../GameObjects/Enemies/Enemy3/Enemy3.h"
 
 class GameMap
 {

@@ -96,6 +96,15 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
+			if (objectGroup->GetName() == "Enemy_3")
+			{
+				Enemy *enemy = new Enemy3(_player);
+				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listEnemies.push_back(enemy);
+
+				QuadTree::InsertDynamicObject(enemy);
+			}
 
 			//init ground
 			if (objectGroup->GetName() == "Ground")
