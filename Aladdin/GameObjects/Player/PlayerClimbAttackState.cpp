@@ -11,7 +11,7 @@ PlayerClimbAttackState::PlayerClimbAttackState(Player * player, GameObject *rope
 	_ropeOrHorizontalBar = ropeOrHorizontalBar;
 	_fromState = fromState;
 
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbAttack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbAttack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
 
 	_player->SetAccelerationY(0);
 	_player->SetVelocityY(0);

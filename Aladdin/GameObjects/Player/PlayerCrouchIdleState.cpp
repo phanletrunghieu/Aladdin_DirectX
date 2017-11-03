@@ -7,7 +7,7 @@ PlayerCrouchIdleState::PlayerCrouchIdleState()
 
 PlayerCrouchIdleState::PlayerCrouchIdleState(Player * player) : PlayerState(player, PlayerState::StateName::CrouchIdle)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "CrouchIdle", ResourceManager::GetInstance()->GetTextureAladdin(), 0.4f, false));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "CrouchIdle", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f, false));
 }
 
 

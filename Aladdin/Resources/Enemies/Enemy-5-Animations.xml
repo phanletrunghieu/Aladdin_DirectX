@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Idle" imagePath="Enemies_Sprite_2_trans.png" width="1065" height="588">
+    <sprite x="18" y="360" w="35" h="38" oX="-1" oY="-1" oW="378" oH="35" />
+  </Animation>
+  <Animation name="Look" imagePath="Enemies_Sprite_2_trans.png" width="1065" height="588">
+    <sprite x="60" y="366" w="39" h="31" oX="-1" oY="398" oW="341" oH="206" />
+    <sprite x="109" y="335" w="32" h="63" oX="-1" oY="399" oW="341" oH="206" />
+    <sprite x="147" y="349" w="33" h="48" oX="-1" oY="398" oW="341" oH="206" />
+    <sprite x="186" y="350" w="37" h="45" oX="-1" oY="396" oW="341" oH="206" />
+    <sprite x="226" y="350" w="37" h="45" oX="-1" oY="396" oW="341" oH="206" />
+    <sprite x="226" y="350" w="37" h="45" oX="-1" oY="396" oW="341" oH="206" />
+    <sprite x="226" y="350" w="37" h="45" oX="-1" oY="396" oW="341" oH="206" />
+    <sprite x="226" y="350" w="37" h="45" oX="-1" oY="396" oW="341" oH="206" />
+    <sprite x="226" y="350" w="37" h="45" oX="-1" oY="396" oW="341" oH="206" />
+    <sprite x="226" y="350" w="37" h="45" oX="-1" oY="396" oW="341" oH="206" />
+  </Animation>
+  <Animation name="Attack" imagePath="Enemies_Sprite_2_trans.png" width="1065" height="588">
+    <sprite x="289" y="355" w="35" h="38" oX="299" oY="394" oW="102" oH="166" />
+    <sprite x="335" y="355" w="35" h="39" oX="345" oY="395" oW="102" oH="166" />
+    <sprite x="379" y="353" w="49" h="39" oX="389" oY="393" oW="102" oH="166" />
+    <sprite x="433" y="353" w="60" h="39" oX="443" oY="393" oW="102" oH="166" />
+  </Animation>
+  <Animation name="Walk" imagePath="Enemies_Sprite_2_trans.png" width="1065" height="588">
+    <sprite x="20" y="428" w="52" h="45" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="79" y="423" w="44" h="45" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="126" y="417" w="43" h="50" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="174" y="416" w="38" h="50" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="217" y="415" w="38" h="50" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="263" y="417" w="38" h="48" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="307" y="415" w="54" h="45" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="370" y="414" w="43" h="47" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="422" y="409" w="43" h="51" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="470" y="407" w="38" h="52" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="517" y="406" w="38" h="52" oX="-1" oY="-1" oW="457" oH="605" />
+    <sprite x="566" y="409" w="38" h="49" oX="-1" oY="-1" oW="457" oH="605" />
+  </Animation>
+</Animations>

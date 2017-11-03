@@ -9,7 +9,7 @@ PlayerRunFallState::PlayerRunFallState()
 
 PlayerRunFallState::PlayerRunFallState(Player * player) : PlayerState(player, PlayerState::StateName::RunFall)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "RunFall", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "RunFall", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.8f));
 
 	_player->SetAccelerationY(_player->GetMass());
 }

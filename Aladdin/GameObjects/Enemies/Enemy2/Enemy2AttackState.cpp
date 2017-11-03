@@ -9,8 +9,8 @@ Enemy2AttackState::Enemy2AttackState()
 
 Enemy2AttackState::Enemy2AttackState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Attack)
 {
-	_animationAttack1 = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy2(), "Attack1", ResourceManager::GetInstance()->GetTextureEnemies(), 1.0f);
-	_animationAttack2 = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy2(), "Attack2", ResourceManager::GetInstance()->GetTextureEnemies(), 1.0f);
+	_animationAttack1 = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy2(), "Attack1", ResourceManager::GetInstance()->GetTextureEnemies1(), false, 1.0f);
+	_animationAttack2 = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy2(), "Attack2", ResourceManager::GetInstance()->GetTextureEnemies1(), false, 1.0f);
 
 	SetAnimation(_animationAttack1);
 }

@@ -17,7 +17,7 @@ protected:
 	D3DXVECTOR2 _distanceToTarget;
 
 	// face look right?
-	bool _isRight;
+	bool _isRight, _allowMoveLeft, _allowMoveRight;
 
 	EnemyState *_state;
 
@@ -25,7 +25,7 @@ protected:
 	int _footPosY;
 	void SetFootPosY();
 public:
-	Enemy();
+	Enemy();//not use
 	Enemy(GameObject * target);
 	~Enemy();
 
@@ -47,6 +47,11 @@ public:
 
 	bool IsRight();
 	void SetIsRight(bool right);
+
+	bool IsAllowMoveLeft();
+	bool IsAllowMoveRight();
+	void AllowMoveLeft(bool allow);
+	void AllowMoveRight(bool allow);
 
 	void SetPosition(float x, float y);
 	void SetPosition(D3DXVECTOR2 position);

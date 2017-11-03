@@ -7,7 +7,7 @@ PlayerSpringState::PlayerSpringState()
 
 PlayerSpringState::PlayerSpringState(Player * player) : PlayerState(player, PlayerState::StateName::Spring)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Spring", ResourceManager::GetInstance()->GetTextureAladdin(), 0.4f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Spring", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f));
 	
 	_player->SetVelocityY(-1 * _player->GetJumpForce()*1.3f);
 	_player->SetAccelerationY(_player->GetMass());

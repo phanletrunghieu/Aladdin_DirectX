@@ -5,7 +5,7 @@ Animation::Animation()
 	//don't use
 }
 
-Animation::Animation(tinyxml2::XMLDocument *xmlDocument, char* animationName, LPDIRECT3DTEXTURE9 texture, float timePerFrame, bool loop):Sprite(texture)
+Animation::Animation(tinyxml2::XMLDocument *xmlDocument, char* animationName, LPDIRECT3DTEXTURE9 texture, bool isSourceRight, float timePerFrame, bool loop):Sprite(texture, isSourceRight)
 {
 	tinyxml2::XMLNode *rootNode = xmlDocument->FirstChildElement("Animations");
 	tinyxml2::XMLNode *animationNode = rootNode->FirstChild();

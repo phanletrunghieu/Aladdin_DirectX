@@ -17,6 +17,7 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemy
 	_viewRange = 300;
 	_attackRange = 80;
 	_isRight = false;
+	_allowMoveLeft = _allowMoveRight = true;
 }
 
 Enemy::~Enemy()
@@ -38,12 +39,12 @@ void Enemy::Update(float deltaTime)
 	//move
 	if(IsTargetInViewRange() && !IsTargetInAttackRange())
 	{
-		if (_distanceToTarget.x > 0)
+		if (_distanceToTarget.x > 0 && _allowMoveRight)
 		{
 			//move right
 			_velocity.x = _speed;
 		}
-		else if(_distanceToTarget.x < 0)
+		else if(_distanceToTarget.x < 0 && _allowMoveLeft)
 		{
 			//move left
 			_velocity.x = -1 * _speed;
@@ -138,6 +139,31 @@ bool Enemy::IsRight()
 void Enemy::SetIsRight(bool right)
 {
 	_isRight = right;
+
+	if (_state->GetAnimation()->IsSourceRight())
+		_state->GetAnimation()->FlipHorizontal(!_isRight);
+	else
+		_state->GetAnimation()->FlipHorizontal(_isRight);
+}
+
+bool Enemy::IsAllowMoveLeft()
+{
+	return _allowMoveLeft;
+}
+
+bool Enemy::IsAllowMoveRight()
+{
+	return _allowMoveRight;
+}
+
+void Enemy::AllowMoveLeft(bool allow)
+{
+	_allowMoveLeft = allow;
+}
+
+void Enemy::AllowMoveRight(bool allow)
+{
+	_allowMoveRight = allow;
 }
 
 void Enemy::SetPosition(float x, float y)

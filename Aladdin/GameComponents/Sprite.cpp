@@ -63,7 +63,7 @@ Sprite::Sprite(LPCWSTR filePath, D3DCOLOR colorKey, RECT sourceRect, int width, 
 }
 */
 
-Sprite::Sprite(LPDIRECT3DTEXTURE9 texture, RECT sourceRect, int width, int height)
+Sprite::Sprite(LPDIRECT3DTEXTURE9 texture, bool isSourceRight, RECT sourceRect, int width, int height)
 {
 	_spriteHandler = Graphics::GetInstance()->GetSpriteHandler();
 	_texture = texture;
@@ -74,6 +74,9 @@ Sprite::Sprite(LPDIRECT3DTEXTURE9 texture, RECT sourceRect, int width, int heigh
 	_translation = D3DXVECTOR2(0, 0);
 	_scale = D3DXVECTOR2(1, 1);
 	_sourceRect = sourceRect;
+
+	_isFlipVertical = _isFlipHorizontal = false;
+	_isSourceRight = isSourceRight;
 
 	//get size of LPDIRECT3DTEXTURE9
 	D3DSURFACE_DESC surfaceDesc;
@@ -288,4 +291,9 @@ bool Sprite::IsFlipHorizontal()
 bool Sprite::IsFlipVertical()
 {
 	return _isFlipVertical;
+}
+
+bool Sprite::IsSourceRight()
+{
+	return _isSourceRight;
 }

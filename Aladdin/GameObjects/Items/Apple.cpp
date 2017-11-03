@@ -8,7 +8,7 @@ Apple::Apple():GameObject(GameObject::GameObjectType::Apple)
 	appleSourceRect.top = 17;
 	appleSourceRect.bottom = 29;
 
-	_appleSprite = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), appleSourceRect);
+	_appleSprite = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, appleSourceRect);
 	_width = _appleSprite->GetWidth();
 	_height = _appleSprite->GetHeight();
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="208">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="217">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -23,6 +23,12 @@
  </tileset>
  <tileset firstgid="12" name="Player" tilewidth="37" tileheight="50" tilecount="1" columns="1">
   <image source="demo_tmx/Player.png" width="37" height="50"/>
+ </tileset>
+ <tileset firstgid="13" name="Enemy-4" tilewidth="48" tileheight="81" tilecount="2" columns="2">
+  <image source="demo_tmx/Enemy-4.png" width="96" height="81"/>
+ </tileset>
+ <tileset firstgid="15" name="Enemy-5" tilewidth="36" tileheight="39" tilecount="1" columns="1">
+  <image source="demo_tmx/Enemy-5.png" width="36" height="39"/>
  </tileset>
  <layer name="Tile Layer 1" width="1" height="1">
   <data encoding="base64" compression="zlib">
@@ -164,6 +170,18 @@
   <object id="202" gid="11" x="3995" y="439" width="43" height="50"/>
   <object id="203" gid="11" x="3208" y="486" width="43" height="50"/>
   <object id="204" gid="11" x="2949" y="422.5" width="43" height="50"/>
+ </objectgroup>
+ <objectgroup name="Enemy_4_Left">
+  <object id="208" gid="14" x="1308" y="582.667" width="48" height="81"/>
+  <object id="209" gid="14" x="2513.5" y="526.5" width="48" height="81"/>
+  <object id="212" gid="14" x="2966" y="166" width="48" height="81"/>
+ </objectgroup>
+ <objectgroup name="Enemy_4_Right">
+  <object id="214" gid="13" x="2550" y="165.333" width="48" height="81"/>
+  <object id="215" gid="13" x="4358.33" y="471" width="48" height="81"/>
+ </objectgroup>
+ <objectgroup name="Enemy_5">
+  <object id="213" gid="15" x="2840.67" y="422.667" width="36" height="39"/>
  </objectgroup>
  <layer name="Tile Layer 2" width="1" height="1">
   <data encoding="base64" compression="zlib">

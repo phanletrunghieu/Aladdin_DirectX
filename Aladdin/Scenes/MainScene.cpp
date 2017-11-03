@@ -19,13 +19,13 @@ void MainScene::LoadContent()
 	sourceRect.top = 0;
 	sourceRect.bottom = 689;
 
-	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureAgrabahMarket(), sourceRect);
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureAgrabahMarket(), true, sourceRect);
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
 	sourceRect.top = 689;
 	sourceRect.bottom = 1378;
-	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureAgrabahMarket(), sourceRect);
+	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureAgrabahMarket(), true, sourceRect);
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 

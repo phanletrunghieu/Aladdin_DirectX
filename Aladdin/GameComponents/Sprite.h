@@ -16,6 +16,8 @@ protected:
 	int _width, _height; // kich thuoc cua texture
 	bool _isFlipVertical, _isFlipHorizontal;
 
+	bool _isSourceRight;
+
 	D3DXVECTOR3 _position;
 	D3DXVECTOR2 _scale;
 	D3DXVECTOR2 _translation;
@@ -26,7 +28,7 @@ protected:
 	bool IsRect(RECT rect);
 public:
 	//Sprite(LPCWSTR filePath, D3DCOLOR colorKey = NULL, RECT sourceRect = RECT(), int width = NULL, int height = NULL);
-	Sprite(LPDIRECT3DTEXTURE9 texture, RECT sourceRect = RECT(), int width = NULL, int height = NULL);
+	Sprite(LPDIRECT3DTEXTURE9 texture, bool isSourceRight = true, RECT sourceRect = RECT(), int width = NULL, int height = NULL);
 	Sprite();
 	~Sprite();
 
@@ -64,5 +66,7 @@ public:
 
 	void FlipVertical(bool flag); // true: lat hinh theo chieu ngang, false: binh thuong
 	bool IsFlipVertical();
+
+	bool IsSourceRight();//true: object in image face to right
 };
 

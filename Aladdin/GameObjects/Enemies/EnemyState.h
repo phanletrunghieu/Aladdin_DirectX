@@ -26,5 +26,7 @@ protected:
 	StateName _name;
 	Enemy* _enemy;
 	Animation* _animation;
+
+	float _totalDuration;
 };
 

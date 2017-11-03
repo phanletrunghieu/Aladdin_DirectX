@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Idle" imagePath="Enemies_Sprite_2_trans.png" width="1065" height="588">
+    <sprite x="8" y="157" w="48" h="80" oX="22" oY="238" oW="190" oH="668" />
+    <sprite x="67" y="152" w="46" h="85" oX="82" oY="238" oW="190" oH="668" />
+    <sprite x="127" y="156" w="38" h="81" oX="136" oY="238" oW="190" oH="668" />
+    <sprite x="179" y="160" w="50" h="77" oX="194" oY="238" oW="190" oH="668" />
+    <sprite x="240" y="160" w="64" h="77" oX="257" oY="238" oW="190" oH="668" />
+    <sprite x="314" y="170" w="55" h="67" oX="328" oY="238" oW="190" oH="668" />
+    <sprite x="376" y="158" w="56" h="79" oX="398" oY="238" oW="190" oH="668" />
+    <sprite x="438" y="151" w="51" h="86" oX="458" oY="238" oW="190" oH="668" />
+    <sprite x="502" y="156" w="62" h="81" oX="510" oY="238" oW="190" oH="668" />
+    <sprite x="568" y="159" w="47" h="78" oX="583" oY="238" oW="190" oH="668" />
+    <sprite x="628" y="160" w="61" h="77" oX="642" oY="238" oW="190" oH="668" />
+  </Animation>
+</Animations>

@@ -14,7 +14,7 @@ protected:
 	int _currentIndex;
 	float _timePerFrame, _currentTotalTime;
 public:
-	Animation(tinyxml2::XMLDocument *xmlDocument, char* animationName, LPDIRECT3DTEXTURE9 texture, float timePerFrame = 0.1f, bool loop = true);
+	Animation(tinyxml2::XMLDocument *xmlDocument, char* animationName, LPDIRECT3DTEXTURE9 texture, bool isSourceRight = true, float timePerFrame = 0.1f, bool loop = true);
 	Animation();
 	~Animation();
 

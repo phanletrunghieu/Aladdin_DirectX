@@ -49,6 +49,12 @@
     <Filter Include="GameObjects\Enemies\Enemy3">
       <UniqueIdentifier>{a4cabe55-5c85-4b31-9fab-f1de91ca22d8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Enemies\Enemy4">
+      <UniqueIdentifier>{a5bc3e6c-997b-44d8-9524-4a0e6881af8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Enemies\Enemy5">
+      <UniqueIdentifier>{eee14c97-b6b5-49ba-977f-282a90f7eb15}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -285,6 +291,27 @@
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.cpp">
       <Filter>GameObjects\Enemies\Enemy3</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy4\Enemy4.cpp">
+      <Filter>GameObjects\Enemies\Enemy4</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy4\Enemy4IdleState.cpp">
+      <Filter>GameObjects\Enemies\Enemy4</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5.cpp">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5IdleState.cpp">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5WalkState.cpp">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5AttackState.cpp">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5LookState.cpp">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -520,6 +547,27 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.h">
       <Filter>GameObjects\Enemies\Enemy3</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy4\Enemy4.h">
+      <Filter>GameObjects\Enemies\Enemy4</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy4\Enemy4IdleState.h">
+      <Filter>GameObjects\Enemies\Enemy4</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5.h">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5IdleState.h">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5WalkState.h">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5AttackState.h">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5LookState.h">
+      <Filter>GameObjects\Enemies\Enemy5</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

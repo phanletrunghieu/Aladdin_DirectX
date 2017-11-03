@@ -9,7 +9,7 @@ PlayerAttackState::PlayerAttackState()
 
 PlayerAttackState::PlayerAttackState(Player * player) : PlayerState(player, PlayerState::StateName::Attack)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Attack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Attack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
 }
 
 

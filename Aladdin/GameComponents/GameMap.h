@@ -11,6 +11,8 @@
 #include "../GameObjects/Enemies/Enemy1/Enemy1.h"
 #include "../GameObjects/Enemies/Enemy2/Enemy2.h"
 #include "../GameObjects/Enemies/Enemy3/Enemy3.h"
+#include "../GameObjects/Enemies/Enemy4/Enemy4.h"
+#include "../GameObjects/Enemies/Enemy5/Enemy5.h"
 
 class GameMap
 {

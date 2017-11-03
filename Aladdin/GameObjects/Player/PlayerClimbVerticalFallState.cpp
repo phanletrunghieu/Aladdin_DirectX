@@ -7,7 +7,7 @@ PlayerClimbVerticalFallState::PlayerClimbVerticalFallState()
 
 PlayerClimbVerticalFallState::PlayerClimbVerticalFallState(Player * player) : PlayerState(player, PlayerState::StateName::ClimbVerticalFall)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbVerticalFall", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbVerticalFall", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.8f));
 
 	_player->SetAccelerationY(_player->GetMass());
 }

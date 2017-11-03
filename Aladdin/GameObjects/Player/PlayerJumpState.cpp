@@ -8,7 +8,7 @@ PlayerJumpState::PlayerJumpState()
 
 PlayerJumpState::PlayerJumpState(Player * player) : PlayerState(player, PlayerState::StateName::Jump)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Jump", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f, false));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Jump", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.8f, false));
 
 	//TODO: fix jump continuously (Jump->Attack->Jump)
 	if (_player->GetVelocity().y == 0)

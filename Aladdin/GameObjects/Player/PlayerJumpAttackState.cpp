@@ -7,7 +7,7 @@ PlayerJumpAttackState::PlayerJumpAttackState()
 
 PlayerJumpAttackState::PlayerJumpAttackState(Player * player) : PlayerState(player, PlayerState::StateName::JumpAttack)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "JumpAttack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "JumpAttack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
 }
 
 

@@ -8,7 +8,7 @@ PlayerStopState::PlayerStopState()
 
 PlayerStopState::PlayerStopState(Player * player):PlayerState(player, PlayerState::StateName::Stop)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Stop", ResourceManager::GetInstance()->GetTextureAladdin(), 0.4f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Stop", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f));
 }
 
 

@@ -8,7 +8,7 @@ Enemy2WalkState::Enemy2WalkState()
 
 Enemy2WalkState::Enemy2WalkState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Walk)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy2(), "Walk", ResourceManager::GetInstance()->GetTextureEnemies(), 0.7f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy2(), "Walk", ResourceManager::GetInstance()->GetTextureEnemies1(), false, 0.7f));
 }
 
 

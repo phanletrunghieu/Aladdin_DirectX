@@ -9,7 +9,7 @@ Enemy3IdleState::Enemy3IdleState()
 
 Enemy3IdleState::Enemy3IdleState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Idle)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies(), 0.8f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Idle", ResourceManager::GetInstance()->GetTextureEnemies1(), false, 0.8f));
 }
 
 

@@ -9,7 +9,7 @@ FloatGround::FloatGround() : GameObject(GameObject::GameObjectType::FloatGround)
 	floatGroundSourceRect.right = 487;
 	floatGroundSourceRect.top = 144;
 	floatGroundSourceRect.bottom = 158;
-	_floatGroundSprite = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), floatGroundSourceRect);
+	_floatGroundSprite = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, floatGroundSourceRect);
 	_width = _floatGroundSprite->GetWidth();
 	_height = _floatGroundSprite->GetHeight();
 }

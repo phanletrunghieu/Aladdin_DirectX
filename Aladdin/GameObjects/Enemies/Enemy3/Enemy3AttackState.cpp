@@ -9,7 +9,7 @@ Enemy3AttackState::Enemy3AttackState()
 
 Enemy3AttackState::Enemy3AttackState(Enemy * enemy) : EnemyState(enemy, EnemyState::StateName::Attack)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Attack", ResourceManager::GetInstance()->GetTextureEnemies(), 1.0f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3(), "Attack", ResourceManager::GetInstance()->GetTextureEnemies1(), false, 1.0f));
 }
 
 

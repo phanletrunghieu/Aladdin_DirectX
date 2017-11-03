@@ -9,7 +9,7 @@ Springboard::Springboard() : GameObject(GameObject::GameObjectType::Springboard)
 	springBoardSourceRect.right = 457;
 	springBoardSourceRect.top = 13;
 	springBoardSourceRect.bottom = 31;
-	_springboardSprite = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), springBoardSourceRect);
+	_springboardSprite = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, springBoardSourceRect);
 	_width = _springboardSprite->GetWidth();
 	_height = _springboardSprite->GetHeight();
 }

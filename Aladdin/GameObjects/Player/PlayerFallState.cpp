@@ -9,7 +9,7 @@ PlayerFallState::PlayerFallState()
 
 PlayerFallState::PlayerFallState(Player * player) : PlayerState(player, PlayerState::StateName::Fall)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Fall", ResourceManager::GetInstance()->GetTextureAladdin(), 0.8f, false));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Fall", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.8f, false));
 
 	_player->SetAccelerationY(_player->GetMass());
 }

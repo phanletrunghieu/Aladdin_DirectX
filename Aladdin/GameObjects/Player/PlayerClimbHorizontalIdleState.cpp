@@ -7,7 +7,7 @@ PlayerClimbHorizontalIdleState::PlayerClimbHorizontalIdleState()
 
 PlayerClimbHorizontalIdleState::PlayerClimbHorizontalIdleState(Player * player, GameObject *horizontalBar) : PlayerState(player, PlayerState::StateName::ClimbHorizontalIde)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbHorizontalIde", ResourceManager::GetInstance()->GetTextureAladdin(), 1.8f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbHorizontalIde", ResourceManager::GetInstance()->GetTextureAladdin(), true, 1.8f));
 
 	_player->SetAccelerationY(0);
 	_player->SetVelocityY(0);

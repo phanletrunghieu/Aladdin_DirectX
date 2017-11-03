@@ -7,7 +7,7 @@ PlayerCrouchAttackState::PlayerCrouchAttackState()
 
 PlayerCrouchAttackState::PlayerCrouchAttackState(Player * player) :PlayerState(player, PlayerState::StateName::CrouchAttack)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "CrouchAttack", ResourceManager::GetInstance()->GetTextureAladdin(), 0.5f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "CrouchAttack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
 }
 
 

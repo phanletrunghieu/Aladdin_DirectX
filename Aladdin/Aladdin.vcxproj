@@ -176,6 +176,13 @@
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3AttackState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3IdleState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy4\Enemy4.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy4\Enemy4IdleState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5AttackState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5IdleState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5LookState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5WalkState.cpp" />
     <ClCompile Include="GameObjects\Enemies\EnemyState.cpp" />
     <ClCompile Include="GameObjects\GameObject.cpp" />
     <ClCompile Include="GameObjects\Items\Apple.cpp" />
@@ -256,6 +263,13 @@
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3AttackState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3IdleState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3WalkState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy4\Enemy4.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy4\Enemy4IdleState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5AttackState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5IdleState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5LookState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5WalkState.h" />
     <ClInclude Include="GameObjects\Enemies\EnemyState.h" />
     <ClInclude Include="GameObjects\GameObject.h" />
     <ClInclude Include="GameObjects\Items\Apple.h" />
