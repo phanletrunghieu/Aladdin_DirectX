@@ -9,7 +9,7 @@ AppleWeapon::AppleWeapon():GameObject(GameObject::GameObjectType::AppleWeapon)
 	_width = _currentAnimation->GetWidth();
 	_height = _currentAnimation->GetHeight();
 
-	_velocity.x = 30;//left or right
+	_velocity.x = 50;//left or right
 	_velocity.y = -20;
 
 	_mass = 10;

@@ -15,6 +15,7 @@ private:
 	tinyxml2::XMLDocument *_animationXMLEnemy4;
 	tinyxml2::XMLDocument *_animationXMLEnemy5;
 	tinyxml2::XMLDocument *_animationXMLAppleWeapon;
+	tinyxml2::XMLDocument *_animationXMLPlayerHealthMeter;
 
 	LPDIRECT3DTEXTURE9 _textureAladdin;
 	LPDIRECT3DTEXTURE9 _textureEnemies1;
@@ -36,6 +37,7 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy4();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy5();
 	tinyxml2::XMLDocument* GetAnimationXMLAppleWeapon();
+	tinyxml2::XMLDocument* GetAnimationXMLPlayerHealthMeter();
 
 	LPDIRECT3DTEXTURE9 GetTextureAladdin();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies1();

@@ -27,6 +27,9 @@ ResourceManager::ResourceManager()
 	_animationXMLAppleWeapon = new tinyxml2::XMLDocument();
 	_animationXMLAppleWeapon->LoadFile("Resources/Items/AppleWeapon-Animation.xml");
 
+	_animationXMLPlayerHealthMeter = new tinyxml2::XMLDocument();
+	_animationXMLPlayerHealthMeter->LoadFile("Resources/Items/HealthMeter-Animation.xml");
+
 	_textureAladdin = graphics->LoadTexture(L"Resources/Aladdin/Aladdin_Sprite.png", D3DCOLOR_XRGB(255, 0, 255));
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
@@ -44,6 +47,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLEnemy4;
 	delete _animationXMLEnemy5;
 	delete _animationXMLAppleWeapon;
+	delete _animationXMLPlayerHealthMeter;
 
 	_textureAladdin->Release();
 	_textureEnemies1->Release();
@@ -93,6 +97,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy5()
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLAppleWeapon()
 {
 	return _animationXMLAppleWeapon;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLPlayerHealthMeter()
+{
+	return _animationXMLPlayerHealthMeter;
 }
 
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdin()

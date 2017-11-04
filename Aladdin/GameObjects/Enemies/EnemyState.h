@@ -9,7 +9,7 @@ class EnemyState
 public:
 	enum StateName
 	{
-		Idle, Walk, Attack, Injured
+		Idle, Walk, Attack, Damage
 	};
 	EnemyState();
 	EnemyState(Enemy *enemy, StateName name = StateName::Idle);
@@ -22,11 +22,19 @@ public:
 	void SetAnimation(Animation* newAnimation);
 
 	StateName GetName();
+
+	//special for attack state (used to make sure that player is attacked once at each attackState)
+	bool IsAttackedPlayer();
+	void SetIsAttackedPlayer(bool value);
+
 protected:
 	StateName _name;
 	Enemy* _enemy;
 	Animation* _animation;
 
 	float _totalDuration;
+
+	//special for attack state (used to make sure that player is attacked once at each attackState)
+	bool _isAttackedPlayer;
 };
 

@@ -12,6 +12,9 @@ EnemyState::EnemyState(Enemy * enemy, StateName name)
 	_enemy = enemy;
 
 	_totalDuration = 0;
+
+	//special for attack state
+	_isAttackedPlayer = false;
 }
 
 
@@ -45,6 +48,10 @@ void EnemyState::Update(float deltaTime)
 
 	_enemy->SetWidth(_animation->GetWidth());
 	_enemy->SetHeight(_animation->GetHeight());
+
+	//reset "_isAttackedPlayer"
+	if (_animation->IsBegin())
+		_isAttackedPlayer = false;
 }
 
 Animation * EnemyState::GetAnimation()
@@ -69,4 +76,14 @@ void EnemyState::SetAnimation(Animation * newAnimation)
 EnemyState::StateName EnemyState::GetName()
 {
 	return _name;
+}
+
+bool EnemyState::IsAttackedPlayer()
+{
+	return _isAttackedPlayer;
+}
+
+void EnemyState::SetIsAttackedPlayer(bool value)
+{
+	_isAttackedPlayer = value;
 }

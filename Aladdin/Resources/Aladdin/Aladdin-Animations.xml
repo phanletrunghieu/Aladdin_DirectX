@@ -183,4 +183,27 @@
     <sprite x="422" y="1871" w="47" h="66" oX="-1" oY="-1" oW="1734" oH="344" />
     <sprite x="482" y="1866" w="45" h="74" oX="-1" oY="-1" oW="1734" oH="344" />
   </Animation>
+  <Animation name="Damage" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="9" y="2167" w="42" h="45" oX="9" oY="2167" oW="2202" oH="376" />
+    <sprite x="58" y="2161" w="55" h="51" oX="58" oY="2161" oW="2202" oH="376" />
+    <sprite x="122" y="2162" w="59" h="49" oX="122" oY="2162" oW="2202" oH="376" />
+    <sprite x="189" y="2163" w="80" h="47" oX="189" oY="2163" oW="2202" oH="376" />
+    <sprite x="282" y="2160" w="61" h="50" oX="282" oY="2160" oW="2202" oH="376" />
+    <sprite x="351" y="2161" w="59" h="48" oX="351" oY="2161" oW="2202" oH="376" />
+  </Animation>
+  <Animation name="Death" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="1" y="2234" w="80" h="47" oX="1" oY="2234" oW="2297" oH="760" />
+    <sprite x="87" y="2231" w="61" h="50" oX="87" oY="2231" oW="2297" oH="760" />
+    <sprite x="160" y="2224" w="45" h="57" oX="160" oY="2224" oW="2297" oH="760" />
+    <sprite x="213" y="2224" w="45" h="57" oX="213" oY="2224" oW="2297" oH="760" />
+    <sprite x="264" y="2231" w="39" h="49" oX="264" oY="2231" oW="2297" oH="760" />
+    <sprite x="312" y="2230" w="40" h="50" oX="312" oY="2230" oW="2297" oH="760" />
+    <sprite x="361" y="2230" w="34" h="50" oX="361" oY="2230" oW="2297" oH="760" />
+    <sprite x="407" y="2230" w="35" h="50" oX="407" oY="2230" oW="2297" oH="760" />
+    <sprite x="454" y="2232" w="38" h="48" oX="454" oY="2232" oW="2297" oH="760" />
+    <sprite x="505" y="2227" w="43" h="55" oX="505" oY="2227" oW="2297" oH="760" />
+    <sprite x="560" y="2228" w="40" h="52" oX="560" oY="2228" oW="2297" oH="760" />
+    <sprite x="614" y="2232" w="39" h="49" oX="614" oY="2232" oW="2297" oH="760" />
+    <sprite x="661" y="2232" w="40" h="50" oX="661" oY="2232" oW="2297" oH="760" />
+  </Animation>
 </Animations>

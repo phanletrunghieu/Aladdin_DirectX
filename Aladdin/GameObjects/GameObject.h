@@ -13,7 +13,7 @@ class GameObject
 public:
 	enum GameObjectType
 	{
-		None, Player, Enemy, Apple, AppleWeapon, Ground, Rope, HorizontalBar, FloatGround, Springboard
+		None, Player, Enemies, Apple, AppleWeapon, Ground, Rope, HorizontalBar, FloatGround, Springboard
 	};
 protected:
 	GameObjectType _tag;

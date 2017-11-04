@@ -24,6 +24,7 @@ void PlayerJumpThrowState::Update(float deltaTime)
 	if (!_isCreatedAppleWeapon && _animation->GetCurrentIndex() == 3)//create appleWeapon
 	{
 		_isCreatedAppleWeapon = true;
+		_player->SetNumAppleWeapon(_player->GetNumAppleWeapon() - 1);
 
 		AppleWeapon *appleWeapon = new AppleWeapon();
 		appleWeapon->SetPosition(_player->GetPosition().x, _player->GetPosition().y);

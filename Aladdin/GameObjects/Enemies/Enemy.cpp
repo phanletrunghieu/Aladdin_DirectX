@@ -1,18 +1,19 @@
 #include "Enemy.h"
 
-Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemy)
+Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemies)
 {
 	//not use
 }
 
-Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemy)
+Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemies)
 {
 	_target = target;
 	_distanceToTarget = _target->GetPosition() - _position;
 
 	_footPosY = 0;
 
-	_health = 0;
+	_health = 100;
+	_damage = 5;
 	_speed = 10;
 	_viewRange = 300;
 	_attackRange = 80;
@@ -129,6 +130,16 @@ int Enemy::GetHealth()
 void Enemy::SetHealth(int newHealth)
 {
 	_health = newHealth;
+}
+
+int Enemy::GetDamage()
+{
+	return _damage;
+}
+
+void Enemy::SetDamage(int newDamage)
+{
+	_damage = newDamage;
 }
 
 bool Enemy::IsRight()

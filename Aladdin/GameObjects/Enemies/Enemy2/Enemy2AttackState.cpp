@@ -31,6 +31,7 @@ void Enemy2AttackState::Update(float deltaTime)
 		return;
 	}
 
+	//random animation
 	if (_animation->IsFinish())
 	{
 		int r = rand() % 10;

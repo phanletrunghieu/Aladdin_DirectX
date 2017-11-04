@@ -9,7 +9,7 @@ class Enemy : public GameObject
 protected:
 	GameObject* _target;
 
-	int _health;
+	int _health, _damage;
 	float _speed;
 
 	// use to detect the target being near
@@ -44,6 +44,9 @@ public:
 
 	int GetHealth();
 	void SetHealth(int newHealth);
+
+	int GetDamage();
+	void SetDamage(int newDamage);
 
 	bool IsRight();
 	void SetIsRight(bool right);

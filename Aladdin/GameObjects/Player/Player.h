@@ -10,6 +10,8 @@ private:
 	PlayerState *_state;
 	bool _isRight, _isGround, _allowMoveLeft, _allowMoveRight;
 	float _speed, _jumpForce, _jumpRunForce;
+
+	int _health, _damage, _numAppleWeapon;
 public:
 	Player();
 	~Player();
@@ -39,5 +41,14 @@ public:
 
 	float GetJumpRunForce();
 	void SetJumpRunForce(float force);
+
+	int GetHealth();
+	void SetHealth(int newHealth);
+
+	int GetDamage();
+	void SetDamage(int newDamage);
+
+	int GetNumAppleWeapon();
+	void SetNumAppleWeapon(int value);
 };
 

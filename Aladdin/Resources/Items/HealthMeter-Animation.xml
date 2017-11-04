@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="100" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="487" w="144" h="31" oX="45" oY="-1" oW="541" oH="598" />
+    <sprite x="188" y="487" w="144" h="31" oX="199" oY="-1" oW="541" oH="598" />
+    <sprite x="339" y="487" w="143" h="31" oX="350" oY="-1" oW="541" oH="598" />
+    <sprite x="487" y="487" w="143" h="31" oX="498" oY="-1" oW="541" oH="598" />
+  </Animation>
+  <Animation name="90" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="535" w="131" h="31" oX="45" oY="-1" oW="582" oH="546" />
+    <sprite x="175" y="535" w="131" h="31" oX="186" oY="-1" oW="582" oH="546" />
+    <sprite x="313" y="535" w="130" h="31" oX="324" oY="-1" oW="582" oH="546" />
+    <sprite x="449" y="535" w="130" h="31" oX="460" oY="-1" oW="582" oH="546" />
+  </Animation>
+  <Animation name="80" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="581" w="120" h="31" oX="45" oY="-1" oW="623" oH="510" />
+    <sprite x="164" y="581" w="120" h="31" oX="175" oY="-1" oW="623" oH="510" />
+    <sprite x="294" y="581" w="119" h="31" oX="305" oY="-1" oW="623" oH="510" />
+    <sprite x="423" y="581" w="119" h="31" oX="434" oY="-1" oW="623" oH="510" />
+  </Animation>
+  <Animation name="70" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="628" w="112" h="31" oX="45" oY="-1" oW="666" oH="478" />
+    <sprite x="156" y="628" w="112" h="31" oX="167" oY="-1" oW="666" oH="478" />
+    <sprite x="278" y="628" w="111" h="31" oX="289" oY="-1" oW="666" oH="478" />
+    <sprite x="399" y="628" w="111" h="31" oX="410" oY="-1" oW="666" oH="478" />
+  </Animation>
+  <Animation name="60" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="675" w="104" h="31" oX="45" oY="-1" oW="709" oH="446" />
+    <sprite x="148" y="675" w="104" h="31" oX="159" oY="-1" oW="709" oH="446" />
+    <sprite x="262" y="675" w="103" h="31" oX="273" oY="-1" oW="709" oH="446" />
+    <sprite x="375" y="675" w="103" h="31" oX="386" oY="-1" oW="709" oH="446" />
+  </Animation>
+  <Animation name="50" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="722" w="96" h="31" oX="45" oY="-1" oW="752" oH="414" />
+    <sprite x="140" y="722" w="96" h="31" oX="151" oY="-1" oW="752" oH="414" />
+    <sprite x="246" y="722" w="95" h="31" oX="257" oY="-1" oW="752" oH="414" />
+    <sprite x="351" y="722" w="95" h="31" oX="362" oY="-1" oW="752" oH="414" />
+  </Animation>
+  <Animation name="40" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="769" w="88" h="31" oX="45" oY="-1" oW="795" oH="383" />
+    <sprite x="133" y="769" w="88" h="31" oX="144" oY="-1" oW="795" oH="383" />
+    <sprite x="231" y="769" w="87" h="31" oX="242" oY="-1" oW="795" oH="383" />
+    <sprite x="328" y="769" w="87" h="31" oX="339" oY="-1" oW="795" oH="383" />
+  </Animation>
+  <Animation name="30" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="816" w="80" h="31" oX="45" oY="-1" oW="838" oH="350" />
+    <sprite x="124" y="816" w="80" h="31" oX="135" oY="-1" oW="838" oH="350" />
+    <sprite x="214" y="816" w="79" h="31" oX="225" oY="-1" oW="838" oH="350" />
+    <sprite x="303" y="816" w="79" h="31" oX="314" oY="-1" oW="838" oH="350" />
+  </Animation>
+  <Animation name="20" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="863" w="71" h="31" oX="45" oY="-1" oW="880" oH="314" />
+    <sprite x="115" y="863" w="71" h="31" oX="126" oY="-1" oW="880" oH="314" />
+    <sprite x="196" y="863" w="72" h="31" oX="207" oY="-1" oW="880" oH="314" />
+    <sprite x="278" y="863" w="72" h="31" oX="289" oY="-1" oW="880" oH="314" />
+  </Animation>
+  <Animation name="10" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="910" w="63" h="28" oX="45" oY="-1" oW="921" oH="282" />
+    <sprite x="107" y="910" w="63" h="28" oX="118" oY="-1" oW="921" oH="282" />
+    <sprite x="180" y="910" w="64" h="28" oX="191" oY="-1" oW="921" oH="282" />
+    <sprite x="254" y="909" w="64" h="29" oX="265" oY="-1" oW="921" oH="282" />
+  </Animation>
+  <Animation name="0" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="34" y="954" w="48" h="23" oX="45" oY="-1" oW="956" oH="48" />
+  </Animation>
+</Animations>

@@ -7,6 +7,18 @@ MainScene::MainScene():Scene(0x9090b0)
 
 MainScene::~MainScene()
 {
+	for (size_t i = 0; i < _backgroundTextures.size(); i++)
+	{
+		delete _backgroundTextures[i];
+		_backgroundTextures[i] = NULL;
+	}
+	_backgroundTextures.clear();
+
+	delete _gameMap;
+	_gameMap = NULL;
+
+	delete _txtCountApple;
+	_txtCountApple = NULL;
 }
 
 void MainScene::LoadContent()
@@ -32,6 +44,18 @@ void MainScene::LoadContent()
 	_gameMap = new GameMap("Resources/Maps/AgrabahMarket/AgrabahMarket.tmx", _quadTree);
 
 	_camera = new Camera(_gameMap->GetPlayer());
+
+	//apple weapon
+	RECT appleSourceRect;
+	appleSourceRect.left = 341;
+	appleSourceRect.right = 352;
+	appleSourceRect.top = 17;
+	appleSourceRect.bottom = 29;
+	_spriteCountApple = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, appleSourceRect);
+	_spriteCountApple->SetScale(D3DXVECTOR2(2, 2));
+	_txtCountApple = new Text(L"0", 15, 15, FW_BOLD);
+
+	_playerHealthMeter = new PlayerHealthMeter();
 }
 
 void MainScene::CheckCollision()
@@ -123,6 +147,10 @@ void MainScene::Update(float dt)
 
 	_gameMap->Update(dt);
 	_camera->Update(dt);
+
+	_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
+	_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
+	_playerHealthMeter->Update(dt);
 }
 
 void MainScene::Draw()
@@ -130,5 +158,10 @@ void MainScene::Draw()
 	_backgroundTextures[0]->Draw(_camera);
 	_gameMap->Draw(_camera);
 	_backgroundTextures[1]->Draw(_camera);
+
+	_spriteCountApple->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 80, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
+	_txtCountApple->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, Graphics::GetInstance()->GetScreenHeight() - 50));
+	_playerHealthMeter->Draw(D3DXVECTOR3(_playerHealthMeter->GetWidth() / 2 + 10, _playerHealthMeter->GetHeight() / 2 + 10, 0));
+	
 	Scene::Draw();
 }

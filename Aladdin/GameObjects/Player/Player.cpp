@@ -1,4 +1,5 @@
 #include "Player.h"
+#include "../Enemies/Enemy.h"
 
 Player::Player():GameObject(GameObject::GameObjectType::Player)
 {
@@ -10,6 +11,10 @@ Player::Player():GameObject(GameObject::GameObjectType::Player)
 	_isRight = true;
 	_isGround = false;
 	_allowMoveLeft = _allowMoveRight = true;
+
+	_health = 100;
+	_damage = 50;
+	_numAppleWeapon = 10;
 
 	_state = new PlayerFallState(this);
 }
@@ -68,6 +73,21 @@ void Player::Draw(Camera * camera)
 
 void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
+	if (target->GetTag() == GameObject::GameObjectType::Apple)
+	{
+		_numAppleWeapon++;
+	}
+
+	if (target->GetTag() == GameObject::GameObjectType::Enemies)
+	{
+		Enemy *enemy = dynamic_cast<Enemy*>(target);
+		if (enemy->GetState()->GetName() == EnemyState::StateName::Attack && !enemy->GetState()->IsAttackedPlayer())
+		{
+			_health -= enemy->GetDamage();
+			enemy->GetState()->SetIsAttackedPlayer(true);
+		}
+	}
+
 	_state->OnCollision(target, side);
 }
 
@@ -155,4 +175,34 @@ float Player::GetJumpRunForce()
 void Player::SetJumpRunForce(float force)
 {
 	_jumpRunForce = force;
+}
+
+int Player::GetHealth()
+{
+	return _health;
+}
+
+void Player::SetHealth(int newHealth)
+{
+	_health = newHealth;
+}
+
+int Player::GetDamage()
+{
+	return _damage;
+}
+
+void Player::SetDamage(int newDamage)
+{
+	_damage = newDamage;
+}
+
+int Player::GetNumAppleWeapon()
+{
+	return _numAppleWeapon;
+}
+
+void Player::SetNumAppleWeapon(int value)
+{
+	_numAppleWeapon = value;
 }

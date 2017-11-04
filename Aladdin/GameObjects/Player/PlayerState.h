@@ -28,7 +28,8 @@ public:
 		ClimbVerticalJump,
 		ClimbVerticalFall,
 		ClimbHorizontalIde,
-		ClimbHorizontalMove
+		ClimbHorizontalMove,
+		Damage
 	};
 protected:
 	StateName _name;

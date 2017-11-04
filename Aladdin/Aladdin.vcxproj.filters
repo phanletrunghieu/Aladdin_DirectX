@@ -312,6 +312,12 @@
     <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5LookState.cpp">
       <Filter>GameObjects\Enemies\Enemy5</Filter>
     </ClCompile>
+    <ClCompile Include="GameComponents\Text.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\PlayerHealthMeter.cpp">
+      <Filter>GameObjects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -568,6 +574,12 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5LookState.h">
       <Filter>GameObjects\Enemies\Enemy5</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Text.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\PlayerHealthMeter.h">
+      <Filter>GameObjects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
