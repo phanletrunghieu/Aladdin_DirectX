@@ -188,6 +188,7 @@
     <ClCompile Include="GameObjects\GameObject.cpp" />
     <ClCompile Include="GameObjects\Items\Apple.cpp" />
     <ClCompile Include="GameObjects\Items\AppleWeapon.cpp" />
+    <ClCompile Include="GameObjects\Items\Camel.cpp" />
     <ClCompile Include="GameObjects\Items\FloatGround.cpp" />
     <ClCompile Include="GameObjects\Items\Springboard.cpp" />
     <ClCompile Include="GameObjects\PlayerHealthMeter.cpp" />
@@ -279,6 +280,7 @@
     <ClInclude Include="GameObjects\GameObject.h" />
     <ClInclude Include="GameObjects\Items\Apple.h" />
     <ClInclude Include="GameObjects\Items\AppleWeapon.h" />
+    <ClInclude Include="GameObjects\Items\Camel.h" />
     <ClInclude Include="GameObjects\Items\FloatGround.h" />
     <ClInclude Include="GameObjects\Items\Springboard.h" />
     <ClInclude Include="GameObjects\PlayerHealthMeter.h" />

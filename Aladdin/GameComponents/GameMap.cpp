@@ -138,6 +138,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				QuadTree::InsertDynamicObject(enemy);
 			}
 
+			//camel
+			if (objectGroup->GetName() == "Camel")
+			{
+				Camel *camel = new Camel();
+				camel->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listCamels.push_back(camel);
+
+				_quadTree->InsertStaticObject(camel);
+			}
+
 			//init ground
 			if (objectGroup->GetName() == "Ground")
 			{
@@ -177,6 +188,10 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 GameMap::~GameMap()
 {
 	delete _map;
+	delete _player;
+
+	_quadTree->Clear();
+	delete _quadTree;
 
 	for (size_t i = 0; i < _listApples.size(); i++)
 	{
@@ -206,6 +221,13 @@ GameMap::~GameMap()
 	}
 	_listEnemies.clear();
 
+	for (size_t i = 0; i < _listCamels.size(); i++)
+	{
+		if (_listCamels[i])
+			delete _listCamels[i];
+	}
+	_listCamels.clear();
+
 	/*don't use tileset for this game
 	for (size_t i = 0; i < _listTileSet.size(); i++)
 	{
@@ -214,18 +236,17 @@ GameMap::~GameMap()
 	}
 	_listTileSet.clear();
 	*/
-
-	_quadTree->Clear();
-	delete _quadTree;
 }
 
 void GameMap::Update(float deltaTime)
 {
 	//enemies
 	for (size_t i = 0; i < _listEnemies.size(); i++)
-	{
 		_listEnemies[i]->Update(deltaTime);
-	}
+
+	//camels
+	for (size_t i = 0; i < _listCamels.size(); i++)
+		_listCamels[i]->Update(deltaTime);
 
 	//player
 	_player->Update(deltaTime);
@@ -318,12 +339,13 @@ void GameMap::Draw(Camera * camera)
 		_listFloatGrounds[i]->Draw(camera);
 	}
 
-	//enemies
-	for (size_t i = 0; i < _listEnemies.size(); i++)
+	//springboard
+	for (size_t i = 0; i < _listSpringboards.size(); i++)
 	{
-		_listEnemies[i]->Draw(camera);
+		_listSpringboards[i]->Draw(camera);
 	}
 
+	//enemies
 	for (size_t i = 0; i < _listEnemies.size(); i++)
 	{
 		//remove not visible object
@@ -339,10 +361,20 @@ void GameMap::Draw(Camera * camera)
 		_listEnemies[i]->Draw(camera);
 	}
 
-	//springboard
-	for (size_t i = 0; i < _listSpringboards.size(); i++)
+	//camels
+	for (size_t i = 0; i < _listCamels.size(); i++)
 	{
-		_listSpringboards[i]->Draw(camera);
+		//remove not visible object
+		if (!_listCamels[i]->IsVisible())
+		{
+			delete _listCamels[i];
+			_listCamels.erase(_listCamels.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listCamels[i]->Draw(camera);
 	}
 
 	//player

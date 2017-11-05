@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Camel" imagePath="Camel_trans.png" width="882" height="99">
+    <sprite x="4" y="21" w="63" h="43" oX="53" oY="65" oW="70" oH="413" />
+    <sprite x="73" y="11" w="81" h="53" oX="131" oY="65" oW="70" oH="413" />
+    <sprite x="163" y="9" w="95" h="55" oX="225" oY="65" oW="70" oH="413" />
+    <sprite x="268" y="9" w="112" h="55" oX="334" oY="65" oW="70" oH="413" />
+    <sprite x="396" y="10" w="147" h="54" oX="461" oY="65" oW="70" oH="413" />
+    <sprite x="396" y="10" w="147" h="54" oX="461" oY="65" oW="70" oH="413" />
+    <sprite x="268" y="9" w="112" h="55" oX="334" oY="65" oW="70" oH="413" />
+    <sprite x="163" y="9" w="95" h="55" oX="225" oY="65" oW="70" oH="413" />
+    <sprite x="73" y="11" w="81" h="53" oX="131" oY="65" oW="70" oH="413" />
+    <sprite x="4" y="21" w="63" h="43" oX="53" oY="65" oW="70" oH="413" />
+  </Animation>
+</Animations>

@@ -13,7 +13,11 @@ PlayerState::PlayerState(Player *player, StateName name)
 
 PlayerState::~PlayerState()
 {
-	delete _animation;
+	if (_animation)
+	{
+		delete _animation;
+		_animation = NULL;
+	}
 }
 
 void PlayerState::Update(float deltaTime)

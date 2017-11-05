@@ -16,6 +16,7 @@ Apple::Apple():GameObject(GameObject::GameObjectType::Apple)
 
 Apple::~Apple()
 {
+	delete _appleSprite;
 }
 
 void Apple::Draw(Camera * camera)
@@ -29,7 +30,7 @@ void Apple::Draw(Camera * camera)
 
 void Apple::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
-	if (target->GetTag() == GameObjectType::Player)
+	if (target->GetTag() == GameObjectType::Players)
 	{
 		_isVisible = false;
 	}

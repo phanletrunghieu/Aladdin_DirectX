@@ -17,6 +17,7 @@ FloatGround::FloatGround() : GameObject(GameObject::GameObjectType::FloatGround)
 
 FloatGround::~FloatGround()
 {
+	delete _floatGroundSprite;
 }
 
 void FloatGround::Draw(Camera * camera)

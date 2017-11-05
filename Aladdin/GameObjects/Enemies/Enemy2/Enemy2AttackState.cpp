@@ -18,6 +18,17 @@ Enemy2AttackState::Enemy2AttackState(Enemy * enemy) : EnemyState(enemy, EnemySta
 
 Enemy2AttackState::~Enemy2AttackState()
 {
+	if (_animationAttack1)
+	{
+		delete _animationAttack1;
+		_animationAttack1 = NULL;
+	}
+
+	if (_animationAttack2)
+	{
+		delete _animationAttack2;
+		_animationAttack2 = NULL;
+	}
 }
 
 void Enemy2AttackState::Update(float deltaTime)

@@ -27,6 +27,9 @@ ResourceManager::ResourceManager()
 	_animationXMLAppleWeapon = new tinyxml2::XMLDocument();
 	_animationXMLAppleWeapon->LoadFile("Resources/Items/AppleWeapon-Animation.xml");
 
+	_animationXMLCamel = new tinyxml2::XMLDocument();
+	_animationXMLCamel->LoadFile("Resources/Items/Camel-Animation.xml");
+
 	_animationXMLPlayerHealthMeter = new tinyxml2::XMLDocument();
 	_animationXMLPlayerHealthMeter->LoadFile("Resources/Items/HealthMeter-Animation.xml");
 
@@ -34,6 +37,7 @@ ResourceManager::ResourceManager()
 	_textureEnemies1 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_1.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureItems = graphics->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
+	_textureCamel = graphics->LoadTexture(L"Resources/Items/Camel.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureAgrabahMarket = graphics->LoadTexture(L"Resources/Maps/AgrabahMarket/AgrabahMarket.png");
 }
 
@@ -48,11 +52,13 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLEnemy5;
 	delete _animationXMLAppleWeapon;
 	delete _animationXMLPlayerHealthMeter;
+	delete _animationXMLCamel;
 
 	_textureAladdin->Release();
 	_textureEnemies1->Release();
 	_textureEnemies2->Release();
 	_textureItems->Release();
+	_textureCamel->Release();
 	_textureAgrabahMarket->Release();
 }
 
@@ -104,6 +110,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLPlayerHealthMeter()
 	return _animationXMLPlayerHealthMeter;
 }
 
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCamel()
+{
+	return _animationXMLCamel;
+}
+
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdin()
 {
 	return _textureAladdin;
@@ -122,6 +133,11 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureEnemies2()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureItems()
 {
 	return _textureItems;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureCamel()
+{
+	return _textureCamel;
 }
 
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAgrabahMarket()

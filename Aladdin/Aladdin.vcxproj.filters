@@ -324,6 +324,9 @@
     <ClCompile Include="GameObjects\Player\PlayerDeathState.cpp">
       <Filter>GameObjects\Player</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Items\Camel.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -592,6 +595,9 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Player\PlayerDeathState.h">
       <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Camel.h">
+      <Filter>GameObjects\Items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

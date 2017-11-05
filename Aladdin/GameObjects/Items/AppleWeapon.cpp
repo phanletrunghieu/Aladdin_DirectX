@@ -19,6 +19,8 @@ AppleWeapon::AppleWeapon():GameObject(GameObject::GameObjectType::AppleWeapon)
 
 AppleWeapon::~AppleWeapon()
 {
+	delete _animationFly;
+	delete _animationExplode;
 }
 
 void AppleWeapon::Draw(Camera * camera)
@@ -31,8 +33,12 @@ void AppleWeapon::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	_currentAnimation->Update(deltaTime);
 	_currentAnimation->SetPosition(_position);
+	_currentAnimation->Update(deltaTime);
+	SetPosition(_currentAnimation->GetPosition());
+
+	_width = _currentAnimation->GetWidth();
+	_height = _currentAnimation->GetHeight();
 
 	if (_currentAnimation->IsFinish() && _currentAnimation == _animationExplode) {
 		_isVisible = false;
@@ -41,7 +47,7 @@ void AppleWeapon::Update(float deltaTime)
 
 void AppleWeapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
-	if (target->GetTag() != GameObjectType::Player)
+	if (target->GetTag() != GameObjectType::Players)
 	{
 		_currentAnimation = _animationExplode;
 		_width = _currentAnimation->GetWidth();

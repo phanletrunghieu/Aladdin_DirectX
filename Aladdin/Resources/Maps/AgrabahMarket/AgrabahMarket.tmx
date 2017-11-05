@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="217">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="219">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -29,6 +29,9 @@
  </tileset>
  <tileset firstgid="15" name="Enemy-5" tilewidth="36" tileheight="39" tilecount="1" columns="1">
   <image source="demo_tmx/Enemy-5.png" width="36" height="39"/>
+ </tileset>
+ <tileset firstgid="16" name="Camel" tilewidth="63" tileheight="44" tilecount="1" columns="1">
+  <image source="demo_tmx/Camel.png" width="63" height="44"/>
  </tileset>
  <layer name="Tile Layer 1" width="1" height="1">
   <data encoding="base64" compression="zlib">
@@ -182,6 +185,9 @@
  </objectgroup>
  <objectgroup name="Enemy_5">
   <object id="213" gid="15" x="2840.67" y="422.667" width="36" height="39"/>
+ </objectgroup>
+ <objectgroup name="Camel">
+  <object id="218" gid="16" x="1538" y="664.152" width="63" height="44"/>
  </objectgroup>
  <layer name="Tile Layer 2" width="1" height="1">
   <data encoding="base64" compression="zlib">

@@ -17,6 +17,7 @@ Springboard::Springboard() : GameObject(GameObject::GameObjectType::Springboard)
 
 Springboard::~Springboard()
 {
+	delete _springboardSprite;
 }
 
 void Springboard::Draw(Camera * camera)

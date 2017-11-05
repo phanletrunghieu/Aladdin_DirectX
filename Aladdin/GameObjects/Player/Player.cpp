@@ -1,7 +1,7 @@
 #include "Player.h"
 #include "../Enemies/Enemy.h"
 
-Player::Player():GameObject(GameObject::GameObjectType::Player)
+Player::Player():GameObject(GameObject::GameObjectType::Players)
 {
 	_mass = 15;
 	_speed = 25;

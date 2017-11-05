@@ -13,6 +13,7 @@
 #include "../GameObjects/Enemies/Enemy3/Enemy3.h"
 #include "../GameObjects/Enemies/Enemy4/Enemy4.h"
 #include "../GameObjects/Enemies/Enemy5/Enemy5.h"
+#include "../GameObjects/Items/Camel.h"
 
 class GameMap
 {
@@ -28,6 +29,7 @@ private:
 	std::vector<FloatGround*> _listFloatGrounds;
 	std::vector<Springboard*> _listSpringboards;
 	std::vector<Enemy*> _listEnemies;
+	std::vector<Camel*> _listCamels;
 public:
 	GameMap();
 	//use QuadTree* &quadTree because quadTree is init in this function

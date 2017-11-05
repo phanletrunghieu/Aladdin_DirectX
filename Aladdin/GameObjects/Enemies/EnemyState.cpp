@@ -20,7 +20,11 @@ EnemyState::EnemyState(Enemy * enemy, StateName name)
 
 EnemyState::~EnemyState()
 {
-	delete _animation;
+	if (_animation)
+	{
+		delete _animation;
+		_animation = NULL;
+	}
 }
 
 void EnemyState::Update(float deltaTime)

@@ -52,6 +52,7 @@ void PlayerFallState::OnCollision(GameObject * target, GameCollision::SideCollis
 		if (diffX < 18 && _player->GetBound().bottom <= target->GetBound().bottom && _player->GetBound().top >= target->GetBound().top)
 		{
 			_player->SetState(new PlayerClimbVerticalState(_player, target));
+			return;
 		}
 	}
 
@@ -61,7 +62,10 @@ void PlayerFallState::OnCollision(GameObject * target, GameCollision::SideCollis
 		if (diffTop < 18
 			&& _player->GetPosition().x >= target->GetBound().left
 			&& _player->GetPosition().x <= target->GetBound().right)
+		{
 			_player->SetState(new PlayerClimbHorizontalIdleState(_player, target), false);
+			return;
+		}
 	}
 
 	if (target->GetTag() == GameObject::GameObjectType::Springboard)
@@ -70,6 +74,14 @@ void PlayerFallState::OnCollision(GameObject * target, GameCollision::SideCollis
 		if (diffY < 18)
 		{
 			_player->SetState(new PlayerSpringState(_player));
+			return;
 		}
+	}
+
+	if (target->GetTag() == GameObject::GameObjectType::Camels && side==GameCollision::SideCollisions::Bottom)
+	{
+		_player->SetVelocityY(-1 * _player->GetJumpForce());
+		_player->SetState(new PlayerJumpState(_player));
+		return;
 	}
 }
