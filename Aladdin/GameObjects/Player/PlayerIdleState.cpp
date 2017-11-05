@@ -8,6 +8,7 @@ PlayerIdleState::PlayerIdleState()
 PlayerIdleState::PlayerIdleState(Player* player):PlayerState(player, PlayerState::StateName::Idle)
 {
 	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Idle", ResourceManager::GetInstance()->GetTextureAladdin(), true, 1.8f));
+	_prevHealth = _player->GetHealth();
 }
 
 
@@ -55,4 +56,11 @@ void PlayerIdleState::Update(float deltaTime)
 		_player->SetState(new PlayerFallState(_player));
 		return;
 	}
+
+	if (_player->GetHealth() < _prevHealth)
+	{
+		_player->SetState(new PlayerDamageState(_player));
+		return;
+	}
+	_prevHealth = _player->GetHealth();
 }

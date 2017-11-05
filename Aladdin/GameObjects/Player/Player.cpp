@@ -85,6 +85,11 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		{
 			_health -= enemy->GetDamage();
 			enemy->GetState()->SetIsAttackedPlayer(true);
+
+			if (_health == 0)
+			{
+				SetState(new PlayerDeathState(this));
+			}
 		}
 	}
 

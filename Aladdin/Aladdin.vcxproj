@@ -201,6 +201,8 @@
     <ClCompile Include="GameObjects\Player\PlayerClimbVerticalState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerCrouchAttackState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerCrouchIdleState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerDamageState.cpp" />
+    <ClCompile Include="GameObjects\Player\PlayerDeathState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerFallState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerIdleState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerJumpAttackState.cpp" />
@@ -290,6 +292,8 @@
     <ClInclude Include="GameObjects\Player\PlayerClimbVerticalState.h" />
     <ClInclude Include="GameObjects\Player\PlayerCrouchAttackState.h" />
     <ClInclude Include="GameObjects\Player\PlayerCrouchIdleState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerDamageState.h" />
+    <ClInclude Include="GameObjects\Player\PlayerDeathState.h" />
     <ClInclude Include="GameObjects\Player\PlayerFallState.h" />
     <ClInclude Include="GameObjects\Player\PlayerIdleState.h" />
     <ClInclude Include="GameObjects\Player\PlayerJumpAttackState.h" />

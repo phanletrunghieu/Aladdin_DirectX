@@ -318,6 +318,12 @@
     <ClCompile Include="GameObjects\PlayerHealthMeter.cpp">
       <Filter>GameObjects</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerDamageState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Player\PlayerDeathState.cpp">
+      <Filter>GameObjects\Player</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -580,6 +586,12 @@
     </ClInclude>
     <ClInclude Include="GameObjects\PlayerHealthMeter.h">
       <Filter>GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerDamageState.h">
+      <Filter>GameObjects\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Player\PlayerDeathState.h">
+      <Filter>GameObjects\Player</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
