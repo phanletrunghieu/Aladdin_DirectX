@@ -41,7 +41,10 @@ void Camel::Update(float deltaTime)
 
 void Camel::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
-	if (target->GetTag() == GameObject::GameObjectType::Players && side == GameCollision::SideCollisions::Top)
+	if (target->GetTag() == GameObject::GameObjectType::Players
+		&& (side == GameCollision::SideCollisions::Top
+			|| side == GameCollision::SideCollisions::TopLeft
+			|| side == GameCollision::SideCollisions::TopRight))
 	{
 		Player* player = dynamic_cast<Player*>(target);
 		if (player->GetState()->GetName() == PlayerState::StateName::Fall || player->GetState()->GetName() == PlayerState::StateName::RunFall)

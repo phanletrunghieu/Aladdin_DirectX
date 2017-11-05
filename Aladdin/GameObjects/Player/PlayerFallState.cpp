@@ -78,7 +78,10 @@ void PlayerFallState::OnCollision(GameObject * target, GameCollision::SideCollis
 		}
 	}
 
-	if (target->GetTag() == GameObject::GameObjectType::Camels && side==GameCollision::SideCollisions::Bottom)
+	if (target->GetTag() == GameObject::GameObjectType::Camels
+		&& (side == GameCollision::SideCollisions::Bottom
+			|| side == GameCollision::SideCollisions::BottomLeft
+			|| side == GameCollision::SideCollisions::BottomRight))
 	{
 		_player->SetVelocityY(-1 * _player->GetJumpForce());
 		_player->SetState(new PlayerJumpState(_player));
