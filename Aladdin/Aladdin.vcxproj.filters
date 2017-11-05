@@ -55,6 +55,15 @@
     <Filter Include="GameObjects\Enemies\Enemy5">
       <UniqueIdentifier>{eee14c97-b6b5-49ba-977f-282a90f7eb15}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Weapons">
+      <UniqueIdentifier>{fcf4d9ad-6308-4541-aa6c-25ad5ea72da7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Weapons\PlayerWeapons">
+      <UniqueIdentifier>{403f823b-b1e8-4b3c-bed7-22facd35d41b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObjects\Weapons\EnemiesWeapons">
+      <UniqueIdentifier>{5731c3f1-8c6a-4b91-8fa5-59fdb12966e5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -243,9 +252,6 @@
     <ClCompile Include="GameObjects\Player\PlayerSpringState.cpp">
       <Filter>GameObjects\Player</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjects\Items\AppleWeapon.cpp">
-      <Filter>GameObjects\Items</Filter>
-    </ClCompile>
     <ClCompile Include="GameComponents\ResourceManager.cpp">
       <Filter>GameComponents</Filter>
     </ClCompile>
@@ -326,6 +332,18 @@
     </ClCompile>
     <ClCompile Include="GameObjects\Items\Camel.cpp">
       <Filter>GameObjects\Items</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\Weapon.cpp">
+      <Filter>GameObjects\Weapons</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.cpp">
+      <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy3Weapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.cpp">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -515,9 +533,6 @@
     <ClInclude Include="GameObjects\Player\PlayerSpringState.h">
       <Filter>GameObjects\Player</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjects\Items\AppleWeapon.h">
-      <Filter>GameObjects\Items</Filter>
-    </ClInclude>
     <ClInclude Include="GameComponents\ResourceManager.h">
       <Filter>GameComponents</Filter>
     </ClInclude>
@@ -598,6 +613,18 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Items\Camel.h">
       <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\Weapon.h">
+      <Filter>GameObjects\Weapons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h">
+      <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy3Weapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.h">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

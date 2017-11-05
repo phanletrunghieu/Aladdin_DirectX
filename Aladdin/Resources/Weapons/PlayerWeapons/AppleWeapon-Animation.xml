@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Fly" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="376" y="24" w="6" h="6" oX="376" oY="24" oW="-346" oH="6" />
+  </Animation>
+  <Animation name="Explode" imagePath="Aladdin_trans.png" width="1121" height="2718">
+    <sprite x="397" y="23" w="6" h="9" oX="397" oY="23" oW="-476" oH="133" />
+    <sprite x="417" y="18" w="19" h="17" oX="417" oY="18" oW="-476" oH="133" />
+    <sprite x="447" y="16" w="28" h="21" oX="447" oY="16" oW="-476" oH="133" />
+    <sprite x="488" y="14" w="30" h="24" oX="488" oY="14" oW="-476" oH="133" />
+    <sprite x="535" y="13" w="29" h="26" oX="535" oY="13" oW="-476" oH="133" />
+  </Animation>
+</Animations>

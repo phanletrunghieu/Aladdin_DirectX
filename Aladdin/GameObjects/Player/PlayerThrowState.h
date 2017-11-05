@@ -1,7 +1,7 @@
 #pragma once
 
 #include "PlayerState.h"
-#include "../Items/AppleWeapon.h"
+#include "../Weapons/PlayerWeapons/AppleWeapon.h"
 #include "../../GameComponents/SceneManager.h"
 
 class PlayerThrowState : public PlayerState

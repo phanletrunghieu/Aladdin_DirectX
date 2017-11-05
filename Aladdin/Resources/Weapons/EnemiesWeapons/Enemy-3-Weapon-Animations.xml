@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Rotate" imagePath="Enemies_Sprite_1_trans.png" width="498" height="1053">
+    <sprite x="73" y="678" w="11" h="24" oX="-1" oY="-1" oW="637" oH="198" />
+    <sprite x="97" y="686" w="26" h="10" oX="-1" oY="-1" oW="637" oH="198" />
+    <sprite x="132" y="675" w="11" h="25" oX="-1" oY="-1" oW="637" oH="198" />
+    <sprite x="152" y="682" w="27" h="10" oX="-1" oY="-1" oW="637" oH="198" />
+    <sprite x="190" y="677" w="15" h="22" oX="-1" oY="-1" oW="637" oH="198" />
+    <sprite x="225" y="685" w="22" h="12" oX="-1" oY="-1" oW="637" oH="198" />
+    <sprite x="261" y="678" w="12" h="21" oX="-1" oY="-1" oW="637" oH="198" />
+  </Animation>
+</Animations>
