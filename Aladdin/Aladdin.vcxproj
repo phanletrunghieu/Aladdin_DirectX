@@ -150,7 +150,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Enemy3Weapon.cpp" />
     <ClCompile Include="GameComponents\Animation.cpp" />
     <ClCompile Include="GameComponents\GameCollision.cpp" />
     <ClCompile Include="GameComponents\Graphics.cpp" />
@@ -245,7 +244,6 @@
     <ClCompile Include="TmxParser\TmxUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Enemy3Weapon.h" />
     <ClInclude Include="GameComponents\Animation.h" />
     <ClInclude Include="GameComponents\GameCollision.h" />
     <ClInclude Include="GameComponents\Graphics.h" />

@@ -4,12 +4,12 @@
 
 Enemy3Weapon::Enemy3Weapon(int damage) : Weapon(Weapon::WeaponType::EnemiesWeapons, damage)
 {
-	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3Weapon(), "Rotate", ResourceManager::GetInstance()->GetTextureItems(), true, 0.5f);
+	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLEnemy3Weapon(), "Rotate", ResourceManager::GetInstance()->GetTextureEnemies1(), true, 0.3f);
 
 	_width = _animation->GetWidth();
 	_height = _animation->GetHeight();
 
-	_velocity.x = 50;//left or right
+	_velocity.x = 35;//left or right
 	_velocity.y = -20;
 
 	_mass = 10;

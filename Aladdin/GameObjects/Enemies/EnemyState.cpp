@@ -37,12 +37,12 @@ void EnemyState::Update(float deltaTime)
 
 		if (_animation->IsSourceRight())
 		{
-			if(_enemy->IsAllowMoveLeft())
+			//if(_enemy->IsAllowMoveLeft())
 				_animation->FlipHorizontal(!_enemy->IsRight());
 		}
 		else
 		{
-			if (_enemy->IsAllowMoveRight())
+			//if (_enemy->IsAllowMoveRight())
 				_animation->FlipHorizontal(_enemy->IsRight());
 		}
 

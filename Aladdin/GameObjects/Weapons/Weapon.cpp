@@ -24,3 +24,8 @@ void Weapon::SetDamage(int value)
 {
 	_damage = value;
 }
+
+Weapon::WeaponType Weapon::GetWeaponType()
+{
+	return _weaponType;
+}

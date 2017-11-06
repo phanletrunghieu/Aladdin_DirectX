@@ -13,7 +13,7 @@ class GameObject
 public:
 	enum GameObjectType
 	{
-		None, Players, Enemies, Apple, Weapons, AppleWeapon, Ground, Rope, HorizontalBar, FloatGround, Springboard, Camels
+		None, Players, Enemies, Apple, Weapons, Ground, Rope, HorizontalBar, FloatGround, Springboard, Camels
 	};
 protected:
 	GameObjectType _tag;
@@ -49,6 +49,7 @@ public:
 
 	D3DXVECTOR2 GetVelocity();
 	virtual void SetVelocity(float x, float y);
+	virtual void SetVelocity(D3DXVECTOR2 velociy);
 	virtual void SetVelocityX(float x);
 	virtual void SetVelocityY(float y);
 

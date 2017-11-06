@@ -83,13 +83,17 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		Enemy *enemy = dynamic_cast<Enemy*>(target);
 		if (enemy->GetState()->GetName() == EnemyState::StateName::Attack && !enemy->GetState()->IsAttackedPlayer())
 		{
-			_health -= enemy->GetDamage();
+			SetHealth(_health - enemy->GetDamage());
 			enemy->GetState()->SetIsAttackedPlayer(true);
+		}
+	}
 
-			if (_health == 0)
-			{
-				SetState(new PlayerDeathState(this));
-			}
+	if (target->GetTag() == GameObject::GameObjectType::Weapons)
+	{
+		Weapon* weapon = dynamic_cast<Weapon*>(target);
+		if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons)
+		{
+			SetHealth(_health - weapon->GetDamage());
 		}
 	}
 
@@ -190,6 +194,11 @@ int Player::GetHealth()
 void Player::SetHealth(int newHealth)
 {
 	_health = newHealth;
+
+	if (_health <= 0)
+	{
+		SetState(new PlayerDeathState(this));
+	}
 }
 
 int Player::GetDamage()

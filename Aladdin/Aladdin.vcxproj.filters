@@ -339,9 +339,6 @@
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.cpp">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClCompile>
-    <ClCompile Include="Enemy3Weapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.cpp">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClCompile>
@@ -619,9 +616,6 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
-    </ClInclude>
-    <ClInclude Include="Enemy3Weapon.h">
-      <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.h">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>

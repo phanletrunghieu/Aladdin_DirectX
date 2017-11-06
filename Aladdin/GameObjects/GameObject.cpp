@@ -82,6 +82,11 @@ void GameObject::SetVelocity(float x, float y)
 	_velocity.y = y;
 }
 
+void GameObject::SetVelocity(D3DXVECTOR2 velociy)
+{
+	_velocity = velociy;
+}
+
 void GameObject::SetVelocityX(float x)
 {
 	_velocity.x = x;

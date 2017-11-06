@@ -16,6 +16,8 @@ public:
 
 	int GetDamage();
 	void SetDamage(int value);
+
+	Weapon::WeaponType GetWeaponType();
 protected:
 	WeaponType _weaponType;
 

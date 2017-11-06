@@ -16,3 +16,26 @@ Enemy4IdleState::Enemy4IdleState(Enemy * enemy) : EnemyState(enemy, EnemyState::
 Enemy4IdleState::~Enemy4IdleState()
 {
 }
+
+void Enemy4IdleState::Update(float deltaTime)
+{
+	EnemyState::Update(deltaTime);
+
+	//create weapon
+	if (_totalDuration >= 3 && _enemy->IsTargetInAttackRange())
+	{
+		_totalDuration = 0;
+
+		Enemy3Weapon* weapon = new Enemy3Weapon();
+		weapon->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
+
+		//set left or right for velocityX
+		weapon->SetVelocity(_enemy->GetTarget()->GetPosition() - _enemy->GetPosition());
+
+		//add gameobject to update&draw list
+		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
+
+		//add appleWeapon to QuadTree
+		QuadTree::InsertDynamicObject(weapon);
+	}
+}

@@ -8,6 +8,8 @@ Enemy3::Enemy3()
 Enemy3::Enemy3(GameObject * player):Enemy(player)
 {
 	_state = new Enemy3IdleState(this);
+
+	_attackRange = 150;
 }
 
 
