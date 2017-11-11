@@ -342,6 +342,15 @@
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.cpp">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2Damage1State.cpp">
+      <Filter>GameObjects\Enemies\Enemy2</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1DamageState.cpp">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2Damage2State.cpp">
+      <Filter>GameObjects\Enemies\Enemy2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -619,6 +628,15 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.h">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2Damage1State.h">
+      <Filter>GameObjects\Enemies\Enemy2</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1DamageState.h">
+      <Filter>GameObjects\Enemies\Enemy1</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2Damage2State.h">
+      <Filter>GameObjects\Enemies\Enemy2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

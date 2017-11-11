@@ -13,7 +13,7 @@ protected:
 	float _speed;
 
 	// use to detect the target being near
-	int _viewRange, _attackRange;
+	int _viewRangeX, _viewRangeY, _attackRangeX, _attackRangeY;
 	D3DXVECTOR2 _distanceToTarget;
 
 	// face look right?

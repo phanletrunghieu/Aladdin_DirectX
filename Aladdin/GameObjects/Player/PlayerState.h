@@ -29,13 +29,17 @@ public:
 		ClimbVerticalFall,
 		ClimbHorizontalIde,
 		ClimbHorizontalMove,
-		Damage
+		Damage,
+		Death
 	};
 protected:
 	StateName _name;
 
 	Player *_player;
 	Animation *_animation;
+
+	//special for attack state (used to make sure that player is attacked once at each attackState)
+	bool _isAttackedEnemy;
 public:
 	PlayerState();
 	PlayerState(Player *player, StateName name = StateName::Idle);
@@ -48,5 +52,9 @@ public:
 	void SetAnimation(Animation* newAnimation);
 
 	StateName GetName();
+
+	//special for attack state (used to make sure that player is attacked once at each attackState)
+	bool IsAttackedEnemy();
+	void SetIsAttackedEnemy(bool value);
 };
 

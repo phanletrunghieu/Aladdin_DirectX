@@ -13,7 +13,18 @@ class GameObject
 public:
 	enum GameObjectType
 	{
-		None, Players, Enemies, Apple, Weapons, Ground, Rope, HorizontalBar, FloatGround, Springboard, Camels
+		None,
+		Players,
+		Enemies,
+		Apple,
+		Weapons,
+		Ground,
+		Rope,
+		HorizontalBar,
+		FloatGround,
+		Coal,//than nong
+		Springboard,
+		Camels
 	};
 protected:
 	GameObjectType _tag;
@@ -24,6 +35,8 @@ protected:
 	int _width, _height;
 
 	bool _isVisible;
+
+	float _deltaTime;
 
 	Input* _input;
 public:
@@ -39,6 +52,7 @@ public:
 	GameObject::GameObjectType GetTag();
 
 	bool IsVisible();
+	void SetIsVisible(bool value);
 
 	D3DXVECTOR2 GetPosition();
 	virtual void SetPosition(float x, float y);

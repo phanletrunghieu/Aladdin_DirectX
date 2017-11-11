@@ -34,7 +34,7 @@
     <sprite x="178" y="451" w="114" h="55" oX="273" oY="507" oW="498" oH="313" />
     <sprite x="300" y="434" w="91" h="72" oX="376" oY="507" oW="498" oH="313" />
   </Animation>
-  <Animation name="Injured1" imagePath="Enemies_trans.png" width="498" height="1053">
+  <Animation name="Damage1" imagePath="Enemies_trans.png" width="498" height="1053">
     <sprite x="6" y="538" w="53" h="47" oX="-1" oY="586" oW="582" oH="422" />
     <sprite x="71" y="515" w="63" h="70" oX="-1" oY="586" oW="582" oH="422" />
     <sprite x="138" y="529" w="65" h="56" oX="-1" oY="586" oW="582" oH="422" />
@@ -42,7 +42,7 @@
     <sprite x="290" y="522" w="74" h="63" oX="-1" oY="586" oW="582" oH="422" />
     <sprite x="382" y="530" w="66" h="55" oX="-1" oY="586" oW="582" oH="422" />
   </Animation>
-  <Animation name="Injured2" imagePath="Enemies_trans.png" width="498" height="1053">
+  <Animation name="Damage2" imagePath="Enemies_trans.png" width="498" height="1053">
     <sprite x="10" y="598" w="41" h="53" oX="-1" oY="652" oW="639" oH="422" />
     <sprite x="59" y="592" w="43" h="59" oX="-1" oY="652" oW="639" oH="422" />
     <sprite x="106" y="593" w="41" h="58" oX="-1" oY="652" oW="639" oH="422" />

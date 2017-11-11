@@ -12,6 +12,9 @@ private:
 	bool _isRight, _isGround, _allowMoveLeft, _allowMoveRight;
 	float _speed, _jumpForce, _jumpRunForce;
 
+	//when colliding with coal, each duration, player's health will decrease
+	float _collidedWithCoalDuration;
+
 	int _health, _damage, _numAppleWeapon;
 public:
 	Player();

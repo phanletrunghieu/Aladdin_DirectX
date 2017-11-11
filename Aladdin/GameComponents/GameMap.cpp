@@ -160,6 +160,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(gameObject);
 			}
 
+			//init ground
+			if (objectGroup->GetName() == "Coal")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Coal);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
 			//init rope
 			if (objectGroup->GetName() == "Rope")
 			{

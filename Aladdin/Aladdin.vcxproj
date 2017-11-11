@@ -167,10 +167,13 @@
     <ClCompile Include="GameObjects\Enemies\Enemy.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1DamageState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1IdleState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1WalkState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2AttackState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2Damage1State.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2Damage2State.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2IdleState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2WalkState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy3\Enemy3.cpp" />
@@ -261,10 +264,13 @@
     <ClInclude Include="GameObjects\Enemies\Enemy.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1DamageState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1IdleState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1WalkState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2AttackState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2Damage1State.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2Damage2State.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2IdleState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2WalkState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy3\Enemy3.h" />

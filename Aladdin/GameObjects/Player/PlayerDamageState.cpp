@@ -26,4 +26,32 @@ void PlayerDamageState::Update(float deltaTime)
 		_player->SetState(new PlayerIdleState(_player));
 		return;
 	}
+
+	//attack
+	if (Input::GetInstance()->IsKeyPressed(DIK_S))
+	{
+		_player->SetState(new PlayerAttackState(_player));
+		return;
+	}
+
+	//jump
+	if (Input::GetInstance()->IsKeyPressed(DIK_D))
+	{
+		_player->SetState(new PlayerJumpState(_player));
+		return;
+	}
+
+	//throw apple
+	if (Input::GetInstance()->IsKeyPressed(DIK_A) && _player->GetNumAppleWeapon() > 0)
+	{
+		_player->SetState(new PlayerThrowState(_player));
+		return;
+	}
+
+	//idle
+	if (Input::GetInstance()->IsKeyPressed(DIK_DOWN))
+	{
+		_player->SetState(new PlayerCrouchIdleState(_player));
+		return;
+	}
 }

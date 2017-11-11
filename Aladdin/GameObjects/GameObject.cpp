@@ -22,6 +22,8 @@ GameObject::~GameObject()
 
 void GameObject::Update(float deltaTime)
 {
+	_deltaTime = deltaTime;
+
 	//delta(v)=a*delta(t)
 	_velocity += _acceleration*deltaTime;
 
@@ -37,6 +39,11 @@ GameObject::GameObjectType GameObject::GetTag()
 bool GameObject::IsVisible()
 {
 	return _isVisible;
+}
+
+void GameObject::SetIsVisible(bool value)
+{
+	_isVisible = value;
 }
 
 D3DXVECTOR2 GameObject::GetPosition()

@@ -12,6 +12,8 @@ Player::Player():GameObject(GameObject::GameObjectType::Players)
 	_isGround = false;
 	_allowMoveLeft = _allowMoveRight = true;
 
+	_collidedWithCoalDuration = 0;
+
 	_health = 100;
 	_damage = 50;
 	_numAppleWeapon = 10;
@@ -26,7 +28,7 @@ Player::~Player()
 
 void Player::Update(float deltaTime)
 {
-	if (_isGround && _velocity.y>0)//change state
+	if (_isGround && _velocity.y>0)
 	{
 		_acceleration.y = 0;
 		_velocity.y = 0;
@@ -97,6 +99,17 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		}
 	}
 
+	if (target->GetTag() == GameObject::GameObjectType::Coal)
+	{
+		//when colliding with coal, each duration, player's health will decrease
+		_collidedWithCoalDuration += _deltaTime;
+		if (_collidedWithCoalDuration >= 3)
+		{
+			_collidedWithCoalDuration = 0;
+			SetHealth(_health - 10);
+		}
+	}
+
 	_state->OnCollision(target, side);
 }
 
@@ -107,6 +120,11 @@ PlayerState * Player::GetState()
 
 void Player::SetState(PlayerState * state, bool fixFootPosition)
 {
+	if (_state->GetName() == PlayerState::StateName::Death)
+	{
+		return;
+	}
+
 	if (fixFootPosition)
 	{
 		//make sure player's foot at the same position when change state. because each state has own height

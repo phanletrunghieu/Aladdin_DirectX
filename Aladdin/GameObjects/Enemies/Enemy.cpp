@@ -1,4 +1,5 @@
 #include "Enemy.h"
+#include "../Player/Player.h"
 
 Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemies)
 {
@@ -15,8 +16,13 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 	_health = 100;
 	_damage = 5;
 	_speed = 10;
-	_viewRange = 300;
-	_attackRange = 80;
+
+	_viewRangeX = 300;
+	_viewRangeY = 80;
+
+	_attackRangeX = 80;
+	_attackRangeY = 80;
+
 	_isRight = false;
 	_allowMoveLeft = _allowMoveRight = true;
 }
@@ -28,8 +34,12 @@ Enemy::~Enemy()
 
 void Enemy::Update(float deltaTime)
 {
-	/*handle move action here*/
+	// calculate distance to target (player)
 	_distanceToTarget = _target->GetPosition() - _position;
+
+	//check isDie
+	if (_health <= 0)
+		_isVisible = false;
 
 	//face to left or right
 	if(_distanceToTarget.x > 0)
@@ -73,19 +83,40 @@ void Enemy::Draw(Camera * camera)
 
 void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
+	if (target->GetTag() == GameObject::GameObjectType::Players)
+	{
+		Player *player = dynamic_cast<Player*>(target);
+		
+		if (player->GetState()->GetName() == PlayerState::StateName::Attack && !player->GetState()->IsAttackedEnemy())
+		{
+			_health -= player->GetDamage();
+			player->GetState()->SetIsAttackedEnemy(true);
+		}
+	}
+
+	if (target->GetTag() == GameObject::GameObjectType::Weapons)
+	{
+		Weapon* weapon = dynamic_cast<Weapon*>(target);
+		if (weapon->GetWeaponType() == Weapon::WeaponType::PlayerWeapons)
+		{
+			_health -= weapon->GetDamage();
+		}
+	}
+	
+	
 	_state->OnCollision(target, side);
 }
 
 bool Enemy::IsTargetInViewRange()
 {
-	if (abs(_distanceToTarget.x) <= _viewRange && abs(_distanceToTarget.y) < _height)
+	if (abs(_distanceToTarget.x) <= _viewRangeX && abs(_distanceToTarget.y) < _viewRangeY)
 		return true;
 	return false;
 }
 
 bool Enemy::IsTargetInAttackRange()
 {
-	if (abs(_distanceToTarget.x) <= _attackRange && abs(_distanceToTarget.y) < _height)
+	if (abs(_distanceToTarget.x) <= _attackRangeX && abs(_distanceToTarget.y) < _attackRangeY)
 		return true;
 	return false;
 }

@@ -22,7 +22,7 @@
     <sprite x="292" y="96" w="76" h="59" oX="368" oY="156" oW="152" oH="407" />
     <sprite x="382" y="96" w="40" h="59" oX="422" oY="156" oW="152" oH="407" />
   </Animation>
-  <Animation name="Injured" imagePath="Enemies_trans.png" width="498" height="1053">
+  <Animation name="Damage" imagePath="Enemies_trans.png" width="498" height="1053">
     <sprite x="8" y="175" w="44" h="57" oX="-1" oY="233" oW="233" oH="469" />
     <sprite x="59" y="185" w="40" h="47" oX="-1" oY="233" oW="233" oH="469" />
     <sprite x="114" y="160" w="38" h="72" oX="-1" oY="233" oW="233" oH="469" />

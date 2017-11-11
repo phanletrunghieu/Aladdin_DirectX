@@ -7,7 +7,7 @@ PlayerDeathState::PlayerDeathState()
 	//don't use
 }
 
-PlayerDeathState::PlayerDeathState(Player * player) : PlayerState(player, PlayerState::StateName::Attack)
+PlayerDeathState::PlayerDeathState(Player * player) : PlayerState(player, PlayerState::StateName::Death)
 {
 	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Death", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f, false));
 }
