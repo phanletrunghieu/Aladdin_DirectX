@@ -25,6 +25,8 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 
 	_isRight = false;
 	_allowMoveLeft = _allowMoveRight = true;
+
+	_collidedWithCoalDuration = 0;
 }
 
 Enemy::~Enemy()
@@ -103,6 +105,16 @@ void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 		}
 	}
 	
+	if (target->GetTag() == GameObject::GameObjectType::Coal)
+	{
+		//when colliding with coal, each duration, player's health will decrease
+		_collidedWithCoalDuration += _deltaTime;
+		if (_collidedWithCoalDuration >= 3)
+		{
+			_collidedWithCoalDuration = 0;
+			SetHealth(_health - 10);
+		}
+	}
 	
 	_state->OnCollision(target, side);
 }

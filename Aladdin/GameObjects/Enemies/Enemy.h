@@ -19,6 +19,9 @@ protected:
 	// face look right?
 	bool _isRight, _allowMoveLeft, _allowMoveRight;
 
+	//when colliding with coal, each duration, player's health will decrease
+	float _collidedWithCoalDuration;
+
 	EnemyState *_state;
 
 	//fix foot posY
