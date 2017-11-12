@@ -45,7 +45,7 @@ public:
 
 	virtual void Draw(Camera *camera) {}
 	virtual void Update(float deltaTime);
-
+	virtual void CheckCollision();
 	virtual void OnCollision(GameObject *target, GameCollision::SideCollisions side) {};
 
 	//Getter, setter

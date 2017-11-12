@@ -73,6 +73,49 @@ void Player::Draw(Camera * camera)
 	*/
 }
 
+void Player::CheckCollision()
+{
+	std::vector<GameObject*> listCanCollide;
+	SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->Retrieve(listCanCollide, this);
+
+	bool playerGround = false;
+	bool allowPlayerMoveLeft = true;
+	bool allowPlayerMoveRight = true;
+
+	for (size_t i = 0; i < listCanCollide.size(); i++)
+	{
+		GameObject *gameObject = listCanCollide.at(i);
+		if (!gameObject->IsVisible())
+			continue;
+
+		//lay va cham cua other voi this
+		GameCollision collisionData = GameCollision::CheckCollision(this->GetBound(), gameObject->GetBound());
+		if (collisionData.IsCollided())
+		{
+			this->OnCollision(gameObject, collisionData.GetSide());
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround)
+			{
+				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom)
+					playerGround = true;
+
+				if (collisionData.GetSide() == GameCollision::SideCollisions::Left)
+					allowPlayerMoveLeft = false;
+				if (collisionData.GetSide() == GameCollision::SideCollisions::Right)
+					allowPlayerMoveRight = false;
+			}
+		}
+	}
+	_isGround = playerGround;
+
+	//because climb state has own move rule
+	if (_state->GetName() != PlayerState::StateName::ClimbVertical && _state->GetName() != PlayerState::StateName::ClimbAttack)
+	{
+		_allowMoveLeft = allowPlayerMoveLeft;
+		_allowMoveRight = allowPlayerMoveRight;
+	}
+}
+
 void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
 	if (target->GetTag() == GameObject::GameObjectType::Apple)

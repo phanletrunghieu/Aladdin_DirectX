@@ -23,6 +23,7 @@ public:
 	void Update(float deltaTime);
 	void Draw(Camera* camera);
 
+	void CheckCollision();
 	void OnCollision(GameObject *target, GameCollision::SideCollisions side);
 
 	PlayerState* GetState();

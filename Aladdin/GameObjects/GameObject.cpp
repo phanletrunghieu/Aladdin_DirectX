@@ -1,4 +1,6 @@
 #include "GameObject.h"
+#include "Camera.h"
+#include "../GameComponents/SceneManager.h"
 
 GameObject::GameObject(GameObjectType tag)
 {
@@ -29,6 +31,28 @@ void GameObject::Update(float deltaTime)
 
 	//s=v*delta(t)
 	_position += _velocity*deltaTime;
+
+	//collision
+	bool isInCamera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera()->IsInCamera(_position, _width, _height);
+	if (isInCamera)
+		this->CheckCollision();
+}
+
+void GameObject::CheckCollision()
+{
+	std::vector<GameObject*> listCanCollide;
+	SceneManager::GetInstance()->GetCurrentScene()->GetQuadTree()->Retrieve(listCanCollide, this);
+	for (size_t i = 0; i < listCanCollide.size(); i++)
+	{
+		GameObject *gameObject = listCanCollide.at(i);
+		if (!gameObject->IsVisible())
+			continue;
+
+		//lay va cham cua other voi this
+		GameCollision collisionData = GameCollision::CheckCollision(this->GetBound(), gameObject->GetBound());
+		if (collisionData.IsCollided())
+			this->OnCollision(gameObject, collisionData.GetSide());
+	}
 }
 
 GameObject::GameObjectType GameObject::GetTag()

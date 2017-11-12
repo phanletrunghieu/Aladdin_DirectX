@@ -42,6 +42,8 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			{
 				_player = new Player();
 				_player->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_quadTree->InsertStaticObject(_player);
 			}
 
 			//init apple
@@ -251,6 +253,18 @@ GameMap::~GameMap()
 
 void GameMap::Update(float deltaTime)
 {
+	//apple
+	for (size_t i = 0; i < _listApples.size(); i++)
+		_listApples[i]->Update(deltaTime);
+
+	//float ground
+	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
+		_listFloatGrounds[i]->Update(deltaTime);
+
+	//springboard
+	for (size_t i = 0; i < _listSpringboards.size(); i++)
+		_listSpringboards[i]->Update(deltaTime);
+
 	//enemies
 	for (size_t i = 0; i < _listEnemies.size(); i++)
 		_listEnemies[i]->Update(deltaTime);

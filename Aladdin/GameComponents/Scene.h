@@ -24,6 +24,8 @@ public:
 	D3DCOLOR GetBackcolor();
 	QuadTree* GetQuadTree();
 
+	Camera* GetCamera();
+
 	void AddGameObjectToWeaponList(GameObject*gameObject);
 
 	virtual void Update(float deltaTime);

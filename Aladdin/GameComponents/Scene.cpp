@@ -20,6 +20,11 @@ QuadTree * Scene::GetQuadTree()
 	return _quadTree;
 }
 
+Camera * Scene::GetCamera()
+{
+	return _camera;
+}
+
 void Scene::AddGameObjectToWeaponList(GameObject * gameObject)
 {
 	_listWeapon.push_back(gameObject);

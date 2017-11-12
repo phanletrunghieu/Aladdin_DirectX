@@ -18,8 +18,6 @@ private:
 	Text *_txtCountApple;
 	Sprite *_spriteCountApple;
 	PlayerHealthMeter *_playerHealthMeter;
-
-	void CheckCollision();
 public:
 	MainScene();
 	~MainScene();
