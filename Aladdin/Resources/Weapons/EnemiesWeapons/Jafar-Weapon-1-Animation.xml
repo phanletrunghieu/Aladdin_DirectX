@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fly" imagePath="Boss_Sprite.png" width="863" height="348">
+    <sprite x="198" y="226" w="27" h="13" oX="-1" oY="-1" oW="48" oH="100" />
+    <sprite x="238" y="224" w="23" h="15" oX="-1" oY="-1" oW="48" oH="100" />
+    <sprite x="270" y="225" w="25" h="14" oX="-1" oY="-1" oW="48" oH="100" />
+  </Animation>
+  <Animation name="explode" imagePath="Boss_Sprite.png" width="863" height="348">
+    <sprite x="310" y="227" w="13" h="12" oX="-1" oY="-1" oW="-134" oH="84" />
+    <sprite x="334" y="226" w="20" h="13" oX="-1" oY="-1" oW="-134" oH="84" />
+    <sprite x="382" y="219" w="14" h="20" oX="-1" oY="-1" oW="-134" oH="84" />
+  </Animation>
+</Animations>

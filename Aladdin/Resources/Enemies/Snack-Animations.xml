@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="snack" imagePath="Boss_Sprite.png" width="863" height="348">
+    <sprite x="8" y="118" w="70" h="57" oX="21" oY="176" oW="174" oH="850" />
+    <sprite x="88" y="112" w="64" h="63" oX="113" oY="176" oW="174" oH="850" />
+    <sprite x="160" y="104" w="67" h="71" oX="198" oY="176" oW="174" oH="850" />
+    <sprite x="240" y="104" w="71" h="71" oX="282" oY="176" oW="174" oH="850" />
+    <sprite x="320" y="92" w="68" h="83" oX="357" oY="176" oW="174" oH="850" />
+    <sprite x="400" y="93" w="68" h="82" oX="437" oY="176" oW="174" oH="850" />
+    <sprite x="480" y="94" w="69" h="81" oX="518" oY="176" oW="174" oH="850" />
+    <sprite x="560" y="94" w="69" h="81" oX="598" oY="176" oW="174" oH="850" />
+    <sprite x="644" y="93" w="63" h="83" oX="680" oY="176" oW="174" oH="850" />
+    <sprite x="716" y="95" w="64" h="81" oX="734" oY="176" oW="174" oH="850" />
+    <sprite x="788" y="116" w="71" h="60" oX="795" oY="176" oW="174" oH="850" />
+  </Animation>
+</Animations>

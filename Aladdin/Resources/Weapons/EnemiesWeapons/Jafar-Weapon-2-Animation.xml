@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fire" imagePath="Boss_Sprite.png" width="863" height="348">
+    <sprite x="8" y="286" w="74" h="49" oX="-1" oY="336" oW="368" oH="717" />
+    <sprite x="96" y="288" w="78" h="47" oX="-1" oY="336" oW="368" oH="717" />
+    <sprite x="184" y="294" w="98" h="41" oX="-1" oY="336" oW="368" oH="717" />
+    <sprite x="296" y="295" w="89" h="40" oX="-1" oY="336" oW="368" oH="717" />
+    <sprite x="400" y="305" w="76" h="30" oX="-1" oY="336" oW="368" oH="717" />
+    <sprite x="488" y="305" w="71" h="30" oX="-1" oY="336" oW="368" oH="717" />
+    <sprite x="568" y="293" w="63" h="42" oX="-1" oY="336" oW="368" oH="717" />
+    <sprite x="645" y="285" w="63" h="50" oX="-1" oY="336" oW="368" oH="717" />
+  </Animation>
+</Animations>

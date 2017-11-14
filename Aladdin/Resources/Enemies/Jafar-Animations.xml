@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Atttack" imagePath="Boss_Sprite.png" width="863" height="348">
+    <sprite x="8" y="9" w="64" h="70" oX="53" oY="80" oW="73" oH="590" />
+    <sprite x="80" y="10" w="57" h="69" oX="124" oY="80" oW="73" oH="590" />
+    <sprite x="144" y="11" w="55" h="68" oX="188" oY="80" oW="73" oH="590" />
+    <sprite x="208" y="12" w="51" h="67" oX="252" oY="80" oW="73" oH="590" />
+    <sprite x="272" y="11" w="64" h="68" oX="315" oY="80" oW="73" oH="590" />
+    <sprite x="344" y="11" w="82" h="68" oX="388" oY="80" oW="73" oH="590" />
+    <sprite x="440" y="11" w="85" h="68" oX="483" oY="80" oW="73" oH="590" />
+    <sprite x="536" y="11" w="68" h="68" oX="579" oY="80" oW="73" oH="590" />
+  </Animation>
+</Animations>
