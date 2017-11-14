@@ -28,6 +28,7 @@ public:
 	};
 protected:
 	GameObjectType _tag;
+	std::vector<GameObjectType> _noCheckCollision;
 	D3DXVECTOR2 _position;
 	D3DXVECTOR2 _velocity;
 	D3DXVECTOR2 _acceleration;

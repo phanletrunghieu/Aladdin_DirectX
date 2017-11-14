@@ -15,6 +15,13 @@ GameObject::GameObject(GameObjectType tag)
 	_isVisible = true;
 
 	_input = Input::GetInstance();
+
+	_noCheckCollision.push_back(GameObjectType::Coal);
+	_noCheckCollision.push_back(GameObjectType::Ground);
+	_noCheckCollision.push_back(GameObjectType::HorizontalBar);
+	_noCheckCollision.push_back(GameObjectType::None);
+	_noCheckCollision.push_back(GameObjectType::Rope);
+	_noCheckCollision.push_back(GameObjectType::Springboard);
 }
 
 
@@ -34,7 +41,16 @@ void GameObject::Update(float deltaTime)
 
 	//collision
 	bool isInCamera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera()->IsInCamera(_position, _width, _height);
-	if (isInCamera)
+	bool isCheckCollision = true;
+	for (size_t i = 0; i < _noCheckCollision.size(); i++)
+	{
+		if (_tag == _noCheckCollision.at(i)) {
+			isCheckCollision = false;
+			break;
+		}
+	}
+
+	if (isInCamera && isCheckCollision)
 		this->CheckCollision();
 }
 

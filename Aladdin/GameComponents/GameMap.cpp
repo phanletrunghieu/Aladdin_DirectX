@@ -43,7 +43,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_player = new Player();
 				_player->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_quadTree->InsertStaticObject(_player);
+				QuadTree::InsertDynamicObject(_player);
 			}
 
 			//init apple
