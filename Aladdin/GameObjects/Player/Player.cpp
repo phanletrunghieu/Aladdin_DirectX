@@ -98,7 +98,10 @@ void Player::CheckCollision()
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom)
 					playerGround = true;
+			}
 
+			if (gameObject->GetTag() == GameObject::GameObjectType::Wall)
+			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Left)
 					allowPlayerMoveLeft = false;
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Right)

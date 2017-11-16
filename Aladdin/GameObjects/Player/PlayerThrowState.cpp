@@ -8,7 +8,7 @@ PlayerThrowState::PlayerThrowState()
 
 PlayerThrowState::PlayerThrowState(Player * player) : PlayerState(player, PlayerState::StateName::Throw)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Throw", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.7f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Throw", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f));
 
 	_isCreatedAppleWeapon = false;
 }

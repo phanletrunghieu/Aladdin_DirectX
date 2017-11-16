@@ -7,7 +7,7 @@ PlayerJumpThrowState::PlayerJumpThrowState()
 
 PlayerJumpThrowState::PlayerJumpThrowState(Player * player) : PlayerState(player, PlayerState::StateName::JumpThrow)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "JumpThrow", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.7f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "JumpThrow", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f));
 
 	_isCreatedAppleWeapon = false;
 }
