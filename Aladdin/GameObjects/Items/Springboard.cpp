@@ -2,7 +2,7 @@
 
 
 
-Springboard::Springboard() : GameObject(GameObject::GameObjectType::Springboard)
+Springboard::Springboard() : GameObject(GameObject::GameObjectType::Springboard, false)
 {
 	RECT springBoardSourceRect;
 	springBoardSourceRect.left = 414;

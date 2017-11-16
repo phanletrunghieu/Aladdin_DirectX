@@ -7,7 +7,7 @@ PlayerRunState::PlayerRunState()
 
 PlayerRunState::PlayerRunState(Player * player) : PlayerState(player, PlayerState::StateName::Run)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Run", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.7f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Run", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f));
 }
 
 

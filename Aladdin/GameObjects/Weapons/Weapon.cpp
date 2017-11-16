@@ -1,6 +1,6 @@
 #include "Weapon.h"
 
-Weapon::Weapon():GameObject(GameObject::GameObjectType::Weapons)
+Weapon::Weapon():GameObject(GameObject::GameObjectType::Weapons, true)
 {
 }
 

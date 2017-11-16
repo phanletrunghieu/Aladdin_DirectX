@@ -25,5 +25,7 @@ public:
 	void InsertStaticObject(GameObject *gameObject);
 	static void InsertDynamicObject(GameObject *gameObject);
 	void Retrieve(std::vector<GameObject*> &gameObjectsOut, GameObject *gameObject);
+	void RemoveStaticObject(GameObject *gameObject);
+	static void RemoveDynamicObject(GameObject *gameObject);
 };
 

@@ -1,6 +1,6 @@
 #include "Apple.h"
 
-Apple::Apple():GameObject(GameObject::GameObjectType::Apple)
+Apple::Apple():GameObject(GameObject::GameObjectType::Apple, false)
 {
 	RECT appleSourceRect;
 	appleSourceRect.left = 341;

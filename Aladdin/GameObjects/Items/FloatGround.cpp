@@ -2,7 +2,7 @@
 
 
 
-FloatGround::FloatGround() : GameObject(GameObject::GameObjectType::FloatGround)
+FloatGround::FloatGround() : GameObject(GameObject::GameObjectType::FloatGround, false)
 {
 	RECT floatGroundSourceRect;
 	floatGroundSourceRect.left = 454;

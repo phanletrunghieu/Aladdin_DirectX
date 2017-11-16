@@ -1,6 +1,6 @@
 #include "Camel.h"
 
-Camel::Camel() : GameObject(GameObject::GameObjectType::Camels)
+Camel::Camel() : GameObject(GameObject::GameObjectType::Camels, false)
 {
 	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLCamel(), "Camel", ResourceManager::GetInstance()->GetTextureCamel(), true, 0.3f, false);
 	_width = _animation->GetWidth();

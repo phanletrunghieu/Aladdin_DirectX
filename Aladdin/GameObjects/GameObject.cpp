@@ -2,9 +2,10 @@
 #include "Camera.h"
 #include "../GameComponents/SceneManager.h"
 
-GameObject::GameObject(GameObjectType tag)
+GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 {
 	_tag = tag;
+	_isMovableObject = isMovableObject;
 
 	_mass = 0;
 
@@ -40,7 +41,9 @@ void GameObject::Update(float deltaTime)
 	_position += _velocity*deltaTime;
 
 	//collision
-	bool isInCamera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera()->IsInCamera(_position, _width, _height);
+	if (_camera == NULL)
+		_camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
+	bool isInCamera = _camera->IsInCamera(_position, _width, _height);
 	bool isCheckCollision = true;
 	for (size_t i = 0; i < _noCheckCollision.size(); i++)
 	{
@@ -61,7 +64,8 @@ void GameObject::CheckCollision()
 	for (size_t i = 0; i < listCanCollide.size(); i++)
 	{
 		GameObject *gameObject = listCanCollide.at(i);
-		if (!gameObject->IsVisible())
+		bool isInCamera = _camera->IsInCamera(gameObject->GetPosition(), gameObject->GetWidth(), gameObject->GetHeight());
+		if (!gameObject->IsVisible() || !isInCamera)
 			continue;
 
 		//lay va cham cua other voi this
@@ -84,6 +88,11 @@ bool GameObject::IsVisible()
 void GameObject::SetIsVisible(bool value)
 {
 	_isVisible = value;
+}
+
+bool GameObject::IsMovableObject()
+{
+	return _isMovableObject;
 }
 
 D3DXVECTOR2 GameObject::GetPosition()

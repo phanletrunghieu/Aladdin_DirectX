@@ -36,7 +36,7 @@ void Scene::Update(float deltaTime)
 	{
 		if (!_listWeapon[i]->IsVisible())
 		{
-			delete _listWeapon[i];
+			QuadTree::RemoveDynamicObject(_listWeapon[i]);
 			_listWeapon.erase(_listWeapon.begin() + i);
 			continue;
 		}

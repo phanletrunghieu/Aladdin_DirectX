@@ -29,7 +29,7 @@ private:
 	bool InitializeWindows(int &screenWidth, int &screenHeight);
 	void ShutdownWindows();
 public:
-	Game(LPCWSTR applicationName = LPCWSTR(), float fps = 60, bool isFullScreen = false);
+	Game(LPCWSTR applicationName = LPCWSTR(), float fps = 30, bool isFullScreen = false);
 	~Game();
 
 	bool Initialize();

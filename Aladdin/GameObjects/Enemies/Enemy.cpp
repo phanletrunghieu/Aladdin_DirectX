@@ -1,7 +1,7 @@
 #include "Enemy.h"
 #include "../Player/Player.h"
 
-Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemies)
+Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemies, true)
 {
 	//not use
 }

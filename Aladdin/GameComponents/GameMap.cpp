@@ -338,7 +338,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listApples[i]->IsVisible())
 		{
-			delete _listApples[i];
+			_quadTree->RemoveStaticObject(_listApples[i]);
 			_listApples.erase(_listApples.begin() + i);
 			i--;
 			continue;
@@ -354,7 +354,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listFloatGrounds[i]->IsVisible())
 		{
-			delete _listFloatGrounds[i];
+			_quadTree->RemoveStaticObject(_listFloatGrounds[i]);
 			_listFloatGrounds.erase(_listFloatGrounds.begin() + i);
 			i--;
 			continue;
@@ -376,7 +376,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listEnemies[i]->IsVisible())
 		{
-			delete _listEnemies[i];
+			QuadTree::RemoveDynamicObject(_listEnemies[i]);
 			_listEnemies.erase(_listEnemies.begin() + i);
 			i--;
 			continue;
@@ -392,7 +392,7 @@ void GameMap::Draw(Camera * camera)
 		//remove not visible object
 		if (!_listCamels[i]->IsVisible())
 		{
-			delete _listCamels[i];
+			_quadTree->RemoveStaticObject(_listCamels[i]);
 			_listCamels.erase(_listCamels.begin() + i);
 			i--;
 			continue;

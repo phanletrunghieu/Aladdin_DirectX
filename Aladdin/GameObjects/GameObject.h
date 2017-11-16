@@ -37,11 +37,15 @@ protected:
 
 	bool _isVisible;
 
+	//use to CheckCollision. No check between NonMovableObject & NonMovableObject
+	bool _isMovableObject;
+
 	float _deltaTime;
 
 	Input* _input;
+	Camera* _camera;
 public:
-	GameObject(GameObjectType tag = None);
+	GameObject(GameObjectType tag = None, bool isMovableObject = true);
 	~GameObject();
 
 	virtual void Draw(Camera *camera) {}
@@ -54,6 +58,8 @@ public:
 
 	bool IsVisible();
 	void SetIsVisible(bool value);
+
+	bool IsMovableObject();
 
 	D3DXVECTOR2 GetPosition();
 	virtual void SetPosition(float x, float y);

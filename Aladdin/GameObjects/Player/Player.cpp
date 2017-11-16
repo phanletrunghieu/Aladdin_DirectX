@@ -1,12 +1,12 @@
 #include "Player.h"
 #include "../Enemies/Enemy.h"
 
-Player::Player():GameObject(GameObject::GameObjectType::Players)
+Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 {
-	_mass = 15;
-	_speed = 25;
-	_jumpForce = 45;
-	_jumpRunForce = 48;
+	_mass = 35;
+	_speed = 45;
+	_jumpForce = 70;
+	_jumpRunForce = 80;
 
 	_isRight = true;
 	_isGround = false;
