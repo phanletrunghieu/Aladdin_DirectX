@@ -5,10 +5,10 @@ Camera* Camera::_instance = NULL;
 Camera::Camera(GameObject* follow)
 {
 	_follow = follow;
-	_width = Graphics::GetInstance()->GetScreenWidth();
-	_height = Graphics::GetInstance()->GetScreenHeight();
+	_width = Graphics::GetInstance()->GetScreenWidth()/2;
+	_height = Graphics::GetInstance()->GetScreenHeight()/2;
 
-	_position = D3DXVECTOR2((_width*1.0) / 2, (_height*1.0) / 2);
+	_position = D3DXVECTOR2((_width*1.0) / 2, Graphics::GetInstance()->GetScreenHeight() - (_height/2.0f));
 	_position.x = _follow->GetPosition().x;
 
 	this->_instance = this;
@@ -30,9 +30,17 @@ void Camera::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (_follow != NULL && (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT)))
+	if (_follow != NULL)
 	{
-		_position.x = _follow->GetPosition().x;
+		if (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT))
+		{
+			_position.x = _follow->GetPosition().x;
+		}
+
+		if (_input->IsKeyPressed(DIK_UP) || _input->IsKeyPressed(DIK_DOWN))
+		{
+			_position.y = _follow->GetPosition().y;
+		}
 	}
 	/*
 	if (Input::GetInstance()->IsKeyPressed(DIK_RIGHT))
@@ -71,11 +79,13 @@ D3DXVECTOR2 Camera::ConvertPosition(D3DXVECTOR2 position)
 
 D3DXVECTOR2 Camera::ConvertPosition(float x, float y)
 {
-	float screenWidth = Graphics::GetInstance()->GetScreenWidth()*1.0;
-	float screenHeight = Graphics::GetInstance()->GetScreenHeight()*1.0;
-
 	D3DXVECTOR2 newPosition;
-	newPosition.x = x - (_position.x - screenWidth / 2);
-	newPosition.y = y - (_position.y - screenHeight / 2);
+	newPosition.x = x - (_position.x - _width / 2);
+	newPosition.y = y - (_position.y - _height / 2);
+
+	//scale
+	newPosition.x *= Graphics::GetInstance()->GetScreenWidth() / _width;
+	newPosition.y *= Graphics::GetInstance()->GetScreenHeight() / _height;
+
 	return newPosition;
 }

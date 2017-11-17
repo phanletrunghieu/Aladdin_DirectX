@@ -142,6 +142,13 @@ void Sprite::Draw(Camera * camera)
 	if (!isInCamera)
 		return;
 
+	//get scale
+	_scale.x = _scale.x / abs(_scale.x);
+	_scale.y = _scale.y / abs(_scale.y);
+
+	_scale.x *= Graphics::GetInstance()->GetScreenWidth() / camera->GetWidth();
+	_scale.y *= Graphics::GetInstance()->GetScreenHeight() / camera->GetHeight();
+
 	// convert position in world to position in camera
 	D3DXVECTOR3 newPosition = camera->ConvertPosition(_position.x, _position.y);
 	newPosition.z = _position.z;
