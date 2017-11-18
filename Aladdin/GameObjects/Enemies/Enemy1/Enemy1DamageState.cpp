@@ -1,6 +1,6 @@
 #include "Enemy1DamageState.h"
 #include "Enemy1.h"
-
+#include "Enemy1IdleState.h"
 
 Enemy1DamageState::Enemy1DamageState()
 {

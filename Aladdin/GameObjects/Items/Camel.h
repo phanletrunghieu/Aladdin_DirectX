@@ -2,7 +2,6 @@
 
 #include "../GameObject.h"
 #include "../../GameComponents/Animation.h"
-#include "../Player/Player.h"
 
 class Camel : public GameObject
 {

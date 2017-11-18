@@ -1,4 +1,6 @@
 #include "Camera.h"
+#include "../GameComponents/Graphics.h"
+#include "../GameComponents/Input.h"
 
 Camera* Camera::_instance = NULL;
 
@@ -35,6 +37,7 @@ void Camera::Update(float deltaTime)
 		if (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT))
 		{
 			_position.x = _follow->GetPosition().x;
+
 		}
 
 		if (_input->IsKeyPressed(DIK_UP) || _input->IsKeyPressed(DIK_DOWN))
@@ -42,19 +45,6 @@ void Camera::Update(float deltaTime)
 			_position.y = _follow->GetPosition().y;
 		}
 	}
-	/*
-	if (Input::GetInstance()->IsKeyPressed(DIK_RIGHT))
-		_position.x += 0.1f;
-
-	if (Input::GetInstance()->IsKeyPressed(DIK_LEFT))
-		_position.x -= 0.1f;
-
-	if (Input::GetInstance()->IsKeyPressed(DIK_UP))
-		_position.y -= 0.1f;
-
-	if (Input::GetInstance()->IsKeyPressed(DIK_DOWN))
-		_position.y += 0.1f;
-	*/
 }
 
 bool Camera::IsInCamera(D3DXVECTOR2 position, int width, int height)

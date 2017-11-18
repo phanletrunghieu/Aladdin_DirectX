@@ -1,4 +1,5 @@
 #include "Enemy3.h"
+#include "Enemy3IdleState.h"
 
 Enemy3::Enemy3()
 {

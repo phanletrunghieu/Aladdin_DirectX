@@ -1,5 +1,7 @@
 #include "Enemy4IdleState.h"
 #include "Enemy4.h"
+#include "../../Weapons/EnemiesWeapons/Enemy3Weapon.h"
+#include "../../../GameComponents/SceneManager.h"
 
 
 Enemy4IdleState::Enemy4IdleState()

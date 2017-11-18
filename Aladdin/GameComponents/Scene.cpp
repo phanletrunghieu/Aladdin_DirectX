@@ -8,6 +8,18 @@ Scene::Scene(D3DCOLOR backgroundColor)
 
 Scene::~Scene()
 {
+	if (_camera)
+	{
+		delete _camera;
+		_camera = NULL;
+	}
+
+	if (_quadTree)
+	{
+		_quadTree->Clear();
+		delete _quadTree;
+		_quadTree = NULL;
+	}
 }
 
 D3DCOLOR Scene::GetBackcolor()

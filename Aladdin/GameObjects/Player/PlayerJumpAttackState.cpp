@@ -1,5 +1,9 @@
 #include "PlayerJumpAttackState.h"
 #include "Player.h"
+#include "PlayerJumpState.h"
+#include "PlayerFallState.h"
+#include "PlayerRunJumpState.h"
+#include "PlayerRunFallState.h"
 
 PlayerJumpAttackState::PlayerJumpAttackState()
 {

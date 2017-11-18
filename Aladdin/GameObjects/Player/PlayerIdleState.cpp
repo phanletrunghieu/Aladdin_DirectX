@@ -1,5 +1,12 @@
 #include "PlayerIdleState.h"
 #include "Player.h"
+#include "PlayerRunState.h"
+#include "PlayerAttackState.h"
+#include "PlayerThrowState.h"
+#include "PlayerJumpState.h"
+#include "PlayerFallState.h"
+#include "PlayerCrouchIdleState.h"
+#include "PlayerDamageState.h"
 
 PlayerIdleState::PlayerIdleState()
 {

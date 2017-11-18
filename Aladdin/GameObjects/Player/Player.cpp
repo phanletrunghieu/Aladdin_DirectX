@@ -1,5 +1,9 @@
 #include "Player.h"
+#include "PlayerFallState.h"
+#include "PlayerDeathState.h"
+#include "../../GameComponents/SceneManager.h"
 #include "../Enemies/Enemy.h"
+#include "../Weapons/Weapon.h"
 
 Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 {

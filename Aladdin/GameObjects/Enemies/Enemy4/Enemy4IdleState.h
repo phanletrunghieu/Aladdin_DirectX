@@ -1,8 +1,6 @@
 #pragma once
 
 #include "../EnemyState.h"
-#include "../../Weapons/EnemiesWeapons/Enemy3Weapon.h"
-#include "../../../GameComponents/SceneManager.h"
 
 class Enemy4IdleState : public EnemyState
 {

@@ -1,5 +1,7 @@
 #include "PlayerStopState.h"
 #include "Player.h"
+#include "PlayerIdleState.h"
+#include "PlayerRunJumpState.h"
 
 
 PlayerStopState::PlayerStopState()

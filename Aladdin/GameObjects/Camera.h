@@ -2,8 +2,6 @@
 
 #include <d3d9.h>
 #include <d3dx9.h>
-#include "../GameComponents/Graphics.h"
-#include "../GameComponents/Input.h"
 #include "../GameObjects/GameObject.h"
 
 class Camera:public GameObject

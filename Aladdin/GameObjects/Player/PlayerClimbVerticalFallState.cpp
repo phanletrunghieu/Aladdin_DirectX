@@ -1,5 +1,8 @@
 #include "PlayerClimbVerticalFallState.h"
 #include "Player.h"
+#include "PlayerClimbHorizontalIdleState.h"
+#include "PlayerClimbVerticalState.h"
+#include "PlayerFallState.h"
 
 PlayerClimbVerticalFallState::PlayerClimbVerticalFallState()
 {

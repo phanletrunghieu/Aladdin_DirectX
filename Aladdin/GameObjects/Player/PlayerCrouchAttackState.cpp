@@ -1,5 +1,6 @@
 #include "PlayerCrouchAttackState.h"
 #include "Player.h"
+#include "PlayerCrouchIdleState.h"
 
 PlayerCrouchAttackState::PlayerCrouchAttackState()
 {

@@ -1,6 +1,8 @@
 #include "Enemy5LookState.h"
 #include "Enemy5.h"
-
+#include "Enemy5IdleState.h"
+#include "Enemy5WalkState.h"
+#include "Enemy5AttackState.h"
 
 Enemy5LookState::Enemy5LookState()
 {

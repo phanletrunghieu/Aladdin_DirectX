@@ -2,8 +2,7 @@
 
 #include "../Camera.h"
 #include "../GameObject.h"
-#include "PlayerFallState.h"
-#include "PlayerDeathState.h"
+#include "PlayerState.h"
 
 class Player:public GameObject
 {

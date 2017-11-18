@@ -1,8 +1,6 @@
 #pragma once
 
 #include "../Enemy.h"
-#include "Enemy1IdleState.h"
-#include "Enemy1DamageState.h"
 
 class Enemy1 : public Enemy
 {

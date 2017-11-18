@@ -1,4 +1,5 @@
 #include "Camel.h"
+#include "../Player/Player.h"
 
 Camel::Camel() : GameObject(GameObject::GameObjectType::Camels, false)
 {

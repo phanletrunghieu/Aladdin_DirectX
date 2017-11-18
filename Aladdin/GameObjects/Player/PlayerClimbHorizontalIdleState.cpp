@@ -1,5 +1,8 @@
 #include "PlayerClimbHorizontalIdleState.h"
 #include "Player.h"
+#include "PlayerClimbHorizontalMoveState.h"
+#include "PlayerClimbAttackState.h"
+#include "PlayerFallState.h"
 
 PlayerClimbHorizontalIdleState::PlayerClimbHorizontalIdleState()
 {

@@ -1,5 +1,8 @@
 #include "PlayerThrowState.h"
 #include "Player.h"
+#include "PlayerIdleState.h"
+#include "../Weapons/PlayerWeapons/AppleWeapon.h"
+#include "../../GameComponents/SceneManager.h"
 
 PlayerThrowState::PlayerThrowState()
 {

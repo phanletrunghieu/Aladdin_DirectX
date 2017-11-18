@@ -1,5 +1,10 @@
 #include "PlayerDamageState.h"
 #include "Player.h"
+#include "PlayerIdleState.h"
+#include "PlayerAttackState.h"
+#include "PlayerJumpState.h"
+#include "PlayerThrowState.h"
+#include "PlayerCrouchIdleState.h"
 
 
 PlayerDamageState::PlayerDamageState()

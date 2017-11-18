@@ -1,11 +1,6 @@
 #pragma once
 
 #include "PlayerState.h"
-#include "PlayerIdleState.h"
-#include "PlayerJumpAttackState.h"
-#include "PlayerJumpThrowState.h"
-#include "PlayerClimbVerticalState.h"
-#include "PlayerSpringState.h"
 
 class PlayerFallState : public PlayerState
 {

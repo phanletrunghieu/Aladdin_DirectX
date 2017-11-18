@@ -1,5 +1,12 @@
 #include "PlayerFallState.h"
 #include "Player.h"
+#include "PlayerIdleState.h"
+#include "PlayerJumpState.h"
+#include "PlayerJumpAttackState.h"
+#include "PlayerJumpThrowState.h"
+#include "PlayerClimbVerticalState.h"
+#include "PlayerClimbHorizontalIdleState.h"
+#include "PlayerSpringState.h"
 
 
 PlayerFallState::PlayerFallState()

@@ -1,5 +1,7 @@
 #include "PlayerSpringState.h"
 #include "Player.h"
+#include "PlayerIdleState.h"
+#include "PlayerFallState.h"
 
 PlayerSpringState::PlayerSpringState()
 {

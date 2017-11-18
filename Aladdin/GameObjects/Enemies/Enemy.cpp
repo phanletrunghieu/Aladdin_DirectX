@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "../Player/Player.h"
+#include "../Weapons/Weapon.h"
 
 Enemy::Enemy() : GameObject(GameObject::GameObjectType::Enemies, true)
 {

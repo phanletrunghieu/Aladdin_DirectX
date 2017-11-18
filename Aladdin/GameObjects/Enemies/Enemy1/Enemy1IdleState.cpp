@@ -1,6 +1,7 @@
 #include "Enemy1IdleState.h"
 #include "Enemy1.h"
-
+#include "Enemy1WalkState.h"
+#include "Enemy1AttackState.h"
 
 Enemy1IdleState::Enemy1IdleState()
 {

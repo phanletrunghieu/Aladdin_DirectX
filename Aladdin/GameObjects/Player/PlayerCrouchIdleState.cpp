@@ -1,5 +1,8 @@
 #include "PlayerCrouchIdleState.h"
 #include "Player.h"
+#include "PlayerCrouchAttackState.h"
+#include "PlayerIdleState.h"
+#include "PlayerJumpState.h"
 
 PlayerCrouchIdleState::PlayerCrouchIdleState()
 {

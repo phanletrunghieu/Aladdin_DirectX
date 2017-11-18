@@ -1,6 +1,8 @@
 #include "Enemy3AttackState.h"
 #include "Enemy3.h"
-
+#include "Enemy3WalkState.h"
+#include "../../Weapons/EnemiesWeapons/Enemy3Weapon.h"
+#include "../../../GameComponents/SceneManager.h"
 
 Enemy3AttackState::Enemy3AttackState()
 {

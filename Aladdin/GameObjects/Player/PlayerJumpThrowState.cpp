@@ -1,5 +1,11 @@
 #include "PlayerJumpThrowState.h"
 #include "Player.h"
+#include "PlayerJumpState.h"
+#include "PlayerFallState.h"
+#include "PlayerRunJumpState.h"
+#include "PlayerRunFallState.h"
+#include "../Weapons/PlayerWeapons/AppleWeapon.h"
+#include "../../GameComponents/SceneManager.h"
 
 PlayerJumpThrowState::PlayerJumpThrowState()
 {
