@@ -35,6 +35,7 @@ public:
 	virtual void Update(float deltaTime);
 	void Draw(Camera* camera);
 
+	void CheckCollision();
 	virtual void OnCollision(GameObject *target, GameCollision::SideCollisions side);
 
 	bool IsTargetInViewRange();

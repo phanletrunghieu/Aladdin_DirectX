@@ -100,11 +100,13 @@ void Player::CheckCollision()
 
 			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround)
 			{
-				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom)
+				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
+					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
+					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
 					playerGround = true;
 			}
 
-			if (gameObject->GetTag() == GameObject::GameObjectType::Wall)
+			if (gameObject->GetTag() == GameObject::GameObjectType::Wall || gameObject->GetTag() == GameObject::GameObjectType::Ground)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Left)
 					allowPlayerMoveLeft = false;
