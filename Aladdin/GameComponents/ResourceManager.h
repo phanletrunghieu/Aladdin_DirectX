@@ -19,6 +19,12 @@ private:
 	tinyxml2::XMLDocument *_animationXMLPlayerHealthMeter;
 	tinyxml2::XMLDocument *_animationXMLCamel;
 
+	tinyxml2::XMLDocument *_animationXMLJafar;
+	tinyxml2::XMLDocument *_animationXMLSnake;
+	tinyxml2::XMLDocument *_animationXMLExplosions;
+	tinyxml2::XMLDocument *_animationXMLJafarWeapon1;
+	tinyxml2::XMLDocument *_animationXMLJafarWeapon2;
+
 	LPDIRECT3DTEXTURE9 _textureAladdin;
 	LPDIRECT3DTEXTURE9 _textureEnemies1;
 	LPDIRECT3DTEXTURE9 _textureEnemies2;
@@ -27,6 +33,13 @@ private:
 
 	//map 1
 	LPDIRECT3DTEXTURE9 _textureAgrabahMarket;
+
+	//man boss:
+	LPDIRECT3DTEXTURE9 _textureBossJafar;
+	LPDIRECT3DTEXTURE9 _textureExplosions;
+
+	//map 2 TEST
+	LPDIRECT3DTEXTURE9 _textureMapBoss;
 public:
 	ResourceManager();
 	~ResourceManager();
@@ -44,11 +57,20 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLPlayerHealthMeter();
 	tinyxml2::XMLDocument* GetAnimationXMLCamel();
 
+	tinyxml2::XMLDocument* GetAnimationXMLJafar();
+	tinyxml2::XMLDocument* GetAnimationXMLSnake();
+	tinyxml2::XMLDocument* GetAnimationXMLExplosions();
+	tinyxml2::XMLDocument* GetAnimationXMLJafarWeapon1();
+	tinyxml2::XMLDocument* GetAnimationXMLJafarWeapon2();
+
 	LPDIRECT3DTEXTURE9 GetTextureAladdin();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies1();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies2();
 	LPDIRECT3DTEXTURE9 GetTextureItems();
 	LPDIRECT3DTEXTURE9 GetTextureCamel();
 	LPDIRECT3DTEXTURE9 GetTextureAgrabahMarket();
+	LPDIRECT3DTEXTURE9 GetTextureExplosions();
+	LPDIRECT3DTEXTURE9 GetTextureBossJafar();
+	LPDIRECT3DTEXTURE9 GetTextureMapBoss();
 };
 

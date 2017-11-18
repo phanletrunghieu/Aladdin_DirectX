@@ -14,6 +14,7 @@
 #include "../GameObjects/Enemies/Enemy4/Enemy4.h"
 #include "../GameObjects/Enemies/Enemy5/Enemy5.h"
 #include "../GameObjects/Items/Camel.h"
+#include "../GameObjects/Enemies/BossJafar/Jafar.h"
 
 class GameMap
 {

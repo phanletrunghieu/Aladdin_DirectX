@@ -63,5 +63,7 @@ public:
 	void SetPosition(float x, float y);
 	void SetPosition(D3DXVECTOR2 position);
 	void SetPosition(D3DXVECTOR3 position);
+
+	D3DXVECTOR2 GetDistanceToTarget();
 };
 

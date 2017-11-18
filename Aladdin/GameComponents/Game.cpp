@@ -1,4 +1,7 @@
 #include "Game.h"
+#include "SceneManager.h"
+#include "../Scenes/MainScene.h"
+#include "../Scenes/JafarScene.h"
 
 Game::Game(LPCWSTR applicationName, float fps, bool isFullScreen)
 {
@@ -68,7 +71,7 @@ bool Game::Initialize()
 	this->_timer = Timer::GetInstance();
 
 	// Show MainScene
-	SceneManager::GetInstance()->ReplaceScene(new MainScene());
+	SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 
 	// init rand
 	srand(time(0));

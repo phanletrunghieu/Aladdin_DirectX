@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Animations>
-  <Animation name="snack" imagePath="Boss_Sprite.png" width="863" height="348">
+  <Animation name="snake" imagePath="Boss_Sprite.png" width="863" height="348">
     <sprite x="8" y="118" w="70" h="57" oX="21" oY="176" oW="174" oH="850" />
     <sprite x="88" y="112" w="64" h="63" oX="113" oY="176" oW="174" oH="850" />
     <sprite x="160" y="104" w="67" h="71" oX="198" oY="176" oW="174" oH="850" />

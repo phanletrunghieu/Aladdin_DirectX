@@ -140,6 +140,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				QuadTree::InsertDynamicObject(enemy);
 			}
 
+			//init BossJafar
+			if (objectGroup->GetName() == "Jafar")
+			{
+				Jafar* jaFar = new Jafar(_player);
+				jaFar->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listEnemies.push_back(jaFar);
+
+				_quadTree->InsertStaticObject(jaFar);
+			}
+
 			//camel
 			if (objectGroup->GetName() == "Camel")
 			{

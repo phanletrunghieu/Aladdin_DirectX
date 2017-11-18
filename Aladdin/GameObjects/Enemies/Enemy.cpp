@@ -286,3 +286,8 @@ void Enemy::SetPosition(D3DXVECTOR3 position)
 	GameObject::SetPosition(position);
 	SetFootPosY();
 }
+
+D3DXVECTOR2 Enemy::GetDistanceToTarget()
+{
+	return _distanceToTarget;
+}

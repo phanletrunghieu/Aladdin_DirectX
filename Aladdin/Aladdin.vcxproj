@@ -164,6 +164,9 @@
     <ClCompile Include="GameComponents\Text.cpp" />
     <ClCompile Include="GameComponents\Timer.cpp" />
     <ClCompile Include="GameObjects\Camera.cpp" />
+    <ClCompile Include="GameObjects\Enemies\BossJafar\Jafar.cpp" />
+    <ClCompile Include="GameObjects\Enemies\BossJafar\JafarAttack.cpp" />
+    <ClCompile Include="GameObjects\Enemies\BossJafar\SnakeAttack.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.cpp" />
@@ -219,9 +222,12 @@
     <ClCompile Include="GameObjects\Player\PlayerStopState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerThrowState.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.cpp" />
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.cpp" />
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\Weapon.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Scenes\JafarScene.cpp" />
     <ClCompile Include="Scenes\MainScene.cpp" />
     <ClCompile Include="TmxParser\base64\base64.cpp" />
     <ClCompile Include="TmxParser\miniz.c" />
@@ -261,6 +267,9 @@
     <ClInclude Include="GameComponents\Text.h" />
     <ClInclude Include="GameComponents\Timer.h" />
     <ClInclude Include="GameObjects\Camera.h" />
+    <ClInclude Include="GameObjects\Enemies\BossJafar\Jafar.h" />
+    <ClInclude Include="GameObjects\Enemies\BossJafar\JafarAttack.h" />
+    <ClInclude Include="GameObjects\Enemies\BossJafar\SnakeAttack.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy1\Enemy1AttackState.h" />
@@ -316,8 +325,11 @@
     <ClInclude Include="GameObjects\Player\PlayerStopState.h" />
     <ClInclude Include="GameObjects\Player\PlayerThrowState.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.h" />
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.h" />
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\Weapon.h" />
+    <ClInclude Include="Scenes\JafarScene.h" />
     <ClInclude Include="Scenes\MainScene.h" />
     <ClInclude Include="TmxParser\base64\base64.h" />
     <ClInclude Include="TmxParser\tinyxml2\tinyxml2.h" />

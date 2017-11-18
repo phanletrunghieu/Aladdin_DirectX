@@ -42,6 +42,27 @@ ResourceManager::ResourceManager()
 	_textureItems = graphics->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureCamel = graphics->LoadTexture(L"Resources/Items/Camel.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureAgrabahMarket = graphics->LoadTexture(L"Resources/Maps/AgrabahMarket/AgrabahMarket.png");
+
+	//man boss:
+	_textureMapBoss = graphics->LoadTexture(L"Resources/Maps/JafarPlace/TestMap.png");
+
+	_animationXMLJafar = new tinyxml2::XMLDocument();
+	_animationXMLJafar->LoadFile("Resources/Enemies/Jafar-Animations.xml");
+
+	_animationXMLSnake = new tinyxml2::XMLDocument();
+	_animationXMLSnake->LoadFile("Resources/Enemies/Snake-Animations.xml");
+
+	_animationXMLExplosions = new tinyxml2::XMLDocument();
+	_animationXMLExplosions->LoadFile("Resources/Enemies/Enemy-Explosions-Animations.xml");
+
+	_animationXMLJafarWeapon1 = new tinyxml2::XMLDocument();
+	_animationXMLJafarWeapon1->LoadFile("Resources/Weapons/EnemiesWeapons/Jafar-Weapon-1-Animation.xml");
+
+	_animationXMLJafarWeapon2 = new tinyxml2::XMLDocument();
+	_animationXMLJafarWeapon2->LoadFile("Resources/Weapons/EnemiesWeapons/Jafar-Weapon-2-Animation.xml");
+
+	_textureBossJafar = graphics->LoadTexture(L"Resources/Enemies/Boss_Sprite.png", D3DCOLOR_XRGB(186, 254, 202));
+	_textureExplosions = graphics->LoadTexture(L"Resources/Enemies/Enemy_Explosions_Sprite.png", D3DCOLOR_XRGB(186, 254, 202));
 }
 
 
@@ -64,6 +85,17 @@ ResourceManager::~ResourceManager()
 	_textureItems->Release();
 	_textureCamel->Release();
 	_textureAgrabahMarket->Release();
+
+	//man boss:
+	delete _animationXMLJafar;
+	delete _animationXMLSnake;
+	delete _animationXMLJafarWeapon1;
+	delete _animationXMLJafarWeapon2;
+	delete _animationXMLExplosions;
+
+	_textureBossJafar->Release();
+	_textureExplosions->Release();
+	_textureMapBoss->Release();
 }
 
 
@@ -124,6 +156,31 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCamel()
 	return _animationXMLCamel;
 }
 
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLJafar()
+{
+	return _animationXMLJafar;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLSnake()
+{
+	return _animationXMLSnake;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLExplosions()
+{
+	return _animationXMLExplosions;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLJafarWeapon1()
+{
+	return _animationXMLJafarWeapon1;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLJafarWeapon2()
+{
+	return _animationXMLJafarWeapon2;
+}
+
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdin()
 {
 	return _textureAladdin;
@@ -152,4 +209,19 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureCamel()
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAgrabahMarket()
 {
 	return _textureAgrabahMarket;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureExplosions()
+{
+	return _textureExplosions;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureBossJafar()
+{
+	return _textureBossJafar;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMapBoss()
+{
+	return _textureMapBoss;
 }

@@ -64,6 +64,9 @@
     <Filter Include="GameObjects\Weapons\EnemiesWeapons">
       <UniqueIdentifier>{5731c3f1-8c6a-4b91-8fa5-59fdb12966e5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Enemies\BossJafar">
+      <UniqueIdentifier>{0d5cd7f7-a8cd-4dbb-8279-b58294137d59}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -351,6 +354,24 @@
     <ClCompile Include="GameObjects\Enemies\Enemy2\Enemy2Damage2State.cpp">
       <Filter>GameObjects\Enemies\Enemy2</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.cpp">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.cpp">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\JafarScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\BossJafar\Jafar.cpp">
+      <Filter>GameObjects\Enemies\BossJafar</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\BossJafar\JafarAttack.cpp">
+      <Filter>GameObjects\Enemies\BossJafar</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\BossJafar\SnakeAttack.cpp">
+      <Filter>GameObjects\Enemies\BossJafar</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -637,6 +658,24 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Enemies\Enemy2\Enemy2Damage2State.h">
       <Filter>GameObjects\Enemies\Enemy2</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.h">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.h">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\JafarScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\BossJafar\Jafar.h">
+      <Filter>GameObjects\Enemies\BossJafar</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\BossJafar\JafarAttack.h">
+      <Filter>GameObjects\Enemies\BossJafar</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\BossJafar\SnakeAttack.h">
+      <Filter>GameObjects\Enemies\BossJafar</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
