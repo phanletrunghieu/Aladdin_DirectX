@@ -3,6 +3,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 #include "QuadTree.h"
+#include "GameMap.h"
 
 class Scene
 {
@@ -11,6 +12,7 @@ protected:
 	QuadTree* _quadTree;
 
 	Camera* _camera;
+	GameMap* _gameMap;
 
 	/*
 	list gameObject phát sinh trong game. Vd: AppleWeapon
@@ -25,6 +27,8 @@ public:
 	QuadTree* GetQuadTree();
 
 	Camera* GetCamera();
+
+	GameMap* GetGameMap();
 
 	void AddGameObjectToWeaponList(GameObject*gameObject);
 

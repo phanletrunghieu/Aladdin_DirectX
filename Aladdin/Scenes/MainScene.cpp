@@ -14,9 +14,6 @@ MainScene::~MainScene()
 	}
 	_backgroundTextures.clear();
 
-	delete _gameMap;
-	_gameMap = NULL;
-
 	delete _txtCountApple;
 	_txtCountApple = NULL;
 }
@@ -62,9 +59,6 @@ void MainScene::Update(float dt)
 {
 	Scene::Update(dt);
 
-	_gameMap->Update(dt);
-	_camera->Update(dt);
-
 	_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
 	_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 	_playerHealthMeter->Update(dt);
@@ -73,12 +67,10 @@ void MainScene::Update(float dt)
 void MainScene::Draw()
 {
 	_backgroundTextures[0]->Draw(_camera);
-	_gameMap->Draw(_camera);
+	Scene::Draw();
 	_backgroundTextures[1]->Draw(_camera);
 
 	_spriteCountApple->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 80, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtCountApple->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, Graphics::GetInstance()->GetScreenHeight() - 50));
 	_playerHealthMeter->Draw(D3DXVECTOR3(_playerHealthMeter->GetWidth() / 2 + 10, _playerHealthMeter->GetHeight() / 2 + 10, 0));
-	
-	Scene::Draw();
 }

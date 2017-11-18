@@ -1,6 +1,7 @@
 #include "Camera.h"
 #include "../GameComponents/Graphics.h"
 #include "../GameComponents/Input.h"
+#include "../GameComponents/SceneManager.h"
 
 Camera* Camera::_instance = NULL;
 
@@ -32,17 +33,30 @@ void Camera::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
+	GameMap *currentMap = SceneManager::GetInstance()->GetCurrentScene()->GetGameMap();
+
 	if (_follow != NULL)
 	{
 		if (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT))
 		{
 			_position.x = _follow->GetPosition().x;
 
+			//stop when at bound of map
+			if (_position.x - _width / 2 < 0)
+				_position.x = _width / 2;
+			if (_position.x + _width / 2 > currentMap->GetWidth())
+				_position.x = currentMap->GetWidth() - _width / 2;
 		}
 
 		if (_input->IsKeyPressed(DIK_UP) || _input->IsKeyPressed(DIK_DOWN))
 		{
 			_position.y = _follow->GetPosition().y;
+
+			//stop when at bound of map
+			if (_position.y - _height / 2 < 0)
+				_position.y = _height / 2;
+			if (_position.y + _height / 2 > currentMap->GetHeight())
+				_position.y = currentMap->GetHeight() - _height / 2;
 		}
 	}
 }

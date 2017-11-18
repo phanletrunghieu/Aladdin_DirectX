@@ -14,6 +14,12 @@ Scene::~Scene()
 		_camera = NULL;
 	}
 
+	if (_gameMap)
+	{
+		delete _gameMap;
+		_gameMap = NULL;
+	}
+
 	if (_quadTree)
 	{
 		_quadTree->Clear();
@@ -37,6 +43,11 @@ Camera * Scene::GetCamera()
 	return _camera;
 }
 
+GameMap * Scene::GetGameMap()
+{
+	return _gameMap;
+}
+
 void Scene::AddGameObjectToWeaponList(GameObject * gameObject)
 {
 	_listWeapon.push_back(gameObject);
@@ -44,6 +55,9 @@ void Scene::AddGameObjectToWeaponList(GameObject * gameObject)
 
 void Scene::Update(float deltaTime)
 {
+	_gameMap->Update(deltaTime);
+	_camera->Update(deltaTime);
+
 	for (size_t i = 0; i < _listWeapon.size(); i++)
 	{
 		if (!_listWeapon[i]->IsVisible())
@@ -58,6 +72,8 @@ void Scene::Update(float deltaTime)
 
 void Scene::Draw()
 {
+	_gameMap->Draw(_camera);
+
 	for (size_t i = 0; i < _listWeapon.size(); i++)
 	{
 		_listWeapon[i]->Draw(_camera);

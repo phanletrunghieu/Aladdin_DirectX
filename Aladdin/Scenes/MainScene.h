@@ -5,7 +5,6 @@
 #include "../GameComponents/Text.h"
 #include "../GameComponents/Scene.h"
 #include "../GameComponents/Input.h"
-#include "../GameComponents/GameMap.h"
 #include "../GameObjects/PlayerHealthMeter.h"
 
 
@@ -13,7 +12,6 @@ class MainScene : public Scene
 {
 private:
 	std::vector<Sprite*> _backgroundTextures;
-	GameMap* _gameMap;
 
 	Text *_txtCountApple;
 	Sprite *_spriteCountApple;
