@@ -145,8 +145,9 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 	if (target->GetTag() == GameObject::GameObjectType::Weapons)
 	{
 		Weapon* weapon = dynamic_cast<Weapon*>(target);
-		if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons)
+		if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons && !weapon->IsAttacked())
 		{
+			weapon->SetIsAttacked(true);
 			SetHealth(_health - weapon->GetDamage());
 		}
 	}

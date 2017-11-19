@@ -26,6 +26,7 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 	_attackRangeY = 80;
 
 	_isRight = false;
+	_canMove = true;
 	_allowMoveLeft = _allowMoveRight = true;
 
 	_collidedWithCoalDuration = 0;
@@ -54,12 +55,12 @@ void Enemy::Update(float deltaTime)
 	//move
 	if(IsTargetInViewRange() && !IsTargetInAttackRange())
 	{
-		if (_distanceToTarget.x > 0 && _allowMoveRight)
+		if (_distanceToTarget.x > 0 && _canMove && _allowMoveRight)
 		{
 			//move right
 			_velocity.x = _speed;
 		}
-		else if(_distanceToTarget.x < 0 && _allowMoveLeft)
+		else if(_distanceToTarget.x < 0 && _canMove && _allowMoveLeft)
 		{
 			//move left
 			_velocity.x = -1 * _speed;
@@ -148,9 +149,10 @@ void Enemy::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 	if (target->GetTag() == GameObject::GameObjectType::Weapons)
 	{
 		Weapon* weapon = dynamic_cast<Weapon*>(target);
-		if (weapon->GetWeaponType() == Weapon::WeaponType::PlayerWeapons)
+		if (weapon->GetWeaponType() == Weapon::WeaponType::PlayerWeapons && !weapon->IsAttacked())
 		{
-			_health -= weapon->GetDamage();
+			weapon->SetIsAttacked(true);
+			SetHealth(_health - weapon->GetDamage());
 		}
 	}
 	

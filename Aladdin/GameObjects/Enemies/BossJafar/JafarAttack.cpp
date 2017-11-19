@@ -1,6 +1,8 @@
 #include "JafarAttack.h"
-#include "SnakeAttack.h"
 #include "Jafar.h"
+#include "SnakeAttack.h"
+#include "../../Weapons/EnemiesWeapons/JafarWeapon.h"
+#include "../../../GameComponents/SceneManager.h"
 
 JafarAttack::JafarAttack()
 {
@@ -36,17 +38,14 @@ void JafarAttack::Update(float deltatime)
 
 		JafarWeapon* weapon = new JafarWeapon();
 
-
-		//weapon->SetPosition(_enemy->GetPosition());
-
 		//set position weapon when player letf of right with Jafar
-		if (_enemy->GetDistanceToTarget().x <0)
+		if (_enemy->GetDistanceToTarget().x < 0)
 		{
 			weapon->SetPosition(_enemy->GetPosition().x - _enemy->GetHeight() / 2, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
 		}
-		else if (_enemy->GetDistanceToTarget().x>0)
+		else
 		{
-			weapon->SetPosition(_enemy->GetPosition().x, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
+			weapon->SetPosition(_enemy->GetPosition().x + _enemy->GetHeight() / 2, _enemy->GetPosition().y - _enemy->GetHeight() / 2);
 		}
 
 		D3DXVECTOR2 weaponVeclocity = _enemy->GetTarget()->GetPosition() - weapon->GetPosition();

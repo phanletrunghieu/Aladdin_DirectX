@@ -5,9 +5,9 @@ AppleWeapon::AppleWeapon(int damage):Weapon(Weapon::WeaponType::PlayerWeapons, d
 	_animationFly = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAppleWeapon(), "Fly", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f);
 	_animationExplode = new Animation(ResourceManager::GetInstance()->GetAnimationXMLAppleWeapon(), "Explode", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f);
 
-	_currentAnimation = _animationFly;
-	_width = _currentAnimation->GetWidth();
-	_height = _currentAnimation->GetHeight();
+	_animation = _animationFly;
+	_width = _animation->GetWidth();
+	_height = _animation->GetHeight();
 
 	_velocity.x = 50;//left or right
 	_velocity.y = -20;
@@ -23,24 +23,12 @@ AppleWeapon::~AppleWeapon()
 	delete _animationExplode;
 }
 
-void AppleWeapon::Draw(Camera * camera)
-{
-	if (_isVisible)
-		_currentAnimation->Draw(camera);
-}
-
 void AppleWeapon::Update(float deltaTime)
 {
-	GameObject::Update(deltaTime);
+	Weapon::Update(deltaTime);
 
-	_currentAnimation->SetPosition(_position);
-	_currentAnimation->Update(deltaTime);
-	SetPosition(_currentAnimation->GetPosition());
-
-	_width = _currentAnimation->GetWidth();
-	_height = _currentAnimation->GetHeight();
-
-	if (_currentAnimation->IsFinish() && _currentAnimation == _animationExplode) {
+	if (_animation->IsFinish() && _animation == _animationExplode)
+	{
 		_isVisible = false;
 	}
 }
@@ -49,9 +37,9 @@ void AppleWeapon::OnCollision(GameObject * target, GameCollision::SideCollisions
 {
 	if (target->GetTag() != GameObjectType::Players)
 	{
-		_currentAnimation = _animationExplode;
-		_width = _currentAnimation->GetWidth();
-		_height = _currentAnimation->GetHeight();
+		_animation = _animationExplode;
+		_width = _animation->GetWidth();
+		_height = _animation->GetHeight();
 
 		_acceleration.y = 0;
 		_velocity.x = _velocity.y = 0;

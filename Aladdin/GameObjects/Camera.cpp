@@ -40,17 +40,16 @@ void Camera::Update(float deltaTime)
 		if (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT))
 		{
 			_position.x = _follow->GetPosition().x;
-
-			//stop when at bound of map
-			if (_position.x - _width / 2 < 0)
-				_position.x = _width / 2;
-			if (_position.x + _width / 2 > currentMap->GetWidth())
-				_position.x = currentMap->GetWidth() - _width / 2;
 		}
 
 		_position.y = _follow->GetPosition().y;
 
 		//stop when at bound of map
+		if (_position.x - _width / 2 < 0)
+			_position.x = _width / 2;
+		if (_position.x + _width / 2 > currentMap->GetWidth())
+			_position.x = currentMap->GetWidth() - _width / 2;
+
 		if (_position.y - _height / 2 < 0)
 			_position.y = _height / 2;
 		if (_position.y + _height / 2 > currentMap->GetHeight())

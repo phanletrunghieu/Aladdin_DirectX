@@ -10,7 +10,4 @@ public:
 	Jafar(GameObject * target);
 
 	void Update(float deltatime);
-	void Draw(Camera* camera);
-
-	void OnCollision(GameObject *target, GameCollision::SideCollisions side);
 };

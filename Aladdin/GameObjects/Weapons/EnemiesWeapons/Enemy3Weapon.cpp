@@ -21,24 +21,6 @@ Enemy3Weapon::~Enemy3Weapon()
 	delete _animation;
 }
 
-void Enemy3Weapon::Draw(Camera * camera)
-{
-	if (_isVisible)
-		_animation->Draw(camera);
-}
-
-void Enemy3Weapon::Update(float deltaTime)
-{
-	GameObject::Update(deltaTime);
-
-	_animation->SetPosition(_position);
-	_animation->Update(deltaTime);
-	SetPosition(_animation->GetPosition());
-
-	_width = _animation->GetWidth();
-	_height = _animation->GetHeight();
-}
-
 void Enemy3Weapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
 	if (target->GetTag() != GameObject::GameObjectType::Enemies)

@@ -111,8 +111,6 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			{
 				Enemy *enemy = new Enemy4(_player);
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
-				enemy->AllowMoveLeft(false);
-				enemy->AllowMoveRight(false);
 
 				_listEnemies.push_back(enemy);
 
@@ -123,8 +121,6 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Enemy *enemy = new Enemy4(_player);
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 				enemy->SetIsRight(true);
-				enemy->AllowMoveLeft(false);
-				enemy->AllowMoveRight(false);
 
 				_listEnemies.push_back(enemy);
 

@@ -17,7 +17,7 @@ protected:
 	D3DXVECTOR2 _distanceToTarget;
 
 	// face look right?
-	bool _isRight, _allowMoveLeft, _allowMoveRight;
+	bool _isRight, _canMove, _allowMoveLeft, _allowMoveRight;
 
 	//when colliding with coal, each duration, player's health will decrease
 	float _collidedWithCoalDuration;

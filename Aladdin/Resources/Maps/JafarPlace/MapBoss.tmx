@@ -15,7 +15,7 @@
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="1" gid="2" x="161" y="239" width="37" height="50"/>
+  <object id="1" gid="2" x="167" y="126" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Wall">
   <object id="14" x="-22" y="8" width="22" height="418"/>
