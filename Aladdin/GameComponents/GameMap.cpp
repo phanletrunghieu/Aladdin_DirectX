@@ -135,6 +135,16 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
+			if (objectGroup->GetName() == "Enemy_6")
+			{
+				Enemy *enemy = new Enemy6(_player);
+				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+				enemy->SetIsRight(true);
+
+				_listEnemies.push_back(enemy);
+
+				_quadTree->InsertStaticObject(enemy);
+			}
 
 			//init BossJafar
 			if (objectGroup->GetName() == "Jafar")

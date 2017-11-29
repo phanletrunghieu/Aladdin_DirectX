@@ -14,8 +14,10 @@ private:
 	tinyxml2::XMLDocument *_animationXMLEnemy3;
 	tinyxml2::XMLDocument *_animationXMLEnemy4;
 	tinyxml2::XMLDocument *_animationXMLEnemy5;
+	tinyxml2::XMLDocument *_animationXMLEnemy6;
 	tinyxml2::XMLDocument *_animationXMLAppleWeapon;
 	tinyxml2::XMLDocument *_animationXMLEnemy3Weapon;
+	tinyxml2::XMLDocument *_animationXMLEnemy6Weapon;
 	tinyxml2::XMLDocument *_animationXMLPlayerHealthMeter;
 	tinyxml2::XMLDocument *_animationXMLCamel;
 
@@ -52,8 +54,10 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy3();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy4();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy5();
+	tinyxml2::XMLDocument* GetAnimationXMLEnemy6();
 	tinyxml2::XMLDocument* GetAnimationXMLAppleWeapon();
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy3Weapon();
+	tinyxml2::XMLDocument* GetAnimationXMLEnemy6Weapon();
 	tinyxml2::XMLDocument* GetAnimationXMLPlayerHealthMeter();
 	tinyxml2::XMLDocument* GetAnimationXMLCamel();
 

@@ -150,6 +150,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CamelWeapon.cpp" />
     <ClCompile Include="GameComponents\Animation.cpp" />
     <ClCompile Include="GameComponents\GameCollision.cpp" />
     <ClCompile Include="GameComponents\Graphics.cpp" />
@@ -190,6 +191,8 @@
     <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5IdleState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5LookState.cpp" />
     <ClCompile Include="GameObjects\Enemies\Enemy5\Enemy5WalkState.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy6\Enemy6.cpp" />
+    <ClCompile Include="GameObjects\Enemies\Enemy6\Enemy6ThrowState.cpp" />
     <ClCompile Include="GameObjects\Enemies\EnemyState.cpp" />
     <ClCompile Include="GameObjects\GameObject.cpp" />
     <ClCompile Include="GameObjects\Items\Apple.cpp" />
@@ -222,6 +225,7 @@
     <ClCompile Include="GameObjects\Player\PlayerStopState.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerThrowState.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.cpp" />
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.cpp" />
@@ -253,6 +257,7 @@
     <ClCompile Include="TmxParser\TmxUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CamelWeapon.h" />
     <ClInclude Include="GameComponents\Animation.h" />
     <ClInclude Include="GameComponents\GameCollision.h" />
     <ClInclude Include="GameComponents\Graphics.h" />
@@ -293,6 +298,8 @@
     <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5IdleState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5LookState.h" />
     <ClInclude Include="GameObjects\Enemies\Enemy5\Enemy5WalkState.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy6\Enemy6.h" />
+    <ClInclude Include="GameObjects\Enemies\Enemy6\Enemy6ThrowState.h" />
     <ClInclude Include="GameObjects\Enemies\EnemyState.h" />
     <ClInclude Include="GameObjects\GameObject.h" />
     <ClInclude Include="GameObjects\Items\Apple.h" />
@@ -325,6 +332,7 @@
     <ClInclude Include="GameObjects\Player\PlayerStopState.h" />
     <ClInclude Include="GameObjects\Player\PlayerThrowState.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy3Weapon.h" />
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h" />

@@ -67,6 +67,9 @@
     <Filter Include="GameObjects\Enemies\BossJafar">
       <UniqueIdentifier>{0d5cd7f7-a8cd-4dbb-8279-b58294137d59}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Enemies\Enemy6">
+      <UniqueIdentifier>{cd238f91-7623-45e3-9e98-5d48a6371bca}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -372,6 +375,18 @@
     <ClCompile Include="GameObjects\Enemies\BossJafar\SnakeAttack.cpp">
       <Filter>GameObjects\Enemies\BossJafar</Filter>
     </ClCompile>
+    <ClCompile Include="CamelWeapon.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy6\Enemy6.cpp">
+      <Filter>GameObjects\Enemies\Enemy6</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Enemies\Enemy6\Enemy6ThrowState.cpp">
+      <Filter>GameObjects\Enemies\Enemy6</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.cpp">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -676,6 +691,18 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Enemies\BossJafar\SnakeAttack.h">
       <Filter>GameObjects\Enemies\BossJafar</Filter>
+    </ClInclude>
+    <ClInclude Include="CamelWeapon.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy6\Enemy6.h">
+      <Filter>GameObjects\Enemies\Enemy6</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Enemies\Enemy6\Enemy6ThrowState.h">
+      <Filter>GameObjects\Enemies\Enemy6</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.h">
+      <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

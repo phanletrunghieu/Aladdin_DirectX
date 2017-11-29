@@ -35,15 +35,17 @@ void EnemyState::Update(float deltaTime)
 	{
 		_animation->SetPosition(_enemy->GetPosition());
 
-		if (_animation->IsSourceRight())
+		//can move => flip
+		if (_enemy->IsCanMove())
 		{
-			//if(_enemy->IsAllowMoveLeft())
+			if (_animation->IsSourceRight())
+			{
 				_animation->FlipHorizontal(!_enemy->IsRight());
-		}
-		else
-		{
-			//if (_enemy->IsAllowMoveRight())
+			}
+			else
+			{
 				_animation->FlipHorizontal(_enemy->IsRight());
+			}
 		}
 
 		_animation->Update(deltaTime);//after animation update, animation's position maybe change

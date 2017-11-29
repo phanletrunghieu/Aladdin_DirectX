@@ -68,6 +68,27 @@ Animation::~Animation()
 
 }
 
+void Animation::ChangeCurrentIndex()
+{
+	//change index
+	if (!_isReverse)
+	{
+		_currentIndex = (_currentIndex + 1) % _listRectSprites.size();
+	}
+	else
+	{
+		_currentIndex--;
+		if (_currentIndex < 0)
+			_currentIndex = _listRectSprites.size() - 1;
+	}
+}
+
+void Animation::CheckIsBeginOrFinish()
+{
+	_isFinish = _currentIndex == _listRectSprites.size() - 1;
+	_isBegin = _currentIndex == 0;
+}
+
 void Animation::Update(float dt)
 {
 	if (_listRectSprites.size() <= 1 || _paused)
@@ -77,34 +98,12 @@ void Animation::Update(float dt)
 	{
 		_currentTotalTime = 0;
 
-		//change index
-		if (!_isReverse)
-		{
-			_currentIndex = (_currentIndex + 1) % _listRectSprites.size();
-		}
-		else
-		{
-			_currentIndex--;
-			if (_currentIndex < 0)
-				_currentIndex = _listRectSprites.size() - 1;
-		}
+		ChangeCurrentIndex();
 
-		//check begin, finish
-		if (_currentIndex == 0)
-			_isBegin = true;
-		else
-			_isBegin = false;
+		CheckIsBeginOrFinish();
 
-		if (_currentIndex == _listRectSprites.size() - 1)//the last frame
-		{
-			_isFinish = true;
-			if (!_loop)
-				_paused = true;
-		}
-		else
-		{
-			_isFinish = false;
-		}
+		if(_isFinish && !_loop)
+			_paused = true;
 
 		//set width, height
 		_width = _listRectSprites[_currentIndex].right - _listRectSprites[_currentIndex].left;
@@ -169,9 +168,7 @@ void Animation::SetCurrentIndex(int index)
 	if (_currentIndex < 0)
 		_currentIndex = 0;
 
-	//check finish, begin
-	_isFinish = _currentIndex == _listRectSprites.size() - 1;
-	_isBegin = _currentIndex == 0;
+	CheckIsBeginOrFinish();
 }
 
 bool Animation::IsBegin()
@@ -212,4 +209,6 @@ void Animation::Pause()
 void Animation::Play()
 {
 	_paused = false;
+	ChangeCurrentIndex();
+	CheckIsBeginOrFinish();
 }

@@ -251,6 +251,11 @@ void Enemy::SetIsRight(bool right)
 		_state->GetAnimation()->FlipHorizontal(_isRight);
 }
 
+bool Enemy::IsCanMove()
+{
+	return _canMove;
+}
+
 bool Enemy::IsAllowMoveLeft()
 {
 	return _allowMoveLeft;

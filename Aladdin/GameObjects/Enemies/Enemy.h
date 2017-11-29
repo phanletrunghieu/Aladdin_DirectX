@@ -55,6 +55,8 @@ public:
 	bool IsRight();
 	void SetIsRight(bool right);
 
+	bool IsCanMove();
+
 	bool IsAllowMoveLeft();
 	bool IsAllowMoveRight();
 	void AllowMoveLeft(bool allow);

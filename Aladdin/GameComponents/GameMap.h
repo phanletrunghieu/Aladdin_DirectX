@@ -13,6 +13,7 @@
 #include "../GameObjects/Enemies/Enemy3/Enemy3.h"
 #include "../GameObjects/Enemies/Enemy4/Enemy4.h"
 #include "../GameObjects/Enemies/Enemy5/Enemy5.h"
+#include "../GameObjects/Enemies/Enemy6/Enemy6.h"
 #include "../GameObjects/Items/Camel.h"
 #include "../GameObjects/Enemies/BossJafar/Jafar.h"
 

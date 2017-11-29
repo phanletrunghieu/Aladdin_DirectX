@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fall" imagePath="Enemies_Sprite_2_trans.png" width="1065" height="588">
+    <sprite x="15" y="97" w="27" h="20" oX="15" oY="97" oW="109" oH="219" />
+    <sprite x="56" y="95" w="23" h="23" oX="56" oY="95" oW="109" oH="219" />
+    <sprite x="90" y="95" w="25" h="21" oX="90" oY="95" oW="109" oH="219" />
+    <sprite x="127" y="98" w="26" h="15" oX="127" oY="98" oW="109" oH="219" />
+    <sprite x="164" y="92" w="23" h="23" oX="164" oY="92" oW="109" oH="219" />
+    <sprite x="204" y="94" w="20" h="24" oX="204" oY="94" oW="109" oH="219" />
+  </Animation>
+  <Animation name="explode" imagePath="Enemies_Sprite_2_trans.png" width="1065" height="588">
+    <sprite x="235" y="100" w="36" h="14" oX="235" oY="100" oW="-782" oH="723" />
+    <sprite x="292" y="94" w="67" h="21" oX="292" oY="94" oW="-782" oH="723" />
+    <sprite x="376" y="94" w="75" h="25" oX="376" oY="94" oW="-782" oH="723" />
+    <sprite x="472" y="88" w="85" h="33" oX="472" oY="88" oW="-782" oH="723" />
+    <sprite x="578" y="85" w="95" h="32" oX="578" oY="85" oW="-782" oH="723" />
+    <sprite x="695" y="83" w="95" h="35" oX="695" oY="83" oW="-782" oH="723" />
+    <sprite x="814" y="84" w="101" h="35" oX="814" oY="84" oW="-782" oH="723" />
+    <sprite x="954" y="81" w="101" h="29" oX="954" oY="81" oW="-782" oH="723" />
+  </Animation>
+</Animations>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="240">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="252">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -33,13 +33,16 @@
  <tileset firstgid="16" name="Camel" tilewidth="63" tileheight="44" tilecount="1" columns="1">
   <image source="demo_tmx/Camel.png" width="63" height="44"/>
  </tileset>
+ <tileset firstgid="17" name="Enemy-6" tilewidth="11" tileheight="22" tilecount="1" columns="1">
+  <image source="demo_tmx/Enemy-6.png" width="11" height="22"/>
+ </tileset>
  <layer name="Tile Layer 1" width="1" height="1">
   <data encoding="base64" compression="zlib">
    eJxjZGBgAAAACAAC
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="246.85" y="568.788" width="37" height="50"/>
+  <object id="207" gid="12" x="1662.85" y="560.788" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Apple">
   <object id="1" gid="3" x="477.333" y="553" width="11" height="12"/>
@@ -192,6 +195,20 @@
  </objectgroup>
  <objectgroup name="Enemy_5">
   <object id="213" gid="15" x="2840.67" y="422.667" width="36" height="39"/>
+ </objectgroup>
+ <objectgroup name="Enemy_6">
+  <object id="240" gid="17" x="1782.27" y="493.97" width="11" height="22"/>
+  <object id="241" gid="17" x="1829.97" y="528.879" width="11" height="22"/>
+  <object id="242" gid="17" x="1942.39" y="351.485" width="11" height="22"/>
+  <object id="243" gid="17" x="1830.88" y="350.818" width="11" height="22"/>
+  <object id="244" gid="17" x="1735.21" y="174.417" width="11" height="22"/>
+  <object id="245" gid="17" x="1942.33" y="174.667" width="11" height="22"/>
+  <object id="246" gid="17" x="2101" y="176.333" width="11" height="22"/>
+  <object id="247" gid="17" x="2502.45" y="366.545" width="11" height="22"/>
+  <object id="248" gid="17" x="3765.67" y="559.333" width="11" height="22"/>
+  <object id="249" gid="17" x="3942" y="558.333" width="11" height="22"/>
+  <object id="250" gid="17" x="4005.67" y="527" width="11" height="22"/>
+  <object id="251" gid="17" x="3303" y="382" width="11" height="22"/>
  </objectgroup>
  <objectgroup name="Camel">
   <object id="218" gid="16" x="1538" y="664.152" width="63" height="44"/>
