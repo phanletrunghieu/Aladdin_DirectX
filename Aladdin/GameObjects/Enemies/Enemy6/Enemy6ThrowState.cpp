@@ -38,7 +38,7 @@ void Enemy6ThrowState::Update(float deltaTime)
 	}
 
 	//create weapon
-	if (_enemy->IsTargetInAttackRange() && !_isCreatedWeapon && _animation->GetCurrentIndex() == 6)
+	if (!_isCreatedWeapon && _animation->GetCurrentIndex() == 6)
 	{
 		_isCreatedWeapon = true;
 

@@ -40,6 +40,7 @@ protected:
 
 	//use to CheckCollision. No check between NonMovableObject & NonMovableObject
 	bool _isMovableObject;
+	D3DXVECTOR2 _prevPosition;//to make sure fit position
 
 	float _deltaTime;
 

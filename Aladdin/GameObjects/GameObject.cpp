@@ -10,6 +10,7 @@ GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 	_mass = 0;
 
 	_position = D3DXVECTOR2(0, 0);
+	_prevPosition = D3DXVECTOR2(-1, -1);
 	_velocity = D3DXVECTOR2(0, 0);
 	_acceleration = D3DXVECTOR2(0, _mass);
 
@@ -55,6 +56,14 @@ void GameObject::Update(float deltaTime)
 
 	if (isInCamera && isCheckCollision)
 		this->CheckCollision();
+
+	//fixed position
+	if (_prevPosition.x == -1 && _prevPosition.x == -1) {//not yet init
+		_prevPosition = _position;
+	}
+	if (!_isMovableObject) {
+		_position = _prevPosition;
+	}
 }
 
 void GameObject::CheckCollision()
