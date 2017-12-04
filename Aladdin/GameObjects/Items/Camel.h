@@ -7,6 +7,7 @@ class Camel : public GameObject
 {
 private:
 	Animation *_animation;
+	bool _isCreatedWeapon;
 public:
 	Camel();
 	~Camel();

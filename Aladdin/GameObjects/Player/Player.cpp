@@ -18,7 +18,7 @@ Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 
 	_collidedWithCoalDuration = 0;
 
-	_health = 100;
+	_health = 1000;
 	_damage = 50;
 	_numAppleWeapon = 10;
 
@@ -135,7 +135,9 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 	if (target->GetTag() == GameObject::GameObjectType::Enemies)
 	{
 		Enemy *enemy = dynamic_cast<Enemy*>(target);
-		if (enemy->GetState()->GetName() == EnemyState::StateName::Attack && !enemy->GetState()->IsAttackedPlayer())
+		if (enemy->GetState()->GetName() == EnemyState::StateName::Attack
+			&& !enemy->GetState()->GetAnimation()->IsBegin()
+			&& !enemy->GetState()->IsAttackedPlayer())
 		{
 			SetHealth(_health - enemy->GetDamage());
 			enemy->GetState()->SetIsAttackedPlayer(true);

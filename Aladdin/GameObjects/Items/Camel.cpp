@@ -1,11 +1,15 @@
 #include "Camel.h"
 #include "../Player/Player.h"
+#include "../Weapons/PlayerWeapons/CamelWeapon.h"
+#include "../../GameComponents/SceneManager.h"
 
 Camel::Camel() : GameObject(GameObject::GameObjectType::Camels, false)
 {
 	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLCamel(), "Camel", ResourceManager::GetInstance()->GetTextureCamel(), true, 0.3f, false);
 	_width = _animation->GetWidth();
 	_height = _animation->GetHeight();
+
+	_isCreatedWeapon = false;
 }
 
 
@@ -34,8 +38,25 @@ void Camel::Update(float deltaTime)
 	_width = _animation->GetWidth();
 	_height = _animation->GetHeight();
 
+	if (!_isCreatedWeapon && _animation->GetCurrentIndex() == 5)
+	{
+		_isCreatedWeapon = true;
+		CamelWeapon* weapon = new CamelWeapon();
+
+		weapon->SetPosition(_position);
+
+		//add gameobject to update&draw list
+		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
+
+		//add appleWeapon to QuadTree
+		QuadTree::InsertDynamicObject(weapon);
+	}
+
+	//reset _isCreatedWeapon
+
 	if (_animation->IsFinish())
 	{
+		_isCreatedWeapon = false;
 		_animation->Pause();
 	}
 }

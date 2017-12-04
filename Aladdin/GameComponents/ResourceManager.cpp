@@ -30,6 +30,9 @@ ResourceManager::ResourceManager()
 	_animationXMLAppleWeapon = new tinyxml2::XMLDocument();
 	_animationXMLAppleWeapon->LoadFile("Resources/Weapons/PlayerWeapons/AppleWeapon-Animation.xml");
 
+	_animationXMLCamelWeapon = new tinyxml2::XMLDocument();
+	_animationXMLCamelWeapon->LoadFile("Resources/Weapons/PlayerWeapons/CamelWeapon-Animation.xml");
+
 	_animationXMLEnemy3Weapon = new tinyxml2::XMLDocument();
 	_animationXMLEnemy3Weapon->LoadFile("Resources/Weapons/EnemiesWeapons/Enemy-3-Weapon-Animations.xml");
 
@@ -82,6 +85,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLEnemy5;
 	delete _animationXMLEnemy6;
 	delete _animationXMLAppleWeapon;
+	delete _animationXMLCamelWeapon;
 	delete _animationXMLEnemy3Weapon;
 	delete _animationXMLEnemy6Weapon;
 	delete _animationXMLPlayerHealthMeter;
@@ -152,6 +156,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy6()
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLAppleWeapon()
 {
 	return _animationXMLAppleWeapon;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCamelWeapon()
+{
+	return _animationXMLCamelWeapon;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLEnemy3Weapon()

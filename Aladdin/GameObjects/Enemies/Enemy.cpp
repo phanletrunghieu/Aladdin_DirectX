@@ -73,7 +73,9 @@ void Enemy::Update(float deltaTime)
 	}
 
 	GameObject::Update(deltaTime);
-	_state->Update(deltaTime);
+
+	if (_isInCamera)
+		_state->Update(deltaTime);
 
 	//fix foot posY
 	_position.y = _footPosY - _height / 2;

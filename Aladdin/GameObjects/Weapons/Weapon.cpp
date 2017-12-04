@@ -26,6 +26,9 @@ void Weapon::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
+	if (!_isInCamera)
+		return;
+
 	if (_animation)
 	{
 		_animation->SetPosition(_position);

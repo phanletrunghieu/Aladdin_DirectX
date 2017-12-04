@@ -150,7 +150,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CamelWeapon.cpp" />
     <ClCompile Include="GameComponents\Animation.cpp" />
     <ClCompile Include="GameComponents\GameCollision.cpp" />
     <ClCompile Include="GameComponents\Graphics.cpp" />
@@ -229,6 +228,7 @@
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.cpp" />
+    <ClCompile Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\Weapon.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Scenes\JafarScene.cpp" />
@@ -257,7 +257,6 @@
     <ClCompile Include="TmxParser\TmxUtil.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CamelWeapon.h" />
     <ClInclude Include="GameComponents\Animation.h" />
     <ClInclude Include="GameComponents\GameCollision.h" />
     <ClInclude Include="GameComponents\Graphics.h" />
@@ -336,6 +335,7 @@
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\JafarWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\SnakeWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h" />
+    <ClInclude Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\Weapon.h" />
     <ClInclude Include="Scenes\JafarScene.h" />
     <ClInclude Include="Scenes\MainScene.h" />

@@ -33,6 +33,13 @@ GameObject::~GameObject()
 
 void GameObject::Update(float deltaTime)
 {
+	if (_camera == NULL)
+		_camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
+	_isInCamera = _camera->IsInCamera(_position, _width, _height);
+
+	if (!_isInCamera)
+		return;
+
 	_deltaTime = deltaTime;
 
 	//delta(v)=a*delta(t)
@@ -42,9 +49,6 @@ void GameObject::Update(float deltaTime)
 	_position += _velocity*deltaTime;
 
 	//collision
-	if (_camera == NULL)
-		_camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
-	bool isInCamera = _camera->IsInCamera(_position, _width, _height);
 	bool isCheckCollision = true;
 	for (size_t i = 0; i < _noCheckCollision.size(); i++)
 	{
@@ -54,7 +58,7 @@ void GameObject::Update(float deltaTime)
 		}
 	}
 
-	if (isInCamera && isCheckCollision)
+	if (_isInCamera && isCheckCollision)
 		this->CheckCollision();
 
 	//fixed position

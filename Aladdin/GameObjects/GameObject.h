@@ -37,6 +37,7 @@ protected:
 	int _width, _height;
 
 	bool _isVisible;
+	bool _isInCamera;
 
 	//use to CheckCollision. No check between NonMovableObject & NonMovableObject
 	bool _isMovableObject;

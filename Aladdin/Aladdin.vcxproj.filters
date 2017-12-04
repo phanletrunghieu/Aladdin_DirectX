@@ -375,9 +375,6 @@
     <ClCompile Include="GameObjects\Enemies\BossJafar\SnakeAttack.cpp">
       <Filter>GameObjects\Enemies\BossJafar</Filter>
     </ClCompile>
-    <ClCompile Include="CamelWeapon.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GameObjects\Enemies\Enemy6\Enemy6.cpp">
       <Filter>GameObjects\Enemies\Enemy6</Filter>
     </ClCompile>
@@ -386,6 +383,9 @@
     </ClCompile>
     <ClCompile Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.cpp">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.cpp">
+      <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -692,9 +692,6 @@
     <ClInclude Include="GameObjects\Enemies\BossJafar\SnakeAttack.h">
       <Filter>GameObjects\Enemies\BossJafar</Filter>
     </ClInclude>
-    <ClInclude Include="CamelWeapon.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GameObjects\Enemies\Enemy6\Enemy6.h">
       <Filter>GameObjects\Enemies\Enemy6</Filter>
     </ClInclude>
@@ -703,6 +700,9 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Weapons\EnemiesWeapons\Enemy6Weapon.h">
       <Filter>GameObjects\Weapons\EnemiesWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.h">
+      <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

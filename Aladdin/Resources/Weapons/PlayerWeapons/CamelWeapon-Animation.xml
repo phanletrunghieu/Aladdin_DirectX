@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fly" imagePath="Camel_trans.png" width="882" height="99">
+    <sprite x="865" y="42" w="11" h="8" oX="-1" oY="-1" oW="-814" oH="11" />
+  </Animation>
+</Animations>

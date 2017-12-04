@@ -6,7 +6,7 @@
 class JafarWeapon : public Weapon
 {
 private:
-	Animation *_animationFly, *_animationExploide,*_currentAnimation;
+	Animation *_animationFly, *_animationExploide;
 public:
 	JafarWeapon(int damage = 10);
 	~JafarWeapon();
