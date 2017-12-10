@@ -2,6 +2,7 @@
 #include "../Player/Player.h"
 #include "../Weapons/PlayerWeapons/CamelWeapon.h"
 #include "../../GameComponents/SceneManager.h"
+#include "../../GameComponents/Sound.h"
 
 Camel::Camel() : GameObject(GameObject::GameObjectType::Camels, false)
 {
@@ -43,8 +44,9 @@ void Camel::Update(float deltaTime)
 		_isCreatedWeapon = true;
 		CamelWeapon* weapon = new CamelWeapon();
 
-		weapon->SetPosition(_position);
+		//weapo/n->SetPosition(_position);
 
+		weapon->SetPosition(_position.x + _animation->GetHeight(), _position.y);
 		//add gameobject to update&draw list
 		SceneManager::GetInstance()->GetCurrentScene()->AddGameObjectToWeaponList(weapon);
 
@@ -73,6 +75,7 @@ void Camel::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 		{
 			_animation->SetCurrentIndex(0);
 			_animation->Play();
+			Sound::GetInstance()->Play("Camel_Spit", false, 1);
 		}
 	}
 }

@@ -21,12 +21,13 @@ protected:
 	std::vector<GameObject*> _listWeapon;
 public:
 	Scene(D3DCOLOR backgroundColor = 0x000000);
-	~Scene();
+	virtual ~Scene();
 
 	D3DCOLOR GetBackcolor();
 	QuadTree* GetQuadTree();
 
 	Camera* GetCamera();
+	void SetCamera(Camera* camera);
 
 	GameMap* GetGameMap();
 

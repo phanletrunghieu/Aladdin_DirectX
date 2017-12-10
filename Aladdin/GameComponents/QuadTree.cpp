@@ -12,7 +12,7 @@ QuadTree::QuadTree(RECT bound, int level)
 
 QuadTree::~QuadTree()
 {
-	this->Clear();
+	//this->Clear();
 }
 
 bool QuadTree::IsContain(GameObject * gameObject)

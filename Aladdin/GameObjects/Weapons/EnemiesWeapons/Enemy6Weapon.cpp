@@ -1,5 +1,5 @@
 #include "Enemy6Weapon.h"
-
+#include "../../../GameComponents/Sound.h"
 
 
 Enemy6Weapon::Enemy6Weapon(int damage) : Weapon(Weapon::WeaponType::EnemiesWeapons, damage)
@@ -32,7 +32,9 @@ void Enemy6Weapon::Update(float deltaTime)
 
 void Enemy6Weapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
-	if (target->GetTag() != GameObject::GameObjectType::Enemies)
+	if (target->GetTag() != GameObject::GameObjectType::Enemies
+		&& target->GetTag() != GameObject::GameObjectType::Apple
+		&& _animation == _animationFall)
 	{
 		_animation = _animationExplode;
 		_width = _animation->GetWidth();
@@ -40,5 +42,7 @@ void Enemy6Weapon::OnCollision(GameObject * target, GameCollision::SideCollision
 
 		_acceleration.y = 0;
 		_velocity.x = _velocity.y = 0;
+
+		Sound::GetInstance()->Play("Clay_Pot", 0, 1);
 	}
 }

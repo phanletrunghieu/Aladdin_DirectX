@@ -14,6 +14,7 @@ private:
 	//when colliding with coal, each duration, player's health will decrease
 	float _collidedWithCoalDuration;
 
+	int _prevHealth;//used to check damage
 	int _health, _damage, _numAppleWeapon;
 public:
 	Player();

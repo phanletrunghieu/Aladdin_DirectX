@@ -19,13 +19,6 @@ Scene::~Scene()
 		delete _gameMap;
 		_gameMap = NULL;
 	}
-
-	if (_quadTree)
-	{
-		_quadTree->Clear();
-		delete _quadTree;
-		_quadTree = NULL;
-	}
 }
 
 D3DCOLOR Scene::GetBackcolor()
@@ -43,6 +36,11 @@ Camera * Scene::GetCamera()
 	return _camera;
 }
 
+void Scene::SetCamera(Camera * camera)
+{
+	_camera = camera;
+}
+
 GameMap * Scene::GetGameMap()
 {
 	return _gameMap;
@@ -56,7 +54,8 @@ void Scene::AddGameObjectToWeaponList(GameObject * gameObject)
 void Scene::Update(float deltaTime)
 {
 	_gameMap->Update(deltaTime);
-	_camera->Update(deltaTime);
+	if((int)_camera != 0xDDDDDDDD)
+		_camera->Update(deltaTime);
 
 	for (size_t i = 0; i < _listWeapon.size(); i++)
 	{

@@ -15,10 +15,10 @@ GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 	_acceleration = D3DXVECTOR2(0, _mass);
 
 	_isVisible = true;
+	_allowUpdateWhenNotInCamera = false;
 
 	_input = Input::GetInstance();
 
-	_noCheckCollision.push_back(GameObjectType::Coal);
 	_noCheckCollision.push_back(GameObjectType::Ground);
 	_noCheckCollision.push_back(GameObjectType::HorizontalBar);
 	_noCheckCollision.push_back(GameObjectType::None);
@@ -37,7 +37,7 @@ void GameObject::Update(float deltaTime)
 		_camera = SceneManager::GetInstance()->GetCurrentScene()->GetCamera();
 	_isInCamera = _camera->IsInCamera(_position, _width, _height);
 
-	if (!_isInCamera)
+	if (!_isInCamera && !_allowUpdateWhenNotInCamera)
 		return;
 
 	_deltaTime = deltaTime;

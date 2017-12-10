@@ -5,7 +5,7 @@
 CamelWeapon::CamelWeapon(int damage):Weapon(Weapon::WeaponType::PlayerWeapons, damage)
 {
 	_animation = new Animation(ResourceManager::GetInstance()->GetAnimationXMLCamelWeapon(), "fly", ResourceManager::GetInstance()->GetTextureCamel(), true, 0.5f);
-	_velocity.x = 60;
+	_velocity.x = 100;
 }
 
 

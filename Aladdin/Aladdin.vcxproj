@@ -158,6 +158,7 @@
     <ClCompile Include="GameComponents\ResourceManager.cpp" />
     <ClCompile Include="GameComponents\Scene.cpp" />
     <ClCompile Include="GameComponents\SceneManager.cpp" />
+    <ClCompile Include="GameComponents\Sound.cpp" />
     <ClCompile Include="GameComponents\Sprite.cpp" />
     <ClCompile Include="GameComponents\Game.cpp" />
     <ClCompile Include="GameComponents\GameMap.cpp" />
@@ -196,6 +197,7 @@
     <ClCompile Include="GameObjects\GameObject.cpp" />
     <ClCompile Include="GameObjects\Items\Apple.cpp" />
     <ClCompile Include="GameObjects\Items\Camel.cpp" />
+    <ClCompile Include="GameObjects\Items\Coal.cpp" />
     <ClCompile Include="GameObjects\Items\FloatGround.cpp" />
     <ClCompile Include="GameObjects\Items\Springboard.cpp" />
     <ClCompile Include="GameObjects\PlayerHealthMeter.cpp" />
@@ -265,6 +267,7 @@
     <ClInclude Include="GameComponents\ResourceManager.h" />
     <ClInclude Include="GameComponents\Scene.h" />
     <ClInclude Include="GameComponents\SceneManager.h" />
+    <ClInclude Include="GameComponents\Sound.h" />
     <ClInclude Include="GameComponents\Sprite.h" />
     <ClInclude Include="GameComponents\Game.h" />
     <ClInclude Include="GameComponents\GameMap.h" />
@@ -303,6 +306,7 @@
     <ClInclude Include="GameObjects\GameObject.h" />
     <ClInclude Include="GameObjects\Items\Apple.h" />
     <ClInclude Include="GameObjects\Items\Camel.h" />
+    <ClInclude Include="GameObjects\Items\Coal.h" />
     <ClInclude Include="GameObjects\Items\FloatGround.h" />
     <ClInclude Include="GameObjects\Items\Springboard.h" />
     <ClInclude Include="GameObjects\PlayerHealthMeter.h" />

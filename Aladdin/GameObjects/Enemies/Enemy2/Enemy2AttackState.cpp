@@ -18,13 +18,13 @@ Enemy2AttackState::Enemy2AttackState(Enemy * enemy) : EnemyState(enemy, EnemySta
 
 Enemy2AttackState::~Enemy2AttackState()
 {
-	if (_animationAttack1)
+	if (_animationAttack1 && _animation!=_animationAttack1)
 	{
 		delete _animationAttack1;
 		_animationAttack1 = NULL;
 	}
 
-	if (_animationAttack2)
+	if (_animationAttack2 && _animation != _animationAttack2)
 	{
 		delete _animationAttack2;
 		_animationAttack2 = NULL;

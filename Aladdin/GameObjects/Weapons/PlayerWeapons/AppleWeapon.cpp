@@ -1,4 +1,5 @@
 #include "AppleWeapon.h"
+#include "../../../GameComponents/Sound.h"
 
 AppleWeapon::AppleWeapon(int damage):Weapon(Weapon::WeaponType::PlayerWeapons, damage)
 {
@@ -35,7 +36,9 @@ void AppleWeapon::Update(float deltaTime)
 
 void AppleWeapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
-	if (target->GetTag() != GameObjectType::Players)
+	if (target->GetTag() != GameObjectType::Players
+		&& target->GetTag() != GameObject::GameObjectType::Apple
+		&& _animation == _animationFly)
 	{
 		_animation = _animationExplode;
 		_width = _animation->GetWidth();
@@ -43,5 +46,7 @@ void AppleWeapon::OnCollision(GameObject * target, GameCollision::SideCollisions
 
 		_acceleration.y = 0;
 		_velocity.x = _velocity.y = 0;
+
+		Sound::GetInstance()->Play("Apple_Splat", false, 1);
 	}
 }

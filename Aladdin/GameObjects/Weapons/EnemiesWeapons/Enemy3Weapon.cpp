@@ -23,7 +23,8 @@ Enemy3Weapon::~Enemy3Weapon()
 
 void Enemy3Weapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
-	if (target->GetTag() != GameObject::GameObjectType::Enemies)
+	if (target->GetTag() != GameObject::GameObjectType::Enemies
+		&& target->GetTag() != GameObject::GameObjectType::Apple)
 	{
 		_isVisible = false;
 		_acceleration.y = 0;

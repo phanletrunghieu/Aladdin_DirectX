@@ -25,7 +25,8 @@ public:
 		FloatGround,
 		Coal,//than nong
 		Springboard,
-		Camels
+		Camels,
+		ToJafarScene
 	};
 protected:
 	GameObjectType _tag;
@@ -37,7 +38,7 @@ protected:
 	int _width, _height;
 
 	bool _isVisible;
-	bool _isInCamera;
+	bool _isInCamera, _allowUpdateWhenNotInCamera;
 
 	//use to CheckCollision. No check between NonMovableObject & NonMovableObject
 	bool _isMovableObject;
@@ -49,7 +50,7 @@ protected:
 	Camera* _camera;
 public:
 	GameObject(GameObjectType tag = None, bool isMovableObject = true);
-	~GameObject();
+	virtual ~GameObject();
 
 	virtual void Draw(Camera *camera) {}
 	virtual void Update(float deltaTime);

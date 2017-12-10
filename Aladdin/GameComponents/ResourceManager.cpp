@@ -1,4 +1,5 @@
 #include "ResourceManager.h"
+#include "../GameComponents/Sound.h"
 
 ResourceManager* ResourceManager::_instance = NULL;
 
@@ -42,6 +43,9 @@ ResourceManager::ResourceManager()
 	_animationXMLCamel = new tinyxml2::XMLDocument();
 	_animationXMLCamel->LoadFile("Resources/Items/Camel-Animation.xml");
 
+	_animationXMLCoalFire = new tinyxml2::XMLDocument();
+	_animationXMLCoalFire->LoadFile("Resources/Items/CoalFire-Animation.xml");
+
 	_animationXMLPlayerHealthMeter = new tinyxml2::XMLDocument();
 	_animationXMLPlayerHealthMeter->LoadFile("Resources/Items/HealthMeter-Animation.xml");
 
@@ -72,6 +76,17 @@ ResourceManager::ResourceManager()
 
 	_textureBossJafar = graphics->LoadTexture(L"Resources/Enemies/Boss_Sprite.png", D3DCOLOR_XRGB(186, 254, 202));
 	_textureExplosions = graphics->LoadTexture(L"Resources/Enemies/Enemy_Explosions_Sprite.png", D3DCOLOR_XRGB(186, 254, 202));
+
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Apple_Splat.wav", "Apple_Splat");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Apple_Collect.wav", "Apple_Collect");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Camel_Spit.wav", "Camel_Spit");
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Clay_Pot.wav", "Clay_Pot");//noi dat rot
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Low_Sword.wav", "Low_Sword");//Aladin attack
+
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Aladdin_Hurt.wav", "Aladdin_Hurt");
+
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Jafar_Snake.wav", "Jafar_Snake");//Jafar chuyen dang Snake
+	Sound::GetInstance()->LoadSound("Resources/Sounds/Jafar_Laugh.wav", "Jafar_Laugh");
 }
 
 
@@ -90,6 +105,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLEnemy6Weapon;
 	delete _animationXMLPlayerHealthMeter;
 	delete _animationXMLCamel;
+	delete _animationXMLCoalFire;
 
 	_textureAladdin->Release();
 	_textureEnemies1->Release();
@@ -181,6 +197,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLPlayerHealthMeter()
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCamel()
 {
 	return _animationXMLCamel;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCoalFire()
+{
+	return _animationXMLCoalFire;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLJafar()

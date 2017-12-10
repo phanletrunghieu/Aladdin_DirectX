@@ -72,6 +72,7 @@ bool Game::Initialize()
 
 	// Show MainScene
 	SceneManager::GetInstance()->ReplaceScene(new MainScene());
+	//SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 
 	// init rand
 	srand(time(0));
@@ -186,7 +187,6 @@ bool Game::Frame(float detaTime)
 {
 	bool result;
 	auto device = _graphics->GetDevice();
-	Scene* currentScene = SceneManager::GetInstance()->GetCurrentScene();
 
 	// Do the input frame processing.
 	result = _input->Frame();
@@ -196,10 +196,10 @@ bool Game::Frame(float detaTime)
 	}
 
 	// Update scene
-	currentScene->Update(detaTime);
+	SceneManager::GetInstance()->GetCurrentScene()->Update(detaTime);
 
 	// clear screen
-	device->Clear(0, NULL, D3DCLEAR_TARGET, currentScene->GetBackcolor(), 1.0f, 0);
+	device->Clear(0, NULL, D3DCLEAR_TARGET, SceneManager::GetInstance()->GetCurrentScene()->GetBackcolor(), 1.0f, 0);
 
 	if (!FAILED(device->BeginScene()))
 	{
@@ -207,7 +207,7 @@ bool Game::Frame(float detaTime)
 		_graphics->GetSpriteHandler()->Begin(D3DXSPRITE_ALPHABLEND);
 
 		// draw items in scene
-		currentScene->Draw();
+		SceneManager::GetInstance()->GetCurrentScene()->Draw();
 
 		// end draw
 		_graphics->GetSpriteHandler()->End();

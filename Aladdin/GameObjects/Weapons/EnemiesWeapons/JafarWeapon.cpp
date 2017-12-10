@@ -15,12 +15,23 @@ JafarWeapon::JafarWeapon(int damage) :Weapon(Weapon::WeaponType::EnemiesWeapons,
 
 	_mass = 0;
 	_acceleration.y = _mass;
+
+	_allowUpdateWhenNotInCamera = true;
 }
 
 JafarWeapon::~JafarWeapon()
 {
-	delete _animationFly;
-	delete _animationExploide;
+	if (_animationFly && _animation != _animationFly)
+	{
+		delete _animationFly;
+		_animationFly = 0;
+	}
+
+	if (_animationFly && _animation != _animationExploide)
+	{
+		delete _animationExploide;
+		_animationExploide = 0;
+	}
 }
 
 void JafarWeapon::Draw(Camera* camera)

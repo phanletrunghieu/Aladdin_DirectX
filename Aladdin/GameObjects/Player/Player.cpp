@@ -1,9 +1,12 @@
 #include "Player.h"
 #include "PlayerFallState.h"
 #include "PlayerDeathState.h"
+#include "PlayerDamageState.h"
 #include "../../GameComponents/SceneManager.h"
 #include "../Enemies/Enemy.h"
 #include "../Weapons/Weapon.h"
+#include "../../GameComponents/Sound.h"
+#include "../../Scenes/JafarScene.h"
 
 Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 {
@@ -19,6 +22,7 @@ Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 	_collidedWithCoalDuration = 0;
 
 	_health = 1000;
+	_prevHealth = _health;
 	_damage = 50;
 	_numAppleWeapon = 10;
 
@@ -28,6 +32,7 @@ Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 Player::~Player()
 {
 	delete _state;
+	_state = NULL;
 }
 
 void Player::Update(float deltaTime)
@@ -52,9 +57,20 @@ void Player::Update(float deltaTime)
 	else
 		_velocity.x = 0;
 
-
 	GameObject::Update(deltaTime);
-	_state->Update(deltaTime);
+	if(_state!=NULL)
+		_state->Update(deltaTime);
+
+	//check damage
+	if (_prevHealth > _health)
+	{
+		Sound::GetInstance()->Play("Aladdin_Hurt", 0, 1);
+		if (_state->GetName() == PlayerState::StateName::Idle)
+		{
+			SetState(new PlayerDamageState(this));
+		}
+	}
+	_prevHealth = _health;
 }
 
 void Player::Draw(Camera * camera)
@@ -118,7 +134,7 @@ void Player::CheckCollision()
 	_isGround = playerGround;
 
 	//because climb state has own move rule
-	if (_state->GetName() != PlayerState::StateName::ClimbVertical && _state->GetName() != PlayerState::StateName::ClimbAttack)
+	if (_state!=NULL && _state->GetName() != PlayerState::StateName::ClimbVertical && _state->GetName() != PlayerState::StateName::ClimbAttack)
 	{
 		_allowMoveLeft = allowPlayerMoveLeft;
 		_allowMoveRight = allowPlayerMoveRight;
@@ -129,6 +145,7 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 {
 	if (target->GetTag() == GameObject::GameObjectType::Apple)
 	{
+		Sound::GetInstance()->Play("Apple_Collect", false, 1);
 		_numAppleWeapon++;
 	}
 
@@ -144,7 +161,9 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		}
 	}
 
-	if (target->GetTag() == GameObject::GameObjectType::Weapons)
+	if (target->GetTag() == GameObject::GameObjectType::Weapons
+		&& _state->GetName() != PlayerState::StateName::Attack
+		&& _state->GetName() != PlayerState::StateName::JumpAttack)
 	{
 		Weapon* weapon = dynamic_cast<Weapon*>(target);
 		if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons && !weapon->IsAttacked())
@@ -163,6 +182,14 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 			_collidedWithCoalDuration = 0;
 			SetHealth(_health - 10);
 		}
+	}
+
+	//next scene
+	if (target->GetTag() == GameObject::GameObjectType::ToJafarScene)
+	{
+		SceneManager::GetInstance()->ReplaceScene(new JafarScene());
+		_state = NULL;
+		return;
 	}
 
 	_state->OnCollision(target, side);

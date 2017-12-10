@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="fire" imagePath="Boss_Sprite_trans.png" width="863" height="348">
+    <sprite x="14" y="193" w="24" h="46" oX="-1" oY="-1" oW="216" oH="155" />
+    <sprite x="46" y="194" w="22" h="45" oX="-1" oY="-1" oW="216" oH="155" />
+    <sprite x="78" y="193" w="24" h="46" oX="-1" oY="-1" oW="216" oH="155" />
+    <sprite x="110" y="190" w="27" h="49" oX="-1" oY="-1" oW="216" oH="155" />
+    <sprite x="150" y="194" w="35" h="45" oX="-1" oY="-1" oW="216" oH="155" />
+  </Animation>
+</Animations>

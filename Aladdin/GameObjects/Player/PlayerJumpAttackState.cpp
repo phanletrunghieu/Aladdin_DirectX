@@ -4,6 +4,7 @@
 #include "PlayerFallState.h"
 #include "PlayerRunJumpState.h"
 #include "PlayerRunFallState.h"
+#include "../../GameComponents/Sound.h"
 
 PlayerJumpAttackState::PlayerJumpAttackState()
 {
@@ -12,6 +13,7 @@ PlayerJumpAttackState::PlayerJumpAttackState()
 PlayerJumpAttackState::PlayerJumpAttackState(Player * player) : PlayerState(player, PlayerState::StateName::JumpAttack)
 {
 	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "JumpAttack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
+	Sound::GetInstance()->Play("Low_Sword", 0, 1);
 }
 
 

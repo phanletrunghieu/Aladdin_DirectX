@@ -17,7 +17,7 @@ protected:
 	D3DXVECTOR2 _distanceToTarget;
 
 	// face look right?
-	bool _isRight, _canMove, _allowMoveLeft, _allowMoveRight;
+	bool _isRight, _canFlip, _allowMoveLeft, _allowMoveRight;
 
 	//when colliding with coal, each duration, player's health will decrease
 	float _collidedWithCoalDuration;
@@ -30,7 +30,7 @@ protected:
 public:
 	Enemy();//not use
 	Enemy(GameObject * target);
-	~Enemy();
+	virtual ~Enemy();
 
 	virtual void Update(float deltaTime);
 	void Draw(Camera* camera);
@@ -55,7 +55,7 @@ public:
 	bool IsRight();
 	void SetIsRight(bool right);
 
-	bool IsCanMove();
+	bool IsCanFlip();
 
 	bool IsAllowMoveLeft();
 	bool IsAllowMoveRight();

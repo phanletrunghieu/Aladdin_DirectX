@@ -13,7 +13,7 @@ public:
 
 	Weapon();
 	Weapon(Weapon::WeaponType weaponType, int damage = 10);
-	~Weapon();
+	virtual ~Weapon();
 
 	void Draw(Camera* camera);
 	void Update(float deltaTime);

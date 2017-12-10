@@ -1,4 +1,5 @@
 #include "JafarScene.h"
+#include "../GameComponents/Sound.h"
 
 JafarScene::JafarScene() :Scene(0x9090b0)
 {
@@ -45,6 +46,8 @@ void JafarScene::LoadContent()
 	_txtCountApple = new Text(L"0", 15, 15, FW_BOLD);
 
 	_playHealthMeter = new PlayerHealthMeter();
+
+	Sound::GetInstance()->Play("Jafar_Laugh", 0, 1);
 }
 
 void JafarScene::Update(float deltatime)

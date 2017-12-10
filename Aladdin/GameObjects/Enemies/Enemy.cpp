@@ -26,8 +26,8 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 	_attackRangeY = 80;
 
 	_isRight = false;
-	_canMove = true;
 	_allowMoveLeft = _allowMoveRight = true;
+	_canFlip = true;
 
 	_collidedWithCoalDuration = 0;
 }
@@ -35,6 +35,7 @@ Enemy::Enemy(GameObject * target) : GameObject(GameObject::GameObjectType::Enemi
 Enemy::~Enemy()
 {
 	delete _state;
+	_state = 0;
 }
 
 void Enemy::Update(float deltaTime)
@@ -55,12 +56,12 @@ void Enemy::Update(float deltaTime)
 	//move
 	if(IsTargetInViewRange() && !IsTargetInAttackRange())
 	{
-		if (_distanceToTarget.x > 0 && _canMove && _allowMoveRight)
+		if (_distanceToTarget.x > 0 && _isMovableObject && _allowMoveRight)
 		{
 			//move right
 			_velocity.x = _speed;
 		}
-		else if(_distanceToTarget.x < 0 && _canMove && _allowMoveLeft)
+		else if(_distanceToTarget.x < 0 && _isMovableObject && _allowMoveLeft)
 		{
 			//move left
 			_velocity.x = -1 * _speed;
@@ -74,7 +75,7 @@ void Enemy::Update(float deltaTime)
 
 	GameObject::Update(deltaTime);
 
-	if (_isInCamera)
+	if (_isInCamera || _allowUpdateWhenNotInCamera)
 		_state->Update(deltaTime);
 
 	//fix foot posY
@@ -108,17 +109,22 @@ void Enemy::CheckCollision()
 		{
 			this->OnCollision(gameObject, collisionData.GetSide());
 
+			//prevent enemy walk out of ground
 			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround)
 			{
-				if (collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
+				if (collisionData.GetSide() == GameCollision::SideCollisions::BottomRight
+					|| collisionData.GetSide() == GameCollision::SideCollisions::Right)
 					allowPlayerMoveLeft = false;
-				else
-					allowPlayerMoveLeft = true;
 
-				if (collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft)
+				if (collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
+					|| collisionData.GetSide() == GameCollision::SideCollisions::Left)
 					allowPlayerMoveRight = false;
-				else
+
+				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom)
+				{
 					allowPlayerMoveRight = true;
+					allowPlayerMoveLeft = true;
+				}
 			}
 
 			if (gameObject->GetTag() == GameObject::GameObjectType::Wall || gameObject->GetTag() == GameObject::GameObjectType::Ground)
@@ -253,9 +259,9 @@ void Enemy::SetIsRight(bool right)
 		_state->GetAnimation()->FlipHorizontal(_isRight);
 }
 
-bool Enemy::IsCanMove()
+bool Enemy::IsCanFlip()
 {
-	return _canMove;
+	return _canFlip;
 }
 
 bool Enemy::IsAllowMoveLeft()

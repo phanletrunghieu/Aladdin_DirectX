@@ -2,7 +2,7 @@
 #include "Player.h"
 #include "PlayerClimbVerticalState.h"
 #include "PlayerClimbHorizontalIdleState.h"
-
+#include "../../GameComponents/Sound.h"
 
 PlayerClimbAttackState::PlayerClimbAttackState()
 {
@@ -20,6 +20,8 @@ PlayerClimbAttackState::PlayerClimbAttackState(Player * player, GameObject *rope
 
 	_player->AllowMoveLeft(false);
 	_player->AllowMoveRight(false);
+
+	Sound::GetInstance()->Play("Low_Sword", 0, 1);
 }
 
 

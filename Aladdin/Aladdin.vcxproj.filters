@@ -387,6 +387,12 @@
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.cpp">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
     </ClCompile>
+    <ClCompile Include="GameComponents\Sound.cpp">
+      <Filter>GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Items\Coal.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -703,6 +709,12 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.h">
       <Filter>GameObjects\Weapons\PlayerWeapons</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents\Sound.h">
+      <Filter>GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Coal.h">
+      <Filter>GameObjects\Items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

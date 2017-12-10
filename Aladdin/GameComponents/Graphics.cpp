@@ -177,6 +177,11 @@ LPD3DXSPRITE Graphics::GetSpriteHandler()
 	return _sprite;
 }
 
+HWND Graphics::GetHWND()
+{
+	return _hwnd;
+}
+
 int Graphics::GetScreenWidth()
 {
 	return _screenWidth;

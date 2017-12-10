@@ -36,7 +36,7 @@ void EnemyState::Update(float deltaTime)
 		_animation->SetPosition(_enemy->GetPosition());
 
 		//can move => flip
-		if (_enemy->IsCanMove())
+		if (_enemy->IsCanFlip())
 		{
 			if (_animation->IsSourceRight())
 			{

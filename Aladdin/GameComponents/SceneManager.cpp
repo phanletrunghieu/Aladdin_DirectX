@@ -32,6 +32,5 @@ void SceneManager::Update(float dt)
 void SceneManager::ReplaceScene(Scene *scene)
 {
 	delete _currentScene;
-
 	_currentScene = scene;
 }

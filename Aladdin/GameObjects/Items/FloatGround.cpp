@@ -2,7 +2,7 @@
 
 
 
-FloatGround::FloatGround() : GameObject(GameObject::GameObjectType::FloatGround, false)
+FloatGround::FloatGround() : GameObject(GameObject::GameObjectType::FloatGround, true)
 {
 	RECT floatGroundSourceRect;
 	floatGroundSourceRect.left = 454;
@@ -27,4 +27,38 @@ void FloatGround::Draw(Camera * camera)
 		_floatGroundSprite->SetPosition(_position);
 		_floatGroundSprite->Draw(camera);
 	}
+}
+
+void FloatGround::OnCollision(GameObject * target, GameCollision::SideCollisions side)
+{
+	if (target->GetTag() == GameObject::GameObjectType::Players)
+	{
+		_velocity.y = 10;
+		_acceleration.y = 60;
+	}
+
+	if (target->GetTag() == GameObject::GameObjectType::Ground)
+	{
+		_acceleration.y = 0;
+		_velocity.y = 0;
+		_position = _firstPosition;
+	}
+}
+
+void FloatGround::SetPosition(D3DXVECTOR2 position)
+{
+	GameObject::SetPosition(position);
+	_firstPosition = position;
+}
+
+void FloatGround::SetPosition(D3DXVECTOR3 position)
+{
+	GameObject::SetPosition(position);
+	_firstPosition = D3DXVECTOR2(position);
+}
+
+void FloatGround::SetPosition(float x, float y)
+{
+	GameObject::SetPosition(x, y);
+	_firstPosition = D3DXVECTOR2(x, y);
 }

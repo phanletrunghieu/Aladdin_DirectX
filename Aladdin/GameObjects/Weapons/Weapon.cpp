@@ -26,7 +26,7 @@ void Weapon::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	if (!_isInCamera)
+	if (!_isInCamera && !_allowUpdateWhenNotInCamera)
 		return;
 
 	if (_animation)

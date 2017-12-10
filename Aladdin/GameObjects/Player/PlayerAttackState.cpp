@@ -1,7 +1,7 @@
 #include "PlayerAttackState.h"
 #include "Player.h"
 #include "PlayerIdleState.h"
-
+#include "../../GameComponents/Sound.h"
 
 PlayerAttackState::PlayerAttackState()
 {
@@ -11,6 +11,7 @@ PlayerAttackState::PlayerAttackState()
 PlayerAttackState::PlayerAttackState(Player * player) : PlayerState(player, PlayerState::StateName::Attack)
 {
 	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Attack", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.5f));
+	Sound::GetInstance()->Play("Low_Sword", 0, 1);
 }
 
 

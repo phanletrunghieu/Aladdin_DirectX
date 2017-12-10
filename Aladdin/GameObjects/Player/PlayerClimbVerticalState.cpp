@@ -14,7 +14,7 @@ PlayerClimbVerticalState::PlayerClimbVerticalState(Player * player, GameObject *
 	_rope = rope;
 	_player->SetPositionX(_rope->GetPosition().x);
 
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbVertical", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "ClimbVertical", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.6f));
 	_animation->Pause();
 
 	_player->SetAccelerationY(0);
@@ -35,13 +35,13 @@ void PlayerClimbVerticalState::Update(float deltaTime)
 
 	if (Input::GetInstance()->IsKeyPressed(DIK_UP) && _player->GetBound().top > _rope->GetBound().top)
 	{
-		_animation->Reverse(false);
+		_animation->Reverse(true);
 		_animation->Play();
 		_player->SetVelocityY(-10);
 	}
 	else if (Input::GetInstance()->IsKeyPressed(DIK_DOWN))
 	{
-		_animation->Reverse(true);
+		_animation->Reverse(false);
 		_animation->Play();
 		_player->SetVelocityY(10);
 	}

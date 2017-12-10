@@ -38,6 +38,8 @@ public:
 	LPDIRECT3DSURFACE9 GetBackBuffer();
 	LPD3DXSPRITE GetSpriteHandler();
 
+	HWND GetHWND();
+
 	int GetScreenWidth();
 	int GetScreenHeight();
 };

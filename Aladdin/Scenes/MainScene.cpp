@@ -1,4 +1,5 @@
 #include "MainScene.h"
+#include "../GameComponents/Sound.h"
 
 MainScene::MainScene():Scene(0x9090b0)
 {
@@ -59,9 +60,13 @@ void MainScene::Update(float dt)
 {
 	Scene::Update(dt);
 
-	_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
-	_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
-	_playerHealthMeter->Update(dt);
+	//check if move to next scene
+	if ((int)_gameMap != 0xDDDDDDDD)
+	{
+		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
+		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
+		_playerHealthMeter->Update(dt);
+	}
 }
 
 void MainScene::Draw()

@@ -21,6 +21,7 @@ private:
 	tinyxml2::XMLDocument *_animationXMLEnemy6Weapon;
 	tinyxml2::XMLDocument *_animationXMLPlayerHealthMeter;
 	tinyxml2::XMLDocument *_animationXMLCamel;
+	tinyxml2::XMLDocument *_animationXMLCoalFire;
 
 	tinyxml2::XMLDocument *_animationXMLJafar;
 	tinyxml2::XMLDocument *_animationXMLSnake;
@@ -62,6 +63,7 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLEnemy6Weapon();
 	tinyxml2::XMLDocument* GetAnimationXMLPlayerHealthMeter();
 	tinyxml2::XMLDocument* GetAnimationXMLCamel();
+	tinyxml2::XMLDocument* GetAnimationXMLCoalFire();
 
 	tinyxml2::XMLDocument* GetAnimationXMLJafar();
 	tinyxml2::XMLDocument* GetAnimationXMLSnake();
@@ -79,4 +81,3 @@ public:
 	LPDIRECT3DTEXTURE9 GetTextureBossJafar();
 	LPDIRECT3DTEXTURE9 GetTextureMapBoss();
 };
-

@@ -168,6 +168,19 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(camel);
 			}
 
+			//init coal
+			if (objectGroup->GetName() == "Coal")
+			{
+				Coal *coal = new Coal();
+				coal->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				coal->SetWidth(object->GetWidth());
+				coal->SetHeight(object->GetHeight());
+
+				_listCoal.push_back(coal);
+
+				_quadTree->InsertStaticObject(coal);
+			}
+
 			//init ground
 			if (objectGroup->GetName() == "Ground")
 			{
@@ -190,10 +203,10 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(gameObject);
 			}
 
-			//init coal
-			if (objectGroup->GetName() == "Coal")
+			//init wall
+			if (objectGroup->GetName() == "ToJafarScene")
 			{
-				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Coal);
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ToJafarScene);
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
@@ -229,10 +242,14 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 GameMap::~GameMap()
 {
 	delete _map;
+	_map = 0;
+
 	delete _player;
+	_player = 0;
 
 	_quadTree->Clear();
 	delete _quadTree;
+	_quadTree = 0;
 
 	for (size_t i = 0; i < _listApples.size(); i++)
 	{
@@ -269,6 +286,13 @@ GameMap::~GameMap()
 	}
 	_listCamels.clear();
 
+	for (size_t i = 0; i < _listCoal.size(); i++)
+	{
+		if (_listCoal[i])
+			delete _listCoal[i];
+	}
+	_listCoal.clear();
+
 	/*don't use tileset for this game
 	for (size_t i = 0; i < _listTileSet.size(); i++)
 	{
@@ -300,6 +324,10 @@ void GameMap::Update(float deltaTime)
 	//camels
 	for (size_t i = 0; i < _listCamels.size(); i++)
 		_listCamels[i]->Update(deltaTime);
+
+	//coal
+	for (size_t i = 0; i < _listCoal.size(); i++)
+		_listCoal[i]->Update(deltaTime);
 
 	//player
 	_player->Update(deltaTime);
@@ -428,6 +456,22 @@ void GameMap::Draw(Camera * camera)
 
 		//visible -> draw
 		_listCamels[i]->Draw(camera);
+	}
+
+	//coal
+	for (size_t i = 0; i < _listCoal.size(); i++)
+	{
+		//remove not visible object
+		if (!_listCoal[i]->IsVisible())
+		{
+			_quadTree->RemoveStaticObject(_listCoal[i]);
+			_listCoal.erase(_listCoal.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listCoal[i]->Draw(camera);
 	}
 
 	//player

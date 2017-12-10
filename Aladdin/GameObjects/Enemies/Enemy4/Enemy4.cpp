@@ -13,7 +13,8 @@ Enemy4::Enemy4(GameObject * player):Enemy(player)
 	_attackRangeX = 180;
 	_attackRangeY = 180;
 
-	_canMove = false;
+	_isMovableObject = false;
+	_canFlip = false;
 }
 
 

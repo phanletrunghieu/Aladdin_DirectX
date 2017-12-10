@@ -13,7 +13,7 @@ public:
 	};
 	EnemyState();
 	EnemyState(Enemy *enemy, StateName name = StateName::Idle);
-	~EnemyState();
+	virtual ~EnemyState();
 
 	virtual void Update(float deltaTime);
 	virtual void OnCollision(GameObject *target, GameCollision::SideCollisions side) {};

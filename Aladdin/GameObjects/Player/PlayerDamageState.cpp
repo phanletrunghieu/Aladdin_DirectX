@@ -6,7 +6,6 @@
 #include "PlayerThrowState.h"
 #include "PlayerCrouchIdleState.h"
 
-
 PlayerDamageState::PlayerDamageState()
 {
 	//don't use
