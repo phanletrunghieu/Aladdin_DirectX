@@ -158,6 +158,15 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 
 				_quadTree->InsertStaticObject(obj);
 			}
+			if (objectGroup->GetName() == "ScoreObject2")
+			{
+				ScoreObject2 *obj = new ScoreObject2();
+				obj->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listScoreObject.push_back(obj);
+
+				_quadTree->InsertStaticObject(obj);
+			}
 
 			//init BossJafar
 			if (objectGroup->GetName() == "Jafar")

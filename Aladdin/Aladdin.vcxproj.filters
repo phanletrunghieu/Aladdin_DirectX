@@ -405,6 +405,9 @@
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject1.cpp">
       <Filter>GameObjects\Items\ScoreObject</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject2.cpp">
+      <Filter>GameObjects\Items\ScoreObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -735,6 +738,9 @@
       <Filter>GameObjects\Items\ScoreObject</Filter>
     </ClInclude>
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject1.h">
+      <Filter>GameObjects\Items\ScoreObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject2.h">
       <Filter>GameObjects\Items\ScoreObject</Filter>
     </ClInclude>
   </ItemGroup>

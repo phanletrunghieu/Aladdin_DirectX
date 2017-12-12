@@ -18,6 +18,7 @@
 #include "../GameObjects/Items/Bottle.h"
 #include "../GameObjects/Items/Coal.h"
 #include "../GameObjects/Items/ScoreObject/ScoreObject1.h"
+#include "../GameObjects/Items/ScoreObject/ScoreObject2.h"
 
 #include "../GameObjects/Enemies/BossJafar/Jafar.h"
 

@@ -66,6 +66,10 @@ void Enemy::Update(float deltaTime)
 			//move left
 			_velocity.x = -1 * _speed;
 		}
+		else
+		{
+			_velocity.x = 0;
+		}
 	}
 	else
 	{
@@ -110,14 +114,15 @@ void Enemy::CheckCollision()
 			this->OnCollision(gameObject, collisionData.GetSide());
 
 			//prevent enemy walk out of ground
+			
 			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::BottomRight
-					|| collisionData.GetSide() == GameCollision::SideCollisions::Right)
+					|| collisionData.GetSide() == GameCollision::SideCollisions::Left)
 					allowPlayerMoveLeft = false;
 
 				if (collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
-					|| collisionData.GetSide() == GameCollision::SideCollisions::Left)
+					|| collisionData.GetSide() == GameCollision::SideCollisions::Right)
 					allowPlayerMoveRight = false;
 
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom)

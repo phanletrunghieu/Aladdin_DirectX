@@ -24,6 +24,7 @@ int Player::GetScore()
 Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 {
 	Reset();
+	_numAppleWeapon = 1000;
 }
 
 Player::~Player()
@@ -45,9 +46,8 @@ void Player::Reset()
 
 	_collidedWithCoalDuration = 0;
 
-	_health = 100;
+	_health = 1000;
 	_damage = 50;
-	_numAppleWeapon = 100;
 
 	_state = new PlayerFallState(this);
 }

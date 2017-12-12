@@ -202,6 +202,7 @@
     <ClCompile Include="GameObjects\Items\FloatGround.cpp" />
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject.cpp" />
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject1.cpp" />
+    <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject2.cpp" />
     <ClCompile Include="GameObjects\Items\Springboard.cpp" />
     <ClCompile Include="GameObjects\PlayerHealthMeter.cpp" />
     <ClCompile Include="GameObjects\Player\Player.cpp" />
@@ -314,6 +315,7 @@
     <ClInclude Include="GameObjects\Items\FloatGround.h" />
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject.h" />
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject1.h" />
+    <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject2.h" />
     <ClInclude Include="GameObjects\Items\Springboard.h" />
     <ClInclude Include="GameObjects\PlayerHealthMeter.h" />
     <ClInclude Include="GameObjects\Player\Player.h" />
