@@ -12,8 +12,12 @@ class JafarScene :public Scene
 
 	Text* _txtCountApple;
 	Sprite* _spriteCountApple;
+
 	Text *_txtTimesPlay;
 	Sprite *_spriteTimesPlay;
+
+	Text *_txtScore;
+
 	PlayerHealthMeter* _playHealthMeter;
 public:
 	JafarScene();

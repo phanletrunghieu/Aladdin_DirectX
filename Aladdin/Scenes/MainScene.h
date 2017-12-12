@@ -15,8 +15,12 @@ private:
 
 	Text *_txtCountApple;
 	Sprite *_spriteCountApple;
+
 	Text *_txtTimesPlay;
 	Sprite *_spriteTimesPlay;
+
+	Text *_txtScore;
+
 	PlayerHealthMeter *_playerHealthMeter;
 public:
 	MainScene();

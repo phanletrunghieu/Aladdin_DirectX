@@ -17,6 +17,8 @@
 #include "../GameObjects/Items/Camel.h"
 #include "../GameObjects/Items/Bottle.h"
 #include "../GameObjects/Items/Coal.h"
+#include "../GameObjects/Items/ScoreObject/ScoreObject1.h"
+
 #include "../GameObjects/Enemies/BossJafar/Jafar.h"
 
 class GameMap
@@ -36,6 +38,7 @@ private:
 	std::vector<Camel*> _listCamels;
 	std::vector<Bottle*> _listBottles;
 	std::vector<Coal*> _listCoal;
+	std::vector<ScoreObject*> _listScoreObject;
 public:
 	GameMap();
 	//use QuadTree* &quadTree because quadTree is init in this function

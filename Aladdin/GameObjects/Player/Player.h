@@ -8,6 +8,7 @@ class Player:public GameObject
 {
 private:
 	static int _timesPlay;//luot choi
+	static int _score;
 
 	D3DXVECTOR2 _appearPosition;
 
@@ -21,6 +22,7 @@ private:
 	int _health, _damage, _numAppleWeapon;
 public:
 	static int GetTimesPlay();
+	static int GetScore();
 	Player();
 	~Player();
 

@@ -36,6 +36,14 @@ void AppleWeapon::Update(float deltaTime)
 
 void AppleWeapon::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
+	//prevent collision with EnemiesWeapons
+	if (target->GetTag() == GameObjectType::Weapons)
+	{
+		Weapon* weapon = dynamic_cast<Weapon*>(target);
+		if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons)
+			return;
+	}
+
 	if (target->GetTag() != GameObjectType::Players
 		&& target->GetTag() != GameObject::GameObjectType::Apple
 		&& _animation == _animationFly)

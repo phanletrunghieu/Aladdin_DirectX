@@ -148,6 +148,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(enemy);
 			}
 
+			//score object
+			if (objectGroup->GetName() == "ScoreObject1")
+			{
+				ScoreObject1 *obj = new ScoreObject1();
+				obj->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listScoreObject.push_back(obj);
+
+				_quadTree->InsertStaticObject(obj);
+			}
+
 			//init BossJafar
 			if (objectGroup->GetName() == "Jafar")
 			{
@@ -292,6 +303,13 @@ GameMap::~GameMap()
 	}
 	_listEnemies.clear();
 
+	for (size_t i = 0; i < _listScoreObject.size(); i++)
+	{
+		if (_listScoreObject[i])
+			delete _listScoreObject[i];
+	}
+	_listScoreObject.clear();
+
 	for (size_t i = 0; i < _listCamels.size(); i++)
 	{
 		if (_listCamels[i])
@@ -340,6 +358,10 @@ void GameMap::Update(float deltaTime)
 	//enemies
 	for (size_t i = 0; i < _listEnemies.size(); i++)
 		_listEnemies[i]->Update(deltaTime);
+
+	//score object
+	for (size_t i = 0; i < _listScoreObject.size(); i++)
+		_listScoreObject[i]->Update(deltaTime);
 
 	//camels
 	for (size_t i = 0; i < _listCamels.size(); i++)
@@ -464,6 +486,22 @@ void GameMap::Draw(Camera * camera)
 
 		//visible -> draw
 		_listEnemies[i]->Draw(camera);
+	}
+
+	//score object
+	for (size_t i = 0; i < _listScoreObject.size(); i++)
+	{
+		//remove not visible object
+		if (!_listScoreObject[i]->IsVisible())
+		{
+			QuadTree::RemoveDynamicObject(_listScoreObject[i]);
+			_listScoreObject.erase(_listScoreObject.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listScoreObject[i]->Draw(camera);
 	}
 
 	//camels

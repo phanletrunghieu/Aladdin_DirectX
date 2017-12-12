@@ -27,6 +27,9 @@ MainScene::~MainScene()
 	delete _txtTimesPlay;
 	_txtTimesPlay = NULL;
 
+	delete _txtScore;
+	_txtScore = NULL;
+
 	delete _playerHealthMeter;
 	_playerHealthMeter = NULL;
 }
@@ -75,6 +78,9 @@ void MainScene::LoadContent()
 	_spriteTimesPlay->SetScale(D3DXVECTOR2(2, 2));
 	_txtTimesPlay = new Text(L"0", 15, 15, FW_BOLD);
 
+	//score
+	_txtScore = new Text(L"0", 25, 25, FW_BOLD);
+
 	_playerHealthMeter = new PlayerHealthMeter();
 }
 
@@ -87,6 +93,7 @@ void MainScene::Update(float dt)
 	{
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
 		_txtTimesPlay->SetString(Player::GetTimesPlay());
+		_txtScore->SetString(Player::GetScore());
 		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playerHealthMeter->Update(dt);
 	}
@@ -103,6 +110,8 @@ void MainScene::Draw()
 
 	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));
+
+	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 150, 50));
 
 	_playerHealthMeter->Draw(D3DXVECTOR3(_playerHealthMeter->GetWidth() / 2 + 10, _playerHealthMeter->GetHeight() / 2 + 10, 0));
 }

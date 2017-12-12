@@ -27,6 +27,9 @@ JafarScene::~JafarScene()
 	delete _txtTimesPlay;
 	_txtTimesPlay = NULL;
 
+	delete _txtScore;
+	_txtScore = NULL;
+
 	delete _playHealthMeter;
 	_playHealthMeter = NULL;
 }
@@ -68,6 +71,9 @@ void JafarScene::LoadContent()
 	_spriteTimesPlay->SetScale(D3DXVECTOR2(2, 2));
 	_txtTimesPlay = new Text(L"0", 15, 15, FW_BOLD);
 
+	//score
+	_txtScore = new Text(L"0", 25, 25, FW_BOLD);
+
 	_playHealthMeter = new PlayerHealthMeter();
 
 	Sound::GetInstance()->Play("Jafar_Laugh", 0, 1);
@@ -82,6 +88,7 @@ void JafarScene::Update(float deltatime)
 	{
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
 		_txtTimesPlay->SetString(Player::GetTimesPlay());
+		_txtScore->SetString(Player::GetScore());
 		_playHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playHealthMeter->Update(deltatime);
 	}
@@ -97,6 +104,8 @@ void JafarScene::Draw()
 
 	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));
+
+	_txtScore->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 150, 50));
 
 	_playHealthMeter->Draw(D3DXVECTOR3(_playHealthMeter->GetWidth() / 2 + 10, _playHealthMeter->GetHeight() / 2 + 10, 0));
 }

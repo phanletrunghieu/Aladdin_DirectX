@@ -9,6 +9,8 @@ Weapon::Weapon(Weapon::WeaponType weaponType, int damage) : GameObject(GameObjec
 	_weaponType = weaponType;
 	_damage = damage;
 	_isAttacked = false;
+
+	_allowUpdateWhenNotInCamera = true;
 }
 
 

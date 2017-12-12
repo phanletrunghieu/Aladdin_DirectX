@@ -70,6 +70,9 @@
     <Filter Include="GameObjects\Enemies\Enemy6">
       <UniqueIdentifier>{cd238f91-7623-45e3-9e98-5d48a6371bca}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameObjects\Items\ScoreObject">
+      <UniqueIdentifier>{fe39e646-9fad-4a82-87d4-11e3d49f63c6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameComponents\Animation.cpp">
@@ -396,6 +399,12 @@
     <ClCompile Include="GameObjects\Items\Bottle.cpp">
       <Filter>GameObjects\Items</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject.cpp">
+      <Filter>GameObjects\Items\ScoreObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject1.cpp">
+      <Filter>GameObjects\Items\ScoreObject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -721,6 +730,12 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Items\Bottle.h">
       <Filter>GameObjects\Items</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject.h">
+      <Filter>GameObjects\Items\ScoreObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject1.h">
+      <Filter>GameObjects\Items\ScoreObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

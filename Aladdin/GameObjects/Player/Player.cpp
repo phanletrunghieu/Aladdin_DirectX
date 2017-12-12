@@ -9,10 +9,16 @@
 #include "../../Scenes/JafarScene.h"
 
 int Player::_timesPlay = 3;
+int Player::_score = 0;
 
 int Player::GetTimesPlay()
 {
 	return _timesPlay;
+}
+
+int Player::GetScore()
+{
+	return _score;
 }
 
 Player::Player():GameObject(GameObject::GameObjectType::Players, true)
@@ -188,6 +194,13 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 	if (target->GetTag() == GameObject::GameObjectType::Bottles)
 	{
 		_appearPosition = _position;
+	}
+
+	if (target->GetTag() == GameObject::GameObjectType::ScoreObjects)
+	{
+		ScoreObject* scoreObj = dynamic_cast<ScoreObject*>(target);
+		_score += scoreObj->GetScore();
+		scoreObj->SetIsVisible(false);
 	}
 
 	//next scene

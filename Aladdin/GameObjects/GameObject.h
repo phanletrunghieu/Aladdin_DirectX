@@ -25,6 +25,7 @@ public:
 		FloatGround,
 		Coal,//than nong
 		Bottles,//hoi sinh
+		ScoreObjects,
 		Springboard,
 		Camels,
 		ToJafarScene
