@@ -45,7 +45,7 @@
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="2621.64" y="496.424" width="37" height="50"/>
+  <object id="207" gid="12" x="3644.19" y="120.545" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Apple">
   <object id="1" gid="3" x="477.333" y="553" width="11" height="12"/>

@@ -7,8 +7,9 @@
 class Player:public GameObject
 {
 private:
-	static D3DXVECTOR2 _appearPosition;
 	static int _timesPlay;//luot choi
+
+	D3DXVECTOR2 _appearPosition;
 
 	PlayerState *_state;
 	bool _isRight, _isGround, _allowMoveLeft, _allowMoveRight;
@@ -43,6 +44,9 @@ public:
 	bool IsAllowMoveRight();
 	void AllowMoveLeft(bool allow);
 	void AllowMoveRight(bool allow);
+
+	D3DXVECTOR2 GetAppearPosition();
+	void SetAppearPosition(D3DXVECTOR2 appearPositioin);
 
 	float GetSpeed();
 	void SetSpeed(float speed);

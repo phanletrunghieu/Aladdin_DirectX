@@ -41,7 +41,9 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 			if (objectGroup->GetName() == "Player")
 			{
 				_player = new Player();
-				_player->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+				D3DXVECTOR2 pos = D3DXVECTOR2(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+				_player->SetPosition(pos);
+				_player->SetAppearPosition(pos);
 
 				QuadTree::InsertDynamicObject(_player);
 			}

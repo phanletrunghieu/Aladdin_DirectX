@@ -15,8 +15,17 @@ MainScene::~MainScene()
 	}
 	_backgroundTextures.clear();
 
+	delete _spriteCountApple;
+	_spriteCountApple = NULL;
+
 	delete _txtCountApple;
 	_txtCountApple = NULL;
+
+	delete _spriteTimesPlay;
+	_spriteTimesPlay = NULL;
+
+	delete _txtTimesPlay;
+	_txtTimesPlay = NULL;
 
 	delete _playerHealthMeter;
 	_playerHealthMeter = NULL;

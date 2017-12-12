@@ -8,7 +8,6 @@
 #include "../../GameComponents/Sound.h"
 #include "../../Scenes/JafarScene.h"
 
-D3DXVECTOR2 Player::_appearPosition = D3DXVECTOR2(300, 500);
 int Player::_timesPlay = 3;
 
 int Player::GetTimesPlay()
@@ -261,6 +260,16 @@ void Player::AllowMoveLeft(bool allow)
 void Player::AllowMoveRight(bool allow)
 {
 	_allowMoveRight = allow;
+}
+
+D3DXVECTOR2 Player::GetAppearPosition()
+{
+	return _appearPosition;
+}
+
+void Player::SetAppearPosition(D3DXVECTOR2 appearPositioin)
+{
+	_appearPosition = appearPositioin;
 }
 
 float Player::GetSpeed()
