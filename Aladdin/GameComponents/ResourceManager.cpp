@@ -46,6 +46,9 @@ ResourceManager::ResourceManager()
 	_animationXMLCoalFire = new tinyxml2::XMLDocument();
 	_animationXMLCoalFire->LoadFile("Resources/Items/CoalFire-Animation.xml");
 
+	_animationXMLBottle = new tinyxml2::XMLDocument();
+	_animationXMLBottle->LoadFile("Resources/Items/Bottle-Animations.xml");
+
 	_animationXMLPlayerHealthMeter = new tinyxml2::XMLDocument();
 	_animationXMLPlayerHealthMeter->LoadFile("Resources/Items/HealthMeter-Animation.xml");
 
@@ -202,6 +205,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCamel()
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLCoalFire()
 {
 	return _animationXMLCoalFire;
+}
+
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLBottle()
+{
+	return _animationXMLBottle;
 }
 
 tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLJafar()

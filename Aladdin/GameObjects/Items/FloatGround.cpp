@@ -33,7 +33,7 @@ void FloatGround::OnCollision(GameObject * target, GameCollision::SideCollisions
 {
 	if (target->GetTag() == GameObject::GameObjectType::Players)
 	{
-		_velocity.y = 10;
+		_velocity.y = 0;
 		_acceleration.y = 60;
 	}
 

@@ -28,6 +28,8 @@ public:
 	int GetCurrentIndex();
 	void SetCurrentIndex(int index);
 
+	bool IsPaused();
+
 	bool IsBegin();
 	bool IsFinish();
 

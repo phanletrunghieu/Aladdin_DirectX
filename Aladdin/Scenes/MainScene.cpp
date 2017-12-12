@@ -17,6 +17,9 @@ MainScene::~MainScene()
 
 	delete _txtCountApple;
 	_txtCountApple = NULL;
+
+	delete _playerHealthMeter;
+	_playerHealthMeter = NULL;
 }
 
 void MainScene::LoadContent()
@@ -43,7 +46,7 @@ void MainScene::LoadContent()
 
 	_camera = new Camera(_gameMap->GetPlayer());
 
-	//apple weapon
+	//apple weapon counter
 	RECT appleSourceRect;
 	appleSourceRect.left = 341;
 	appleSourceRect.right = 352;
@@ -52,6 +55,16 @@ void MainScene::LoadContent()
 	_spriteCountApple = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, appleSourceRect);
 	_spriteCountApple->SetScale(D3DXVECTOR2(2, 2));
 	_txtCountApple = new Text(L"0", 15, 15, FW_BOLD);
+
+	//times play counter
+	RECT temp;
+	temp.left = 367;
+	temp.right = 391;
+	temp.top = 140;
+	temp.bottom = 165;
+	_spriteTimesPlay = new Sprite(ResourceManager::GetInstance()->GetTextureItems(), true, temp);
+	_spriteTimesPlay->SetScale(D3DXVECTOR2(2, 2));
+	_txtTimesPlay = new Text(L"0", 15, 15, FW_BOLD);
 
 	_playerHealthMeter = new PlayerHealthMeter();
 }
@@ -64,6 +77,7 @@ void MainScene::Update(float dt)
 	if ((int)_gameMap != 0xDDDDDDDD)
 	{
 		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
+		_txtTimesPlay->SetString(Player::GetTimesPlay());
 		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 		_playerHealthMeter->Update(dt);
 	}
@@ -77,5 +91,9 @@ void MainScene::Draw()
 
 	_spriteCountApple->Draw(D3DXVECTOR3(Graphics::GetInstance()->GetScreenWidth() - 80, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
 	_txtCountApple->Draw(D3DXVECTOR2(Graphics::GetInstance()->GetScreenWidth() - 50, Graphics::GetInstance()->GetScreenHeight() - 50));
+
+	_spriteTimesPlay->Draw(D3DXVECTOR3(50, Graphics::GetInstance()->GetScreenHeight() - 50, 0));
+	_txtTimesPlay->Draw(D3DXVECTOR2(90, Graphics::GetInstance()->GetScreenHeight() - 50));
+
 	_playerHealthMeter->Draw(D3DXVECTOR3(_playerHealthMeter->GetWidth() / 2 + 10, _playerHealthMeter->GetHeight() / 2 + 10, 0));
 }

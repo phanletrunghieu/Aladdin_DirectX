@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="264">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="267">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -36,13 +36,16 @@
  <tileset firstgid="17" name="Enemy-6" tilewidth="11" tileheight="22" tilecount="1" columns="1">
   <image source="demo_tmx/Enemy-6.png" width="11" height="22"/>
  </tileset>
+ <tileset firstgid="18" name="Bottle" tilewidth="20" tileheight="33" tilecount="1" columns="1">
+  <image source="demo_tmx/Bottle.png" width="20" height="33"/>
+ </tileset>
  <layer name="Tile Layer 1" width="1" height="1">
   <data encoding="base64" compression="zlib">
    eJxjZGBgAAAACAAC
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="4414.85" y="68.788" width="37" height="50"/>
+  <object id="207" gid="12" x="2621.64" y="496.424" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Apple">
   <object id="1" gid="3" x="477.333" y="553" width="11" height="12"/>
@@ -157,6 +160,11 @@
   <object id="178" gid="5" x="3442.75" y="262.75" width="43" height="18"/>
   <object id="179" gid="5" x="3458.25" y="182" width="43" height="18"/>
   <object id="180" gid="5" x="4228.67" y="136" width="43" height="18"/>
+ </objectgroup>
+ <objectgroup name="Bottle">
+  <object id="264" gid="18" x="2693.5" y="517" width="20" height="33"/>
+  <object id="265" gid="18" x="3485.33" y="483.667" width="20" height="33"/>
+  <object id="266" gid="18" x="3672.5" y="212" width="20" height="33"/>
  </objectgroup>
  <objectgroup name="Enemy_1">
   <object id="186" gid="6" x="681.5" y="634" width="44" height="58"/>

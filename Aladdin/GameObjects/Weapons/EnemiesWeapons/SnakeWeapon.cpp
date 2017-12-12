@@ -12,6 +12,8 @@ SnakeWeapon::SnakeWeapon(int damage) :Weapon(Weapon::WeaponType::EnemiesWeapons,
 
 	_mass = 0;
 	_acceleration.y = _mass;
+
+	_allowUpdateWhenNotInCamera = true;
 }
 
 SnakeWeapon::~SnakeWeapon()

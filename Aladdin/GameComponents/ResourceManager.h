@@ -22,6 +22,7 @@ private:
 	tinyxml2::XMLDocument *_animationXMLPlayerHealthMeter;
 	tinyxml2::XMLDocument *_animationXMLCamel;
 	tinyxml2::XMLDocument *_animationXMLCoalFire;
+	tinyxml2::XMLDocument *_animationXMLBottle;
 
 	tinyxml2::XMLDocument *_animationXMLJafar;
 	tinyxml2::XMLDocument *_animationXMLSnake;
@@ -64,6 +65,7 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLPlayerHealthMeter();
 	tinyxml2::XMLDocument* GetAnimationXMLCamel();
 	tinyxml2::XMLDocument* GetAnimationXMLCoalFire();
+	tinyxml2::XMLDocument* GetAnimationXMLBottle();
 
 	tinyxml2::XMLDocument* GetAnimationXMLJafar();
 	tinyxml2::XMLDocument* GetAnimationXMLSnake();

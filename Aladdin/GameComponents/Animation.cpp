@@ -171,6 +171,11 @@ void Animation::SetCurrentIndex(int index)
 	CheckIsBeginOrFinish();
 }
 
+bool Animation::IsPaused()
+{
+	return _paused;
+}
+
 bool Animation::IsBegin()
 {
 	return _isBegin;

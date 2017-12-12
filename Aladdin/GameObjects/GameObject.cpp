@@ -80,11 +80,19 @@ void GameObject::CheckCollision()
 		bool isInCamera = _camera->IsInCamera(gameObject->GetPosition(), gameObject->GetWidth(), gameObject->GetHeight());
 		if (!gameObject->IsVisible() || !isInCamera)
 			continue;
+		//khong cho player xet va cham voi weapon
+		if (this->_tag == GameObjectType::Players && gameObject->_tag == GameObjectType::Weapons)
+			continue;
 
 		//lay va cham cua other voi this
 		GameCollision collisionData = GameCollision::CheckCollision(this->GetBound(), gameObject->GetBound());
-		if (collisionData.IsCollided())
+		if (collisionData.IsCollided()) {
 			this->OnCollision(gameObject, collisionData.GetSide());
+
+			//goi va cham cho player voi weapon
+			if (this->_tag == GameObjectType::Weapons && gameObject->_tag == GameObjectType::Players)
+				gameObject->OnCollision(this, collisionData.GetSide());
+		}
 	}
 }
 

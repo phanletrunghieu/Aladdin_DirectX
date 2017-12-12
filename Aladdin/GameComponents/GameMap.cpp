@@ -168,6 +168,17 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(camel);
 			}
 
+			//bottle
+			if (objectGroup->GetName() == "Bottle")
+			{
+				Bottle *bottle = new Bottle();
+				bottle->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
+
+				_listBottles.push_back(bottle);
+
+				_quadTree->InsertStaticObject(bottle);
+			}
+
 			//init coal
 			if (objectGroup->GetName() == "Coal")
 			{
@@ -286,6 +297,13 @@ GameMap::~GameMap()
 	}
 	_listCamels.clear();
 
+	for (size_t i = 0; i < _listBottles.size(); i++)
+	{
+		if (_listBottles[i])
+			delete _listBottles[i];
+	}
+	_listBottles.clear();
+
 	for (size_t i = 0; i < _listCoal.size(); i++)
 	{
 		if (_listCoal[i])
@@ -324,6 +342,10 @@ void GameMap::Update(float deltaTime)
 	//camels
 	for (size_t i = 0; i < _listCamels.size(); i++)
 		_listCamels[i]->Update(deltaTime);
+
+	//bottles
+	for (size_t i = 0; i < _listBottles.size(); i++)
+		_listBottles[i]->Update(deltaTime);
 
 	//coal
 	for (size_t i = 0; i < _listCoal.size(); i++)
@@ -456,6 +478,22 @@ void GameMap::Draw(Camera * camera)
 
 		//visible -> draw
 		_listCamels[i]->Draw(camera);
+	}
+
+	//bottles
+	for (size_t i = 0; i < _listBottles.size(); i++)
+	{
+		//remove not visible object
+		if (!_listBottles[i]->IsVisible())
+		{
+			_quadTree->RemoveStaticObject(_listBottles[i]);
+			_listBottles.erase(_listBottles.begin() + i);
+			i--;
+			continue;
+		}
+
+		//visible -> draw
+		_listBottles[i]->Draw(camera);
 	}
 
 	//coal

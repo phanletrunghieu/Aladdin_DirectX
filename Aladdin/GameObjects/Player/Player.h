@@ -7,6 +7,9 @@
 class Player:public GameObject
 {
 private:
+	static D3DXVECTOR2 _appearPosition;
+	static int _timesPlay;//luot choi
+
 	PlayerState *_state;
 	bool _isRight, _isGround, _allowMoveLeft, _allowMoveRight;
 	float _speed, _jumpForce, _jumpRunForce;
@@ -14,11 +17,14 @@ private:
 	//when colliding with coal, each duration, player's health will decrease
 	float _collidedWithCoalDuration;
 
-	int _prevHealth;//used to check damage
 	int _health, _damage, _numAppleWeapon;
 public:
+	static int GetTimesPlay();
 	Player();
 	~Player();
+
+	//use when died
+	void Reset();
 
 	void Update(float deltaTime);
 	void Draw(Camera* camera);

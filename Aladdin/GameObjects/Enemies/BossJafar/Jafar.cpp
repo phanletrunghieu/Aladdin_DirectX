@@ -15,7 +15,7 @@ Jafar::~Jafar()
 
 Jafar::Jafar(GameObject * target) :Enemy(target)
 {
-	_health = 300;
+	_health = 500;
 
 	_isRight = false;
 	_isMovableObject = false;

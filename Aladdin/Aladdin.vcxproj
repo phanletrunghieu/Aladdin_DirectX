@@ -196,6 +196,7 @@
     <ClCompile Include="GameObjects\Enemies\EnemyState.cpp" />
     <ClCompile Include="GameObjects\GameObject.cpp" />
     <ClCompile Include="GameObjects\Items\Apple.cpp" />
+    <ClCompile Include="GameObjects\Items\Bottle.cpp" />
     <ClCompile Include="GameObjects\Items\Camel.cpp" />
     <ClCompile Include="GameObjects\Items\Coal.cpp" />
     <ClCompile Include="GameObjects\Items\FloatGround.cpp" />
@@ -305,6 +306,7 @@
     <ClInclude Include="GameObjects\Enemies\EnemyState.h" />
     <ClInclude Include="GameObjects\GameObject.h" />
     <ClInclude Include="GameObjects\Items\Apple.h" />
+    <ClInclude Include="GameObjects\Items\Bottle.h" />
     <ClInclude Include="GameObjects\Items\Camel.h" />
     <ClInclude Include="GameObjects\Items\Coal.h" />
     <ClInclude Include="GameObjects\Items\FloatGround.h" />

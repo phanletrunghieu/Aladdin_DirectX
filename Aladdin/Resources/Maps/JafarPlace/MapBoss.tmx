@@ -24,8 +24,8 @@
  <objectgroup name="Jafar">
   <object id="8" gid="3" x="761" y="305" width="64" height="71"/>
  </objectgroup>
- <objectgroup name="Ground" offsetx="-6" offsety="-4">
-  <object id="2" x="4" y="308" width="1258" height="124"/>
-  <object id="6" x="160" y="246" width="54" height="62"/>
+ <objectgroup name="Ground">
+  <object id="2" x="2" y="301.591" width="1258" height="126.409"/>
+  <object id="6" x="152" y="239" width="56.25" height="65"/>
  </objectgroup>
 </map>

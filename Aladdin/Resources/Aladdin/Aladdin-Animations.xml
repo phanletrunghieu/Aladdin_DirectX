@@ -53,15 +53,15 @@
     <sprite x="54" y="326" w="51" h="61" oX="65" oY="388" oW="379" oH="297" />
     <sprite x="115" y="314" w="44" h="73" oX="120" oY="388" oW="379" oH="297" />
     <sprite x="171" y="319" w="81" h="68" oX="172" oY="388" oW="379" oH="297" />
-    <sprite x="260" y="335" w="51" h="52" oX="268" oY="388" oW="379" oH="297" />
+    <sprite x="260" y="335" w="51" h="52" oX="272" oY="388" oW="379" oH="297" />
   </Animation>
   <Animation name="Throw" imagePath="Aladdin_trans.png" width="1121" height="2718">
     <sprite x="7" y="235" w="43" h="55" oX="7" oY="290" oW="283" oH="306" />
-    <sprite x="57" y="232" w="41" h="58" oX="57" oY="290" oW="283" oH="306" />
-    <sprite x="109" y="233" w="37" h="57" oX="109" oY="290" oW="283" oH="306" />
-    <sprite x="163" y="231" w="46" h="59" oX="164" oY="290" oW="283" oH="306" />
-    <sprite x="221" y="233" w="36" h="57" oX="221" oY="290" oW="283" oH="306" />
-    <sprite x="268" y="239" w="38" h="51" oX="270" oY="290" oW="283" oH="306" />
+    <sprite x="57" y="232" w="41" h="58" oX="58" oY="290" oW="283" oH="306" />
+    <sprite x="109" y="233" w="37" h="57" oX="108" oY="290" oW="283" oH="306" />
+    <sprite x="163" y="231" w="46" h="59" oX="163" oY="290" oW="283" oH="306" />
+    <sprite x="221" y="233" w="36" h="57" oX="219" oY="290" oW="283" oH="306" />
+    <sprite x="268" y="239" w="38" h="51" oX="266" oY="290" oW="283" oH="306" />
   </Animation>
   <Animation name="CrouchIdle" imagePath="Aladdin_trans.png" width="1121" height="2718">
     <sprite x="205" y="500" w="42" h="48" oX="211" oY="549" oW="369" oH="210" />
@@ -188,8 +188,8 @@
     <sprite x="58" y="2161" w="55" h="51" oX="80" oY="2213" oW="2202" oH="376" />
     <sprite x="122" y="2162" w="59" h="49" oX="144" oY="2212" oW="2202" oH="376" />
     <sprite x="189" y="2163" w="80" h="47" oX="228" oY="2211" oW="2202" oH="376" />
-    <sprite x="282" y="2160" w="61" h="50" oX="306" oY="2211" oW="2202" oH="376" />
-    <sprite x="351" y="2161" w="59" h="48" oX="373" oY="2210" oW="2202" oH="376" />
+    <sprite x="282" y="2160" w="61" h="50" oX="305" oY="2211" oW="2202" oH="376" />
+    <sprite x="351" y="2161" w="59" h="48" oX="370" oY="2213" oW="2202" oH="376" />
   </Animation>
   <Animation name="Death" imagePath="Aladdin_trans.png" width="1121" height="2718">
     <sprite x="1" y="2234" w="80" h="47" oX="1" oY="2282" oW="2297" oH="760" />

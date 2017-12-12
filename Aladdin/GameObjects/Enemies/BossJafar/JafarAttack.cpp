@@ -25,14 +25,14 @@ void JafarAttack::Update(float deltatime)
 {
 	EnemyState::Update(deltatime);
 
-	if (_enemy->GetHealth() <= 150)//chuyen dang Snake
+	if (_enemy->GetHealth() <= 250)//chuyen dang Snake
 	{
 		_enemy->SetState(new SnakeAttack(_enemy));
 		Sound::GetInstance()->Play("Jafar_Snake", 0, 1);
 		return;
 	}
 
-	if (!_isCreatedWeapon && _animation->GetCurrentIndex() == 3)
+	if (!_isCreatedWeapon && (_animation->GetCurrentIndex() == 2 || _animation->GetCurrentIndex() == 4 || _animation->GetCurrentIndex() == 6))
 	{
 		_isCreatedWeapon = true;
 
@@ -59,6 +59,6 @@ void JafarAttack::Update(float deltatime)
 
 
 	}
-	if (_animation->GetCurrentIndex() == 4)
+	if (_animation->GetCurrentIndex() == 3 || _animation->GetCurrentIndex() == 5 || _animation->GetCurrentIndex() == 7)
 		_isCreatedWeapon = false;
 }

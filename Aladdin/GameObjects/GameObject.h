@@ -24,6 +24,7 @@ public:
 		HorizontalBar,
 		FloatGround,
 		Coal,//than nong
+		Bottles,//hoi sinh
 		Springboard,
 		Camels,
 		ToJafarScene

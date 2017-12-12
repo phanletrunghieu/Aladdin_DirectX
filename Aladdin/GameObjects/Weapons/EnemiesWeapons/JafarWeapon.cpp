@@ -52,7 +52,7 @@ void JafarWeapon::Update(float deltatime)
 
 void JafarWeapon::OnCollision(GameObject* target, GameCollision::SideCollisions side)
 {
-	if (target->GetTag() != GameObject::GameObjectType::Enemies)
+	if (target->GetTag() != GameObject::GameObjectType::Enemies && target->GetTag() != GameObject::GameObjectType::Weapons && _animation!= _animationExploide)
 	{
 		_animation = _animationExploide;
 		_width = _animation->GetWidth();

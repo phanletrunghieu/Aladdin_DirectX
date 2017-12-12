@@ -8,7 +8,26 @@
 #include "../../GameComponents/Sound.h"
 #include "../../Scenes/JafarScene.h"
 
+D3DXVECTOR2 Player::_appearPosition = D3DXVECTOR2(300, 500);
+int Player::_timesPlay = 3;
+
+int Player::GetTimesPlay()
+{
+	return _timesPlay;
+}
+
 Player::Player():GameObject(GameObject::GameObjectType::Players, true)
+{
+	Reset();
+}
+
+Player::~Player()
+{
+	delete _state;
+	_state = NULL;
+}
+
+void Player::Reset()
 {
 	_mass = 35;
 	_speed = 45;
@@ -21,18 +40,11 @@ Player::Player():GameObject(GameObject::GameObjectType::Players, true)
 
 	_collidedWithCoalDuration = 0;
 
-	_health = 1000;
-	_prevHealth = _health;
+	_health = 100;
 	_damage = 50;
-	_numAppleWeapon = 10;
+	_numAppleWeapon = 100;
 
 	_state = new PlayerFallState(this);
-}
-
-Player::~Player()
-{
-	delete _state;
-	_state = NULL;
 }
 
 void Player::Update(float deltaTime)
@@ -44,15 +56,15 @@ void Player::Update(float deltaTime)
 	}
 
 	//face to right or left
-	if (_input->IsKeyPressed(DIK_LEFT))
+	if (_input->IsKeyPressed(DIK_LEFT) && _health > 0)
 		_isRight = false;
-	else if(_input->IsKeyPressed(DIK_RIGHT))
+	else if(_input->IsKeyPressed(DIK_RIGHT) && _health > 0)
 		_isRight = true;
 
 	//move
-	if (_input->IsKeyPressed(DIK_LEFT) && _allowMoveLeft)
+	if (_input->IsKeyPressed(DIK_LEFT) && _allowMoveLeft && _health > 0)
 		_velocity.x = -1 * _speed;
-	else if (_input->IsKeyPressed(DIK_RIGHT) && _allowMoveRight)
+	else if (_input->IsKeyPressed(DIK_RIGHT) && _allowMoveRight && _health > 0)
 		_velocity.x = _speed;
 	else
 		_velocity.x = 0;
@@ -60,17 +72,6 @@ void Player::Update(float deltaTime)
 	GameObject::Update(deltaTime);
 	if(_state!=NULL)
 		_state->Update(deltaTime);
-
-	//check damage
-	if (_prevHealth > _health)
-	{
-		Sound::GetInstance()->Play("Aladdin_Hurt", 0, 1);
-		if (_state->GetName() == PlayerState::StateName::Idle)
-		{
-			SetState(new PlayerDamageState(this));
-		}
-	}
-	_prevHealth = _health;
 }
 
 void Player::Draw(Camera * camera)
@@ -114,7 +115,7 @@ void Player::CheckCollision()
 		{
 			this->OnCollision(gameObject, collisionData.GetSide());
 
-			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround)
+			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround || gameObject->GetTag() == GameObject::GameObjectType::Wall)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
 					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
@@ -161,15 +162,16 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		}
 	}
 
-	if (target->GetTag() == GameObject::GameObjectType::Weapons
-		&& _state->GetName() != PlayerState::StateName::Attack
-		&& _state->GetName() != PlayerState::StateName::JumpAttack)
+	if (target->GetTag() == GameObject::GameObjectType::Weapons)
 	{
-		Weapon* weapon = dynamic_cast<Weapon*>(target);
-		if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons && !weapon->IsAttacked())
+		if (_state->GetName() != PlayerState::StateName::Attack && _state->GetName() != PlayerState::StateName::JumpAttack)
 		{
-			weapon->SetIsAttacked(true);
-			SetHealth(_health - weapon->GetDamage());
+			Weapon* weapon = dynamic_cast<Weapon*>(target);
+			if (weapon->GetWeaponType() == Weapon::WeaponType::EnemiesWeapons && !weapon->IsAttacked())
+			{
+				weapon->SetIsAttacked(true);
+				SetHealth(_health - weapon->GetDamage());
+			}
 		}
 	}
 
@@ -184,8 +186,13 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		}
 	}
 
+	if (target->GetTag() == GameObject::GameObjectType::Bottles)
+	{
+		_appearPosition = _position;
+	}
+
 	//next scene
-	if (target->GetTag() == GameObject::GameObjectType::ToJafarScene)
+	if (target->GetTag() == GameObject::GameObjectType::ToJafarScene && _health > 0)
 	{
 		SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 		_state = NULL;
@@ -293,12 +300,36 @@ int Player::GetHealth()
 
 void Player::SetHealth(int newHealth)
 {
+	//check if died
+	if (_health <= 0)
+		return;
+
+	if (newHealth < _health)
+	{
+		Sound::GetInstance()->Play("Aladdin_Hurt", 0, 1);
+		if (_state->GetName() == PlayerState::StateName::Idle)
+		{
+			SetState(new PlayerDamageState(this));
+		}
+	}
+
 	_health = newHealth;
 
-	if (_health <= 0)
+	if (newHealth <= 0)
 	{
 		SetState(new PlayerDeathState(this));
+
+		//hoi sinh
+		if (_timesPlay > 0)
+		{
+			_timesPlay--;
+			Reset();
+			_position = _appearPosition;
+			_camera->SetPosition(_position);
+		}
 	}
+
+	
 }
 
 int Player::GetDamage()

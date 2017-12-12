@@ -15,6 +15,7 @@
 #include "../GameObjects/Enemies/Enemy5/Enemy5.h"
 #include "../GameObjects/Enemies/Enemy6/Enemy6.h"
 #include "../GameObjects/Items/Camel.h"
+#include "../GameObjects/Items/Bottle.h"
 #include "../GameObjects/Items/Coal.h"
 #include "../GameObjects/Enemies/BossJafar/Jafar.h"
 
@@ -33,6 +34,7 @@ private:
 	std::vector<Springboard*> _listSpringboards;
 	std::vector<Enemy*> _listEnemies;
 	std::vector<Camel*> _listCamels;
+	std::vector<Bottle*> _listBottles;
 	std::vector<Coal*> _listCoal;
 public:
 	GameMap();

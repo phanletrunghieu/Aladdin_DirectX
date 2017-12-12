@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="bottle" imagePath="Items_trans.png" width="664" height="1000">
+    <sprite x="19" y="424" w="19" h="32" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="49" y="428" w="23" h="28" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="78" y="437" w="34" h="19" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="119" y="425" w="19" h="33" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="145" y="425" w="22" h="33" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="174" y="426" w="25" h="32" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="207" y="426" w="23" h="33" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="239" y="427" w="20" h="33" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="270" y="428" w="23" h="32" oX="-1" oY="-1" oW="450" oH="300" />
+    <sprite x="302" y="429" w="22" h="32" oX="-1" oY="-1" oW="450" oH="300" />
+  </Animation>
+</Animations>
