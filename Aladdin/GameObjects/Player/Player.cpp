@@ -47,7 +47,7 @@ void Player::Reset()
 
 	_collidedWithCoalDuration = 0;
 
-	_health = 10;
+	_health = 100;
 	_damage = 50;
 
 	_state = new PlayerFallState(this);
