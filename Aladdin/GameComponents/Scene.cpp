@@ -8,7 +8,6 @@ Scene::Scene(D3DCOLOR backgroundColor)
 
 Scene::~Scene()
 {
-	/*
 	if (_camera)
 	{
 		delete _camera;
@@ -20,7 +19,6 @@ Scene::~Scene()
 		delete _gameMap;
 		_gameMap = NULL;
 	}
-	*/
 }
 
 D3DCOLOR Scene::GetBackcolor()

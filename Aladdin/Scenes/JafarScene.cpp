@@ -8,7 +8,6 @@ JafarScene::JafarScene() :Scene(0x9090b0)
 
 JafarScene::~JafarScene()
 {
-	/*
 	for (size_t i = 0; i < _backgroundTextures.size(); i++)
 	{
 		delete _backgroundTextures[i];
@@ -33,7 +32,6 @@ JafarScene::~JafarScene()
 
 	delete _playHealthMeter;
 	_playHealthMeter = NULL;
-	*/
 }
 
 void JafarScene::LoadContent()

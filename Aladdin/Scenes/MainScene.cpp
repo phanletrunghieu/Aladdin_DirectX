@@ -8,7 +8,6 @@ MainScene::MainScene():Scene(0x9090b0)
 
 MainScene::~MainScene()
 {
-	/*
 	for (size_t i = 0; i < _backgroundTextures.size(); i++)
 	{
 		delete _backgroundTextures[i];
@@ -33,7 +32,6 @@ MainScene::~MainScene()
 
 	delete _playerHealthMeter;
 	_playerHealthMeter = NULL;
-	*/
 }
 
 void MainScene::LoadContent()
