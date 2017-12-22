@@ -1,6 +1,8 @@
 #include "Jafar.h"
 #include "../../Player/Player.h"
 #include "JafarAttack.h"
+#include "../../../GameComponents/SceneManager.h"
+#include "../../../Scenes/VictoryScene.h"
 
 Jafar::Jafar()
 {
@@ -27,4 +29,10 @@ Jafar::Jafar(GameObject * target) :Enemy(target)
 void Jafar::Update(float deltatime)
 {
 	Enemy::Update(deltatime);
+
+	if (_health <= 0)
+	{
+		SceneManager::GetInstance()->ReplaceScene(new VictoryScene());
+		_state = NULL;
+	}
 }

@@ -28,7 +28,8 @@ public:
 		ScoreObjects,
 		Springboard,
 		Camels,
-		ToJafarScene
+		ToJafarScene,
+		Colbany //lan can
 	};
 protected:
 	GameObjectType _tag;

@@ -408,6 +408,12 @@
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject2.cpp">
       <Filter>GameObjects\Items\ScoreObject</Filter>
     </ClCompile>
+    <ClCompile Include="Scenes\DefeatScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Scenes\VictoryScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -742,6 +748,12 @@
     </ClInclude>
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject2.h">
       <Filter>GameObjects\Items\ScoreObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\DefeatScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scenes\VictoryScene.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

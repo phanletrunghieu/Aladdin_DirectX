@@ -236,7 +236,18 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				_quadTree->InsertStaticObject(gameObject);
 			}
 
-			//init wall
+			//init colbany
+			if (objectGroup->GetName() == "Colbany")
+			{
+				GameObject *gameObject = new GameObject(GameObject::GameObjectType::Colbany);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init ToJafarSence
 			if (objectGroup->GetName() == "ToJafarScene")
 			{
 				GameObject *gameObject = new GameObject(GameObject::GameObjectType::ToJafarScene);
@@ -352,6 +363,9 @@ GameMap::~GameMap()
 
 void GameMap::Update(float deltaTime)
 {
+	//player
+	_player->Update(deltaTime);
+
 	//apple
 	for (size_t i = 0; i < _listApples.size(); i++)
 		_listApples[i]->Update(deltaTime);
@@ -383,9 +397,6 @@ void GameMap::Update(float deltaTime)
 	//coal
 	for (size_t i = 0; i < _listCoal.size(); i++)
 		_listCoal[i]->Update(deltaTime);
-
-	//player
-	_player->Update(deltaTime);
 }
 
 void GameMap::Draw(Camera * camera)

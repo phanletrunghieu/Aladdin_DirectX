@@ -237,8 +237,10 @@
     <ClCompile Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.cpp" />
     <ClCompile Include="GameObjects\Weapons\Weapon.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="Scenes\DefeatScene.cpp" />
     <ClCompile Include="Scenes\JafarScene.cpp" />
     <ClCompile Include="Scenes\MainScene.cpp" />
+    <ClCompile Include="Scenes\VictoryScene.cpp" />
     <ClCompile Include="TmxParser\base64\base64.cpp" />
     <ClCompile Include="TmxParser\miniz.c" />
     <ClCompile Include="TmxParser\tinyxml2\tinyxml2.cpp" />
@@ -349,8 +351,10 @@
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\AppleWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\PlayerWeapons\CamelWeapon.h" />
     <ClInclude Include="GameObjects\Weapons\Weapon.h" />
+    <ClInclude Include="Scenes\DefeatScene.h" />
     <ClInclude Include="Scenes\JafarScene.h" />
     <ClInclude Include="Scenes\MainScene.h" />
+    <ClInclude Include="Scenes\VictoryScene.h" />
     <ClInclude Include="TmxParser\base64\base64.h" />
     <ClInclude Include="TmxParser\tinyxml2\tinyxml2.h" />
     <ClInclude Include="TmxParser\TmxColor.h" />

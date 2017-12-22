@@ -1,4 +1,4 @@
-
+#pragma once
 #include "../GameObjects/Camera.h"
 #include "../GameComponents/Sprite.h"
 #include "../GameComponents/Text.h"

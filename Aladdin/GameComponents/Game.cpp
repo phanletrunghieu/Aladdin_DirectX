@@ -2,6 +2,8 @@
 #include "SceneManager.h"
 #include "../Scenes/MainScene.h"
 #include "../Scenes/JafarScene.h"
+#include "../Scenes/VictoryScene.h"
+#include "../Scenes/DefeatScene.h"
 
 Game::Game(LPCWSTR applicationName, float fps, bool isFullScreen)
 {
@@ -71,7 +73,9 @@ bool Game::Initialize()
 	this->_timer = Timer::GetInstance();
 
 	// Show MainScene
+	//SceneManager::GetInstance()->ReplaceScene(new VictoryScene());
 	SceneManager::GetInstance()->ReplaceScene(new MainScene());
+	//SceneManager::GetInstance()->ReplaceScene(new DefeatScene());
 	//SceneManager::GetInstance()->ReplaceScene(new JafarScene());
 
 	// init rand

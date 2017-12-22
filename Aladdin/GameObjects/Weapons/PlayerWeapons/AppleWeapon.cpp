@@ -46,7 +46,7 @@ void AppleWeapon::OnCollision(GameObject * target, GameCollision::SideCollisions
 
 	if (target->GetTag() != GameObjectType::Players
 		&& target->GetTag() != GameObject::GameObjectType::Apple
-		&& _animation == _animationFly)
+		&& _animation == _animationFly && target->GetTag()!=GameObject::GameObjectType::Colbany)
 	{
 		_animation = _animationExplode;
 		_width = _animation->GetWidth();

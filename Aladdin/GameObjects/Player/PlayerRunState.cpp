@@ -1,6 +1,8 @@
 #include "PlayerRunState.h"
 #include "Player.h"
 #include "PlayerStopState.h"
+#include "PlayerAttackState.h"
+#include "PlayerThrowState.h"
 #include "PlayerRunJumpState.h"
 #include "PlayerRunFallState.h"
 
@@ -10,7 +12,7 @@ PlayerRunState::PlayerRunState()
 
 PlayerRunState::PlayerRunState(Player * player) : PlayerState(player, PlayerState::StateName::Run)
 {
-	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Run", ResourceManager::GetInstance()->GetTextureAladdin(), true, 0.4f));
+	SetAnimation(new Animation(ResourceManager::GetInstance()->GetAnimationXMLAladdin(), "Run", ResourceManager::GetInstance()->GetTextureAladdin(), true, 1.0f));
 }
 
 
@@ -31,6 +33,12 @@ void PlayerRunState::Update(float deltaTime)
 	if (Input::GetInstance()->IsKeyPressed(DIK_D))
 	{
 		_player->SetState(new PlayerRunJumpState(_player));
+		return;
+	}
+
+	if (Input::GetInstance()->IsKeyPressed(DIK_A) && _player->GetNumAppleWeapon() > 0)
+	{
+		_player->SetState(new PlayerThrowState(_player));
 		return;
 	}
 

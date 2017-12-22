@@ -7,6 +7,8 @@ SnakeWeapon::SnakeWeapon(int damage) :Weapon(Weapon::WeaponType::EnemiesWeapons,
 	_width = _animation->GetWidth();
 	_height = _animation->GetHeight();
 
+	_animation->SetScale(D3DXVECTOR2(10, 10));
+
 	_velocity.x = 40;
 	_velocity.y = 0;
 
@@ -54,6 +56,12 @@ void SnakeWeapon::OnCollision(GameObject *target, GameCollision::SideCollisions 
 		_isVisible = false;
 		_acceleration.y = 0;
 		_velocity.x = _velocity.y = 0;
+	}
+
+	if (target->GetTag() == GameObject::GameObjectType::Colbany)
+	{
+		//them CoalFire tren Colbany.
+		
 	}
 	
 	

@@ -8,11 +8,12 @@ Camera* Camera::_instance = NULL;
 Camera::Camera(GameObject* follow)
 {
 	_follow = follow;
-	_width = Graphics::GetInstance()->GetScreenWidth()/3;
-	_height = Graphics::GetInstance()->GetScreenHeight()/3;
+	_width = Graphics::GetInstance()->GetScreenWidth();
+	_height = Graphics::GetInstance()->GetScreenHeight();
 
 	_position = D3DXVECTOR2((_width*1.0) / 2, Graphics::GetInstance()->GetScreenHeight() - (_height/2.0f));
-	_position.x = _follow->GetPosition().x;
+	if (_follow != NULL)
+		_position.x = _follow->GetPosition().x;
 
 	this->_instance = this;
 }
@@ -33,11 +34,12 @@ void Camera::Update(float deltaTime)
 {
 	GameObject::Update(deltaTime);
 
-	GameMap *currentMap = SceneManager::GetInstance()->GetCurrentScene()->GetGameMap();
+	Scene *currentScene = SceneManager::GetInstance()->GetCurrentScene();
+	GameMap *currentMap = currentScene->GetGameMap();
 
 	if (_follow != NULL)
 	{
-		if (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT))
+		if (_input->IsKeyPressed(DIK_LEFT) || _input->IsKeyPressed(DIK_RIGHT) || currentScene->GetSceneName()==Scene::SceneName::JafarScenes)
 		{
 			_position.x = _follow->GetPosition().x;
 		}
@@ -55,6 +57,7 @@ void Camera::Update(float deltaTime)
 		if (_position.y + _height / 2 > currentMap->GetHeight())
 			_position.y = currentMap->GetHeight() - _height / 2;
 	}
+
 }
 
 bool Camera::IsInCamera(D3DXVECTOR2 position, int width, int height)
@@ -88,4 +91,10 @@ D3DXVECTOR2 Camera::ConvertPosition(float x, float y)
 	newPosition.y *= Graphics::GetInstance()->GetScreenHeight() / _height;
 
 	return newPosition;
+}
+
+void Camera::SetZoom(int rate)
+{
+	_width /= rate;
+	_height /= rate;
 }

@@ -7,6 +7,7 @@
 #include "../Weapons/Weapon.h"
 #include "../../GameComponents/Sound.h"
 #include "../../Scenes/JafarScene.h"
+#include "../../Scenes/DefeatScene.h"
 
 int Player::_timesPlay = 3;
 int Player::_score = 0;
@@ -36,8 +37,8 @@ Player::~Player()
 void Player::Reset()
 {
 	_mass = 35;
-	_speed = 45;
-	_jumpForce = 70;
+	_speed = 40;
+	_jumpForce = 60;
 	_jumpRunForce = 80;
 
 	_isRight = true;
@@ -46,7 +47,7 @@ void Player::Reset()
 
 	_collidedWithCoalDuration = 0;
 
-	_health = 1000;
+	_health = 10;
 	_damage = 50;
 
 	_state = new PlayerFallState(this);
@@ -120,7 +121,7 @@ void Player::CheckCollision()
 		{
 			this->OnCollision(gameObject, collisionData.GetSide());
 
-			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround || gameObject->GetTag() == GameObject::GameObjectType::Wall)
+			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround || gameObject->GetTag() == GameObject::GameObjectType::Wall || gameObject->GetTag() == GameObject::GameObjectType::Colbany)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
 					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
@@ -149,6 +150,8 @@ void Player::CheckCollision()
 
 void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
+	_state->OnCollision(target, side);
+
 	if (target->GetTag() == GameObject::GameObjectType::Apple)
 	{
 		Sound::GetInstance()->Play("Apple_Collect", false, 1);
@@ -210,8 +213,6 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		_state = NULL;
 		return;
 	}
-
-	_state->OnCollision(target, side);
 }
 
 PlayerState * Player::GetState()
@@ -348,6 +349,11 @@ void Player::SetHealth(int newHealth)
 			Reset();
 			_position = _appearPosition;
 			_camera->SetPosition(_position);
+		}
+		else//chet luon
+		{
+			SceneManager::GetInstance()->ReplaceScene(new DefeatScene());
+			_state = NULL;
 		}
 	}
 

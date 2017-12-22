@@ -1,7 +1,8 @@
 #include "Scene.h"
 
-Scene::Scene(D3DCOLOR backgroundColor)
+Scene::Scene(SceneName sceneName, D3DCOLOR backgroundColor)
 {
+	this->_sceneName = sceneName;
 	this->_backgroundColor = backgroundColor;
 	LoadContent();
 }
@@ -19,6 +20,11 @@ Scene::~Scene()
 		delete _gameMap;
 		_gameMap = NULL;
 	}
+}
+
+Scene::SceneName Scene::GetSceneName()
+{
+	return _sceneName;
 }
 
 D3DCOLOR Scene::GetBackcolor()
@@ -70,7 +76,8 @@ void Scene::Update(float deltaTime)
 
 void Scene::Draw()
 {
-	_gameMap->Draw(_camera);
+	if (_gameMap != NULL)
+		_gameMap->Draw(_camera);
 
 	for (size_t i = 0; i < _listWeapon.size(); i++)
 	{

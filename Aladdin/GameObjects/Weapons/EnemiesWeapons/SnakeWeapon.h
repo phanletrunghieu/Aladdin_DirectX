@@ -2,6 +2,7 @@
 
 #include "../Weapon.h"
 #include "../../../GameComponents/Animation.h"
+#include "../../../GameObjects/Items/Coal.h"
 
 class SnakeWeapon :public Weapon
 {

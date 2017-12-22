@@ -22,4 +22,6 @@ public:
 
 	D3DXVECTOR2 ConvertPosition(D3DXVECTOR2 position);
 	D3DXVECTOR2 ConvertPosition(float x, float y);
+
+	void SetZoom(int rate);
 };

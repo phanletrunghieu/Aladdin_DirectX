@@ -1,7 +1,7 @@
 #include "JafarScene.h"
 #include "../GameComponents/Sound.h"
 
-JafarScene::JafarScene() :Scene(0x9090b0)
+JafarScene::JafarScene() :Scene(Scene::SceneName::JafarScenes, 0x9090b0)
 {
 	LoadContent();
 }
@@ -40,16 +40,21 @@ void JafarScene::LoadContent()
 	RECT sourceRect;
 
 	sourceRect.left = 0;
-	sourceRect.right = 1259;
+	//sourceRect.right = 760;
+	sourceRect.right = 800;
 	sourceRect.top = 0;
-	sourceRect.bottom = 563;
+	sourceRect.bottom = 450;
+	//sourceRect.bottom = 670;
 
 	sprite = new Sprite(ResourceManager::GetInstance()->GetTextureMapBoss(), true, sourceRect);
 	sprite->SetPosition(sprite->GetWidth() / 2.0f, sprite->GetHeight() / 2.0f);
 	_backgroundTextures.push_back(sprite);
 
-	_gameMap = new GameMap("Resources/Maps/JafarPlace/MapBoss.tmx", _quadTree);
+	//_gameMap = new GameMap("Resources/Maps/JafarPlace/MapBoss.tmx", _quadTree);
+	
+	_gameMap = new GameMap("Resources/Maps/JafarPlace/MapBoss4.tmx", _quadTree);
 	_camera = new Camera(_gameMap->GetPlayer());
+	_camera->SetZoom(3);
 
 	//apple weapon counter
 	RECT appleSourceRect;

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="800" tileheight="450" nextobjectid="19">
+ <tileset firstgid="1" name="Player" tilewidth="37" tileheight="50" tilecount="1" columns="1">
+  <image source="demo_tmx/Player.png" width="37" height="50"/>
+ </tileset>
+ <tileset firstgid="2" name="Jafar" tilewidth="64" tileheight="71" tilecount="1" columns="1">
+  <image source="demo_tmx/Jafar.png" width="64" height="71"/>
+ </tileset>
+ <tileset firstgid="3" name="background4" tilewidth="800" tileheight="450" tilecount="1" columns="1">
+  <image source="background4.png" width="800" height="450"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgAAAAEAAE
+  </data>
+ </layer>
+ <objectgroup name="Player">
+  <object id="1" gid="1" x="157" y="327" width="37" height="50"/>
+ </objectgroup>
+ <objectgroup name="Jafar">
+  <object id="16" gid="2" x="393" y="258" width="64" height="71"/>
+ </objectgroup>
+ <objectgroup name="Ground">
+  <object id="2" x="0" y="329" width="802.667" height="19"/>
+  <object id="15" x="359" y="258" width="143" height="14"/>
+  <object id="17" x="164" y="253">
+   <polyline points="0,0 87,-21 100,-23 124,-10 128,-5 153,-7 194,17"/>
+  </object>
+  <object id="18" x="516" y="262">
+   <polyline points="0,0 57,-17 119,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="Wall">
+  <object id="4" x="-1" y="0" width="8" height="328"/>
+  <object id="5" x="788" y="2" width="13" height="326"/>
+ </objectgroup>
+</map>

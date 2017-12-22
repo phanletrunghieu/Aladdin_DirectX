@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Animations>
+  <Animation name="Win" imagePath="Monkey_trans.png" width="535" height="610">
+    <sprite x="18" y="84" w="25" h="32" oX="-1" oY="-1" oW="97" oH="367" />
+    <sprite x="52" y="84" w="41" h="32" oX="-1" oY="-1" oW="97" oH="367" />
+    <sprite x="101" y="85" w="52" h="31" oX="-1" oY="-1" oW="97" oH="367" />
+    <sprite x="161" y="80" w="40" h="36" oX="-1" oY="-1" oW="97" oH="367" />
+    <sprite x="211" y="81" w="34" h="35" oX="-1" oY="-1" oW="97" oH="367" />
+    <sprite x="255" y="81" w="44" h="35" oX="-1" oY="-1" oW="97" oH="367" />
+    <sprite x="312" y="83" w="49" h="33" oX="-1" oY="-1" oW="97" oH="367" />
+    <sprite x="371" y="86" w="46" h="30" oX="-1" oY="-1" oW="97" oH="367" />
+  </Animation>
+</Animations>

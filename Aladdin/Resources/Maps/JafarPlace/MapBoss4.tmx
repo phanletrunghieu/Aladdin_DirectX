@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="760" tileheight="380" nextobjectid="23">
+ <tileset firstgid="1" name="Player" tilewidth="37" tileheight="50" tilecount="1" columns="1">
+  <image source="demo_tmx/Player.png" width="37" height="50"/>
+ </tileset>
+ <tileset firstgid="2" name="Jafar" tilewidth="64" tileheight="71" tilecount="1" columns="1">
+  <image source="demo_tmx/Jafar.png" width="64" height="71"/>
+ </tileset>
+ <tileset firstgid="3" name="background" tilewidth="760" tileheight="380" tilecount="1" columns="1">
+  <image source="background.png" width="760" height="380"/>
+ </tileset>
+ <layer name="Tile Layer 1" width="1" height="1">
+  <data encoding="base64" compression="zlib">
+   eJxjZmBgAAAAEAAE
+  </data>
+ </layer>
+ <objectgroup name="Player">
+  <object id="22" gid="1" x="113" y="360" width="37" height="50"/>
+ </objectgroup>
+ <objectgroup name="Jafar">
+  <object id="6" gid="2" x="602" y="357" width="64" height="71"/>
+ </objectgroup>
+ <objectgroup name="Wall">
+  <object id="3" x="2" y="55" width="32" height="319"/>
+  <object id="4" x="726" y="43" width="35" height="333"/>
+ </objectgroup>
+ <objectgroup name="Coal">
+  <object id="16" x="501" y="347" width="93" height="29"/>
+ </objectgroup>
+ <objectgroup name="Ground">
+  <object id="2" x="25" y="363" width="728" height="16"/>
+ </objectgroup>
+ <objectgroup name="Colbany">
+  <object id="17" x="282" y="310" width="57" height="8"/>
+  <object id="18" x="417" y="310" width="49" height="7"/>
+  <object id="19" x="155" y="311" width="42" height="6"/>
+  <object id="20" x="76" y="317" width="30" height="6"/>
+ </objectgroup>
+</map>

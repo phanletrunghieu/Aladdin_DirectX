@@ -57,10 +57,13 @@ ResourceManager::ResourceManager()
 	_textureEnemies2 = graphics->LoadTexture(L"Resources/Enemies/Enemies_Sprite_2.png", D3DCOLOR_XRGB(120, 193, 152));
 	_textureItems = graphics->LoadTexture(L"Resources/Items/Items.png", D3DCOLOR_XRGB(248, 0, 248));
 	_textureCamel = graphics->LoadTexture(L"Resources/Items/Camel.png", D3DCOLOR_XRGB(248, 0, 248));
+	_textureMonkey = graphics->LoadTexture(L"Resources/Items/Monkey.png", D3DCOLOR_XRGB(255, 0, 255));
+
 	_textureAgrabahMarket = graphics->LoadTexture(L"Resources/Maps/AgrabahMarket/AgrabahMarket.png");
 
 	//man boss:
-	_textureMapBoss = graphics->LoadTexture(L"Resources/Maps/JafarPlace/TestMap.png");
+	//_textureMapBoss = graphics->LoadTexture(L"Resources/Maps/JafarPlace/TestMap.png");
+	_textureMapBoss = graphics->LoadTexture(L"Resources/Maps/JafarPlace/background.png");
 
 	_animationXMLJafar = new tinyxml2::XMLDocument();
 	_animationXMLJafar->LoadFile("Resources/Enemies/Jafar-Animations.xml");
@@ -77,8 +80,13 @@ ResourceManager::ResourceManager()
 	_animationXMLJafarWeapon2 = new tinyxml2::XMLDocument();
 	_animationXMLJafarWeapon2->LoadFile("Resources/Weapons/EnemiesWeapons/Jafar-Weapon-2-Animation.xml");
 
+	_animationXMLMonkey = new tinyxml2::XMLDocument();
+	_animationXMLMonkey->LoadFile("Resources/Items/Monkey-Animations.xml");
+
+
 	_textureBossJafar = graphics->LoadTexture(L"Resources/Enemies/Boss_Sprite.png", D3DCOLOR_XRGB(186, 254, 202));
 	_textureExplosions = graphics->LoadTexture(L"Resources/Enemies/Enemy_Explosions_Sprite.png", D3DCOLOR_XRGB(186, 254, 202));
+	
 
 	Sound::GetInstance()->LoadSound("Resources/Sounds/Apple_Splat.wav", "Apple_Splat");
 	Sound::GetInstance()->LoadSound("Resources/Sounds/Apple_Collect.wav", "Apple_Collect");
@@ -109,6 +117,7 @@ ResourceManager::~ResourceManager()
 	delete _animationXMLPlayerHealthMeter;
 	delete _animationXMLCamel;
 	delete _animationXMLCoalFire;
+	delete _animationXMLMonkey;
 
 	_textureAladdin->Release();
 	_textureEnemies1->Release();
@@ -116,6 +125,7 @@ ResourceManager::~ResourceManager()
 	_textureItems->Release();
 	_textureCamel->Release();
 	_textureAgrabahMarket->Release();
+	_textureMonkey->Release();
 
 	//man boss:
 	delete _animationXMLJafar;
@@ -237,6 +247,11 @@ tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLJafarWeapon2()
 	return _animationXMLJafarWeapon2;
 }
 
+tinyxml2::XMLDocument * ResourceManager::GetAnimationXMLMonkey()
+{
+	return _animationXMLMonkey;
+}
+
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureAladdin()
 {
 	return _textureAladdin;
@@ -277,7 +292,13 @@ LPDIRECT3DTEXTURE9 ResourceManager::GetTextureBossJafar()
 	return _textureBossJafar;
 }
 
+
 LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMapBoss()
 {
 	return _textureMapBoss;
+}
+
+LPDIRECT3DTEXTURE9 ResourceManager::GetTextureMonkey()
+{
+	return _textureMonkey;
 }

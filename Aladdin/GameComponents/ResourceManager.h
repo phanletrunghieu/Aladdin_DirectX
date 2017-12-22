@@ -29,12 +29,15 @@ private:
 	tinyxml2::XMLDocument *_animationXMLExplosions;
 	tinyxml2::XMLDocument *_animationXMLJafarWeapon1;
 	tinyxml2::XMLDocument *_animationXMLJafarWeapon2;
+	tinyxml2::XMLDocument *_animationXMLMonkey;
+
 
 	LPDIRECT3DTEXTURE9 _textureAladdin;
 	LPDIRECT3DTEXTURE9 _textureEnemies1;
 	LPDIRECT3DTEXTURE9 _textureEnemies2;
 	LPDIRECT3DTEXTURE9 _textureItems;
 	LPDIRECT3DTEXTURE9 _textureCamel;
+	LPDIRECT3DTEXTURE9 _textureMonkey;
 
 	//map 1
 	LPDIRECT3DTEXTURE9 _textureAgrabahMarket;
@@ -72,6 +75,7 @@ public:
 	tinyxml2::XMLDocument* GetAnimationXMLExplosions();
 	tinyxml2::XMLDocument* GetAnimationXMLJafarWeapon1();
 	tinyxml2::XMLDocument* GetAnimationXMLJafarWeapon2();
+	tinyxml2::XMLDocument* GetAnimationXMLMonkey();
 
 	LPDIRECT3DTEXTURE9 GetTextureAladdin();
 	LPDIRECT3DTEXTURE9 GetTextureEnemies1();
@@ -82,4 +86,7 @@ public:
 	LPDIRECT3DTEXTURE9 GetTextureExplosions();
 	LPDIRECT3DTEXTURE9 GetTextureBossJafar();
 	LPDIRECT3DTEXTURE9 GetTextureMapBoss();
+	LPDIRECT3DTEXTURE9 GetTextureMonkey();
+
+
 };

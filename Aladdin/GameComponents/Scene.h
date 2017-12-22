@@ -20,8 +20,20 @@ protected:
 	*/
 	std::vector<GameObject*> _listWeapon;
 public:
-	Scene(D3DCOLOR backgroundColor = 0x000000);
+	enum SceneName
+	{
+		MainScenes,
+		JafarScenes,
+		VictoryScenes,
+		DefeatScenes
+	};
+
+	SceneName _sceneName;
+
+	Scene(SceneName sceneName, D3DCOLOR backgroundColor = 0x000000);
 	virtual ~Scene();
+
+	SceneName GetSceneName();
 
 	D3DCOLOR GetBackcolor();
 	QuadTree* GetQuadTree();

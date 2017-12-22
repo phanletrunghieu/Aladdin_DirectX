@@ -1,7 +1,7 @@
 #include "MainScene.h"
 #include "../GameComponents/Sound.h"
 
-MainScene::MainScene():Scene(0x9090b0)
+MainScene::MainScene():Scene(Scene::SceneName::MainScenes, 0x9090b0)
 {
 	LoadContent();
 }
@@ -57,6 +57,7 @@ void MainScene::LoadContent()
 	_gameMap = new GameMap("Resources/Maps/AgrabahMarket/AgrabahMarket.tmx", _quadTree);
 
 	_camera = new Camera(_gameMap->GetPlayer());
+	_camera->SetZoom(3);
 
 	//apple weapon counter
 	RECT appleSourceRect;

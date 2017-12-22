@@ -3,7 +3,7 @@
 JafarWeapon::JafarWeapon(int damage) :Weapon(Weapon::WeaponType::EnemiesWeapons, damage)
 {
 	_animationFly = new Animation(ResourceManager::GetInstance()->GetAnimationXMLJafarWeapon1(), "fly", ResourceManager::GetInstance()->GetTextureBossJafar(), true, 3.0f);
-	_animationExploide = new Animation(ResourceManager::GetInstance()->GetAnimationXMLJafarWeapon1(), "explode", ResourceManager::GetInstance()->GetTextureBossJafar(), true, 3.0f);
+	_animationExploide = new Animation(ResourceManager::GetInstance()->GetAnimationXMLJafarWeapon1(), "explode", ResourceManager::GetInstance()->GetTextureBossJafar(), true, 1.0f);
 	
 	_animation = _animationFly;
 
@@ -60,7 +60,7 @@ void JafarWeapon::OnCollision(GameObject* target, GameCollision::SideCollisions 
 			return;
 	}
 
-	if (target->GetTag() != GameObject::GameObjectType::Enemies && target->GetTag() != GameObject::GameObjectType::Weapons && _animation!= _animationExploide)
+	if (target->GetTag() != GameObject::GameObjectType::Enemies && target->GetTag() != GameObject::GameObjectType::Weapons && _animation != _animationExploide && target->GetTag() != GameObject::GameObjectType::Colbany)
 	{
 		_animation = _animationExploide;
 		_width = _animation->GetWidth();
