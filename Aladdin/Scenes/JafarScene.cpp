@@ -87,6 +87,15 @@ void JafarScene::Update(float deltatime)
 	_playHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
 	_playHealthMeter->Update(deltatime);
 
+	Player* player = _gameMap->GetPlayer();
+	if (player->IsAllowMoveRight())
+		player->SetAccelerationX(500);
+	else
+	{
+		player->SetAccelerationX(0);
+		player->SetVelocityX(0);
+	}
+
 	Scene::Update(deltatime);
 }
 

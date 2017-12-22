@@ -80,6 +80,7 @@ void QuadTree::Clear()
 	}
 
 	_listStaticGameObject.clear();
+	_listDynamicGameObject.clear();
 }
 
 void QuadTree::InsertStaticObject(GameObject * gameObject)
