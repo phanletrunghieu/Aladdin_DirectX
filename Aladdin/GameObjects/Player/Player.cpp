@@ -149,6 +149,9 @@ void Player::CheckCollision()
 
 void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side)
 {
+	if(_state!=NULL)
+		_state->OnCollision(target, side);
+
 	if (target->GetTag() == GameObject::GameObjectType::Apple)
 	{
 		Sound::GetInstance()->Play("Apple_Collect", false, 1);
@@ -210,8 +213,6 @@ void Player::OnCollision(GameObject * target, GameCollision::SideCollisions side
 		_state = NULL;
 		return;
 	}
-
-	_state->OnCollision(target, side);
 }
 
 PlayerState * Player::GetState()

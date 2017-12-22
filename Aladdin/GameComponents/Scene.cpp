@@ -8,6 +8,7 @@ Scene::Scene(D3DCOLOR backgroundColor)
 
 Scene::~Scene()
 {
+	/*
 	if (_camera)
 	{
 		delete _camera;
@@ -19,6 +20,7 @@ Scene::~Scene()
 		delete _gameMap;
 		_gameMap = NULL;
 	}
+	*/
 }
 
 D3DCOLOR Scene::GetBackcolor()
@@ -53,9 +55,8 @@ void Scene::AddGameObjectToWeaponList(GameObject * gameObject)
 
 void Scene::Update(float deltaTime)
 {
+	_camera->Update(deltaTime);
 	_gameMap->Update(deltaTime);
-	if((int)_camera != 0xDDDDDDDD)
-		_camera->Update(deltaTime);
 
 	for (size_t i = 0; i < _listWeapon.size(); i++)
 	{

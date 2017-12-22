@@ -8,6 +8,7 @@ MainScene::MainScene():Scene(0x9090b0)
 
 MainScene::~MainScene()
 {
+	/*
 	for (size_t i = 0; i < _backgroundTextures.size(); i++)
 	{
 		delete _backgroundTextures[i];
@@ -32,6 +33,7 @@ MainScene::~MainScene()
 
 	delete _playerHealthMeter;
 	_playerHealthMeter = NULL;
+	*/
 }
 
 void MainScene::LoadContent()
@@ -86,17 +88,13 @@ void MainScene::LoadContent()
 
 void MainScene::Update(float dt)
 {
-	Scene::Update(dt);
+	_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
+	_txtTimesPlay->SetString(Player::GetTimesPlay());
+	_txtScore->SetString(Player::GetScore());
+	_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
+	_playerHealthMeter->Update(dt);
 
-	//check if move to next scene
-	if ((int)_gameMap != 0xDDDDDDDD)
-	{
-		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
-		_txtTimesPlay->SetString(Player::GetTimesPlay());
-		_txtScore->SetString(Player::GetScore());
-		_playerHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
-		_playerHealthMeter->Update(dt);
-	}
+	Scene::Update(dt);
 }
 
 void MainScene::Draw()

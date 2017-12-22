@@ -8,6 +8,7 @@ JafarScene::JafarScene() :Scene(0x9090b0)
 
 JafarScene::~JafarScene()
 {
+	/*
 	for (size_t i = 0; i < _backgroundTextures.size(); i++)
 	{
 		delete _backgroundTextures[i];
@@ -32,6 +33,7 @@ JafarScene::~JafarScene()
 
 	delete _playHealthMeter;
 	_playHealthMeter = NULL;
+	*/
 }
 
 void JafarScene::LoadContent()
@@ -81,17 +83,13 @@ void JafarScene::LoadContent()
 
 void JafarScene::Update(float deltatime)
 {
-	Scene::Update(deltatime);
+	_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
+	_txtTimesPlay->SetString(Player::GetTimesPlay());
+	_txtScore->SetString(Player::GetScore());
+	_playHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
+	_playHealthMeter->Update(deltatime);
 
-	//check if move to next scene
-	if ((int)_gameMap != 0xDDDDDDDD)
-	{
-		_txtCountApple->SetString(_gameMap->GetPlayer()->GetNumAppleWeapon());
-		_txtTimesPlay->SetString(Player::GetTimesPlay());
-		_txtScore->SetString(Player::GetScore());
-		_playHealthMeter->ChangeAnimation(_gameMap->GetPlayer()->GetHealth());
-		_playHealthMeter->Update(deltatime);
-	}
+	Scene::Update(deltatime);
 }
 
 void JafarScene::Draw()
