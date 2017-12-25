@@ -21,6 +21,7 @@ GameObject::GameObject(GameObjectType tag, bool isMovableObject)
 
 	_noCheckCollision.push_back(GameObjectType::Ground);
 	_noCheckCollision.push_back(GameObjectType::Colbany);
+	_noCheckCollision.push_back(GameObjectType::Camels);
 	_noCheckCollision.push_back(GameObjectType::HorizontalBar);
 	_noCheckCollision.push_back(GameObjectType::None);
 	_noCheckCollision.push_back(GameObjectType::Rope);

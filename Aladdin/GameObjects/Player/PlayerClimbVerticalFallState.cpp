@@ -3,6 +3,7 @@
 #include "PlayerClimbHorizontalIdleState.h"
 #include "PlayerClimbVerticalState.h"
 #include "PlayerFallState.h"
+#include "PlayerIdleState.h"
 
 PlayerClimbVerticalFallState::PlayerClimbVerticalFallState()
 {
@@ -23,6 +24,12 @@ PlayerClimbVerticalFallState::~PlayerClimbVerticalFallState()
 void PlayerClimbVerticalFallState::Update(float deltaTime)
 {
 	PlayerState::Update(deltaTime);
+
+	if (_player->IsGround())//change state
+	{
+		_player->SetState(new PlayerIdleState(_player));
+		return;
+	}
 
 	if (_animation->IsFinish())
 	{

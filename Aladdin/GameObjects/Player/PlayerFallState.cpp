@@ -90,6 +90,8 @@ void PlayerFallState::OnCollision(GameObject * target, GameCollision::SideCollis
 			|| side == GameCollision::SideCollisions::BottomLeft
 			|| side == GameCollision::SideCollisions::BottomRight))
 	{
+		target->OnCollision(_player, GameCollision::SideCollisions::Top);
+
 		_player->SetVelocityY(-1 * _player->GetJumpForce());
 		_player->SetState(new PlayerJumpState(_player));
 		return;
