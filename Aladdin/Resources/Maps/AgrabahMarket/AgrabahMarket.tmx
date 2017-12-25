@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="275">
+<map version="1.0" tiledversion="1.0.3" orientation="orthogonal" renderorder="right-down" width="1" height="1" tilewidth="4773" tileheight="689" nextobjectid="294">
  <tileset firstgid="1" name="AgrabahMarket" tilewidth="4773" tileheight="689" tilecount="2" columns="1">
   <image source="AgrabahMarket.png" trans="3f48cc" width="4773" height="1378"/>
  </tileset>
@@ -51,7 +51,7 @@
   </data>
  </layer>
  <objectgroup name="Player">
-  <object id="207" gid="12" x="1940.24" y="650.061" width="37" height="50"/>
+  <object id="207" gid="12" x="2430.24" y="416.061" width="37" height="50"/>
  </objectgroup>
  <objectgroup name="Apple">
   <object id="1" gid="3" x="477.333" y="553" width="11" height="12"/>
@@ -259,14 +259,6 @@
   <object id="130" x="1475.67" y="387.167" width="39.3333" height="7.5"/>
   <object id="132" x="1590.67" y="275.667" width="682.667" height="7"/>
   <object id="133" x="2560.33" y="515.833" width="187" height="5.8333"/>
-  <object id="134" x="2512" y="528" width="64.5" height="13"/>
-  <object id="135" x="2456.5" y="535.5" width="70.5" height="12"/>
-  <object id="136" x="2423.5" y="542.5" width="44" height="14"/>
-  <object id="137" x="2392.5" y="551.5" width="45" height="12"/>
-  <object id="139" x="2361.5" y="560" width="47.5" height="11.5"/>
-  <object id="140" x="2329" y="567" width="43.5" height="12"/>
-  <object id="141" x="2294.5" y="574.5" width="44" height="7"/>
-  <object id="142" x="2243" y="578.5" width="48.5" height="12"/>
   <object id="143" x="2736.5" y="564.5" width="107" height="7.5"/>
   <object id="145" x="2642.5" y="403.5" width="174.5" height="5.5"/>
   <object id="146" x="2788.5" y="419.75" width="296" height="5.25"/>
@@ -288,15 +280,25 @@
   <object id="170" x="3505.33" y="112.667" width="107.333" height="8"/>
   <object id="171" x="3603" y="212.167" width="1112.5" height="6.99997"/>
   <object id="181" x="3917.5" y="440" width="68" height="22"/>
-  <object id="252" x="2285.75" y="587.5" width="38" height="14.75"/>
-  <object id="253" x="2321" y="595.25" width="34.5" height="10"/>
-  <object id="254" x="2351.5" y="602.75" width="35.75" height="10.75"/>
-  <object id="255" x="2385.25" y="611.75" width="50.75" height="9.5"/>
-  <object id="256" x="2427.75" y="618.5" width="40" height="11.25"/>
-  <object id="257" x="2457.25" y="627.25" width="42.5" height="9.5"/>
-  <object id="258" x="2472.5" y="635.5" width="58.5" height="8.25"/>
-  <object id="259" x="2482.75" y="643.75" width="80.5" height="8.5"/>
-  <object id="260" x="2544.25" y="651" width="43.5" height="12.5"/>
+ </objectgroup>
+ <objectgroup name="Stair_Right">
+  <object id="275" x="2508.67" y="524.667" width="54" height="9.33333"/>
+  <object id="276" x="2452.67" y="531.333" width="66" height="15.3333"/>
+  <object id="277" x="2420" y="538.667" width="44.6667" height="14.6667"/>
+  <object id="278" x="2388.67" y="546" width="45.3333" height="16.6667"/>
+  <object id="279" x="2356.67" y="555.333" width="45.3333" height="14.6667"/>
+  <object id="280" x="2323.33" y="563.333" width="43.3333" height="14"/>
+  <object id="281" x="2292" y="570.667" width="42.6667" height="9.33333"/>
+  <object id="282" x="2242.67" y="579.333" width="47.3333" height="10"/>
+  <object id="283" x="2283.33" y="587.333" width="41.3333" height="9.33333"/>
+  <object id="284" x="2308.67" y="595.333" width="46.6667" height="8"/>
+  <object id="285" x="2338.67" y="602" width="48.6667" height="10"/>
+  <object id="288" x="2382.67" y="612" width="50" height="8.66667"/>
+  <object id="289" x="2430" y="620.667" width="38" height="8"/>
+  <object id="290" x="2456.67" y="627.333" width="43.3333" height="8"/>
+  <object id="291" x="2484.67" y="635.333" width="47.3333" height="9.33333"/>
+  <object id="292" x="2522.67" y="642.667" width="40.6667" height="9.33333"/>
+  <object id="293" x="2556" y="652" width="31.3333" height="12"/>
  </objectgroup>
  <objectgroup name="Wall">
   <object id="227" x="4772" y="226" width="44" height="463"/>

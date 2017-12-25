@@ -204,6 +204,7 @@
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject1.cpp" />
     <ClCompile Include="GameObjects\Items\ScoreObject\ScoreObject2.cpp" />
     <ClCompile Include="GameObjects\Items\Springboard.cpp" />
+    <ClCompile Include="GameObjects\Items\Stair.cpp" />
     <ClCompile Include="GameObjects\PlayerHealthMeter.cpp" />
     <ClCompile Include="GameObjects\Player\Player.cpp" />
     <ClCompile Include="GameObjects\Player\PlayerAttackState.cpp" />
@@ -319,6 +320,7 @@
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject1.h" />
     <ClInclude Include="GameObjects\Items\ScoreObject\ScoreObject2.h" />
     <ClInclude Include="GameObjects\Items\Springboard.h" />
+    <ClInclude Include="GameObjects\Items\Stair.h" />
     <ClInclude Include="GameObjects\PlayerHealthMeter.h" />
     <ClInclude Include="GameObjects\Player\Player.h" />
     <ClInclude Include="GameObjects\Player\PlayerAttackState.h" />

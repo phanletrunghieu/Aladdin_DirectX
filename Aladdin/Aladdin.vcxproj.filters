@@ -414,6 +414,9 @@
     <ClCompile Include="Scenes\VictoryScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
+    <ClCompile Include="GameObjects\Items\Stair.cpp">
+      <Filter>GameObjects\Items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameComponents\Animation.h">
@@ -754,6 +757,9 @@
     </ClInclude>
     <ClInclude Include="Scenes\VictoryScene.h">
       <Filter>Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjects\Items\Stair.h">
+      <Filter>GameObjects\Items</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

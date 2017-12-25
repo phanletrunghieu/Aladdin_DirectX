@@ -5,6 +5,8 @@
 #include "../../GameComponents/SceneManager.h"
 #include "../Enemies/Enemy.h"
 #include "../Weapons/Weapon.h"
+#include "../Items/ScoreObject/ScoreObject.h"
+#include "../Items/Stair.h"
 #include "../../GameComponents/Sound.h"
 #include "../../Scenes/JafarScene.h"
 #include "../../Scenes/DefeatScene.h"
@@ -121,6 +123,7 @@ void Player::CheckCollision()
 		{
 			this->OnCollision(gameObject, collisionData.GetSide());
 
+			// START check in ground
 			if (gameObject->GetTag() == GameObject::GameObjectType::Ground || gameObject->GetTag() == GameObject::GameObjectType::FloatGround || gameObject->GetTag() == GameObject::GameObjectType::Wall || gameObject->GetTag() == GameObject::GameObjectType::Colbany)
 			{
 				if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
@@ -128,6 +131,27 @@ void Player::CheckCollision()
 					|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
 					playerGround = true;
 			}
+
+			if (gameObject->GetTag() == GameObject::GameObjectType::Stairs)
+			{
+				Stair *stair = dynamic_cast<Stair*>(gameObject);
+				if (stair->IsCheckCollisionAsGround())
+				{
+					if (collisionData.GetSide() == GameCollision::SideCollisions::Bottom
+						|| collisionData.GetSide() == GameCollision::SideCollisions::BottomLeft
+						|| collisionData.GetSide() == GameCollision::SideCollisions::BottomRight)
+					{
+						playerGround = true;
+					}
+
+					//auto go up
+					if (collisionData.GetSide() == stair->GetSide())
+					{
+						_position.y -= 10;
+					}
+				}
+			}
+			// END check in ground
 
 			if (gameObject->GetTag() == GameObject::GameObjectType::Wall || gameObject->GetTag() == GameObject::GameObjectType::Ground)
 			{

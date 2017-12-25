@@ -1,5 +1,22 @@
 #include "GameMap.h"
 
+#include "../GameObjects/Items/Apple.h"
+#include "../GameObjects/Items/FloatGround.h"
+#include "../GameObjects/Items/Springboard.h"
+#include "../GameObjects/Enemies/Enemy1/Enemy1.h"
+#include "../GameObjects/Enemies/Enemy2/Enemy2.h"
+#include "../GameObjects/Enemies/Enemy3/Enemy3.h"
+#include "../GameObjects/Enemies/Enemy4/Enemy4.h"
+#include "../GameObjects/Enemies/Enemy5/Enemy5.h"
+#include "../GameObjects/Enemies/Enemy6/Enemy6.h"
+#include "../GameObjects/Items/Camel.h"
+#include "../GameObjects/Items/Bottle.h"
+#include "../GameObjects/Items/Coal.h"
+#include "../GameObjects/Items/ScoreObject/ScoreObject1.h"
+#include "../GameObjects/Items/ScoreObject/ScoreObject2.h"
+#include "../GameObjects/Items/Stair.h"
+#include "../GameObjects/Enemies/BossJafar/Jafar.h"
+
 GameMap::GameMap()
 {}
 
@@ -54,7 +71,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Apple *apple = new Apple();
 				apple->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listApples.push_back(apple);
+				_listGameObjects.push_back(apple);
 
 				_quadTree->InsertStaticObject(apple);
 			}
@@ -65,7 +82,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				FloatGround *floatGround = new FloatGround();
 				floatGround->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listFloatGrounds.push_back(floatGround);
+				_listGameObjects.push_back(floatGround);
 
 				_quadTree->InsertStaticObject(floatGround);
 			}
@@ -76,7 +93,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Springboard *springboard = new Springboard();
 				springboard->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listSpringboards.push_back(springboard);
+				_listGameObjects.push_back(springboard);
 
 				_quadTree->InsertStaticObject(springboard);
 			}
@@ -87,7 +104,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Enemy *enemy = new Enemy1(_player);
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listEnemies.push_back(enemy);
+				_listGameObjects.push_back(enemy);
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
@@ -96,7 +113,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Enemy *enemy = new Enemy2(_player);
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listEnemies.push_back(enemy);
+				_listGameObjects.push_back(enemy);
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
@@ -105,7 +122,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Enemy *enemy = new Enemy3(_player);
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listEnemies.push_back(enemy);
+				_listGameObjects.push_back(enemy);
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
@@ -114,7 +131,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Enemy *enemy = new Enemy4(_player);
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listEnemies.push_back(enemy);
+				_listGameObjects.push_back(enemy);
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
@@ -124,7 +141,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 				enemy->SetIsRight(true);
 
-				_listEnemies.push_back(enemy);
+				_listGameObjects.push_back(enemy);
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
@@ -133,7 +150,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Enemy *enemy = new Enemy5(_player);
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listEnemies.push_back(enemy);
+				_listGameObjects.push_back(enemy);
 
 				QuadTree::InsertDynamicObject(enemy);
 			}
@@ -143,7 +160,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				enemy->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 				enemy->SetIsRight(true);
 
-				_listEnemies.push_back(enemy);
+				_listGameObjects.push_back(enemy);
 
 				_quadTree->InsertStaticObject(enemy);
 			}
@@ -154,7 +171,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				ScoreObject1 *obj = new ScoreObject1();
 				obj->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listScoreObject.push_back(obj);
+				_listGameObjects.push_back(obj);
 
 				_quadTree->InsertStaticObject(obj);
 			}
@@ -163,7 +180,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				ScoreObject2 *obj = new ScoreObject2();
 				obj->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listScoreObject.push_back(obj);
+				_listGameObjects.push_back(obj);
 
 				_quadTree->InsertStaticObject(obj);
 			}
@@ -174,7 +191,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Jafar* jaFar = new Jafar(_player);
 				jaFar->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listEnemies.push_back(jaFar);
+				_listGameObjects.push_back(jaFar);
 
 				_quadTree->InsertStaticObject(jaFar);
 			}
@@ -185,7 +202,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Camel *camel = new Camel();
 				camel->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listCamels.push_back(camel);
+				_listGameObjects.push_back(camel);
 
 				_quadTree->InsertStaticObject(camel);
 			}
@@ -196,7 +213,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				Bottle *bottle = new Bottle();
 				bottle->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() - object->GetHeight() / 2);
 
-				_listBottles.push_back(bottle);
+				_listGameObjects.push_back(bottle);
 
 				_quadTree->InsertStaticObject(bottle);
 			}
@@ -209,7 +226,7 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				coal->SetWidth(object->GetWidth());
 				coal->SetHeight(object->GetHeight());
 
-				_listCoal.push_back(coal);
+				_listGameObjects.push_back(coal);
 
 				_quadTree->InsertStaticObject(coal);
 			}
@@ -221,6 +238,19 @@ GameMap::GameMap(char * filePath, QuadTree* &quadTree)
 				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
 				gameObject->SetWidth(object->GetWidth());
 				gameObject->SetHeight(object->GetHeight());
+
+				_quadTree->InsertStaticObject(gameObject);
+			}
+
+			//init stair
+			if (objectGroup->GetName() == "Stair_Right")
+			{
+				Stair *gameObject = new Stair(GameCollision::SideCollisions::Right);
+				gameObject->SetPosition(object->GetX() + object->GetWidth() / 2, object->GetY() + object->GetHeight() / 2);
+				gameObject->SetWidth(object->GetWidth());
+				gameObject->SetHeight(object->GetHeight());
+
+				_listGameObjects.push_back(gameObject);
 
 				_quadTree->InsertStaticObject(gameObject);
 			}
@@ -295,61 +325,12 @@ GameMap::~GameMap()
 	delete _quadTree;
 	_quadTree = 0;
 
-	for (size_t i = 0; i < _listApples.size(); i++)
+	for (size_t i = 0; i < _listGameObjects.size(); i++)
 	{
-		if (_listApples[i])
-			delete _listApples[i];
+		if (_listGameObjects[i])
+			delete _listGameObjects[i];
 	}
-	_listApples.clear();
-
-	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
-	{
-		if (_listFloatGrounds[i])
-			delete _listFloatGrounds[i];
-	}
-	_listFloatGrounds.clear();
-
-	for (size_t i = 0; i < _listSpringboards.size(); i++)
-	{
-		if (_listSpringboards[i])
-			delete _listSpringboards[i];
-	}
-	_listSpringboards.clear();
-
-	for (size_t i = 0; i < _listEnemies.size(); i++)
-	{
-		if (_listEnemies[i])
-			delete _listEnemies[i];
-	}
-	_listEnemies.clear();
-
-	for (size_t i = 0; i < _listScoreObject.size(); i++)
-	{
-		if (_listScoreObject[i])
-			delete _listScoreObject[i];
-	}
-	_listScoreObject.clear();
-
-	for (size_t i = 0; i < _listCamels.size(); i++)
-	{
-		if (_listCamels[i])
-			delete _listCamels[i];
-	}
-	_listCamels.clear();
-
-	for (size_t i = 0; i < _listBottles.size(); i++)
-	{
-		if (_listBottles[i])
-			delete _listBottles[i];
-	}
-	_listBottles.clear();
-
-	for (size_t i = 0; i < _listCoal.size(); i++)
-	{
-		if (_listCoal[i])
-			delete _listCoal[i];
-	}
-	_listCoal.clear();
+	_listGameObjects.clear();
 
 	/*don't use tileset for this game
 	for (size_t i = 0; i < _listTileSet.size(); i++)
@@ -366,37 +347,8 @@ void GameMap::Update(float deltaTime)
 	//player
 	_player->Update(deltaTime);
 
-	//apple
-	for (size_t i = 0; i < _listApples.size(); i++)
-		_listApples[i]->Update(deltaTime);
-
-	//float ground
-	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
-		_listFloatGrounds[i]->Update(deltaTime);
-
-	//springboard
-	for (size_t i = 0; i < _listSpringboards.size(); i++)
-		_listSpringboards[i]->Update(deltaTime);
-
-	//enemies
-	for (size_t i = 0; i < _listEnemies.size(); i++)
-		_listEnemies[i]->Update(deltaTime);
-
-	//score object
-	for (size_t i = 0; i < _listScoreObject.size(); i++)
-		_listScoreObject[i]->Update(deltaTime);
-
-	//camels
-	for (size_t i = 0; i < _listCamels.size(); i++)
-		_listCamels[i]->Update(deltaTime);
-
-	//bottles
-	for (size_t i = 0; i < _listBottles.size(); i++)
-		_listBottles[i]->Update(deltaTime);
-
-	//coal
-	for (size_t i = 0; i < _listCoal.size(); i++)
-		_listCoal[i]->Update(deltaTime);
+	for (size_t i = 0; i < _listGameObjects.size(); i++)
+		_listGameObjects[i]->Update(deltaTime);
 }
 
 void GameMap::Draw(Camera * camera)
@@ -454,122 +406,19 @@ void GameMap::Draw(Camera * camera)
 	*/
 
 	//////draw object here
-	//apple
-	for (size_t i = 0; i < _listApples.size(); i++)
+	for (size_t i = 0; i < _listGameObjects.size(); i++)
 	{
 		//remove not visible object
-		if (!_listApples[i]->IsVisible())
+		if (!_listGameObjects[i]->IsVisible())
 		{
-			_quadTree->RemoveStaticObject(_listApples[i]);
-			_listApples.erase(_listApples.begin() + i);
+			_quadTree->RemoveStaticObject(_listGameObjects[i]);
+			_listGameObjects.erase(_listGameObjects.begin() + i);
 			i--;
 			continue;
 		}
 
 		//visible -> draw
-		_listApples[i]->Draw(camera);
-	}
-
-	//float ground
-	for (size_t i = 0; i < _listFloatGrounds.size(); i++)
-	{
-		//remove not visible object
-		if (!_listFloatGrounds[i]->IsVisible())
-		{
-			_quadTree->RemoveStaticObject(_listFloatGrounds[i]);
-			_listFloatGrounds.erase(_listFloatGrounds.begin() + i);
-			i--;
-			continue;
-		}
-
-		//visible -> draw
-		_listFloatGrounds[i]->Draw(camera);
-	}
-
-	//springboard
-	for (size_t i = 0; i < _listSpringboards.size(); i++)
-	{
-		_listSpringboards[i]->Draw(camera);
-	}
-
-	//enemies
-	for (size_t i = 0; i < _listEnemies.size(); i++)
-	{
-		//remove not visible object
-		if (!_listEnemies[i]->IsVisible())
-		{
-			QuadTree::RemoveDynamicObject(_listEnemies[i]);
-			_listEnemies.erase(_listEnemies.begin() + i);
-			i--;
-			continue;
-		}
-
-		//visible -> draw
-		_listEnemies[i]->Draw(camera);
-	}
-
-	//score object
-	for (size_t i = 0; i < _listScoreObject.size(); i++)
-	{
-		//remove not visible object
-		if (!_listScoreObject[i]->IsVisible())
-		{
-			QuadTree::RemoveDynamicObject(_listScoreObject[i]);
-			_listScoreObject.erase(_listScoreObject.begin() + i);
-			i--;
-			continue;
-		}
-
-		//visible -> draw
-		_listScoreObject[i]->Draw(camera);
-	}
-
-	//camels
-	for (size_t i = 0; i < _listCamels.size(); i++)
-	{
-		//remove not visible object
-		if (!_listCamels[i]->IsVisible())
-		{
-			_quadTree->RemoveStaticObject(_listCamels[i]);
-			_listCamels.erase(_listCamels.begin() + i);
-			i--;
-			continue;
-		}
-
-		//visible -> draw
-		_listCamels[i]->Draw(camera);
-	}
-
-	//bottles
-	for (size_t i = 0; i < _listBottles.size(); i++)
-	{
-		//remove not visible object
-		if (!_listBottles[i]->IsVisible())
-		{
-			_quadTree->RemoveStaticObject(_listBottles[i]);
-			_listBottles.erase(_listBottles.begin() + i);
-			i--;
-			continue;
-		}
-
-		//visible -> draw
-		_listBottles[i]->Draw(camera);
-	}
-
-	//coal
-	for (size_t i = 0; i < _listCoal.size(); i++)
-	{
-		//remove not visible object
-		if (!_listCoal[i]->IsVisible())
-		{
-			_quadTree->RemoveStaticObject(_listCoal[i]);
-			_listCoal.erase(_listCoal.begin() + i);
-			i--;
-			continue;
-		}
-
-		//visible -> draw
-		_listCoal[i]->Draw(camera);
+		_listGameObjects[i]->Draw(camera);
 	}
 
 	//player

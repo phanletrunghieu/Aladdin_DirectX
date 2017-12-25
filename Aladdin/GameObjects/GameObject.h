@@ -19,6 +19,7 @@ public:
 		Apple,
 		Weapons,
 		Ground,
+		Stairs,
 		Wall,
 		Rope,
 		HorizontalBar,
